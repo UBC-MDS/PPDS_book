@@ -1,12 +1,1 @@
-name: ppds_book
-channels:
-  - conda-forge
-  - defaults
-dependencies:
-  - python=3.7
-  - pandas
-  - matplotlib
-  - plotly
-  - scikit-learn
-  - altair
-  - pip
+3.7

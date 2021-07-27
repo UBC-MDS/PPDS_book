@@ -1,0 +1,929 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>&lt;no title&gt; &#8212; Programming in Python for Data Science</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/video.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://hfboyce.github.io/ppds/intro.html/modules/home/module1.html" />
+    <link rel="shortcut icon" href="../../_static/icon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Programming in Python for Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  Modules
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module1.html">
+   Module 1:  Python &amp; Pandas - An Unexpected Friendship
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_01.html">
+     What is a dataframe?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_03.html">
+     What is Pandas?
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Coding Exercises
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module1.html">
+   Module 1: Python &amp; Pandas - An Unexpected Friendship
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_01.html">
+     What is a dataframe?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_03.html">
+     What is Pandas?
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/modules/home/module1.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/UBC-MDS/PPDS_book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/UBC-MDS/PPDS_book/issues/new?title=Issue%20on%20page%20%2Fmodules/home/module1.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/UBC-MDS/PPDS_book/edit/main/modules/home/module1.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <exercise id="0" title="Module Learning Outcomes" type="slides,video">
+<slides source="module1/module1_00" shot="5" start="0:004" end="0:29">
+</slides>
+</exercise>
+<exercise id="1" title="Introduction to Dataframes" type="slides,video">
+<slides source="module1/module1_01" shot="3" start="0:003" end="1:54">
+</slides>
+</exercise>
+<exercise id="2" title="Describing a Dataframe">
+<p><strong>Question 1</strong><br />
+What are dataframes comparable to?</p>
+<choice id="1" >
+<opt text="Text Documents">
+<p>Is this an easy way to organize data?</p>
+</opt>
+<opt text="Excel Sheets" correct="true">
+<p>Good job!</p>
+</opt>
+<opt text="Picture Frames" >
+<p>Are we storing pictures in a dataframe?</p>
+</opt>
+</choice> 
+<p><strong>Question 2</strong><br />
+If a <code class="docutils literal notranslate"><span class="pre">csv</span></code> file was opened in a plain text editor, what character would be separating the values of each column?</p>
+<choice id="2">
+<opt text='<code> : </code>'>
+<p>The “C” in <code class="docutils literal notranslate"><span class="pre">csv</span></code> does not stand for colon.</p>
+</opt>
+<opt text='<code> ; </code>'>
+<p><code class="docutils literal notranslate"><span class="pre">csv</span></code> is an acronym for _______ Separated Values format, so likely not “Semi-Colon”.</p>
+</opt>
+<opt text='<code> , </code>' correct="true">
+<p>Great! You have been paying attention.</p>
+</opt>
+</choice >
+</exercise>
+<exercise id="3" title="Introduction to Pandas" type="slides,video">
+<slides source="module1/module1_03" shot="3" start="2:00" end="06:11">
+</slides>
+</exercise>
+<exercise id="4" title="Definitions">
+<p><strong>Question 1</strong><br />
+What is Pandas?</p>
+<choice id="1">
+<opt text="A useful tool for data manipulation in Python" correct="true">
+<p>Nice work! Pandas is a tool we use in conjunction with Python.</p>
+</opt>
+<opt text="A programming language">
+<p>Are you sure you know the difference between Python and Pandas?</p>
+</opt>
+<opt text="A datatype">
+<p>Not quite. You may want to review the module slides.</p>
+</opt>
+</choice >
+<p><strong>Question 2</strong><br />
+Which of the following statements is true?</p>
+<choice id="2">
+<opt text="Attribute and methods can be thought of as nouns and functions as verbs" >
+<p>Functions can be compared to verbs but you may want to revisit methods.</p>
+</opt>
+<opt text="Attribute can be thought of as nouns and functions and methods as verbs" correct="true">
+<p>You got it!</p>
+</opt>
+<opt text="Functions and methods can be thought of as nouns and attributes as verbs">
+<p>It may be a good idea to look over this section.</p>
+</opt>
+</choice >
+</exercise >
+<exercise id="5" title="Your First Code!">
+<p><strong>Instructions:</strong><br />
+Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.</strong></p>
+<p>Let’s try importing pandas and loading in our data.</p>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Import <code class="docutils literal notranslate"><span class="pre">pandas</span></code> as <code class="docutils literal notranslate"><span class="pre">pd</span></code>.</p></li>
+<li><p>Load in data named <code class="docutils literal notranslate"><span class="pre">canucks.csv</span></code>.</p></li>
+<li><p>Save the dataframe as <code class="docutils literal notranslate"><span class="pre">hockey_players</span></code>.</p></li>
+<li><p>Display the first 5 rows of the dataframe.</p></li>
+</ul>
+<codeblock id="01_05">
+<ul class="simple">
+<li><p>Are you sure you are saving your dataframe as <code class="docutils literal notranslate"><span class="pre">hockey_players</span></code>?</p></li>
+<li><p>Are you using <code class="docutils literal notranslate"><span class="pre">pd.read_csv()</span></code>?</p></li>
+</ul>
+</codeblock>
+</exercise>
+<exercise id="6" title="Your Second Code!">
+<p><strong>Instructions:</strong><br />
+Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.</strong></p>
+<p>What are the column names of the hockey_players dataframe?</p>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Find the column names of <code class="docutils literal notranslate"><span class="pre">hockey_players</span></code> and save it as <code class="docutils literal notranslate"><span class="pre">columns_hockey</span></code>.</p></li>
+<li><p>Display it.</p></li>
+</ul>
+<codeblock id="01_06a">
+<ul class="simple">
+<li><p>Are you sure you are saving your objects as <code class="docutils literal notranslate"><span class="pre">columns_hockey</span></code>?</p></li>
+<li><p>Are you using <code class="docutils literal notranslate"><span class="pre">.columns</span></code>?</p></li>
+</ul>
+</codeblock>
+<p>What is the shape of the hockey dataframe?</p>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Find the shape of <code class="docutils literal notranslate"><span class="pre">hockey_players</span></code> and save the result as <code class="docutils literal notranslate"><span class="pre">hockey_shape</span></code>.</p></li>
+<li><p>Display it.</p></li>
+</ul>
+<codeblock id="01_06b">
+<ul class="simple">
+<li><p>Are you sure you are saving your objects as <code class="docutils literal notranslate"><span class="pre">hockey_shape</span></code>?</p></li>
+<li><p>Are you using <code class="docutils literal notranslate"><span class="pre">.shape</span></code>?</p></li>
+</ul>
+</codeblock>
+</exercise>
+<exercise id="7" title="Slicing with Pandas Using .loc[]" type="slides,video">
+<slides source="module1/module1_07" shot="3" start="06:18" end="10:47">
+</slides>
+</exercise>
+<exercise id="8" title="Slicing and Dicing Practice">
+<p>My dataframe object name is <code class="docutils literal notranslate"><span class="pre">fruit_salad</span></code>.</p>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>           name    colour    location    seed   shape  sweetness   water-content  weight
+0         apple       red     canada    True   round     True          84         100
+1        banana    yellow     mexico   False    long     True          75         120
+2    cantaloupe    orange      spain    True   round     True          90        1360
+3  dragon-fruit   magenta      china    True   round    False          96         600
+4    elderberry    purple    austria   False   round     True          80           5
+5           fig    purple     turkey   False    oval    False          78          40
+6         guava     green     mexico    True    oval     True          83         450
+7   huckleberry      blue     canada    True   round     True          73           5
+8          kiwi     brown      china    True   round     True          80          76
+9         lemon    yellow     mexico   False    oval    False          83          65
+</pre></div>
+</div>
+<p><strong>Question 1</strong><br />
+If you wanted only the rows from <code class="docutils literal notranslate"><span class="pre">cantaloupe</span></code> to  <code class="docutils literal notranslate"><span class="pre">kiwi</span></code>, what would your code look like using index labels?</p>
+<choice id="1" >
+<opt text='<code>fruit_salad.loc[2, 8]</code>'>
+<p>This is not the right syntax or number of rows.</p>
+</opt>
+<opt text='<code>fruit_salad[2, 8]</code>' >
+<p>This is not using the right syntax.</p>
+</opt>
+<opt text='<code>fruit_salad[2:8]</code>' >
+<p>This is missing something rather important.</p>
+</opt>
+<opt text='<code>fruit_salad.loc[2:8]</code>' correct="true">
+<p>Good job!</p>
+</opt>
+</choice >
+<p><strong>Question 2</strong><br />
+If you wanted all the rows between <code class="docutils literal notranslate"><span class="pre">cantaloupe</span></code> and <code class="docutils literal notranslate"><span class="pre">fig</span></code> and only columns <code class="docutils literal notranslate"><span class="pre">name</span></code> to <code class="docutils literal notranslate"><span class="pre">seed</span></code>, what would your code look like using index labels?</p>
+<choice id="2" >
+<opt text='<code>fruit_salad.loc[2:5, "colour":"seed"]</code>'>
+<p>I think you are missing the <code class="docutils literal notranslate"><span class="pre">name</span></code> column.</p>
+</opt>
+<opt text='<code>fruit_salad.loc[2:5, "name":"seed"]</code>' correct="true">
+<p>Great!</p>
+</opt>
+<opt text='<code>fruit_salad.loc["name":"seed", 2:5]</code>' >
+<p>This seems to be backward.</p>
+</opt>
+<opt text= '<code>fruit_salad[2:8, "name":"seed"]</code>'  >
+<p>I think you are missing something important.</p>
+</opt>
+</choice >
+</exercise>
+<exercise id="9" title=" Practicing Rows Slicing">
+<p><strong>Instructions:</strong><br />
+Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.</strong></p>
+<p>This following code chunk will be used to give you an output of the data <code class="docutils literal notranslate"><span class="pre">hockey_players</span></code>. This will help answer and code in the exercises following it.</p>
+<codeblock id="hockey_players">
+</codeblock>
+<p>Using our <code class="docutils literal notranslate"><span class="pre">hockey_players</span></code> data from the last few questions, let’s try slicing it.</p>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Select the players <code class="docutils literal notranslate"><span class="pre">Guillaume</span> <span class="pre">Brisebois</span></code> to <code class="docutils literal notranslate"><span class="pre">Quinn</span> <span class="pre">Hughes</span></code>.</p></li>
+<li><p>Save the new sliced dataframe as object <code class="docutils literal notranslate"><span class="pre">benched_players</span></code>.</p></li>
+<li><p>Display it.</p></li>
+</ul>
+<codeblock id="01_09">
+<ul class="simple">
+<li><p>Are you using <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code>?</p></li>
+<li><p>Are you using the correct dataframe labels? Check your spelling and punctuation in row and column labels.</p></li>
+</ul>
+</codeblock>
+</exercise>
+<exercise id="10" title="Practicing Column Slicing">
+<p><strong>Instructions:</strong><br />
+Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.</strong></p>
+<p>Use the output of the following code chunk to help answer the next question.</p>
+<codeblock id="hockey_players">
+</codeblock>
+<p>Using our <code class="docutils literal notranslate"><span class="pre">hockey_players</span></code> data from the last few questions, let’s try slicing it.</p>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Select the players <code class="docutils literal notranslate"><span class="pre">Adam</span> <span class="pre">Gaudette</span></code> to <code class="docutils literal notranslate"><span class="pre">Brandon</span> <span class="pre">Sutter</span></code> and the columns <code class="docutils literal notranslate"><span class="pre">Player</span></code>, <code class="docutils literal notranslate"><span class="pre">No.</span></code>, <code class="docutils literal notranslate"><span class="pre">Age</span></code>, <code class="docutils literal notranslate"><span class="pre">Height</span></code>, <code class="docutils literal notranslate"><span class="pre">Weight</span></code> and <code class="docutils literal notranslate"><span class="pre">Country</span></code>.</p></li>
+<li><p>Save the new sliced dataframe as object <code class="docutils literal notranslate"><span class="pre">star_players</span></code>.</p></li>
+<li><p>Display it.</p></li>
+</ul>
+<codeblock id="01_10">
+<ul class="simple">
+<li><p>Are you using <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code>?</p></li>
+<li><p>Are you using the correct dataframe labels? Check your spelling and punctuation in row and column labels.</p></li>
+<li><p>Did you slice both columns and rows?</p></li>
+<li><p>Are you using “quotations”?</p></li>
+</ul>
+</codeblock>
+</exercise>
+<exercise id="11" title=" Slicing Columns Using .loc[]" type="slides,video">
+<slides source="module1/module1_11" shot="3" start="10:512" end="12:38">
+</slides>
+</exercise>
+<exercise id="12" title="Slicing Columns Only">
+<p>Using my dataframe object named <code class="docutils literal notranslate"><span class="pre">fruit_salad</span></code>, let’s answer some slicing questions.</p>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>           name    colour    location    seed   shape  sweetness   water-content  weight
+0         apple       red     canada    True   round     True          84         100
+1        banana    yellow     mexico   False    long     True          75         120
+2    cantaloupe    orange      spain    True   round     True          90        1360
+3  dragon-fruit   magenta      china    True   round    False          96         600
+4    elderberry    purple    austria   False   round     True          80           5
+5           fig    purple     turkey   False    oval    False          78          40
+6         guava     green     mexico    True    oval     True          83         450
+7   huckleberry      blue     canada    True   round     True          73           5
+8          kiwi     brown      china    True   round     True          80          76
+9         lemon    yellow     mexico   False    oval    False          83          65
+</pre></div>
+</div>
+<p><strong>Question</strong><br />
+If you wanted all the rows and only columns <code class="docutils literal notranslate"><span class="pre">seeds</span></code>, <code class="docutils literal notranslate"><span class="pre">shape</span></code>, <code class="docutils literal notranslate"><span class="pre">sweetness</span></code> and  <code class="docutils literal notranslate"><span class="pre">water-content</span></code>, what would your code look like using index labels?</p>
+<choice id="1" >
+<opt text='<code>fruit_salad.loc[:, "seed":"weight"]</code>'>
+<p>This is almost right but it may be good to check your columns.</p>
+</opt>
+<opt text='<code>fruit_salad[:, "seed":"water-content"]</code>' >
+<p>This is almost right but it’s missing something important! Try looking at the title of the slides we just finished.</p>
+</opt>
+<opt text='<code>fruit_salad[0:9, "seed":"water-content"]</code>' >
+<p>This is almost right but it’s missing something important and it could be condensed! Try looking at the title of the slides we just finished.</p>
+</opt>
+<opt text='<code>fruit_salad.loc[:, "seed":"water-content"]</code>' correct="true">
+<p>Good job! This has both <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> and includes the columns we wish to slice here.</p>
+</opt>
+</choice >
+</exercise>
+<exercise id="13" title="Selecting Using .loc[]" type="slides,video">
+<slides source="module1/module1_13" shot="3" start="12:43" end="13:45">
+</slides>
+</exercise>
+<exercise id="14" title="Rearranging Columns and Rows">
+<p>Using my <code class="docutils literal notranslate"><span class="pre">fruit_salad</span></code> dataframe from earlier?</p>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>           name    colour    location    seed   shape  sweetness   water-content  weight
+0         apple       red     canada    True   round     True          84         100
+1        banana    yellow     mexico   False    long     True          75         120
+2    cantaloupe    orange      spain    True   round     True          90        1360
+3  dragon-fruit   magenta      china    True   round    False          96         600
+4    elderberry    purple    austria   False   round     True          80           5
+5           fig    purple     turkey   False    oval    False          78          40
+6         guava     green     mexico    True    oval     True          83         450
+7   huckleberry      blue     canada    True   round     True          73           5
+8          kiwi     brown      china    True   round     True          80          76
+9         lemon    yellow     mexico   False    oval    False          83          65
+</pre></div>
+</div>
+<p><strong>Question</strong><br />
+If I wanted to make a tropical salad and the recipe calls for <code class="docutils literal notranslate"><span class="pre">kiwi</span></code>, <code class="docutils literal notranslate"><span class="pre">cantaloupe</span></code> and <code class="docutils literal notranslate"><span class="pre">guava</span></code> in this order and I am only interested in columns ordered as <code class="docutils literal notranslate"><span class="pre">sweetness</span></code>, <code class="docutils literal notranslate"><span class="pre">weight</span></code>, <code class="docutils literal notranslate"><span class="pre">seed</span></code> and  <code class="docutils literal notranslate"><span class="pre">location</span></code>, what would my code look like?</p>
+<choice >
+<opt text='<code>fruit_salad.loc[8, 2, 6:"sweetness", "weight", "seed", "location"]</code>' >
+<p>Unfortunately, this code has many errors in it.</p>
+</opt>
+<opt text='<code>fruit_salad.loc[[8, 2, 6]:["sweetness", "weight", "seed", "location"]]</code>' >
+<p>The way that the rows and columns are separated may need to be looked over.</p>
+</opt>
+<opt text='<code>fruit_salad.loc[[8, 2, 6], ["sweetness", "weight", "seed", "location"]]</code>' correct="true">
+<p>Yes, this looks right!</p>
+</opt>
+<opt text='<code>fruit_salad.loc[[2, 6, 8], ["location", "seed”, “sweetness", "weight"]]</code>'>
+<p>Remember we are rearranging here.</p>
+</opt>
+</choice >
+</exercise>
+<exercise id="15" title="Practicing Selecting Using Index Labels">
+<p><strong>Instructions:</strong><br />
+Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.</strong></p>
+<p>Use the output of the following code chunk to help answer the next question.</p>
+<codeblock id="hockey_players">
+</codeblock>
+<p>Let’s select specific players and columns.</p>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Select the players <code class="docutils literal notranslate"><span class="pre">Zack</span> <span class="pre">MacEwan</span></code>, <code class="docutils literal notranslate"><span class="pre">Jake</span> <span class="pre">Virtanen</span></code> and <code class="docutils literal notranslate"><span class="pre">Jordie</span> <span class="pre">Benn</span></code> in that order and the columns <code class="docutils literal notranslate"><span class="pre">Height</span></code>, <code class="docutils literal notranslate"><span class="pre">Weight</span></code>, <code class="docutils literal notranslate"><span class="pre">Salary</span></code> and <code class="docutils literal notranslate"><span class="pre">Country</span></code> in that order.</p></li>
+<li><p>Save the new sliced dataframe as object <code class="docutils literal notranslate"><span class="pre">penalty_players</span></code>.</p></li>
+<li><p>Display it.</p></li>
+</ul>
+<codeblock id="01_15">
+<ul class="simple">
+<li><p>Are you using <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code>?</p></li>
+<li><p>Are you using the correct dataframe labels? Are you using names as your row labels?</p></li>
+<li><p>Did you slice both columns and rows?</p></li>
+<li><p>Are you using 2 sets of <code class="docutils literal notranslate"><span class="pre">[]</span></code> brackets?</p></li>
+<li><p>Are you using “quotations”?</p></li>
+</ul>
+</codeblock>
+</exercise>
+<exercise id="16" title="Obtaining Dataframe Values" type="slides,video">
+<slides source="module1/module1_16" shot="3" start="13:50" end="15:07">
+</slides>
+</exercise>
+<exercise id="17" title="Practicing Selecting Values">
+<p><strong>Instructions:</strong><br />
+Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.</strong></p>
+<p>Use the output of the following code chunk to help complete the next tasks.</p>
+<codeblock id="hockey_players">
+</codeblock>
+<p>Using our <code class="docutils literal notranslate"><span class="pre">hockey_players</span></code> data, try finding the following values and save them in their repective object names.</p>
+<p><em><strong>Make sure you remove the hash (<code class="docutils literal notranslate"><span class="pre">#</span></code>) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.</strong></em></p>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Save<code class="docutils literal notranslate"><span class="pre">Thatcher</span> <span class="pre">Demko</span></code>’s salary in an object named<code class="docutils literal notranslate"><span class="pre">demko_paid</span></code>.</p></li>
+<li><p>How old is <code class="docutils literal notranslate"><span class="pre">Zack</span> <span class="pre">MacEwen</span></code>? Save it as object <code class="docutils literal notranslate"><span class="pre">macewen_age</span></code>.</p></li>
+<li><p>What position does <code class="docutils literal notranslate"><span class="pre">Jacob</span> <span class="pre">Markstrom</span></code> play? Save this as object <code class="docutils literal notranslate"><span class="pre">markstrom_position</span></code>.</p></li>
+<li><p>When was <code class="docutils literal notranslate"><span class="pre">Justin</span> <span class="pre">Bailey</span></code> born? Save it as an object named <code class="docutils literal notranslate"><span class="pre">bailey_birth</span></code>.</p></li>
+</ul>
+<codeblock id="01_17">
+<ul class="simple">
+<li><p>Are you using <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> to select the specific values?</p></li>
+<li><p>Are you using single <code class="docutils literal notranslate"><span class="pre">[]</span></code> brackets?</p></li>
+<li><p>Are you using “quotations”?</p></li>
+</ul>
+</codeblock>
+</exercise>
+<exercise id="18" title="Selecting a Single Column" type="slides,video">
+<slides source="module1/module1_18" shot="3" start="15:13" end="16:45">
+</slides>
+</exercise>
+<exercise id="19" title="Practicing Selecting">
+<p><strong>Instructions:</strong><br />
+Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.</strong></p>
+<p>Let’s try selecting a specific column.</p>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Select all the rows from column <code class="docutils literal notranslate"><span class="pre">Salary</span></code> only and save it as <code class="docutils literal notranslate"><span class="pre">player_cost</span></code>. (<em>Hint: you don’t need <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> here</em>)</p></li>
+<li><p>Display it.</p></li>
+</ul>
+<codeblock id="01_19">
+<ul class="simple">
+<li><p>Are you using the correct dataframe labels?</p></li>
+<li><p>Are you using double <code class="docutils literal notranslate"><span class="pre">[]</span></code> brackets?</p></li>
+<li><p>Are you using “quotations”?</p></li>
+</ul>
+</codeblock>
+</exercise>
+<exercise id="20" title="Slicing and Selecting Using df.iloc[]" type="slides,video">
+<slides source="module1/module1_20" shot="3" start="16:51" end="24:16">
+</slides>
+</exercise>
+<exercise id="21" title="Practicing Slicing and Selecting Using Index Position">
+<p>Here is our <code class="docutils literal notranslate"><span class="pre">fruit_salad</span></code> data again:</p>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>           name    colour    location    seed   shape  sweetness   water-content  weight
+0         apple       red     canada    True   round     True          84         100
+1        banana    yellow     mexico   False    long     True          75         120
+2    cantaloupe    orange      spain    True   round     True          90        1360
+3  dragon-fruit   magenta      china    True   round    False          96         600
+4    elderberry    purple    austria   False   round     True          80           5
+5           fig    purple     turkey   False    oval    False          78          40
+6         guava     green     mexico    True    oval     True          83         450
+7   huckleberry      blue     canada    True   round     True          73           5
+8          kiwi     brown      china    True   round     True          80          76
+9         lemon    yellow     mexico   False    oval    False          83          65
+</pre></div>
+</div>
+<p><strong>Question 1</strong>
+If I wanted the rows <code class="docutils literal notranslate"><span class="pre">elderberry</span></code>  to <code class="docutils literal notranslate"><span class="pre">kiwi</span></code> and only columns <code class="docutils literal notranslate"><span class="pre">seeds</span></code>, <code class="docutils literal notranslate"><span class="pre">shape</span></code>, <code class="docutils literal notranslate"><span class="pre">sweetness</span></code> and  <code class="docutils literal notranslate"><span class="pre">water-content</span></code>, what would my code look like if I was using index positions?</p>
+<choice id="1" >
+<opt text='<code>fruit_salad.iloc[4:9, 3:]</code>'>
+<p>Not quite, but you are halfway there.</p>
+</opt>
+<opt text='<code>fruit_salad.iloc[4:8, 3:7]</code>' >
+<p>Not quite, but you are halfway there.</p>
+</opt>
+<opt text='<code>fruit_salad.iloc[4:9, 3:7]</code>'  correct="true">
+<p>This is correct!</p>
+</opt>
+<opt text='<code>fruit_salad.iloc[5:10, 4:8]</code>'>
+<p>Are you forgetting that in the Python language we start counting at 0?</p>
+</opt>
+</choice >
+<p><strong>Question 2</strong>
+If I wanted the rows <code class="docutils literal notranslate"><span class="pre">lemon</span></code> and <code class="docutils literal notranslate"><span class="pre">cantaloupe</span></code>  but only the columns <code class="docutils literal notranslate"><span class="pre">colour</span></code>, <code class="docutils literal notranslate"><span class="pre">weight</span></code> and <code class="docutils literal notranslate"><span class="pre">seeds</span></code> in that order, what would my code look like if I was using index position?</p>
+<choice id="2" >
+<opt text='<code>fruit_salad.iloc[[lemon, cantaloupe], [colour, weight, seeds]]</code>'>
+<p>We need to use the index position for this question and when using <code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code>.</p>
+</opt>
+<opt text='<code>fruit_salad.iloc[[10, 3], [2, 8, 4]]</code>' >
+<p>Great! You don’t need to specify the second column part because by default the code will slice all the columns.</p>
+</opt>
+<opt text='<code>fruit_salad.iloc[[9, 2], [1, 7, 3]]</code>' correct="true">
+<p>Great Work!</p>
+</opt>
+<opt text= '<code>fruit_salad[[9, 2], [1, 7, 3]]</code>'  >
+<p>I think you are missing something important!</p>
+</opt>
+</choice >
+</exercise>
+<exercise id="22" title="Practicing Slicing Using Index Position">
+<p><strong>Instructions:</strong><br />
+Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.</strong></p>
+<p>Use the output of the following code chunk to help complete the next tasks.</p>
+<codeblock id="hockey_players_i">
+</codeblock>
+<p>In previous questions, we tried slicing using index labels on our Canack dataset. Let’s try something similar but using the index positions.</p>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Slice the players <code class="docutils literal notranslate"><span class="pre">Jacob</span> <span class="pre">Markstrom</span></code> to <code class="docutils literal notranslate"><span class="pre">Tim</span> <span class="pre">Schaller</span></code> and the columns <code class="docutils literal notranslate"><span class="pre">Player</span></code> to <code class="docutils literal notranslate"><span class="pre">Height</span></code>.</p></li>
+<li><p>Save the new sliced dataframe as object <code class="docutils literal notranslate"><span class="pre">skilled_players</span></code>.</p></li>
+<li><p>Display it.</p></li>
+</ul>
+<codeblock id="01_22">
+<ul class="simple">
+<li><p>Are you using <code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code>?</p></li>
+<li><p>Are you using the correct dataframe positions? Are you counting starting from 0?</p></li>
+<li><p>Are you going 1 index past the bound you want?</p></li>
+</ul>
+</codeblock>
+</exercise>
+<exercise id="23" title="Practicing Selecting Using Index Position">
+<p>Use the output of the following code chunk to help complete the next tasks.</p>
+<p><strong>Instructions:</strong><br />
+Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.</strong></p>
+<codeblock id="hockey_players_i">
+</codeblock>
+<p>These unfortunate Canuck players have various forms of injuries, so let’s make a dataframe of players who have injuries by selecting them using their index position.</p>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Select <code class="docutils literal notranslate"><span class="pre">Antoine</span> <span class="pre">Roussel</span></code>, <code class="docutils literal notranslate"><span class="pre">Thatcher</span> <span class="pre">Demko</span></code>, <code class="docutils literal notranslate"><span class="pre">Jake</span> <span class="pre">Virtanen</span></code> and <code class="docutils literal notranslate"><span class="pre">Jay</span> <span class="pre">Beagle</span></code> with only columns <code class="docutils literal notranslate"><span class="pre">Player</span></code>, <code class="docutils literal notranslate"><span class="pre">Birth</span> <span class="pre">Date</span></code>, <code class="docutils literal notranslate"><span class="pre">Experience</span></code> and <code class="docutils literal notranslate"><span class="pre">Salary</span></code> in the specified order.</p></li>
+<li><p>Save this dataframe as object <code class="docutils literal notranslate"><span class="pre">injured_players</span></code>.</p></li>
+<li><p>Don’t forget to display it.</p></li>
+</ul>
+<codeblock id="01_23">
+<ul class="simple">
+<li><p>Are you using <code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code>?</p></li>
+<li><p>Are you using the correct dataframe positions? Are you counting starting from 0?</p></li>
+<li><p>Are you using two sets of <code class="docutils literal notranslate"><span class="pre">[]</span></code> square brackets within your <code class="docutils literal notranslate"><span class="pre">iloc</span></code> brackets?</p></li>
+</ul>
+</codeblock>
+</exercise>
+<exercise id="24" title="Sorting Dataframes" type="slides,video">
+<slides source="module1/module1_24" shot="3" start="24:21" end="25:132">
+</slides>
+</exercise>
+<exercise id="25" title="Practice Sorting">
+<p><strong>Instructions:</strong><br />
+Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.</strong></p>
+<p>Let’s sort our hockey dataframe.</p>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Sort your <code class="docutils literal notranslate"><span class="pre">hockey_players</span></code> dataframe by Salary from most to least and name your new dataframe as <code class="docutils literal notranslate"><span class="pre">rich_players</span></code>.</p></li>
+<li><p>Display it.</p></li>
+</ul>
+<codeblock id="01_25">
+<ul class="simple">
+<li><p>Are you sure you are using <code class="docutils literal notranslate"><span class="pre">sort_values</span></code>?</p></li>
+<li><p>Are you using the argument <code class="docutils literal notranslate"><span class="pre">ascending=False</span></code> to order <code class="docutils literal notranslate"><span class="pre">Salary</span></code> in descending order?</p></li>
+</ul>
+</codeblock>
+</exercise>
+<exercise id="26" title="Summary Statistics" type="slides,video">
+<slides source="module1/module1_26" shot="3" start="25:185" end="29:30">
+</slides>
+</exercise>
+<exercise id="27" title="Fruit Bowl Statistics">
+<p>Bringing back our Fruit Salad dataframe</p>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>           name    colour    location    seed   shape  sweetness   water-content  weight
+0         apple       red     canada    True   round     True          84         100
+1        banana    yellow     mexico   False    long     True          75         120
+2    cantaloupe    orange      spain    True   round     True          90        1360
+3  dragon-fruit   magenta      china    True   round    False          96         600
+4    elderberry    purple    austria   False   round     True          80           5
+5           fig    purple     turkey   False    oval    False          78          40
+6         guava     green     mexico    True    oval     True          83         450
+7   huckleberry      blue     canada    True   round     True          73           5
+8          kiwi     brown      china    True   round     True          80          76
+9         lemon    yellow     mexico   False    oval    False          83          65
+</pre></div>
+</div>
+<p><strong>Question 1</strong></p>
+<p>Which of the following columns contain numerical data?</p>
+<choice id="1" >
+<opt text='<code>colour</code>, <code>shape</code>, <code>water-content</code>'>
+<p>Maybe it would be a good idea to take a look back at the slides again.</p>
+</opt>
+<opt text='<code>colour</code>, <code>seed</code>, <code>water-content</code>, <code>weight</code>' >
+<p>Some of the columns maybe in here though!</p>
+</opt>
+<opt text='<code>water-content</code>, <code>weight</code>' correct="true">
+<p>This looks great! Well done!</p>
+</opt>
+<opt text='All of the columns are categorical' >
+<p>Maybe it would be a good idea to take a look back at the slides again.</p>
+</opt>
+</choice >
+<p><strong>Question 2</strong></p>
+<p>We need summary statistics of both numerical and categorical columns of the dataframe <code class="docutils literal notranslate"><span class="pre">fruit_salad</span></code>. What code would be suitable for this?</p>
+<choice id="2" >
+<opt text='<code>df.describe()</code>'>
+<p>Is our dataframe named <code class="docutils literal notranslate"><span class="pre">df</span></code>? Will this get summary statistics for all the columns?</p>
+</opt>
+<opt text='<code>fruit_salad.describe()</code>' >
+<p>We want statistics of both quantitative and categorical columns.</p>
+</opt>
+<opt text='<code>fruit_salad.describe(include="all")</code>' correct="true">
+<p>This looks great! Well done!</p>
+</opt>
+<opt text='<code>fruit_salad.summary(include="all")</code>' >
+<p>Is <code class="docutils literal notranslate"><span class="pre">summary</span></code> the correct command here?</p>
+</opt>
+</choice >
+</exercise>
+<exercise id="28" title="Using df.describe()">
+<p><strong>Instructions:</strong><br />
+Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.</strong></p>
+<p>Try to obtain some statistics from the hockey data.</p>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Find the statistics of both categorical and quantitative columns. Save the dataframe in an object called <code class="docutils literal notranslate"><span class="pre">hockey_stats</span></code>.</p></li>
+<li><p>Display it.</p></li>
+</ul>
+<codeblock id="01_28a">
+<ul class="simple">
+<li><p>Are you sure you are saving your objects correctly?</p></li>
+<li><p>Are you using using <code class="docutils literal notranslate"><span class="pre">.describe(include=&quot;all&quot;)</span></code> ?</p></li>
+</ul>
+</codeblock>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Find the total salary of the team and save it in an object called <code class="docutils literal notranslate"><span class="pre">player_cost</span></code>.</p></li>
+</ul>
+<codeblock id="01_28b">
+<ul class="simple">
+<li><p>Are you using <code class="docutils literal notranslate"><span class="pre">df[[&quot;column-name&quot;]].sum()</span></code> to find the total of a column?</p></li>
+</ul>
+</codeblock>
+</exercise>
+<exercise id="29" title="Frequency Tables and Writing CSVs" type="slides,video">
+<slides source="module1/module1_29" shot="3" start="29:35" end="32:20">
+</slides>
+</exercise>
+<exercise id="30" title="Practicing Frequency Tables">
+<p><strong>Instructions:</strong><br />
+Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.</strong></p>
+<p><em><strong>Make sure you remove the hash (<code class="docutils literal notranslate"><span class="pre">#</span></code>) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.</strong></em></p>
+<p>Let’s get the frequencies of some of our values! We spoke in the slides about the steps we needed to follow to get a frequency table.</p>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Let’s make an object named <code class="docutils literal notranslate"><span class="pre">position_column</span></code> that consists of just the <code class="docutils literal notranslate"><span class="pre">Position</span></code> column. Note we will be using this for <code class="docutils literal notranslate"><span class="pre">value_counts</span></code> so we must do this with only using single <code class="docutils literal notranslate"><span class="pre">[]</span></code> brackets.</p></li>
+<li><p>Find the frequencies of the position for the hockey team using <code class="docutils literal notranslate"><span class="pre">.value_counts()</span></code> and save it as <code class="docutils literal notranslate"><span class="pre">position_freq</span></code>.</p></li>
+<li><p>Export <code class="docutils literal notranslate"><span class="pre">position_freq</span></code>  to a csv named <code class="docutils literal notranslate"><span class="pre">position_frequencies.csv</span></code> using <code class="docutils literal notranslate"><span class="pre">.to_csv()</span></code>.</p></li>
+<li><p>Don’t forget to display it.</p></li>
+</ul>
+<p><em>If you get a warning along with your output, that’s fine. We will explain why this happens further in the course.</em></p>
+<codeblock id="01_30">
+<ul class="simple">
+<li><p>Are you sure you are using single <code class="docutils literal notranslate"><span class="pre">[]</span></code> brackets for <code class="docutils literal notranslate"><span class="pre">position_column</span></code>?</p></li>
+<li><p>Are you using <code class="docutils literal notranslate"><span class="pre">.to_csv()</span></code> to save your <code class="docutils literal notranslate"><span class="pre">csv</span></code>?</p></li>
+<li><p>Are you naming your <code class="docutils literal notranslate"><span class="pre">csv</span></code> correctly as “position_frequencies.csv”?</p></li>
+</ul>
+</codeblock>
+</exercise>
+<exercise id="31" title="Quick Viz with Altair" type="slides,video">
+<slides source="module1/module1_31" shot="3" start="32:25" end="37:45">
+</slides>
+</exercise>
+<exercise id="32" title="Practicing Bar Charts">
+<p><strong>Instructions:</strong><br />
+Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.</strong></p>
+<p><em><strong>Make sure you remove the hash (<code class="docutils literal notranslate"><span class="pre">#</span></code>) symbol in the coding portions of this question. We have commented them so that the line won’t execute and you can test your code after each step.</strong></em></p>
+<p>You are going to load the <code class="docutils literal notranslate"><span class="pre">canucks.csv</span></code> from the questions that we exported as a <code class="docutils literal notranslate"><span class="pre">csv</span></code> in the last section and create a <code class="docutils literal notranslate"><span class="pre">bar</span></code> plot of the <code class="docutils literal notranslate"><span class="pre">Positions</span></code> column.</p>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Load in the csv named <code class="docutils literal notranslate"><span class="pre">canucks.csv</span></code> and save it as <code class="docutils literal notranslate"><span class="pre">hockey_players</span></code>.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">alt.Chart()</span></code> to create a chart object.</p></li>
+<li><p>Use  <code class="docutils literal notranslate"><span class="pre">.mark_bar()</span></code> to create a bar plot.</p></li>
+<li><p>Use  <code class="docutils literal notranslate"><span class="pre">.encode()</span></code> to specify the <code class="docutils literal notranslate"><span class="pre">Position</span></code> column for plotting.</p></li>
+<li><p>Assign a color as Teal and set opacity to 0.5.</p></li>
+<li><p>Don’t forget to add a title as “Canuck Player Positions”..</p></li>
+</ul>
+<codeblock id="01_32">
+<ul class="simple">
+<li><p>Are you sure you are using <code class="docutils literal notranslate"><span class="pre">opacity</span></code> to set the opacity?</p></li>
+<li><p>Are you using the correct Dataframe?</p></li>
+<li><p>Did you assign the correct values to <code class="docutils literal notranslate"><span class="pre">color</span></code> and <code class="docutils literal notranslate"><span class="pre">opacity</span></code>?</p></li>
+<li><p>Are you using the <code class="docutils literal notranslate"><span class="pre">.properties(title=...)</span></code> to assign the title?</p></li>
+<li><p>Are you spelling color in the American manner?</p></li>
+</ul>
+</codeblock>
+</exercise>
+<exercise id="33" title="Practicing Scatterplots">
+<p><strong>Instructions:</strong><br />
+Running a coding exercise for the first time, could take a bit of time for everything to load. Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code. Run it and see if you obtain the desired output. Submit your code to validate if you were correct.</strong></p>
+<p>Ok, let’s try our luck with a scatterplot. We want to explore the relationship between <code class="docutils literal notranslate"><span class="pre">Age</span></code> and <code class="docutils literal notranslate"><span class="pre">Salary</span></code>.</p>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Plots x as <code class="docutils literal notranslate"><span class="pre">Age</span></code> and y as <code class="docutils literal notranslate"><span class="pre">Salary</span></code> using a scatterplot and save the plot in an object named <code class="docutils literal notranslate"><span class="pre">age_salary_scatter</span></code>.</p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">mark_circle(...)</span></code> to specify a scatter plot.</p></li>
+<li><p>Set color to <code class="docutils literal notranslate"><span class="pre">Darkblue</span></code> and opacity to 0.4.</p></li>
+<li><p>Don’t forget to assign a title as “Canuck players Age vs. Salary”.</p></li>
+</ul>
+<codeblock id="01_33">
+<ul class="simple">
+<li><p>Are you using <code class="docutils literal notranslate"><span class="pre">.mark_circle()</span></code></p></li>
+<li><p>Are you sure you using <code class="docutils literal notranslate"><span class="pre">opacity</span></code> to set the opacity?</p></li>
+<li><p>Are you using the correct Dataframe?</p></li>
+<li><p>Are you assigning variables x and y to the correct columns</p></li>
+<li><p>Did you assign the correct values to color, title and opacity?</p></li>
+<li><p>Are you spelling color in the American manner?</p></li>
+</ul>
+</codeblock>
+</exercise>
+<exercise id="34" title="What Did We Just Learn?" type="slides,video">
+<slides source="module1/module1_34" shot= "5" start="0:31" end="1:18">
+</slides>
+</exercise>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "UBC-MDS/PPDS_book",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./modules/home"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Hayley Boyce, Mike Gelbart, Tiffany Timbers<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

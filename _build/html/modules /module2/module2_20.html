@@ -1,0 +1,605 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conditional value replacement and assignment &#8212; Programming in Python for Data Science</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/video.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://hfboyce.github.io/ppds/intro.html/modules /module2/module2_20.html" />
+    <link rel="shortcut icon" href="../../_static/icon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Programming in Python for Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/modules /module2/module2_20.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/UBC-MDS/PPDS_book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/UBC-MDS/PPDS_book/issues/new?title=Issue%20on%20page%20%2Fmodules /module2/module2_20.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/UBC-MDS/PPDS_book/edit/main/modules /module2/module2_20.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Conditional value replacement and assignment
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#building-on-things-we-know">
+   Building on things we know
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#building-on-more-things-we-know">
+   Building on more things we know
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#replacing-with-inequalities">
+   Replacing with inequalities
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-new-columns">
+     Creating new columns
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lets-apply-what-we-learned">
+   Let’s apply what we learned!
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="conditional-value-replacement-and-assignment">
+<h1>Conditional value replacement and assignment<a class="headerlink" href="#conditional-value-replacement-and-assignment" title="Permalink to this headline">¶</a></h1>
+<p>Notes: <br></p>
+</div>
+<hr class="docutils" />
+<div class="section" id="building-on-things-we-know">
+<h1>Building on things we know<a class="headerlink" href="#building-on-things-we-know" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;cereal.csv&#39;</span><span class="p">,</span>
+                  <span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;mfr&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">,</span> <span class="s1">&#39;calories&#39;</span><span class="p">,</span> <span class="s1">&#39;protein&#39;</span><span class="p">,</span> <span class="s1">&#39;weight&#39;</span><span class="p">,</span> <span class="s1">&#39;rating&#39;</span><span class="p">])</span>
+<span class="n">cereal</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                        name mfr  type  calories  protein  weight     rating
+0                  100% Bran   N  Cold        70        4     1.0  68.402973
+1          100% Natural Bran   Q  Cold       120        3     1.0  33.983679
+2                   All-Bran   K  Cold        70        4     1.0  59.425505
+3  All-Bran with Extra Fiber   K  Cold        50        4     1.0  93.704912
+4             Almond Delight   R  Cold       110        2     1.0  34.384843
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>So far, we have accumulated many different skills to wrangle our data.</p>
+<p>One type of transformation that you may use often is replacing values
+within a column depending on a certain condition.</p>
+<p>Let’s bring in a smaller version of our cereal dataset.</p>
+<p>In the dataframe, the manufacturer value “Q” isn’t that informative and
+it might be easier to understand our data if we change all these values
+to something more clear like “Quaker”.</p>
+<p>This leads us to our task:</p>
+<p><em><strong>Replace the <code class="docutils literal notranslate"><span class="pre">Q</span></code> manufacturer values with a new value of <code class="docutils literal notranslate"><span class="pre">Quaker</span></code>.</strong></em></p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">q_cereal</span> <span class="o">=</span> <span class="n">cereal</span><span class="p">[</span><span class="n">cereal</span><span class="p">[</span><span class="s1">&#39;mfr&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Q&#39;</span><span class="p">]</span>
+<span class="n">q_cereal</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">mfr</span> <span class="o">=</span> <span class="s1">&#39;Quaker&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                  name     mfr  type  calories  protein  weight     rating
+1    100% Natural Bran  Quaker  Cold       120        3     1.0  33.983679
+10        Cap&#39;n&#39;Crunch  Quaker  Cold       120        1     1.0  18.042851
+35    Honey Graham Ohs  Quaker  Cold       120        1     1.0  21.871292
+41                Life  Quaker  Cold       100        4     1.0  45.328074
+54         Puffed Rice  Quaker  Cold        50        1     0.5  60.756112
+55        Puffed Wheat  Quaker  Cold        50        2     0.5  63.005645
+56  Quaker Oat Squares  Quaker  Cold       100        4     1.0  49.511874
+57      Quaker Oatmeal  Quaker   Hot       100        5     1.0  50.828392
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Our first instinct may be to first filter those rows using the technique
+we learned in our last section.</p>
+<p>From our new filtered selection, perhaps we could assign values of
+“Quaker” to column <code class="docutils literal notranslate"><span class="pre">mfr</span></code> using similar code to this.</p>
+<p>The output looks like it did what we wanted, but what happened to the
+rest of our dataframe?</p>
+<p>Remember that we only want to replace the values in our existing
+dataframe and not create a new one.</p>
+<p>When we use the <code class="docutils literal notranslate"><span class="pre">.assign()</span></code> verb like this, it creates a new dataframe
+with only the rows that meet the condition <code class="docutils literal notranslate"><span class="pre">cereal['mfr']</span> <span class="pre">==</span> <span class="pre">'Q'</span></code> .</p>
+<p>This is problematic since we still want the original dataframe and the
+rows with <code class="docutils literal notranslate"><span class="pre">mfr</span></code> values not equal <code class="docutils literal notranslate"><span class="pre">Q</span></code>.</p>
+<p>So what do we do?</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="building-on-more-things-we-know">
+<h1>Building on more things we know<a class="headerlink" href="#building-on-more-things-we-know" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">73</span><span class="p">]</span> 
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>name           Trix
+mfr               G
+type           Cold
+calories        110
+protein           1
+weight            1
+rating      27.7533
+Name: 73, dtype: object
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cereal</span><span class="p">[</span><span class="s1">&#39;mfr&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Q&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                  name mfr  type  calories  protein  weight     rating
+1    100% Natural Bran   Q  Cold       120        3     1.0  33.983679
+10        Cap&#39;n&#39;Crunch   Q  Cold       120        1     1.0  18.042851
+35    Honey Graham Ohs   Q  Cold       120        1     1.0  21.871292
+41                Life   Q  Cold       100        4     1.0  45.328074
+54         Puffed Rice   Q  Cold        50        1     0.5  60.756112
+55        Puffed Wheat   Q  Cold        50        2     0.5  63.005645
+56  Quaker Oat Squares   Q  Cold       100        4     1.0  49.511874
+57      Quaker Oatmeal   Q   Hot       100        5     1.0  50.828392
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Remember our friend <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code>? We are going to get reacquainted with it.</p>
+<p>Similarly, to how <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> can select and return specified columns and
+rows of the dataframe, it can filter on conditions too.</p>
+<p>We are used to seeing code involving <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> like this.</p>
+<p>But now we’ll get introduced to a new side of it when we use it to
+filter as well.</p>
+<p>We can use the same syntax, <code class="docutils literal notranslate"><span class="pre">cereal['mfr']</span> <span class="pre">==</span> <span class="pre">'Q'</span></code>, we normally would
+when filtering. However, this time we wrap the whole thing within
+<code class="docutils literal notranslate"><span class="pre">.loc[]</span></code>.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cereal</span><span class="p">[</span><span class="s1">&#39;mfr&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Q&#39;</span><span class="p">,</span> <span class="s1">&#39;mfr&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>1     Q
+10    Q
+35    Q
+41    Q
+54    Q
+55    Q
+56    Q
+57    Q
+Name: mfr, dtype: object
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cereal</span><span class="p">[</span><span class="s1">&#39;mfr&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Q&#39;</span><span class="p">,</span> <span class="s1">&#39;mfr&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Quaker&#39;</span>
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Some people may be asking, “Why don’t we do all our filtering like this
+then?” Well, the answer is, you can, but we prefer not to.</p>
+<p>Filtering without <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> is a bit more readable.</p>
+<p>Let’s concentrate back on our task of only replacing <code class="docutils literal notranslate"><span class="pre">mfr</span></code> values equal
+to <code class="docutils literal notranslate"><span class="pre">Q</span></code> to <code class="docutils literal notranslate"><span class="pre">Quaker</span></code>.</p>
+<p>How can <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> help us with this?</p>
+<p>Unlike our earlier approach, <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> accepts more arguments within it.</p>
+<p>We have the ability to specify not only the target rows matching a
+specific condition but our column of interest as well.</p>
+<p>Once we have that, we can then assign these rows the new values <code class="docutils literal notranslate"><span class="pre">Quaker</span></code>
+in the <code class="docutils literal notranslate"><span class="pre">mfr</span></code> column.</p>
+<p>Wait! Nothing was outputted with our code! What happened?</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                         name     mfr  type  calories  protein  weight     rating
+0                   100% Bran       N  Cold        70        4     1.0  68.402973
+1           100% Natural Bran  Quaker  Cold       120        3     1.0  33.983679
+2                    All-Bran       K  Cold        70        4     1.0  59.425505
+3   All-Bran with Extra Fiber       K  Cold        50        4     1.0  93.704912
+4              Almond Delight       R  Cold       110        2     1.0  34.384843
+..                        ...     ...   ...       ...      ...     ...        ...
+72                    Triples       G  Cold       110        2     1.0  39.106174
+73                       Trix       G  Cold       110        1     1.0  27.753301
+74                 Wheat Chex       R  Cold       100        3     1.0  49.787445
+75                   Wheaties       G  Cold       100        3     1.0  51.592193
+76        Wheaties Honey Gold       G  Cold       110        2     1.0  36.187559
+
+[77 rows x 7 columns]
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Let’s take a look at the original dataframe.</p>
+<p>We can now see that the <code class="docutils literal notranslate"><span class="pre">Q</span></code> manufacturer values have changed to
+<code class="docutils literal notranslate"><span class="pre">Quaker</span></code>.</p>
+<p>When we use this syntax, we do not need to save the results in a new
+object like we had to with <code class="docutils literal notranslate"><span class="pre">.assign()</span></code> and <code class="docutils literal notranslate"><span class="pre">.drop()</span></code>.</p>
+<p>Let’s discuss what really is happening behind the scenes.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="p">[</span><span class="s1">&#39;mfr&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Q&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>0     False
+1     False
+2     False
+3     False
+4     False
+      ...  
+72    False
+73    False
+74    False
+75    False
+76    False
+Name: mfr, Length: 77, dtype: bool
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Remember what the condition <code class="docutils literal notranslate"><span class="pre">cereal['mfr']</span> <span class="pre">==</span> <span class="pre">'Q'</span></code> returns?</p>
+<p>It produces an object containing all the rows with True/False values
+depending on whether or not the row meets the condition.</p>
+<hr class="docutils" />
+<img alt="404 image" src="module2/tf_quaker.png" />
+<p>Notes:</p>
+<p>Essentially our code is finding the rows with <code class="docutils literal notranslate"><span class="pre">True</span></code> values and
+replacing the values in the <code class="docutils literal notranslate"><span class="pre">mfr</span></code> colum with the new value of <code class="docutils literal notranslate"><span class="pre">Quaker</span></code>.</p>
+<hr class="docutils" />
+<ol class="simple">
+<li></li>
+</ol>
+<!-- end list -->
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cereal</span><span class="p">[</span><span class="s1">&#39;mfr&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Q&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<br>
+<ol class="simple">
+<li></li>
+</ol>
+<!-- end list -->
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cereal</span><span class="p">[</span><span class="s1">&#39;mfr&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Q&#39;</span><span class="p">,</span> <span class="s1">&#39;mfr&#39;</span><span class="p">]</span> 
+</pre></div>
+</div>
+<br>
+<ol class="simple">
+<li></li>
+</ol>
+<!-- end list -->
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cereal</span><span class="p">[</span><span class="s1">&#39;mfr&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Q&#39;</span><span class="p">,</span> <span class="s1">&#39;mfr&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Quaker&#39;</span>
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>You can split up how this code works into 3 steps:</p>
+<ol class="simple">
+<li><p>We use <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> to find the rows meeting certain conditions.</p></li>
+<li><p>We next indicate which column we wish to access.</p></li>
+<li><p>Once we have obtained our desired rows and the column which we are
+editing, we assign a value.</p></li>
+</ol>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="p">[</span><span class="n">cereal</span><span class="p">[</span><span class="s1">&#39;mfr&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Q&#39;</span><span class="p">,</span> <span class="s1">&#39;mfr&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Quaker&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>TypeError: &#39;Series&#39; objects are mutable, thus they cannot be hashed
+
+Detailed traceback: 
+  File &quot;&lt;string&gt;&quot;, line 1, in &lt;module&gt;
+  File &quot;/usr/local/lib/python3.7/site-packages/pandas/core/frame.py&quot;, line 2938, in __setitem__
+    self._set_item(key, value)
+  File &quot;/usr/local/lib/python3.7/site-packages/pandas/core/frame.py&quot;, line 3000, in _set_item
+    value = self._sanitize_column(key, value)
+  File &quot;/usr/local/lib/python3.7/site-packages/pandas/core/frame.py&quot;, line 3666, in _sanitize_column
+    if broadcast and key in self.columns and value.ndim == 1:
+  File &quot;/usr/local/lib/python3.7/site-packages/pandas/core/indexes/base.py&quot;, line 3899, in __contains__
+    hash(key)
+  File &quot;/usr/local/lib/python3.7/site-packages/pandas/core/generic.py&quot;, line 1799, in __hash__
+    f&quot;{repr(type(self).__name__)} objects are mutable, &quot;
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Does this work without using <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code>?</p>
+<p>Let’s give it a try.</p>
+<p>Unfortunately, we are not able to replace values in this manner and it
+results in an error since filtering this way does not allow us to
+specify a column.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="replacing-with-inequalities">
+<h1>Replacing with inequalities<a class="headerlink" href="#replacing-with-inequalities" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cereal</span><span class="p">[</span><span class="s1">&#39;protein&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;protein_level&#39;</span><span class="p">]</span>  <span class="o">=</span> <span class="s1">&#39;high&#39;</span> 
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cereal</span><span class="p">[</span><span class="s1">&#39;protein&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;protein_level&#39;</span><span class="p">]</span>  <span class="o">=</span> <span class="s1">&#39;low&#39;</span> 
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>This syntax using <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> also works for inequality conditions.</p>
+<p>If we are replacing numerical values with characters or words (or vice
+versa) we need to assign our desired values to a <strong>new column</strong> and not
+the existing one, because the column type will be different.</p>
+<p>Perhaps we want just two categories for protein levels - “high” and
+“low”.</p>
+<p>Any cereal above 3 grams of protein will be considered a “high” protein
+level and anything less, as a “low” protein level.</p>
+<p>Let’s assign the “high” protein values first.</p>
+<p>The only difference here from earlier is we now use an inequality for
+our condition and we designate a new column name instead of an existing
+one.</p>
+<p>Let’s save the values in a column named <code class="docutils literal notranslate"><span class="pre">protein_level</span></code>.</p>
+<p>Next by the “low” values.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                         name     mfr  type  calories  protein  weight     rating protein_level
+0                   100% Bran       N  Cold        70        4     1.0  68.402973          high
+1           100% Natural Bran  Quaker  Cold       120        3     1.0  33.983679          high
+2                    All-Bran       K  Cold        70        4     1.0  59.425505          high
+3   All-Bran with Extra Fiber       K  Cold        50        4     1.0  93.704912          high
+4              Almond Delight       R  Cold       110        2     1.0  34.384843           low
+..                        ...     ...   ...       ...      ...     ...        ...           ...
+72                    Triples       G  Cold       110        2     1.0  39.106174           low
+73                       Trix       G  Cold       110        1     1.0  27.753301           low
+74                 Wheat Chex       R  Cold       100        3     1.0  49.787445          high
+75                   Wheaties       G  Cold       100        3     1.0  51.592193          high
+76        Wheaties Honey Gold       G  Cold       110        2     1.0  36.187559           low
+
+[77 rows x 8 columns]
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Let’s take a look at the dataframe now.</p>
+<hr class="docutils" />
+<div class="section" id="creating-new-columns">
+<h2>Creating new columns<a class="headerlink" href="#creating-new-columns" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">oz_to_g</span> <span class="o">=</span> <span class="mf">28.3495</span>
+<span class="n">cereal</span><span class="p">[</span><span class="s1">&#39;weight_g&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cereal</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">oz_to_g</span>
+<span class="n">cereal</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                         name     mfr  type  calories  protein  weight     rating protein_level  weight_g
+0                   100% Bran       N  Cold        70        4     1.0  68.402973          high   28.3495
+1           100% Natural Bran  Quaker  Cold       120        3     1.0  33.983679          high   28.3495
+2                    All-Bran       K  Cold        70        4     1.0  59.425505          high   28.3495
+3   All-Bran with Extra Fiber       K  Cold        50        4     1.0  93.704912          high   28.3495
+4              Almond Delight       R  Cold       110        2     1.0  34.384843           low   28.3495
+..                        ...     ...   ...       ...      ...     ...        ...           ...       ...
+72                    Triples       G  Cold       110        2     1.0  39.106174           low   28.3495
+73                       Trix       G  Cold       110        1     1.0  27.753301           low   28.3495
+74                 Wheat Chex       R  Cold       100        3     1.0  49.787445          high   28.3495
+75                   Wheaties       G  Cold       100        3     1.0  51.592193          high   28.3495
+76        Wheaties Honey Gold       G  Cold       110        2     1.0  36.187559           low   28.3495
+
+[77 rows x 9 columns]
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>You may have noticed we did not use <code class="docutils literal notranslate"><span class="pre">.assign()</span></code> to create our new
+column.</p>
+<p>That’s because as we mentioned earlier, when we use <code class="docutils literal notranslate"><span class="pre">.assign()</span></code> it
+creates a brand new dataframe.</p>
+<p>When we are replacing values, we don’t want a new dataframe and instead,
+we just want to alter the current values in the existing dataframe.</p>
+<p>When we are not doing conditional value replacement, we could create new
+columns with a similar syntax. Take the example of converting the weight
+from ounces into grams and making a new column named <code class="docutils literal notranslate"><span class="pre">weight_g</span></code>.</p>
+<p>This code edits the existing dataframe <code class="docutils literal notranslate"><span class="pre">cereal</span></code> instead of creating a
+new one.</p>
+<p>We prefer to use <code class="docutils literal notranslate"><span class="pre">.assign()</span></code> where possible as it can help avoid
+unexpected errors and performance issues.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="lets-apply-what-we-learned">
+<h1>Let’s apply what we learned!<a class="headerlink" href="#lets-apply-what-we-learned" title="Permalink to this headline">¶</a></h1>
+<p>Notes:</p>
+<br>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "UBC-MDS/PPDS_book",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./modules /module2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Hayley Boyce, Mike Gelbart, Tiffany Timbers<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

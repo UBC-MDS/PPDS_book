@@ -1,0 +1,743 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unit tests, corner cases &#8212; Programming in Python for Data Science</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/video.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://hfboyce.github.io/ppds/intro.html/modules/module6/module6_17.html" />
+    <link rel="shortcut icon" href="../../_static/icon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Programming in Python for Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  Modules
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module1.html">
+   Module 1:  Python &amp; Pandas - An Unexpected Friendship
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_01.html">
+     What is a dataframe?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_03.html">
+     What is Pandas?
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Coding Exercises
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module1.html">
+   Module 1: Python &amp; Pandas - An Unexpected Friendship
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_01.html">
+     What is a dataframe?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_03.html">
+     What is Pandas?
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/modules/module6/module6_17.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/UBC-MDS/PPDS_book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/UBC-MDS/PPDS_book/issues/new?title=Issue%20on%20page%20%2Fmodules/module6/module6_17.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/UBC-MDS/PPDS_book/edit/main/modules/module6/module6_17.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Unit tests, corner cases
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#assert-statements">
+     Assert Statements
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#why">
+     Why?
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-to-test">
+     What to test?
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#false-positives">
+     False Positives
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#testing-functions-that-work-with-data">
+   Testing Functions that Work with Data
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#systematic-approach">
+     Systematic Approach
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lets-apply-what-we-learned">
+   Let’s apply what we learned!
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="unit-tests-corner-cases">
+<h1>Unit tests, corner cases<a class="headerlink" href="#unit-tests-corner-cases" title="Permalink to this headline">¶</a></h1>
+<p>Notes:</p>
+<br>
+<hr class="docutils" />
+<p><em><strong>How can we be so sure that the code we wrote is doing what we want it
+to?</strong></em></p>
+<p><em><strong>Does our code work 100% of the time?</strong></em></p>
+<center>
+<a class="reference internal image-reference" href="module6/question.png"><img alt="404 image" src="module6/question.png" style="width: 25%;" /></a>
+</center>
+<p>These questions can be answered by using something called <strong>units
+tests</strong>.</p>
+<p>Notes:</p>
+<p>In the last section, we learned about raising exceptions, which, in a
+lot of cases, helps the function user identify if they are using it
+correctly.</p>
+<p>But there are still some questions remaining:</p>
+<p><em><strong>How can we be so sure that the code we wrote is doing what we want it
+to?</strong></em></p>
+<p><em><strong>Does our code work 100% of the time?</strong></em></p>
+<p>These questions can be answered by using something called <strong>units
+tests</strong>.</p>
+<p>We’ll be implementing unit tests in Python using <code class="docutils literal notranslate"><span class="pre">assert</span></code> statements.”
+<code class="docutils literal notranslate"><span class="pre">assert</span></code> statements are just one way of implementing unit tests.</p>
+<p>Let’s first discuss the syntax of an <code class="docutils literal notranslate"><span class="pre">assert</span></code> statement and then how
+they can be applied to the bigger concept, which is unit tests.</p>
+<hr class="docutils" />
+<div class="section" id="assert-statements">
+<h2>Assert Statements<a class="headerlink" href="#assert-statements" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="mi">1</span> <span class="o">==</span> <span class="mi">2</span> <span class="p">,</span> <span class="s2">&quot;1 is not equal to 2.&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>AssertionError: 1 is not equal to 2.
+
+Detailed traceback: 
+  File &quot;&lt;string&gt;&quot;, line 1, in &lt;module&gt;
+</pre></div>
+</div>
+<center>
+<a class="reference internal image-reference" href="module6/assert2.png"><img alt="module6/assert2.png" src="module6/assert2.png" style="width: 75%;" /></a>
+</center>
+<p>Notes:</p>
+<p><code class="docutils literal notranslate"><span class="pre">assert</span></code> statements can be used as sanity checks for our program.</p>
+<p>We implement them as a “debugging” tactic to make sure our code runs as
+we expect it to.</p>
+<p>When Python reaches an <code class="docutils literal notranslate"><span class="pre">assert</span></code> statement, it evaluates the condition to
+a Boolean value.</p>
+<p>If the statement is <code class="docutils literal notranslate"><span class="pre">True</span></code>, Python will continue to run. However, if the
+Boolean is <code class="docutils literal notranslate"><span class="pre">False</span></code>, the code stops running, and an error message is
+printed.</p>
+<p>Let’s take a look at one.</p>
+<p>Here we have the keyword <code class="docutils literal notranslate"><span class="pre">assert</span></code> that checks if <code class="docutils literal notranslate"><span class="pre">1==2</span></code>. Since this is
+<code class="docutils literal notranslate"><span class="pre">False</span></code>, an error is thrown, and the message beside the condition <code class="docutils literal notranslate"><span class="pre">&quot;1</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">equal</span> <span class="pre">to</span> <span class="pre">2.&quot;</span></code> is outputted.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="mi">1</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">,</span> <span class="s2">&quot;1 is not equal to 1.&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Will this line execute?&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>Will this line execute?
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="mi">1</span> <span class="o">==</span> <span class="mi">2</span> <span class="p">,</span> <span class="s2">&quot;1 is not equal to 2.&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Will this line execute?&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>AssertionError: 1 is not equal to 2.
+
+Detailed traceback: 
+  File &quot;&lt;string&gt;&quot;, line 1, in &lt;module&gt;
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Let’s take a look at an example where the Boolean is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<p>Here, since the <code class="docutils literal notranslate"><span class="pre">assert</span></code> statement results in a <code class="docutils literal notranslate"><span class="pre">True</span></code> values, Python
+continues to run, and the next line of code is executed.</p>
+<p>When an assert is thrown due to a Boolean evaluating to <code class="docutils literal notranslate"><span class="pre">False</span></code>, the
+next line of code does not get an opportunity to be executed.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="mi">1</span> <span class="o">==</span> <span class="mi">2</span> 
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>AssertionError: 
+
+Detailed traceback: 
+  File &quot;&lt;string&gt;&quot;, line 1, in &lt;module&gt;
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Not all <code class="docutils literal notranslate"><span class="pre">assert</span></code> statements need to have a message.</p>
+<p>We can re-write the statement from before without one.</p>
+<p>This time you’ll notice that the error doesn’t contain the particular
+message beside <code class="docutils literal notranslate"><span class="pre">AssertionError</span></code> like we had before.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="why">
+<h2>Why?<a class="headerlink" href="#why" title="Permalink to this headline">¶</a></h2>
+<center>
+<a class="reference internal image-reference" href="module6/why.png"><img alt="module6/why.png" src="module6/why.png" style="width: 100%;" /></a>
+</center>
+<p>Notes:</p>
+<p>Where do assert statements come in handy?</p>
+<p>Up to this point, we have been creating functions, and only after we
+have written them, we’ve tested if they work.</p>
+<p>Some programmers use a different approach: writing tests <em>before</em> the
+actual function. This is called Test-Driven Development.</p>
+<p>This may seem a little counter-intuitive, but we’re creating the
+expectations of our function before the actual function code.</p>
+<p>Often we have an idea of what our function should be able to do and what
+output is expected.</p>
+<p>If we write our tests before the function, it helps understand exactly
+what code we need to write and it avoids encountering large
+time-consuming bugs down the line.</p>
+<p>Once we have a serious of tests for the function, we can put them into
+<code class="docutils literal notranslate"><span class="pre">assert</span></code> statements as an easy way of checking that all the tests pass.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="what-to-test">
+<h2>What to test?<a class="headerlink" href="#what-to-test" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">exponent_a_list</span><span class="p">(</span><span class="n">numerical_list</span><span class="p">,</span> <span class="n">exponent</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    <span class="n">new_exponent_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+    
+    <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numerical_list</span><span class="p">:</span>
+        <span class="n">new_exponent_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">number</span> <span class="o">**</span> <span class="n">exponent</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">new_exponent_list</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">exponent_a_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">49</span><span class="p">],</span> <span class="s2">&quot;incorrect output for exponent = 2&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">exponent_a_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">27</span><span class="p">],</span> <span class="s2">&quot;incorrect output for exponent = 3&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">exponent_a_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="mi">2</span><span class="p">))</span> <span class="o">==</span> <span class="nb">list</span><span class="p">,</span> <span class="s2">&quot;output type not a list&quot;</span>
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>So, what kind of tests do we want?</p>
+<p>We want to keep these tests simple - things that we know are true or
+could be easily calculated by hand.</p>
+<p>For example, let’s look at our <code class="docutils literal notranslate"><span class="pre">exponent_a_list()</span></code> function.</p>
+<p>Easy cases for this function would be lists containing numbers that we
+can easily square or cube.</p>
+<p>For example, we expect the square output of <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">4,</span> <span class="pre">7]</span></code> to be
+<code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">4,</span> <span class="pre">16,</span> <span class="pre">49]</span></code>.</p>
+<p>The test for this would look like the one shown here.</p>
+<p>It is recommended to write multiple tests.</p>
+<p>Let’s write another test for a differently sized list as well as
+different values for both input arguments <code class="docutils literal notranslate"><span class="pre">numerical_list</span></code> and
+<code class="docutils literal notranslate"><span class="pre">exponent</span></code>.</p>
+<p>Let’s make another test for <code class="docutils literal notranslate"><span class="pre">exponent</span></code> = <code class="docutils literal notranslate"><span class="pre">3</span></code>. Again, we use numbers that
+we know the cube of.</p>
+<p>We can also test that the type of the returned object is correct.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="false-positives">
+<h2>False Positives<a class="headerlink" href="#false-positives" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">bad_function</span><span class="p">(</span><span class="n">numerical_list</span><span class="p">,</span> <span class="n">exponent</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    <span class="n">new_exponent_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">numerical_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">**</span> <span class="n">exponent</span><span class="p">]</span> <span class="c1"># seed list with first element</span>
+    <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numerical_list</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+        <span class="n">new_exponent_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">number</span> <span class="o">**</span> <span class="n">exponent</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">new_exponent_list</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">bad_function</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">49</span><span class="p">],</span> <span class="s2">&quot;incorrect output for exponent = 2&quot;</span>
+<span class="k">assert</span> <span class="n">bad_function</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">27</span><span class="p">],</span> <span class="s2">&quot;incorrect output for exponent = 3&quot;</span>
+</pre></div>
+</div>
+<p><br> <br></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bad_function</span><span class="p">([],</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>IndexError: list index out of range
+
+Detailed traceback: 
+  File &quot;&lt;string&gt;&quot;, line 1, in &lt;module&gt;
+  File &quot;&lt;string&gt;&quot;, line 2, in bad_function
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Just because all our tests pass, this does not mean our program is
+necessarily correct.</p>
+<p>It’s common that our tests can pass, but our code contains errors.</p>
+<p>Let’s take a look at the function <code class="docutils literal notranslate"><span class="pre">bad_function()</span></code>. It’s very similar to
+<code class="docutils literal notranslate"><span class="pre">exponent_a_list</span></code> except that it separately computes the first entry
+before doing the rest in the loop.</p>
+<p>This function looks like it would work perfectly fine, but what happens
+if we get an input argument for <code class="docutils literal notranslate"><span class="pre">numerical_list</span></code> that cannot be sliced?</p>
+<p>Let’s write some unit tests using <code class="docutils literal notranslate"><span class="pre">assert</span></code> statements and see what
+happens.</p>
+<p>Here, it looks like our tests pass at first.</p>
+<p>But what happens if we try our function with an empty list?</p>
+<p>We get an unexpected error! How do we avoid this?</p>
+<p>Write a lot of tests and don’t be overconfident, even after writing a
+lot of tests!</p>
+<p>Checking an empty list in our <code class="docutils literal notranslate"><span class="pre">bad_function()</span></code> function is an example of
+checking a <strong>corner case</strong>.</p>
+<p>A corner case is an input that is reasonable but a bit unusual and may
+trip up our code.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="testing-functions-that-work-with-data">
+<h1>Testing Functions that Work with Data<a class="headerlink" href="#testing-functions-that-work-with-data" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">column_stats</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">column</span><span class="p">):</span>
+   <span class="n">stats_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;max&#39;</span><span class="p">:</span> <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span>
+                 <span class="s1">&#39;min&#39;</span><span class="p">:</span> <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span>
+                 <span class="s1">&#39;mean&#39;</span><span class="p">:</span> <span class="nb">round</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()),</span>
+                 <span class="s1">&#39;range&#39;</span><span class="p">:</span> <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()}</span>
+   <span class="k">return</span> <span class="n">stats_dict</span>
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Often, we will be making functions that work on data.</p>
+<p>For example, perhaps we want to write a function called <code class="docutils literal notranslate"><span class="pre">column_stats</span></code>
+that returns some summary statistics in the form of a dictionary.</p>
+<p>The function here is something we might have envisioned. (Note that if
+we’re using test-driven development, this function will just be an idea,
+not completed code.)</p>
+<p>In these situations, we need to invent some sort of data so that we can
+easily calculate the max, min, range, and mean and write unit tests to
+check that our function does the correct operations.</p>
+<p>The data can be made from scratch using functions such as
+<code class="docutils literal notranslate"><span class="pre">pd.DataFrame()</span></code> or <code class="docutils literal notranslate"><span class="pre">pd.DataFrame.from_dict()</span></code> which we learned about in
+module 4.</p>
+<p>You can also upload a very small slice of an existing dataframe.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Cherry&#39;</span><span class="p">,</span> <span class="s1">&#39;Oak&#39;</span><span class="p">,</span> <span class="s1">&#39;Willow&#39;</span><span class="p">,</span> <span class="s1">&#39;Fir&#39;</span><span class="p">,</span> <span class="s1">&#39;Oak&#39;</span><span class="p">],</span> 
+        <span class="s1">&#39;height&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> 
+        <span class="s1">&#39;diameter&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> 
+        <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> 
+        <span class="s1">&#39;flowering&#39;</span><span class="p">:</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">]}</span>
+         
+<span class="n">forest</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">forest</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>     name  height  diameter  age  flowering
+0  Cherry      15         2    0       True
+1     Oak      20         5    0      False
+2  Willow      10         3    0       True
+3     Fir       5        10    0      False
+4     Oak      10         5    0      False
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">column_stats</span><span class="p">(</span><span class="n">forest</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="p">{</span><span class="s1">&#39;max&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;mean&#39;</span><span class="p">:</span> <span class="mf">12.0</span><span class="p">,</span> <span class="s1">&#39;range&#39;</span><span class="p">:</span> <span class="mi">15</span><span class="p">}</span>
+<span class="k">assert</span> <span class="n">column_stats</span><span class="p">(</span><span class="n">forest</span><span class="p">,</span> <span class="s1">&#39;diameter&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="p">{</span><span class="s1">&#39;max&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;mean&#39;</span><span class="p">:</span> <span class="mf">5.0</span><span class="p">,</span> <span class="s1">&#39;range&#39;</span><span class="p">:</span> <span class="mi">8</span><span class="p">}</span>
+<span class="k">assert</span> <span class="n">column_stats</span><span class="p">(</span><span class="n">forest</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="p">{</span><span class="s1">&#39;max&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;mean&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;range&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>The values we chose in our columns should be simple enough to easily
+calculate the expected output of our function.</p>
+<p>Just like how we made unit tests using calculations we know to be true,
+we do the same using a simple dataset we call <strong>helper data</strong>.</p>
+<p>The dataframe must have a small dimension to keep the calculations
+simple.</p>
+<p>The tests we write for the function <code class="docutils literal notranslate"><span class="pre">column_stats()</span></code> are now easy to
+calculate since the values we are using are few and simple.</p>
+<p>We wrote tests that check different columns in our <code class="docutils literal notranslate"><span class="pre">forest</span></code> dataframe.</p>
+<hr class="docutils" />
+<div class="section" id="systematic-approach">
+<h2>Systematic Approach<a class="headerlink" href="#systematic-approach" title="Permalink to this headline">¶</a></h2>
+<p>We use a <strong>systematic approach</strong> to design our function using a general
+set of steps to follow when writing programs.</p>
+<p><em><strong>1. Write the function stub: a function that does nothing but accepts
+all input parameters and returns the correct datatype.</strong></em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">exponent_a_list</span><span class="p">(</span><span class="n">numerical_list</span><span class="p">,</span> <span class="n">exponent</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">list</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>We use a <strong>systematic approach</strong> to design our function using a general
+set of steps to follow when writing programs.</p>
+<p>The approach we recommend includes 5 steps:</p>
+<p><em><strong>1. Write the function stub: a function that does nothing but accepts
+all input parameters and returns the correct datatype.</strong></em></p>
+<p>This means we are writing the skeleton of a function.</p>
+<p>We include the line that defines the function with the input arguments
+and the <code class="docutils literal notranslate"><span class="pre">return</span></code> statement returning the object with the desired data
+type.</p>
+<p>Using our <code class="docutils literal notranslate"><span class="pre">exponent_a_list()</span></code> function as an example, we include the
+function’s first line and the return statement.</p>
+<hr class="docutils" />
+<p><em><strong>2. Write tests to satisfy the design specifications.</strong></em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">exponent_a_list</span><span class="p">(</span><span class="n">numerical_list</span><span class="p">,</span> <span class="n">exponent</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">list</span><span class="p">()</span>
+   
+<span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">exponent_a_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="mi">2</span><span class="p">))</span> <span class="o">==</span> <span class="nb">list</span><span class="p">,</span> <span class="s2">&quot;output type not a list&quot;</span>
+<span class="k">assert</span> <span class="n">exponent_a_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">49</span><span class="p">],</span> <span class="s2">&quot;incorrect output for exponent = 2&quot;</span>
+<span class="k">assert</span> <span class="n">exponent_a_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">27</span><span class="p">],</span> <span class="s2">&quot;incorrect output for exponent = 3&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>AssertionError: incorrect output for exponent = 2
+
+Detailed traceback: 
+  File &quot;&lt;string&gt;&quot;, line 1, in &lt;module&gt;
+</pre></div>
+</div>
+<p>Notes:</p>
+<p><em><strong>2. Write tests to satisfy the design specifications.</strong></em></p>
+<p>This is where our <code class="docutils literal notranslate"><span class="pre">assert</span></code> statements come in.</p>
+<p>We write tests that we want our function to pass.</p>
+<p>In our <code class="docutils literal notranslate"><span class="pre">exponent_a_list()</span></code> example, we expect that our function will
+take in a list and an optional argument named <code class="docutils literal notranslate"><span class="pre">exponent</span></code> and then
+returns a list with the exponential value of each element of the input
+list.</p>
+<p>Here we can see our code fails since we have no function code yet!</p>
+<hr class="docutils" />
+<p><em><strong>3. Outline the program with pseudo-code.</strong></em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">exponent_a_list</span><span class="p">(</span><span class="n">numerical_list</span><span class="p">,</span> <span class="n">exponent</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+
+    <span class="c1"># create a new empty list</span>
+    <span class="c1"># loop through all the elements in numerical_list</span>
+    <span class="c1"># for each element calculate element ** exponent</span>
+    <span class="c1"># append it to the new list </span>
+    
+    <span class="k">return</span> <span class="nb">list</span><span class="p">()</span>
+    
+<span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">exponent_a_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="mi">2</span><span class="p">))</span> <span class="o">==</span> <span class="nb">list</span><span class="p">,</span> <span class="s2">&quot;output type not a list&quot;</span>
+<span class="k">assert</span> <span class="n">exponent_a_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">49</span><span class="p">],</span> <span class="s2">&quot;incorrect output for exponent = 2&quot;</span>
+<span class="k">assert</span> <span class="n">exponent_a_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">27</span><span class="p">],</span> <span class="s2">&quot;incorrect output for exponent = 3&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>AssertionError: incorrect output for exponent = 2
+
+Detailed traceback: 
+  File &quot;&lt;string&gt;&quot;, line 1, in &lt;module&gt;
+</pre></div>
+</div>
+<p>Notes:</p>
+<p><em><strong>3. Outline the program with pseudo-code.</strong></em></p>
+<p>Pseudo-code is an informal but high-level description of the code and
+operations that we wish to implement.</p>
+<p>In this step, we are essentially writing the steps that we anticipate
+needing to complete our function as comments within the function.</p>
+<p>So for our function pseudo-code includes:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># create a new empty list
+# loop through all the elements in numerical_list
+# for each element calculate element ** exponent
+# append it to the new list 
+</pre></div>
+</div>
+<hr class="docutils" />
+<p><em><strong>4. Write code and test frequently.</strong></em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">exponent_a_list</span><span class="p">(</span><span class="n">numerical_list</span><span class="p">,</span> <span class="n">exponent</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    <span class="n">new_exponent_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+    
+    <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numerical_list</span><span class="p">:</span>
+        <span class="n">new_exponent_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">number</span> <span class="o">**</span> <span class="n">exponent</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">new_exponent_list</span>
+    
+<span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">exponent_a_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="mi">2</span><span class="p">))</span> <span class="o">==</span> <span class="nb">list</span><span class="p">,</span> <span class="s2">&quot;output type not a list&quot;</span>
+<span class="k">assert</span> <span class="n">exponent_a_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">49</span><span class="p">],</span> <span class="s2">&quot;incorrect output for exponent = 2&quot;</span>
+<span class="k">assert</span> <span class="n">exponent_a_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">27</span><span class="p">],</span> <span class="s2">&quot;incorrect output for exponent = 3&quot;</span>
+</pre></div>
+</div>
+<p>Notes:</p>
+<p><em><strong>4. Write code and test frequently.</strong></em></p>
+<p>Here is where we fill in our function.</p>
+<p>As you work on the code, more and more tests of the tests that you wrote
+will pass until finally, all your <code class="docutils literal notranslate"><span class="pre">assert</span></code> statements no longer produce
+any error messages.</p>
+<hr class="docutils" />
+<p><em><strong>5. Write documentation.</strong></em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">exponent_a_list</span><span class="p">(</span><span class="n">numerical_list</span><span class="p">,</span> <span class="n">exponent</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Creates a new list containing specified exponential values of the input list. </span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    numerical_list : list</span>
+<span class="sd">        The list from which to calculate exponential values from</span>
+<span class="sd">    exponent : int or float, optional</span>
+<span class="sd">        The exponent value (the default is 2, which implies the square).</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    new_exponent_list : list</span>
+<span class="sd">        A new list containing the exponential value specified of each of</span>
+<span class="sd">        the elements from the input list </span>
+<span class="sd">        </span>
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; exponent_a_list([1, 2, 3, 4])</span>
+<span class="sd">    [1, 4, 9, 16]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">new_exponent_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numerical_list</span><span class="p">:</span>
+        <span class="n">new_exponent_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">number</span> <span class="o">**</span> <span class="n">exponent</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">new_exponent_list</span>
+</pre></div>
+</div>
+<p>Notes:</p>
+<p><em><strong>5. Write documentation.</strong></em></p>
+<p>Finally, we finish writing our function with a docstring.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="lets-apply-what-we-learned">
+<h1>Let’s apply what we learned!<a class="headerlink" href="#lets-apply-what-we-learned" title="Permalink to this headline">¶</a></h1>
+<p>Notes:</p>
+<br>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "UBC-MDS/PPDS_book",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./modules/module6"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Hayley Boyce, Mike Gelbart, Tiffany Timbers<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

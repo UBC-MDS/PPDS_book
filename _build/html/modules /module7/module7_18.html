@@ -1,0 +1,497 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Python debugger &#8212; Programming in Python for Data Science</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/video.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://hfboyce.github.io/ppds/intro.html/modules /module7/module7_18.html" />
+    <link rel="shortcut icon" href="../../_static/icon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Programming in Python for Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/modules /module7/module7_18.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/UBC-MDS/PPDS_book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/UBC-MDS/PPDS_book/issues/new?title=Issue%20on%20page%20%2Fmodules /module7/module7_18.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/UBC-MDS/PPDS_book/edit/main/modules /module7/module7_18.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   The Python debugger
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lets-apply-what-we-learned">
+   Let’s apply what we learned!
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="the-python-debugger">
+<h1>The Python debugger<a class="headerlink" href="#the-python-debugger" title="Permalink to this headline">¶</a></h1>
+<p>Notes: <br></p>
+<hr class="docutils" />
+<br>
+<center>
+<a class="reference internal image-reference" href="module7/m7_s18_01.png"><img alt="404 image" src="module7/m7_s18_01.png" style="width: 100%;" /></a>
+</center>
+<p>Notes:</p>
+<p>We are going to talk about the Python Debugger.</p>
+<p>To do so, we are going to examine a piece of code that has a bug in it,
+and we’re going to try to hunt down that bug with the debugger.</p>
+<p>The piece of code we are going to examine is a function called
+<code class="docutils literal notranslate"><span class="pre">random_walker</span></code>. This function simulates a random walk in two dimensions</p>
+<ul class="simple">
+<li><p>so you can walk in any of four directions up, down, left, or right,
+and each one has a 1/4 chance of occurring.</p></li>
+</ul>
+<p>The function takes in the number of steps that you want as an argument.</p>
+<p>For example, if you pass in 10, <code class="docutils literal notranslate"><span class="pre">random_walker()</span></code> will take 10 steps and
+prints out the location every time and return the squared distance.</p>
+<hr class="docutils" />
+<br>
+<center>
+<a class="reference internal image-reference" href="module7/m7_s18_02.png"><img alt="404 image" src="module7/m7_s18_02.png" style="width: 100%;" /></a>
+</center>
+<p>Notes:</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">random()</span></code> function that we import in from the <code class="docutils literal notranslate"><span class="pre">random</span></code> library
+generates a float from 0 and 1.</p>
+<hr class="docutils" />
+<br>
+<center>
+<a class="reference internal image-reference" href="module7/m7_s18_03.png"><img alt="404 image" src="module7/m7_s18_03.png" style="width: 100%;" /></a>
+</center>
+<p>Notes:</p>
+<p>The code works by checking if the number generated is between (upper
+bounds excluded):</p>
+<ul class="simple">
+<li><p>0.00-0.25</p></li>
+<li><p>0.25-0.5</p></li>
+<li><p>0.5-0.75</p></li>
+<li><p>or 0.75-1</p></li>
+</ul>
+<p>Where each internal is pertaining to one of the directions left, right,
+up, or down.</p>
+<p>This means each direction has a 25% chance of happening, but there is a
+bug in this code that we will soon discover.</p>
+<hr class="docutils" />
+<br>
+<center>
+<a class="reference internal image-reference" href="module7/m7_s18_04.png"><img alt="404 image" src="module7/m7_s18_04.png" style="width: 100%;" /></a>
+</center>
+<p>Notes:</p>
+<p>We are going to run the cell <code class="docutils literal notranslate"><span class="pre">random_walker(20),</span></code> which will print 20
+steps.</p>
+<p>It’s hard to know immediately that something is wrong, but you can see
+that we’ve moved negatively in x directions (to the left) and positive
+in the y-direction (upwards).</p>
+<hr class="docutils" />
+<br>
+<center>
+<a class="reference internal image-reference" href="module7/m7_s18_05.png"><img alt="404 image" src="module7/m7_s18_05.png" style="width: 100%;" /></a>
+</center>
+<p>Notes:</p>
+<p>If we run it again, we are going to get different outputs since it uses
+a random number generator <code class="docutils literal notranslate"><span class="pre">random(),</span></code> but weirdly, we see the same thing
+again.</p>
+<p>We seem to be consistently moving left and up.</p>
+<p>When we run it over and over, we see these results repeating.</p>
+<p>Why do we keep moving to the left and up when this function is supposed
+to result in equal probability for any of the four choices.</p>
+<p>Something seems a little bit suspicious.</p>
+<p>What is going on?</p>
+<hr class="docutils" />
+<br>
+<center>
+<a class="reference internal image-reference" href="module7/m7_s18_07.png"><img alt="404 image" src="module7/m7_s18_07.png" style="width: 100%;" /></a>
+</center>
+<p>Notes:</p>
+<p>To get help in figuring this out, we are going to use something called a
+<code class="docutils literal notranslate"><span class="pre">breakpoint()</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Breakpoint()</span></code> works by stopping the executing process. Now when Python
+gets to this <code class="docutils literal notranslate"><span class="pre">breakpoint()</span></code> function (which is part of the Python
+debugger), the code will stop running.</p>
+<p>We then can execute the code line by line and attempt to diagnose the
+problem.</p>
+<p>We run the <code class="docutils literal notranslate"><span class="pre">random_walker()</span></code> function again to redefine it since we’ve
+added this <code class="docutils literal notranslate"><span class="pre">breakpoint()</span></code> function.</p>
+<p>Now when the <code class="docutils literal notranslate"><span class="pre">random_walker()</span></code> function is called, it’s going to stop
+executing at this breakpoint.</p>
+<hr class="docutils" />
+<br>
+<center>
+<a class="reference internal image-reference" href="module7/m7_s18_08.png"><img alt="404 image" src="module7/m7_s18_08.png" style="width: 100%;" /></a>
+</center>
+<p>Notes:</p>
+<p>This is what is returned.</p>
+<p>We see this <code class="docutils literal notranslate"><span class="pre">pdb</span></code> which stands for python debugger.</p>
+<p>Our code has stopped, and it shows the line Python is currently stopped
+on, in this case, it’s<code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">rand</span> <span class="pre">&lt;</span> <span class="pre">0.25:</span></code></p>
+<hr class="docutils" />
+<br>
+<center>
+<a class="reference internal image-reference" href="module7/m7_s18_09.png"><img alt="404 image" src="module7/m7_s18_09.png" style="width: 100%;" /></a>
+</center>
+<p>Notes:</p>
+<p>If we type <code class="docutils literal notranslate"><span class="pre">print(rand)</span></code>, we can see what the random number <code class="docutils literal notranslate"><span class="pre">rand</span></code> was,
+and it tells us 0.957.</p>
+<hr class="docutils" />
+<br>
+<center>
+<a class="reference internal image-reference" href="module7/m7_s18_10.png"><img alt="404 image" src="module7/m7_s18_10.png" style="width: 100%;" /></a>
+</center>
+<p>Notes:</p>
+<p>If we type <code class="docutils literal notranslate"><span class="pre">n</span></code> in the debugger, it runs to the next line.</p>
+<hr class="docutils" />
+<br>
+<center>
+<a class="reference internal image-reference" href="module7/m7_s18_11.png"><img alt="404 image" src="module7/m7_s18_11.png" style="width: 100%;" /></a>
+</center>
+<p>Notes:</p>
+<p>We don’t expect Python to go into the condition body, which is next in
+the code since <code class="docutils literal notranslate"><span class="pre">rand</span></code> does not meet the condition.</p>
+<hr class="docutils" />
+<br>
+<center>
+<a class="reference internal image-reference" href="module7/m7_s18_13.png"><img alt="404 image" src="module7/m7_s18_13.png" style="width: 100%;" /></a>
+</center>
+<p>Notes:</p>
+<p>The next 2 lines skip the statement bodies because they are not met as
+well.</p>
+<hr class="docutils" />
+<br>
+<center>
+<a class="reference internal image-reference" href="module7/m7_s18_12.png"><img alt="404 image" src="module7/m7_s18_12.png" style="width: 100%;" /></a>
+</center>
+<p>Notes:</p>
+<p>We do, however, meet the else condition, and so 1 is subtracted from
+<code class="docutils literal notranslate"><span class="pre">y</span></code>. Nothing seems terribly wrong yet.</p>
+<hr class="docutils" />
+<br>
+<center>
+<a class="reference internal image-reference" href="module7/m7_s18_14.png"><img alt="404 image" src="module7/m7_s18_14.png" style="width: 100%;" /></a>
+</center>
+<p>Notes:</p>
+<p>Pressing <code class="docutils literal notranslate"><span class="pre">n</span></code> again brings us back to the top of the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p>
+<hr class="docutils" />
+<br>
+<center>
+<a class="reference internal image-reference" href="module7/m7_s18_15.png"><img alt="404 image" src="module7/m7_s18_15.png" style="width: 100%;" /></a>
+</center>
+<p>Notes:</p>
+<p>We reassign <code class="docutils literal notranslate"><span class="pre">rand</span></code> a new random value, which turns out to be 0.0057.</p>
+<hr class="docutils" />
+<br>
+<center>
+<a class="reference internal image-reference" href="module7/m7_s18_16.png"><img alt="404 image" src="module7/m7_s18_16.png" style="width: 100%;" /></a>
+</center>
+<p>Notes:</p>
+<p>Let’s go through another round of these <code class="docutils literal notranslate"><span class="pre">if</span></code> with our new random value.</p>
+<hr class="docutils" />
+<br>
+<center>
+<a class="reference internal image-reference" href="module7/m7_s18_17.png"><img alt="404 image" src="module7/m7_s18_17.png" style="width: 100%;" /></a>
+</center>
+<p>Notes:</p>
+<p>We expect to go inside of this first <code class="docutils literal notranslate"><span class="pre">if</span></code> statement because the random
+number is actually less than a 0.25. Because our values are less than
+0.25, we expect to move to the right and add 1 to <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+<p>We run this code, and we moved to the right just like we said we would.</p>
+<hr class="docutils" />
+<br>
+<center>
+<a class="reference internal image-reference" href="module7/m7_s18_18.png"><img alt="404 image" src="module7/m7_s18_18.png" style="width: 100%;" /></a>
+</center>
+<p>Notes:</p>
+<p>We keep going and check the next condition.</p>
+<p>This is where things get suspicious.</p>
+<p>We move to the left <strong>and</strong> to the right, which is not the intention of
+the code.</p>
+<hr class="docutils" />
+<br>
+<center>
+<a class="reference internal image-reference" href="module7/m7_s18_20.png"><img alt="404 image" src="module7/m7_s18_20.png" style="width: 100%;" /></a>
+</center>
+<p>Notes:</p>
+<p>The intention behind this code is that only one of these four directions
+would be taken. If the number was between zero and a quarter, the step
+would be to the right. If it were between a quarter and a half, the step
+would be to the left, between half and three quarters, the steps would
+be up, and between three quarters and one, the step would be down.</p>
+<p>This way, there is always an equal chance of each direction.</p>
+<p>When the random number was .005, it moved in 2 directions, which doesn’t
+make sense since only 1 step was supposed to be taken.</p>
+<p>Here it’s moving to the left, to the right and upward.</p>
+<hr class="docutils" />
+<br>
+<center>
+<a class="reference internal image-reference" href="module7/m7_s18_21.png"><img alt="404 image" src="module7/m7_s18_21.png" style="width: 100%;" /></a>
+</center>
+<p>Notes:</p>
+<p>The reason that this happens is because the two inner if statements
+should be <code class="docutils literal notranslate"><span class="pre">elif</span></code> statements and not <code class="docutils literal notranslate"><span class="pre">if</span></code> statements.</p>
+<p>In other words:</p>
+<p><em>if this is the case, do this</em> <em><strong>but don’t do anything else</strong></em> <em>or if
+this is the case, do this</em> <em><strong>but don’t do anything else.</strong></em></p>
+<p>By accidentally having <code class="docutils literal notranslate"><span class="pre">if</span></code> statements instead of <code class="docutils literal notranslate"><span class="pre">elif</span></code> statements, it
+was allowing the execution of multiple condition bodies.</p>
+<p>Whenever a small number was generated, the movement would be left and
+right or just left, but it would be impossible to move right without
+moving left.</p>
+<p>In general, the movement would always be left and up and not right.</p>
+<hr class="docutils" />
+<br>
+<center>
+<a class="reference internal image-reference" href="module7/m7_s18_23.png"><img alt="404 image" src="module7/m7_s18_23.png" style="width: 100%;" /></a>
+</center>
+<p>Notes:</p>
+<p>So we’ve fixed the code, and we’re done with the debugger.</p>
+<p>We stepped through the code step by step, which helped us solve the bug.</p>
+<p>We could try and do in our head, but that can be really hard as code
+gets more complicated. This breakpoint is convenient because it allows
+us to actually see what’s happening at each step.</p>
+<p>To get out of the debugger, we write <code class="docutils literal notranslate"><span class="pre">q</span></code> for “quit”.</p>
+<hr class="docutils" />
+<br>
+<center>
+<a class="reference internal image-reference" href="module7/m7_s18_24.png"><img alt="404 image" src="module7/m7_s18_24.png" style="width: 100%;" /></a>
+</center>
+<p>Notes:</p>
+<p>We can remove the <code class="docutils literal notranslate"><span class="pre">breakpoint()</span></code> function by deleting it or commenting
+it out temporarily and run our cell again with the fixed code.</p>
+<hr class="docutils" />
+<br>
+<center>
+<a class="reference internal image-reference" href="module7/m7_s18_25.png"><img alt="404 image" src="module7/m7_s18_25.png" style="width: 100%;" /></a>
+</center>
+<p>Notes:</p>
+<p>It’s really hard to test code that’s random since we can’t just look at
+the output and recognize that it’s been fixed. We can, however, run it a
+few times and see that steps are now being taken in different directions
+and things seem a little more reasonable.</p>
+<p>The Python debugger has other functions that can help debug your code
+and you can explore them in the
+<a href="https://docs.python.org/3/library/pdb.html" target="_blank">documentation</a>.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="lets-apply-what-we-learned">
+<h1>Let’s apply what we learned!<a class="headerlink" href="#lets-apply-what-we-learned" title="Permalink to this headline">¶</a></h1>
+<p>Notes: <br></p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "UBC-MDS/PPDS_book",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./modules /module7"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Hayley Boyce, Mike Gelbart, Tiffany Timbers<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

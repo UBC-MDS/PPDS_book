@@ -1,0 +1,605 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Non-automatic style formatting &#8212; Programming in Python for Data Science</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/video.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://hfboyce.github.io/ppds/intro.html/modules/module7/module7_15.html" />
+    <link rel="shortcut icon" href="../../_static/icon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Programming in Python for Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  Modules
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module1.html">
+   Module 1:  Python &amp; Pandas - An Unexpected Friendship
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_01.html">
+     What is a dataframe?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_03.html">
+     What is Pandas?
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Coding Exercises
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module1.html">
+   Module 1: Python &amp; Pandas - An Unexpected Friendship
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_01.html">
+     What is a dataframe?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_03.html">
+     What is Pandas?
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/modules/module7/module7_15.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/UBC-MDS/PPDS_book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/UBC-MDS/PPDS_book/issues/new?title=Issue%20on%20page%20%2Fmodules/module7/module7_15.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/UBC-MDS/PPDS_book/edit/main/modules/module7/module7_15.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Non-automatic style formatting
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comments">
+     Comments
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#naming-convention">
+     Naming convention
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#variables-without-keywords">
+     Variables without Keywords
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dont-do-this">
+       Don’t Do This
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#or-this">
+       Or This
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Or This
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#meaningful-names">
+     Meaningful Names
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#concise-names">
+     Concise Names
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lets-apply-what-we-learned">
+   Let’s apply what we learned!
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="non-automatic-style-formatting">
+<h1>Non-automatic style formatting<a class="headerlink" href="#non-automatic-style-formatting" title="Permalink to this headline">¶</a></h1>
+<p>Notes: <br></p>
+<hr class="docutils" />
+<div class="section" id="comments">
+<h2>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h2>
+<p><strong>Bad Comments:</strong> Example of a comment that doesn’t make sense</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># The estimated stock room size minus the rented space </span>
+<span class="n">screen_time</span> <span class="o">=</span> <span class="mi">23</span> <span class="o">*</span> <span class="mf">1.10</span>
+</pre></div>
+</div>
+<br>
+<p><strong>Bad Comments:</strong> Example of commenting gone overboard</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Reading in the cereal dataframe</span>
+<span class="n">cereal_dataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;cereal.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># Saving the cereal dataframe&#39;s columns as cereal_columns</span>
+<span class="n">cereal_columns</span> <span class="o">=</span> <span class="n">cereal_dataframe</span><span class="o">.</span><span class="n">columns</span> 
+
+<span class="n">cereal_dataframe</span><span class="o">.</span><span class="n">head</span><span class="p">()</span> <span class="c1"># Displaying the first 5 rows of the cereal_dataframe</span>
+</pre></div>
+</div>
+<br>
+<p><strong>Good Comments:</strong> Example of a useful comment</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Obtaining the cereals with calories between 130 and 150</span>
+<span class="n">cereal_dataframe</span><span class="p">[(</span><span class="n">cereal_dataframe</span><span class="p">[</span><span class="s1">&#39;calories&#39;</span><span class="p">]</span> <span class="o">&gt;</span><span class="mi">130</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">cereal_dataframe</span><span class="p">[</span><span class="s1">&#39;calories&#39;</span><span class="p">]</span> <span class="o">&lt;</span><span class="mi">150</span><span class="p">)]</span>
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>We’ve learned about some tools that can help format and standardize our
+code, such as white space and indentations, but what about the things
+that a formatter can’t automatically change?</p>
+<p>Let’s start with how we write comments.</p>
+<p>Comments are important for understanding your code.</p>
+<p>While docstrings cover what a function does, your comments will help
+document how your code achieves its goal.</p>
+<p><a href="https://www.python.org/dev/peps/pep-0008/#comments" target="_blank">python.org</a>
+has some strong opinions about how comments should be written, and the
+first thing they mention is that our comments should reflect what the
+code is doing.</p>
+<p>It sounds easy enough, but when working on projects that are constantly
+changing, it’s easy to change the code but forget to change the comments
+which do not affect the output of the code.</p>
+<p>In cases like this, it’s better that our code has no comments than
+comments that contradict it.</p>
+<p>It’s also important that comments add to the understanding of our coding
+instead of simply commenting for the sake of commenting.</p>
+<p>Not all code needs a comment, especially if it’s redundant for
+understanding what the code does.</p>
+<hr class="docutils" />
+<p>Guidelines according to PEP8 and
+<a href="https://www.python.org/dev/peps/pep-0008/#comments" target="_blank">python.org</a>:</p>
+<ul class="simple">
+<li><p>Comments should start with a <code class="docutils literal notranslate"><span class="pre">#</span></code> followed by a single space.</p></li>
+<li><p>They should be complete sentences. The first word should be
+capitalized unless it is an identifier that begins with a lower case
+letter.</p></li>
+<li><p>Comments should be clear and easily understandable to other speakers
+of the language you are writing in.</p></li>
+<li><p>For block comments, each line of a block comment should start with a
+<code class="docutils literal notranslate"><span class="pre">#</span></code> followed by a single space and should be indented to the same
+level as the code it precedes.</p></li>
+</ul>
+<p>Notes:</p>
+<p>Here are some basic guidelines according to PEP8 and
+<a href="https://www.python.org/dev/peps/pep-0008/#comments" target="_blank">python.org</a>
+that are recommended when writing comments:</p>
+<ul class="simple">
+<li><p>Comments should start with <code class="docutils literal notranslate"><span class="pre">#</span></code> followed by a single space.</p></li>
+<li><p>They should be complete sentences.</p></li>
+<li><p>The first word should be capitalized unless it is an identifier that
+begins with a lower case letter.</p></li>
+<li><p>They should be clear and easily understandable to other speakers of
+the language you are writing in.</p></li>
+<li><p>If you are using block comments, each line of a block comment should
+start with a <code class="docutils literal notranslate"><span class="pre">#</span></code> followed by a single space and should be indented
+to the same level as the code it precedes.</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>BAD comment</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># adding 6.99 </span>
+<span class="n">cost</span> <span class="o">=</span> <span class="n">cost</span> <span class="o">+</span> <span class="mf">6.99</span> 
+</pre></div>
+</div>
+<p><strong>Better comment</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Accounting for shipping charges</span>
+<span class="n">cost</span> <span class="o">=</span> <span class="n">cost</span> <span class="o">+</span> <span class="mf">6.99</span> 
+</pre></div>
+</div>
+<p><strong>BAD comment</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># This code iterates over the numbers 1 to 5 each time adding the number</span>
+<span class="c1"># to the variable x to get a sum of the numbers from 1, 2, 3, 4, and 5. </span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">i</span>
+</pre></div>
+</div>
+<p><strong>Better comment</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># Sum up the values 1 to 5 </span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">i</span>
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Here is an example of a bad comment where we say “adding 6.99” to the
+<code class="docutils literal notranslate"><span class="pre">cost</span></code> variable. This comment doesn’t tell us why we are doing this
+operation. A more reasonable comment would be to correct the capitalize
+the comment and explain that we are adding 6.99 to the variable <code class="docutils literal notranslate"><span class="pre">cost</span></code>
+to account for shipping charges.</p>
+<p>Code that is concise is preferred over long-winded explanations. In this
+next example case, there is no need to write a comment this long when
+something short like “Sum up the values 1 to 5” does the job.</p>
+<p>When writing comments, it’s important to make sure they are meaningful,
+concise, and are a supplement to the understanding of your code.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="naming-convention">
+<h2>Naming convention<a class="headerlink" href="#naming-convention" title="Permalink to this headline">¶</a></h2>
+<p>Some common variable naming recommendations:</p>
+<ul class="simple">
+<li><p>Variable names should use underscores</p></li>
+<li><p>Variable names should be lowercase</p></li>
+</ul>
+<p><strong>Fine</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lego</span>
+</pre></div>
+</div>
+<p><strong>Fine</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lego_themes</span>
+</pre></div>
+</div>
+<p><strong>Fine</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lego_df</span>
+</pre></div>
+</div>
+<p><strong>Not Recommended</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lego_DF</span>
+</pre></div>
+</div>
+<p><strong>Not Recommended</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">LEGO</span>
+</pre></div>
+</div>
+<p><strong>Not Recommended</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">legothemes</span>
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Python naming convention is somewhat inconsistent, as stated on
+<a href="https://www.python.org/dev/peps/pep-0008/#naming-conventions" target="_blank">Python.org’s
+website</a></p>
+<p>That being said, it’s useful to try to set consistent standards which
+helps the Python community and will help you keep track of your code at
+a later time.</p>
+<p>Some common variable naming recommendations are as follows:</p>
+<ul class="simple">
+<li><p>Variable names should use underscores</p></li>
+<li><p>Variable names should be lowercase</p></li>
+</ul>
+<p>You could use the names <code class="docutils literal notranslate"><span class="pre">lego</span></code>, <code class="docutils literal notranslate"><span class="pre">lego_themes</span></code>, <code class="docutils literal notranslate"><span class="pre">lego_df</span></code>, but we advise
+again things like <code class="docutils literal notranslate"><span class="pre">lego_DF</span></code>, <code class="docutils literal notranslate"><span class="pre">LEGO</span></code> or <code class="docutils literal notranslate"><span class="pre">legothemes</span></code>.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="variables-without-keywords">
+<h2>Variables without Keywords<a class="headerlink" href="#variables-without-keywords" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="dont-do-this">
+<h3>Don’t Do This<a class="headerlink" href="#dont-do-this" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span> <span class="o">=</span> <span class="p">[]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="or-this">
+<h3>Or This<a class="headerlink" href="#or-this" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tuple</span><span class="p">(</span><span class="n">argument</span><span class="p">):</span>
+    <span class="k">return</span> 
+</pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h3>Or This<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">str</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="nb">type</span> <span class="o">=</span> <span class="mi">67</span> <span class="o">*</span> <span class="nb">str</span>
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Something you should not name your variables are Python keywords.</p>
+<p>This will create a multitude of problems for you.</p>
+<p>For example, If you did name a variable with the specific keyword, the
+next time that you attempt to use that keyword for its intended
+functionality, an error will be thrown because it will try to use your
+variable instead!</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="meaningful-names">
+<h2>Meaningful Names<a class="headerlink" href="#meaningful-names" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">100</span> 
+<span class="n">b</span> <span class="o">=</span> <span class="mi">23</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mf">0.56</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="n">e</span> <span class="o">=</span> <span class="n">c</span> <span class="o">*</span> <span class="n">d</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">apples</span> <span class="o">=</span> <span class="mi">100</span> 
+<span class="n">bananas</span> <span class="o">=</span> <span class="mi">23</span>
+<span class="n">fruit_price</span> <span class="o">=</span> <span class="mf">0.56</span>
+
+<span class="n">fruit_total</span> <span class="o">=</span> <span class="n">apples</span> <span class="o">+</span> <span class="n">bananas</span>
+<span class="n">cost</span> <span class="o">=</span> <span class="n">fruit_price</span> <span class="o">*</span> <span class="n">fruit_total</span>
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Just like how we use comments to explain our code, it’s good coding
+style to name your variables thoughtfully and in ways that help make
+your coding more “readable”.</p>
+<p>Naming your variables helps others (and future you) make sense of the
+instructions you are writing for the computer.</p>
+<p>For example, let’s try writing the code here again but with variable
+names that are a bit more descriptive.</p>
+<p>Giving these new variables names, we can follow a bit more of the
+reasoning behind the calculations.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="concise-names">
+<h2>Concise Names<a class="headerlink" href="#concise-names" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mass_of_the_object_in_motion</span> <span class="o">=</span> <span class="mi">45</span>
+<span class="n">the_acceleration_of_the_object_in_motion</span> <span class="o">=</span> <span class="mf">1.8</span>
+
+<span class="n">force_acting_on_an_object</span> <span class="o">=</span> <span class="n">mass_of_the_object_in_motion</span> <span class="o">*</span> <span class="n">the_acceleration_of_the_object_in_motion</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mass</span> <span class="o">=</span> <span class="mi">45</span>
+<span class="n">acceleration</span> <span class="o">=</span> <span class="mf">1.8</span>
+
+<span class="n">force</span> <span class="o">=</span> <span class="n">mass</span> <span class="o">*</span> <span class="n">acceleration</span>
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Similarly to how variables named without meaning makes code readability
+difficult, the same can be said about variables with excessively long
+names.</p>
+<p>You want to be efficient yet understandable.</p>
+<p>In this example, we can see that the second body of code is much easier
+on our eye, and it takes much less effort to understand what our code is
+trying to convey.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="lets-apply-what-we-learned">
+<h1>Let’s apply what we learned!<a class="headerlink" href="#lets-apply-what-we-learned" title="Permalink to this headline">¶</a></h1>
+<p>Notes: <br></p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "UBC-MDS/PPDS_book",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./modules/module7"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Hayley Boyce, Mike Gelbart, Tiffany Timbers<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

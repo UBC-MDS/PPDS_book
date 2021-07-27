@@ -1,0 +1,922 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DRY revisited and function fundamentals &#8212; Programming in Python for Data Science</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/video.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://hfboyce.github.io/ppds/intro.html/modules/module6/module6_01.html" />
+    <link rel="shortcut icon" href="../../_static/icon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Programming in Python for Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  Modules
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module1.html">
+   Module 1:  Python &amp; Pandas - An Unexpected Friendship
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_01.html">
+     What is a dataframe?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_03.html">
+     What is Pandas?
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Coding Exercises
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module1.html">
+   Module 1: Python &amp; Pandas - An Unexpected Friendship
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_01.html">
+     What is a dataframe?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_03.html">
+     What is Pandas?
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/modules/module6/module6_01.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/UBC-MDS/PPDS_book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/UBC-MDS/PPDS_book/issues/new?title=Issue%20on%20page%20%2Fmodules/module6/module6_01.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/UBC-MDS/PPDS_book/edit/main/modules/module6/module6_01.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   DRY revisited and function fundamentals
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scoping">
+     Scoping
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#global-and-local-variables">
+     Global and Local Variables
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#when-things-get-tricky">
+     When things get tricky
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modifying-global-variables">
+     Modifying global variables
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#function-side-effects">
+     Function Side Effects
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#side-effect-documentation">
+     Side Effect Documentation
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-deal-with-print">
+     The deal with
+     <em>
+      print()
+     </em>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lets-apply-what-we-learned">
+   Let’s apply what we learned!
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="dry-revisited-and-function-fundamentals">
+<h1>DRY revisited and function fundamentals<a class="headerlink" href="#dry-revisited-and-function-fundamentals" title="Permalink to this headline">¶</a></h1>
+<p>Notes:</p>
+<br>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">squared</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span> 
+    <span class="n">squared</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">number</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">squared</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>[4, 9, 25]
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">squares_a_list</span><span class="p">(</span><span class="n">numerical_list</span><span class="p">):</span>
+    <span class="n">new_squared_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numerical_list</span><span class="p">:</span>
+        <span class="n">new_squared_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">number</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">new_squared_list</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">squares_a_list</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>[4, 9, 25]
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>In the last module, we were introduced to the DRY principle and how
+creating functions helps comply with it.</p>
+<p>Let’s do a little bit of a recap.</p>
+<p><strong>DRY</strong> stands for Don’t Repeat Yourself.</p>
+<p>We can avoid writing repetitive code by creating a function that takes
+in arguments, performs some operations, and returns the results.</p>
+<p>The example in Module 5 converted code that creates a list of squared
+elements from an existing list of numbers into a function.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">larger_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">11</span><span class="p">]</span>
+<span class="n">promoted_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">73</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span> <span class="mi">95</span><span class="p">]</span>
+<span class="n">executive_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">121</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">103</span><span class="p">,</span> <span class="mi">183</span><span class="p">,</span> <span class="mi">222</span><span class="p">,</span> <span class="mi">214</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">squares_a_list</span><span class="p">(</span><span class="n">larger_numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>[25, 1936, 3025, 529, 121]
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">squares_a_list</span><span class="p">(</span><span class="n">promoted_numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>[5329, 7056, 9025]
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">squares_a_list</span><span class="p">(</span><span class="n">executive_numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>[10000, 14641, 62500, 10609, 33489, 49284, 45796]
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>This function gave us the ability to do the same operation for multiple
+lists without having to rewrite any code and just calling the function.</p>
+<hr class="docutils" />
+<div class="section" id="scoping">
+<h2>Scoping<a class="headerlink" href="#scoping" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">squares_a_list</span><span class="p">(</span><span class="n">numerical_list</span><span class="p">):</span>
+    <span class="n">new_squared_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numerical_list</span><span class="p">:</span>
+        <span class="n">new_squared_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">number</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">new_squared_list</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">new_squared_list</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">squares_a_list</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>[4]
+[4, 9]
+[4, 9, 25]
+[4, 9, 25]
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">new_squared_list</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>NameError: name &#39;new_squared_list&#39; is not defined
+
+Detailed traceback: 
+  File &quot;&lt;string&gt;&quot;, line 1, in &lt;module&gt;
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>It’s important to know what exactly is going on inside and outside of a
+function.</p>
+<p>In our function <code class="docutils literal notranslate"><span class="pre">squares_a_list()</span></code> we saw that we created a variable
+named <code class="docutils literal notranslate"><span class="pre">new_squared_list</span></code>.</p>
+<p>We can print this variable and watch all the elements be appended to it
+as we loop through the input list.</p>
+<p>But what happens if we try and print this variable outside of the
+function?</p>
+<p>Yikes! Where did <code class="docutils literal notranslate"><span class="pre">new_squared_list</span></code> go?</p>
+<p>It doesn’t seem to exist! That’s not entirely true.</p>
+<p>In Python, <code class="docutils literal notranslate"><span class="pre">new_squared_list</span></code> is something we call a <em><strong>local
+variable</strong></em>.</p>
+<p>Local variables are any objects that have been created within a function
+and only exist inside the function where they are made.</p>
+<p>Code within a function is described as a <strong>local environment</strong>.</p>
+<p>Since we called <code class="docutils literal notranslate"><span class="pre">new_squared_list</span></code> outside of the function’s body,
+Python fails to recognize it.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">squares_a_list</span><span class="p">(</span><span class="n">numerical_list</span><span class="p">):</span>
+    <span class="n">new_squared_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numerical_list</span><span class="p">:</span>
+        <span class="n">new_squared_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">number</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">new_squared_list</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">new_squared_list</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a_new_variable</span> <span class="o">=</span> <span class="s2">&quot;Peek-a-boo&quot;</span>
+<span class="n">a_new_variable</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>&#39;Peek-a-boo&#39;
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Let’s compare that with the variable <code class="docutils literal notranslate"><span class="pre">a_new_variable</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">a_new_variable</span></code> is created outside of a function in what we call our
+<em><strong>global environment</strong></em>, and therefore Python recognizes it as a
+<em><strong>global variable</strong></em>.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="global-and-local-variables">
+<h2>Global and Local Variables<a class="headerlink" href="#global-and-local-variables" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">squares_a_list</span><span class="p">(</span><span class="n">numerical_list</span><span class="p">):</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">a_new_variable</span><span class="p">)</span>
+    
+    <span class="n">new_squared_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numerical_list</span><span class="p">:</span>
+        <span class="n">new_squared_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">number</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">new_squared_list</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">squares_a_list</span><span class="p">([</span><span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">99999</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>Peek-a-boo
+[144, 25, 49, 9999800001]
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Global variables differ from local variables as they are not only
+recognized outside of any function but also recognized inside functions.</p>
+<p>Let’s take a look at what happens when we add <code class="docutils literal notranslate"><span class="pre">a_new_variable</span></code>, which is
+a global variable,e and refer to it in the <code class="docutils literal notranslate"><span class="pre">squares_a_list</span></code> function.</p>
+<p>The function recognizes the global variable!</p>
+<p>It’s important to note that, although functions recognize global
+variables, it’s not good practice to have functions reference objects
+outside of it.</p>
+<p>We will learn more about this later in the module.</p>
+<hr class="docutils" />
+<p><br> <br> <br></p>
+<center>
+<img src='/module6/starbucks.png' width="100%" alt="404 image">
+</center>
+<p><a class="reference external" href="https://unsplash.com/photos/42ui88Qrxhw">Attribution - Starbucks</a></p>
+<p><a class="reference external" href="https://unsplash.com/photos/42ui88Qrxhw">Attribution - 49th and
+Parallel</a></p>
+<p>Notes:</p>
+<p>I’m going to make an analogy comparing coffee stores to variables.</p>
+<p><strong>Starbucks Coffee</strong> is a <em><strong>globally</strong></em> recognized brand across the
+world and is available in 70 different countries.</p>
+<p>I can purchase a coffee from Starbucks in Vancouver (my local city), and
+if I were to travel across the world to Sydney, Australia, I would still
+be able to purchase a coffee from Starbucks there.</p>
+<p>Starbucks Coffee is similar to a global variable as it is accessible and
+recognized in both its local (Vancouver) and global environments.</p>
+<p><strong>49th Parallel</strong> is a <em><strong>local</strong></em> Vancouver coffee store.</p>
+<p>Many people from Vancouver recognize it; however, purchasing a coffee
+from 49th Parallel outside of Vancouver would be impossible as it is not
+accessible past the City of Vancouver.</p>
+<p>Just like Starbucks Coffee, global variables are recognized and
+accessible in both their global and local environments, whereas local
+variables like the coffee store 49th Parallel are only recognized and
+accessible in the local environment it was created in.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="when-things-get-tricky">
+<h2>When things get tricky<a class="headerlink" href="#when-things-get-tricky" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a_new_variable</span> <span class="o">=</span> <span class="s2">&quot;Peek-a-boo&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">squares_a_list</span><span class="p">(</span><span class="n">numerical_list</span><span class="p">):</span>
+    <span class="n">a_new_variable</span> <span class="o">=</span> <span class="s2">&quot;Ta-Da!&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">a_new_variable</span><span class="p">)</span>
+    
+    <span class="n">new_squared_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numerical_list</span><span class="p">:</span>
+        <span class="n">new_squared_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">number</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">new_squared_list</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">squares_a_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>Ta-Da!
+[1, 4]
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Things can get unclear when we have variables that are named the same
+way but come from two different environments.</p>
+<p>What happens when 2 different objects share the same name, where one was
+defined inside the function and the other in the global environment?</p>
+<p>For instance, let’s say we defined a variable <code class="docutils literal notranslate"><span class="pre">a_new_variable</span></code> in our
+global environment, and we’ve made a variable in a local environment
+with the same name <code class="docutils literal notranslate"><span class="pre">a_new_variable</span></code> but with different values within our
+<code class="docutils literal notranslate"><span class="pre">squares_a_list</span></code> function.</p>
+<p>We can see that the locally created <code class="docutils literal notranslate"><span class="pre">a_new_variable</span></code> variable was
+printed instead of the global object with the same name.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">squares_a_list</span><span class="p">(</span><span class="n">numerical_list</span><span class="p">):</span>
+    <span class="n">a_new_variable</span> <span class="o">=</span> <span class="s2">&quot;Ta-Da!&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">a_new_variable</span><span class="p">)</span>
+    
+    <span class="n">new_squared_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numerical_list</span><span class="p">:</span>
+        <span class="n">new_squared_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">number</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">new_squared_list</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">squares_a_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="n">a_new_variable</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>Ta-Da!
+[1, 4]
+&#39;Peek-a-boo&#39;
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>What about if we output <code class="docutils literal notranslate"><span class="pre">a_new_variable</span></code> right after.</p>
+<p>Our function prints the locally defined <code class="docutils literal notranslate"><span class="pre">a_new_variable</span></code>, and the global
+environment prints the globally defined <code class="docutils literal notranslate"><span class="pre">a_new_variable</span></code>.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">squares_a_list</span><span class="p">(</span><span class="n">numerical_list</span><span class="p">,</span> <span class="n">a_new_variable</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">a_new_variable</span><span class="p">)</span>
+    
+    <span class="n">new_squared_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numerical_list</span><span class="p">:</span>
+        <span class="n">new_squared_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">number</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">new_squared_list</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a_new_variable</span> <span class="o">=</span> <span class="s2">&quot;Peek-a-boo&quot;</span>
+<span class="n">squares_a_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="s2">&quot;BAM!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>BAM!
+[1, 4]
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>What if <code class="docutils literal notranslate"><span class="pre">a_new_variable</span></code> was an argument?</p>
+<p>Given a global variable <code class="docutils literal notranslate"><span class="pre">a_new_variable</span> <span class="pre">=</span> <span class="pre">&quot;Peek-a-boo&quot;</span></code>, what value will
+the function print if we assign a value of <code class="docutils literal notranslate"><span class="pre">&quot;BAM!&quot;</span></code> to the input
+argument <code class="docutils literal notranslate"><span class="pre">a_new_variable</span></code>?</p>
+<p>Here we can see that the function uses the input argument value instead
+of the global variable value.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="modifying-global-variables">
+<h2>Modifying global variables<a class="headerlink" href="#modifying-global-variables" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">global_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="mi">52</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">squares_a_list</span><span class="p">(</span><span class="n">numerical_list</span><span class="p">):</span>
+    <span class="n">global_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">99</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;print global_list:&quot;</span><span class="p">,</span> <span class="n">global_list</span><span class="p">)</span>
+    
+    <span class="n">new_squared_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numerical_list</span><span class="p">:</span>
+        <span class="n">new_squared_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">number</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">new_squared_list</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">squares_a_list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>print global_list: [50, 51, 52, 99]
+[1, 4]
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">global_list</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>[50, 51, 52, 99]
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>So global variables are accessible inside functions - but what about
+modifying them?</p>
+<p>Let’s take a list that we define in our global environment called
+<code class="docutils literal notranslate"><span class="pre">global_list</span></code> and add <code class="docutils literal notranslate"><span class="pre">99</span></code> to the list in the local environment.</p>
+<p>The list that we defined globally was able to be modified inside the
+function and have the changes reflected back in the global environment!</p>
+<p>What is going on?</p>
+<p>Modifying objects like this within a function without returning them is
+called a function <strong>side effect</strong>.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="function-side-effects">
+<h2>Function Side Effects<a class="headerlink" href="#function-side-effects" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;cereal.csv&#39;</span><span class="p">)</span>
+<span class="n">cereal</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                        name mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+0                  100% Bran   N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
+1          100% Natural Bran   Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
+2                   All-Bran   K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
+3  All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
+4             Almond Delight   R  Cold       110        2    2     200    1.0   14.0       8       1        25      3     1.0  0.75  34.384843
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">.drop()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.assign()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.sort_values()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.rename()</span></code></p></li>
+</ul>
+<p>Notes:</p>
+<p>For this next concept, we are going to bring back our trusty cereal
+dataframe.</p>
+<p>Since the beginning of this course, we have been using verbs such as;</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">.drop()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.assign()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.sort_values()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.rename()</span></code></p></li>
+</ul>
+<p>Where we modify a dataframe and save the modification as a new dataframe
+object.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal_dropped</span> <span class="o">=</span> <span class="n">cereal</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;sugars&#39;</span><span class="p">,</span><span class="s1">&#39;potass&#39;</span><span class="p">,</span><span class="s1">&#39;vitamins&#39;</span><span class="p">,</span> <span class="s1">&#39;shelf&#39;</span><span class="p">,</span> <span class="s1">&#39;weight&#39;</span><span class="p">,</span> <span class="s1">&#39;cups&#39;</span><span class="p">])</span>
+<span class="n">cereal_dropped</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                name mfr  type  calories  protein  fat  sodium  fiber  carbo     rating
+0          100% Bran   N  Cold        70        4    1     130   10.0    5.0  68.402973
+1  100% Natural Bran   Q  Cold       120        3    5      15    2.0    8.0  33.983679
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                name mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+0          100% Bran   N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
+1  100% Natural Bran   Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;sugars&#39;</span><span class="p">,</span><span class="s1">&#39;potass&#39;</span><span class="p">,</span><span class="s1">&#39;vitamins&#39;</span><span class="p">,</span> <span class="s1">&#39;shelf&#39;</span><span class="p">,</span> <span class="s1">&#39;weight&#39;</span><span class="p">,</span> <span class="s1">&#39;cups&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                name mfr  type  calories  protein  fat  sodium  fiber  carbo     rating
+0          100% Bran   N  Cold        70        4    1     130   10.0    5.0  68.402973
+1  100% Natural Bran   Q  Cold       120        3    5      15    2.0    8.0  33.983679
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>For example, when we have been dropping columns from a dataframe, we
+have been saving the changes with the assignment operator to a new
+object.</p>
+<p>In this example, we drop columns from <code class="docutils literal notranslate"><span class="pre">sugars</span></code> to <code class="docutils literal notranslate"><span class="pre">cups</span></code> and assign this
+modified dataframe with the dropped columns to the object named
+<code class="docutils literal notranslate"><span class="pre">cereal_dropped</span></code>.</p>
+<p>If we look at the original <code class="docutils literal notranslate"><span class="pre">cereal</span></code> dataframe, we can see it was
+unaffected by this transformation.</p>
+<p>Many of the verbs that we use for our transformations, such as the ones
+we mentioned on the previous slide, have an argument called <code class="docutils literal notranslate"><span class="pre">inplace</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">inplace</span></code> argument accepts a Boolean value where the dataframe
+object is modified directly without the need to save the changes to an
+object with the assignment operation. That means we can skip the part of
+making a new object with the <code class="docutils literal notranslate"><span class="pre">=</span></code> sign.</p>
+<p>Let’s try and drop the same columns as before but now using
+<code class="docutils literal notranslate"><span class="pre">inplace=True</span></code>.</p>
+<p>This time, nothing is returned when we execute this code; however, if we
+look at the <code class="docutils literal notranslate"><span class="pre">cereal</span></code> dataframe now, we can see that it’s been altered,
+and the columns have been dropped.</p>
+<p>This transformation of the dataframe object is a <strong>side effect</strong> of the
+function.</p>
+<p>A side effect is when a function produces changes to global variables
+outside the environment it was created, this means a function has an
+observable effect besides the returning value.</p>
+<p>It’s important to include that although <code class="docutils literal notranslate"><span class="pre">inplace</span></code> exists, there is a
+reason we haven’t taught it, and it’s because we don’t recommend using
+it. Overriding the object by saving it with the same object name is the
+preferred coding technique.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;cereal.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">regular_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2020</span><span class="p">]</span>
+<span class="n">regular_list</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>[7, 8, 2020]
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">regular_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">regular_list</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>[7, 8, 2020, 3]
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Although this appears to be new vocabulary, side effects have been
+present since the beginning of this course, starting with <code class="docutils literal notranslate"><span class="pre">pd.to_csv()</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">pd.to_csv()</span></code> is a function that we saw in module 1, that didn’t return
+anything after we executed it but still produced a <strong>side effect</strong> of a
+newly saved csv file on our computer.</p>
+<p>Another example that we’ve seen when working with lists is the verb
+<code class="docutils literal notranslate"><span class="pre">.append()</span></code>.</p>
+<p>When we execute the code <code class="docutils literal notranslate"><span class="pre">.append(3)</span></code>, on our object <code class="docutils literal notranslate"><span class="pre">regular_list</span></code>,
+nothing is returned from the function, and we have not used to
+assignment operator to save any transformation to the list, however,
+when we inspect <code class="docutils literal notranslate"><span class="pre">regular_list</span></code>, we can see that it has been modified and
+included the new element <code class="docutils literal notranslate"><span class="pre">3</span></code>.</p>
+<p>This would be another example of a function with a side effect.</p>
+<p>The list was created in the global environment, but modified in
+<code class="docutils literal notranslate"><span class="pre">.append()</span></code>’s local environment.</p>
+<p>Side effects seem like fun, but they can be extremely problematic when
+trying to debug (fix) your code.</p>
+<p>When writing functions, it’s usually a good idea to avoid side effects.</p>
+<p>If objects need to be modified, best practice is to modify them in the
+environment they originated in.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="side-effect-documentation">
+<h2>Side Effect Documentation<a class="headerlink" href="#side-effect-documentation" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>If your functions have side-effects, they should be documented.</p></li>
+</ul>
+<p>Notes:</p>
+<p>Although side effects are not recommended, there are cases where either
+we must have side-effects in our functions, or there is no way to avoid
+it. In these cases, it is extremely important that we document it.</p>
+<p>This leads to the next question of <em>How</em>? Good news - the answer is
+coming later on in this module!</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="the-deal-with-print">
+<h2>The deal with <em>print()</em><a class="headerlink" href="#the-deal-with-print" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A regular string&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>A regular string
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a_number_variable</span> <span class="o">=</span> <span class="mf">54.346</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">a_number_variable</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>54.346
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>What is <code class="docutils literal notranslate"><span class="pre">print()</span></code>?</p>
+<p>We have not talked about this function in large detail but we do know
+<code class="docutils literal notranslate"><span class="pre">print()</span></code> will print whatever variable or item you call in it. It can be
+an especially handy one when debugging.</p>
+<p>We can use it to print some code directly or from a variable like we see
+here.</p>
+<p>It’s important that we address using the print statement vs using return
+in a function as they are quite different.</p>
+<p>Let’s see why.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">squares_a_list</span><span class="p">(</span><span class="n">numerical_list</span><span class="p">):</span>
+    <span class="n">new_squared_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numerical_list</span><span class="p">:</span>
+        <span class="n">new_squared_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">number</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">new_squared_list</span>
+</pre></div>
+</div>
+<p><br/> <br/></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">squares_a_list_print</span><span class="p">(</span><span class="n">numerical_list</span><span class="p">):</span>
+    <span class="n">new_squared_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numerical_list</span><span class="p">:</span>
+        <span class="n">new_squared_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">number</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">new_squared_list</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Here er have our <code class="docutils literal notranslate"><span class="pre">squares_a_list</span></code> function. Let’s create a new function
+called <code class="docutils literal notranslate"><span class="pre">squares_a_list_print</span></code> where instead of returning the new
+variable <code class="docutils literal notranslate"><span class="pre">new_squared_list</span></code>, we print it instead.</p>
+<p>The only difference here is that in <code class="docutils literal notranslate"><span class="pre">squares_a_list</span></code> we return
+<code class="docutils literal notranslate"><span class="pre">new_squared_list</span></code> and in <code class="docutils literal notranslate"><span class="pre">squares_a_list_print</span></code> we are printing
+<code class="docutils literal notranslate"><span class="pre">new_squared_list</span></code>.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">squares_a_list</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>[4, 9, 25]
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">squares_a_list_print</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>[4, 9, 25]
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Let’s see what happens when we call these functions now.</p>
+<p>If we call them both without assigning them to an object, it looks like
+these functions do identical things.</p>
+<p>Both output the new list.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">return_func_var</span> <span class="o">=</span> <span class="n">squares_a_list</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">return_func_var</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>[4, 9, 25]
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">print_func_var</span> <span class="o">=</span> <span class="n">squares_a_list_print</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>[4, 9, 25]
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">print_func_var</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>None
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>This time let’s instead save them to objects.</p>
+<p>When we call and save <code class="docutils literal notranslate"><span class="pre">squares_a_list(numbers)</span></code>, you’ll see that nothing
+is printed or outputted.</p>
+<p>But if we print what our variable <code class="docutils literal notranslate"><span class="pre">return_func_var</span></code> contains, you’ll see
+the list of square numbers.</p>
+<p>In contrast,when we do the same thing with
+<code class="docutils literal notranslate"><span class="pre">squares_a_list_print(numbers)</span></code>, the new list is outputted while we are
+assigning it to a variable since the print function is called within our
+<code class="docutils literal notranslate"><span class="pre">squares_a_list_print(numbers)</span></code> function.</p>
+<p>If we see print what’s in our variables <code class="docutils literal notranslate"><span class="pre">print_func_var</span></code>, you’ll see
+that there is nothing stored in it.</p>
+<p>That’s because the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function, when used in a function, is a
+<strong>side effect</strong> and our <code class="docutils literal notranslate"><span class="pre">squares_a_list_print()</span></code> function is not
+returning anything to store, it’s only displaying it.</p>
+<p>In order for us to save the output of our functions to a variable, we
+must use <code class="docutils literal notranslate"><span class="pre">return</span></code> in our function, otherwise we are only producing a
+side effect instead of returning an actual value</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="lets-apply-what-we-learned">
+<h1>Let’s apply what we learned!<a class="headerlink" href="#lets-apply-what-we-learned" title="Permalink to this headline">¶</a></h1>
+<p>Notes:</p>
+<br>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "UBC-MDS/PPDS_book",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./modules/module6"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Hayley Boyce, Mike Gelbart, Tiffany Timbers<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

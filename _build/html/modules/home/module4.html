@@ -1,0 +1,1074 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>&lt;no title&gt; &#8212; Programming in Python for Data Science</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/video.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://hfboyce.github.io/ppds/intro.html/modules/home/module4.html" />
+    <link rel="shortcut icon" href="../../_static/icon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Programming in Python for Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  Modules
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module1.html">
+   Module 1:  Python &amp; Pandas - An Unexpected Friendship
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_01.html">
+     What is a dataframe?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_03.html">
+     What is Pandas?
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Coding Exercises
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module1.html">
+   Module 1: Python &amp; Pandas - An Unexpected Friendship
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_01.html">
+     What is a dataframe?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_03.html">
+     What is Pandas?
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/modules/home/module4.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/UBC-MDS/PPDS_book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/UBC-MDS/PPDS_book/issues/new?title=Issue%20on%20page%20%2Fmodules/home/module4.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/UBC-MDS/PPDS_book/edit/main/modules/home/module4.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <exercise id="0" title="Module Learning Outcomes" type="slides, video">
+<slides source="module4/module4_00" shot = "8" start="0:001" end="0:35">
+</slides>
+</exercise> 
+<exercise id="1" title="Python Data Types" type="slides, video">
+<slides source="module4/module4_01" shot = "1" start="78:16" end="86:35">
+</slides>
+</exercise>
+<exercise id="2" title="Name That Data Type">
+<p>For the next few questions, name the data type of each value.</p>
+<p><strong>Question 1</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">question_1</span> <span class="o">=</span> <span class="s1">&#39;NaN&#39;</span>
+</pre></div>
+</div>
+<choice id="1" >
+<opt text="<code>int</code>">
+<p>Do you notice the quotations?</p>
+</opt>
+<opt text="<code>float</code>">
+<p>Do you notice the quotations?</p>
+</opt>
+<opt text="<code>NoneType</code>">
+<p>Do you notice the quotations?</p>
+</opt>
+<opt text="<code>bool</code>">
+<p>Do you notice the quotations?</p>
+</opt>
+<opt text="<code>str</code>" correct="true">
+<p>Although, this spells out “NaN”, The value is within quotations indicating it is a string.</p>
+</opt>
+</choice> 
+<p><strong>Question 2</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">question_1</span> <span class="o">=</span> <span class="mf">3.6</span>
+</pre></div>
+</div>
+<choice id="2" >
+<opt text="<code>int</code>">
+<p>We are not trying to trick you here.</p>
+</opt>
+<opt text="<code>float</code>" correct="true">
+<p>Nothing tricky about this one.</p>
+</opt>
+<opt text="<code>NoneType</code>">
+<p>We are not trying to trick you here.</p>
+</opt>
+<opt text="<code>bool</code>">
+<p>We are not trying to trick you here.</p>
+</opt>
+<opt text="<code>str</code>">
+<p>We are not trying to trick you here.</p>
+</opt>
+</choice> 
+<p><strong>Question 3</strong></p>
+<p>Which data type can only take on 1 value?</p>
+<choice id="3" >
+<opt text="<code>int</code>">
+<p>You may want to look over this before moving forward.</p>
+</opt>
+<opt text="<code>float</code>" >
+<p>You may want to look over this before moving forward.</p>
+</opt>
+<opt text="<code>NoneType</code>" correct="true">
+<p>Yes, this can only have the value <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</opt>
+<opt text="<code>bool</code>">
+<p>This can actually take 2 values!</p>
+</opt>
+<opt text="<code>str</code>">
+<p>You may want to look over this before moving forward.</p>
+</opt>
+</choice> 
+</exercise>
+<exercise id="3" title=" String Verbs">
+<p><strong>Instructions:</strong><br />
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.</strong></p>
+<p><em><strong>Make sure you remove the hash (<code class="docutils literal notranslate"><span class="pre">#</span></code>) symbol in the coding portions of this question.  We have commented them so that the line won’t execute and you can test your code after each step.</strong></em></p>
+<p>How many times do the lyrics “Let it be” occur in the Beatles Hit song of the same title?</p>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Use some of the string verbs you learned in the lecture to count all the times “let it be” (all upper and lower case versions) appears in the string <code class="docutils literal notranslate"><span class="pre">lyrics</span></code>.</p></li>
+<li><p>Save it in an object named <code class="docutils literal notranslate"><span class="pre">letitbe_count</span></code>.</p></li>
+</ul>
+<codeblock id="04_03">
+<ul class="simple">
+<li><p>Are you converting <code class="docutils literal notranslate"><span class="pre">lyrics</span></code> to lowercase using <code class="docutils literal notranslate"><span class="pre">.lower()</span></code>?</p></li>
+<li><p>Are you using <code class="docutils literal notranslate"><span class="pre">.count()</span></code> with the argument <code class="docutils literal notranslate"><span class="pre">let</span> <span class="pre">it</span> <span class="pre">be</span></code>?</p></li>
+</ul>
+</codeblock>
+</exercise>
+<exercise id="4" title="Casting Data Types">
+<p><strong>Instructions:</strong><br />
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.</strong></p>
+<p><em><strong>Make sure you remove the hash (<code class="docutils literal notranslate"><span class="pre">#</span></code>) symbol in the coding portions of this question.  We have commented them so that the line won’t execute and you can test your code after each step.</strong></em></p>
+<p>How can we cast from a string to an integer value?</p>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Convert <code class="docutils literal notranslate"><span class="pre">string1</span></code> to a <code class="docutils literal notranslate"><span class="pre">float</span></code> in an object named <code class="docutils literal notranslate"><span class="pre">pi</span></code>.</p></li>
+<li><p>Convert the object <code class="docutils literal notranslate"><span class="pre">pi</span></code> now into an <code class="docutils literal notranslate"><span class="pre">int</span></code> named <code class="docutils literal notranslate"><span class="pre">pi_slice</span></code>.</p></li>
+</ul>
+<codeblock id="04_04">
+<ul class="simple">
+<li><p>Are you using <code class="docutils literal notranslate"><span class="pre">float()</span></code>?</p></li>
+<li><p>Are you using <code class="docutils literal notranslate"><span class="pre">int()</span></code>?</p></li>
+</ul>
+</codeblock>
+</exercise>
+<exercise id="5" title="Python Data Structures: Lists, Tuples and Sets" type="slides, video">
+<slides source="module4/module4_05" shot = "1" start="86:39" end="95:47">
+</slides>
+</exercise>
+<exercise id="6" title="Name that Data Structure">
+<p><strong>Question 1</strong><br />
+<em>“I don’t care about my elements order.”</em><br />
+Who am I?</p>
+<choice id="1" >
+<opt text="<code>str</code>">
+<p>Which data structure does not have a particular order?</p>
+</opt>
+<opt text="<code>list</code>" >
+<p>Which data structure does not have a particular order?</p>
+</opt>
+<opt text="<code>tuple</code>" >
+<p>Which data structure does not have a particular order?</p>
+</opt>
+<opt text="<code>set</code>" correct="true">
+<p>Well done.</p>
+</opt>
+</choice> 
+<p><strong>Question 2</strong><br />
+<em>“I can’t be changed, I don’t accept new elements but I can contain multiple data types”</em><br />
+Who am I?</p>
+<choice id="2" >
+<opt text="<code>str</code>">
+<p>This data structure fits the first two statements but a string contains characters of all type <code class="docutils literal notranslate"><span class="pre">str</span></code>.</p>
+</opt>
+<opt text="<code>list</code>" >
+<p>This data structure can add elements using <code class="docutils literal notranslate"><span class="pre">.append()</span></code></p>
+</opt>
+<opt text="<code>tuple</code>" correct="true">
+<p>Yes, this can only have the value <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</opt>
+<opt text="<code>set</code>">
+<p>This data structure can add to it using <code class="docutils literal notranslate"><span class="pre">.add()</span></code></p>
+</opt>
+</choice> 
+</exercise>
+<exercise id="7" title="Data Structure True and False">
+<p>Are the following statements True or False?</p>
+<p><em>Tuples are immutable.</em></p>
+<choice id="1">
+<opt text="True" correct="true">
+<p>Yay! You got it!</p>
+</opt>
+<opt text= "False" >
+<p>This is, in fact, the opposite!</p>
+</opt>
+</choice> 
+<p><em>Sets can only contain numerical data types.</em></p>
+<choice id="2">
+<opt text="True">
+<p>Sets can contain many different datatypes apart from numerical values.</p>
+</opt>
+<opt text= "False"  correct="true">
+<p>Yay! You got it!</p>
+</opt>
+</choice> 
+</exercise>
+<exercise id="8" title="The Data Structure Basics">
+<p><strong>Instructions:</strong><br />
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.</strong></p>
+<p><em><strong>Make sure you remove the hash (<code class="docutils literal notranslate"><span class="pre">#</span></code>) symbol in the coding portions of this question.  We have commented them so that the line won’t execute and you can test your code after each step.</strong></em></p>
+<p>Let’s explore how to add to a list, slice it and convert it into a tuple.</p>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Using the list provided, add a <code class="docutils literal notranslate"><span class="pre">pen</span></code>, a <code class="docutils literal notranslate"><span class="pre">scrap</span> <span class="pre">paper</span></code>, a <code class="docutils literal notranslate"><span class="pre">7.3</span></code> and a <code class="docutils literal notranslate"><span class="pre">True</span></code> element.</p></li>
+<li><p>Find the length of the list after adding the element and save the value in an object named <code class="docutils literal notranslate"><span class="pre">drawer_length</span></code>.</p></li>
+<li><p>Slice the list from <code class="docutils literal notranslate"><span class="pre">4</span></code> to <code class="docutils literal notranslate"><span class="pre">scrap</span> <span class="pre">paper</span></code>  and save this in an object named <code class="docutils literal notranslate"><span class="pre">cleaned_junk_drawer</span></code>.</p></li>
+<li><p>Finally,  convert it into a set and name it <code class="docutils literal notranslate"><span class="pre">junk_set</span></code>.</p></li>
+</ul>
+<codeblock id="04_08">
+<ul class="simple">
+<li><p>The verbs <code class="docutils literal notranslate"><span class="pre">.append()</span></code> and <code class="docutils literal notranslate"><span class="pre">len()</span></code> may be handy.</p></li>
+<li><p>You can convert your list to a tuple with `tuple().</p></li>
+<li><p>Have you sliced keeping in mind the end of the slice is excluded?</p></li>
+</ul>
+</codeblock>
+</exercise>
+<exercise id="9" title="Making a Dataframe from Lists">
+<p><strong>Instructions:</strong><br />
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.</strong></p>
+<p>Let’s use lists and convert them into a pandas dataframe.</p>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Use the lists given in the cell below to make a dataframe.</p></li>
+<li><p>Name the dataframe <code class="docutils literal notranslate"><span class="pre">family</span></code>.</p></li>
+</ul>
+<codeblock id="04_09">
+<ul class="simple">
+<li><p>Are you using <code class="docutils literal notranslate"><span class="pre">pd.DataFrame()</span></code>?</p></li>
+<li><p>Are you using the arguments <code class="docutils literal notranslate"><span class="pre">data</span></code> and <code class="docutils literal notranslate"><span class="pre">columns</span></code>?</p></li>
+</ul>
+</codeblock>
+</exercise>
+<exercise id="10" title="Python Data Structures: Dictionaries" type="slides, video">
+<slides source="module4/module4_10" shot = "1" start="95:50" end="101:17">
+</slides>
+</exercise>
+<exercise id="11" title="Dictionary Questions">
+<p><strong>Question 1</strong></p>
+<p>Is the following statement True or False?</p>
+<p><em>Dictionaries and sets use the same type of brackets to create them.</em></p>
+<choice id="1" >
+<opt text="True" correct="true" >
+<p>That’s right. They both use curly brackets.</p>
+</opt>
+<opt text="False" >
+<p>What kind of brackets do they both use?</p>
+</opt>
+</choice> 
+<p><strong>Question 2</strong></p>
+<p>Which verb transforms dictionaries into dataframes?</p>
+<choice id="2" >
+<opt text="<code>.from_dict()</code>">
+<p>You seem to be missing something at the beginning.</p>
+</opt>
+<opt text="<code>pd.dataframe.from_dict()</code>">
+<p>Careful with capitalization. You are extremely close.</p>
+</opt>
+<opt text="<code>pd.DataFrame.from_dictionary()</code>">
+<p>Maybe it’s not quite this long.</p>
+</opt>
+<opt text="<code>pd.DataFrame.from_dict()</code>" correct="true">
+<p>Nice work!</p>
+</opt>
+</choice> 
+</exercise>
+<exercise id="12" title="Dictionary Basics">
+<p><strong>Instructions:</strong><br />
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.</strong></p>
+<p>Recently Jeremy bought a new Ikea shoe rack.  The packaging included quite a few parts and he is finding it hard to keep track!</p>
+<p>Tasks:
+Make a dictionary that includes the quantity of each part included in the Ikea set.</p>
+<p>The shoe rack contained the following parts:</p>
+<ul class="simple">
+<li><p>8 <code class="docutils literal notranslate"><span class="pre">Long</span> <span class="pre">Screw</span></code></p></li>
+<li><p>8 <code class="docutils literal notranslate"><span class="pre">Wood</span> <span class="pre">Dowel</span></code></p></li>
+<li><p>2 <code class="docutils literal notranslate"><span class="pre">Short</span> <span class="pre">Screw</span></code></p></li>
+<li><p>1 <code class="docutils literal notranslate"><span class="pre">Allen</span> <span class="pre">Key</span></code></p></li>
+<li><p>Construct the dictionary so that the part names are the keys and the quantities of the parts, are the values for the dictionary.</p></li>
+<li><p>Name the dictionary <code class="docutils literal notranslate"><span class="pre">ikea_shoe_rack</span></code>.</p></li>
+</ul>
+<codeblock id="04_12">
+<ul class="simple">
+<li><p>Are you naming your dictionary properly?</p></li>
+<li><p>Are all your parts spelled correctly?</p></li>
+</ul>
+</codeblock>
+</exercise>
+<exercise id="13" title="Building a Dataframe from a Dictionary">
+<p><strong>Instructions:</strong><br />
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.</strong></p>
+<p>The shoe rack was not the only thing Jeremy bought. below is a table of all his purchases.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:right head"><p></p></th>
+<th class="text-align:left head"><p>item_name</p></th>
+<th class="text-align:left head"><p>collection</p></th>
+<th class="text-align:right head"><p>price</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:right"><p>0</p></td>
+<td class="text-align:left"><p>Bistro Set</p></td>
+<td class="text-align:left"><p>APPLARO</p></td>
+<td class="text-align:right"><p>216.98</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>1</p></td>
+<td class="text-align:left"><p>Shelf Unit</p></td>
+<td class="text-align:left"><p>HYLLIS</p></td>
+<td class="text-align:right"><p>11.99</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>3</p></td>
+<td class="text-align:left"><p>Shoe Rack</p></td>
+<td class="text-align:left"><p>TJUSIG</p></td>
+<td class="text-align:right"><p>29.99</p></td>
+</tr>
+</tbody>
+</table>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Create the table above from a dictionary using <code class="docutils literal notranslate"><span class="pre">pd.DataFrame.from_dict()</span></code>.</p></li>
+<li><p>Name your new dataframe ikea_df</p></li>
+</ul>
+<codeblock id="04_13">
+<ul class="simple">
+<li><p>Are you using lists as the values in your dictionary?</p></li>
+<li><p>Are you making sure to use floats for the price?</p></li>
+<li><p>are all your items and collections spelled correctly?</p></li>
+</ul>
+</codeblock>
+</exercise>
+<exercise id="14" title="Dataframes, Series and Column dtypes" type="slides, video">
+<slides source="module4/module4_14" shot = "1" start="101:21" end="108:06">
+</slides>
+</exercise>
+<exercise id="15" title="Name That type/dtype">
+<p><strong>Question 1</strong><br />
+What is the data type of a Pandas dataframe?</p>
+<choice id="1" >
+<opt text="<code>pandas.core.frame.DataFrame</code>" correct="true">
+<p>Yes, this is the data type!</p>
+</opt>
+<opt text="Multiple series" >
+<p>This is what makes up a dataframe but it’s not the data type.
+</opt></p>
+<opt text="<code>object</code>" >
+<p>This is a dtype, not a type.</p>
+</opt>
+<opt text="<code>str</code>">
+<p>This is a type, but not the dataframe type.</p>
+</opt>
+</choice> 
+<p><strong>Question 2</strong><br />
+What is the data type of a column in a dataframe?</p>
+<choice id="2" >
+<opt text="<code>pd.DataFrame</code>">
+<p>This is the whole dataframe type.</p>
+</opt>
+<opt text="<code>pd.Series</code>" correct="true">
+<p>That’s right! A column has a type of pd.Series.</p>
+</opt>
+<opt text="<code>object</code>">
+<p>This is a dtype and not a data type.</p>
+</opt>
+<opt text="<code>str</code>">
+<p>Although you are guessing a data type, this is the incorrect one.</p>
+</opt>
+</choice> 
+</exercise>
+<exercise id="16" title="Dataframe and Series True and False">
+<p>Are the following statements True or False?</p>
+<p><em>Dataframes are a made up of a tuple of Series.</em></p>
+<choice id="1">
+<opt text="True">
+<p>It is made up of Series but not a tuple data structure.</p>
+</opt>
+<opt text= "False" correct="true">
+<p>A Dataframe is made up of a dictionary of Series</p>
+</opt>
+</choice> 
+<p><em>Pandas will assign a dtype of <code class="docutils literal notranslate"><span class="pre">obj</span></code> when it’s having difficulty recognizing the column dtype.</em></p>
+<choice id="2">
+<opt text="True" correct="true">
+<p>When it’s unclear what the dtype is, Pandas will assign it a dtype <code class="docutils literal notranslate"><span class="pre">object</span></code>.</p>
+</opt>
+<opt text= "False">
+<p>You may want to review this section.</p>
+</opt>
+</choice> 
+</exercise>
+<exercise id="17" title="Dtype Practice">
+<p><strong>Instructions:</strong><br />
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.</strong></p>
+<p>Remember our <code class="docutils literal notranslate"><span class="pre">canucks</span></code> dataframe? Let’s take a closer look at the labels of the columns.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Player</p></th>
+<th class="head"><p>No.</p></th>
+<th class="head"><p>Age</p></th>
+<th class="head"><p>Height</p></th>
+<th class="head"><p>Weight</p></th>
+<th class="head"><p>Country</p></th>
+<th class="head"><p>Position</p></th>
+<th class="head"><p>Experience</p></th>
+<th class="head"><p>Birth Date</p></th>
+<th class="head"><p>Salary</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<p><strong>Question 1 (a)</strong></p>
+<p>What dtype would be an appropriate guess for the <code class="docutils literal notranslate"><span class="pre">Salary</span></code> column?</p>
+<choice id="1" >
+<opt text="<code>float64</code>" correct="true">
+<p>Nice! <code class="docutils literal notranslate"><span class="pre">float64</span></code> and <code class="docutils literal notranslate"><span class="pre">int64</span></code> are both appropriate dtype guesses for the <code class="docutils literal notranslate"><span class="pre">Salary</span></code> column.</p>
+</opt>
+<opt text="<code>int64</code>" correct="true">
+<p>Nice! <code class="docutils literal notranslate"><span class="pre">float64</span></code> and <code class="docutils literal notranslate"><span class="pre">int64</span></code> are both appropriate dtype guesses for the <code class="docutils literal notranslate"><span class="pre">Salary</span></code> column.</p>
+</opt>
+<opt text="<code>str</code>">
+<p>This is not a dtype, this is one of Python’s data types.</p>
+</opt>
+<opt text="<code>bool</code>" >
+<p><code class="docutils literal notranslate"><span class="pre">float64</span></code> and <code class="docutils literal notranslate"><span class="pre">int64</span></code> would be more appropriate dtype guesses for the <code class="docutils literal notranslate"><span class="pre">Salary</span></code> column.</p>
+</opt>
+</choice> 
+<p><strong>Question 1 (b)</strong></p>
+<p>Use the coding cell below to check the dtype for the <code class="docutils literal notranslate"><span class="pre">Salary</span></code> column.</p>
+<codeblock id="04_17">
+<ul class="simple">
+<li><p>Are you using the attribute <code class="docutils literal notranslate"><span class="pre">dtypes</span></code>?</p></li>
+</ul>
+</codeblock>
+<p><strong>Question 1 (c)</strong></p>
+<p>What is the actual dtype of the <code class="docutils literal notranslate"><span class="pre">Salary</span></code> column?</p>
+<choice id="2" >
+<opt text="<code>float64</code>" correct="true">
+<p>Nice!</p>
+</opt>
+<opt text="<code>int64</code>">
+<p>This time is was not of dtype <code class="docutils literal notranslate"><span class="pre">int64</span></code>.</p>
+</opt>
+<opt text="<code>object</code>">
+<p>Are you looking at the output from above?</p>
+</opt>
+<opt text="<code>bool</code>" >
+<p>Are you looking at the output from above?</p>
+</opt>
+</choice> 
+<br>
+<p><strong>Question 2 (a)</strong></p>
+<p>What dtype is would be an appropriate guess for the <code class="docutils literal notranslate"><span class="pre">Weight</span></code> column?</p>
+<choice id="3" >
+<opt text="<code>float64</code>" correct="true">
+<p>Nice! <code class="docutils literal notranslate"><span class="pre">float64</span></code> and <code class="docutils literal notranslate"><span class="pre">int64</span></code> are both appropriate dtype guesses for the <code class="docutils literal notranslate"><span class="pre">Weight</span></code> column.</p>
+</opt>
+<opt text="<code>int64</code>" correct="true">
+<p>Nice! <code class="docutils literal notranslate"><span class="pre">float64</span></code> and <code class="docutils literal notranslate"><span class="pre">int64</span></code> are both appropriate dtype guesses for the <code class="docutils literal notranslate"><span class="pre">Weight</span></code> column.</p>
+</opt>
+<opt text="<code>str</code>">
+<p>This is not a dtype, this is one of Python’s data types.</p>
+</opt>
+<opt text="<code>bool</code>" >
+<p><code class="docutils literal notranslate"><span class="pre">float64</span></code> and <code class="docutils literal notranslate"><span class="pre">int64</span></code> would be more appropriate dtype guesses for the <code class="docutils literal notranslate"><span class="pre">Weight</span></code> column.</p>
+</opt>
+</choice> 
+<p><strong>Question 2 (b)</strong></p>
+<p>Use the coding cell below to check the dtype for the <code class="docutils literal notranslate"><span class="pre">Weight</span></code> column.</p>
+<codeblock id="04_17b">
+<ul class="simple">
+<li><p>Are you using the attribute <code class="docutils literal notranslate"><span class="pre">dtypes</span></code>?</p></li>
+</ul>
+</codeblock>
+<p><strong>Question 2 (c)</strong></p>
+<p>What is the actual dtype of the <code class="docutils literal notranslate"><span class="pre">Weight</span></code> column?</p>
+<choice id="4" >
+<opt text="<code>float64</code>" >
+<p>This time is was not of dtype <code class="docutils literal notranslate"><span class="pre">float64</span></code>.</p>
+</opt>
+<opt text="<code>int64</code>" correct="true">
+<p>Nice!</p>
+</opt>
+<opt text="<code>object</code>">
+<p>Are you looking at the output from above?</p>
+</opt>
+<opt text="<code>bool</code>" >
+<p>Are you looking at the output from above?</p>
+</opt>
+</choice> 
+</exercise>
+<exercise id="18" title="Python Operations" type="slides, video">
+<slides source="module4/module4_18" shot = "1" start="108:10" end="113:57">
+</slides>
+</exercise>
+<exercise id="19" title="Output or Error with Operations">
+<p>Will the following operations result with an output or an error?</p>
+<p><strong>Question 1</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;One&#39;</span><span class="p">,</span> <span class="s1">&#39;Two&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;five&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+<choice id="1" >
+<opt text="Runs successfully" >
+<p>Take special care to the brackets being used. dictionary1 + dictionary2</p>
+</opt>
+<opt text="Error"  correct="true" >
+<p>Both elements must be of the same data structure to add together.</p>
+</opt>
+</choice> 
+<p><strong>Question 2</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">tuple</span><span class="p">([</span><span class="s1">&#39;One&#39;</span><span class="p">,</span> <span class="s1">&#39;Two&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span> <span class="o">+</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;five&#39;</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+<choice id="2" >
+<opt text="Output" correct="true" >
+<p>That’s right. the output would be <code class="docutils literal notranslate"><span class="pre">('One',</span> <span class="pre">'Two',</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">'five',</span> <span class="pre">6)</span></code>.</p>
+</opt>
+<opt text="<code>Error</code>" >
+<p>Are they both the same data structure?</p>
+</opt>
+</choice> 
+<p><strong>Question 3</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dictionary1</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="s1">&#39;two&#39;</span><span class="p">}</span>
+<span class="n">dictionary2</span> <span class="o">=</span> <span class="p">{</span><span class="mi">3</span><span class="p">:</span> <span class="s1">&#39;three&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="s1">&#39;four&#39;</span><span class="p">}</span>
+
+<span class="n">dictionary1</span> <span class="o">+</span> <span class="n">dictionary2</span>
+</pre></div>
+</div>
+<choice id="3" >
+<opt text="Output" >
+<p>Dictionaries cannot be concatenated together. We would have to combine them adding the individual keys-value pairs separately.</p>
+</opt>
+<opt text="<code>Error</code>" correct="true" >
+<p>That’s right!</p>
+</opt>
+</choice> 
+<p><strong>Question 4</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">([</span><span class="s1">&#39;nine&#39;</span><span class="p">,</span> <span class="s1">&#39;ten&#39;</span><span class="p">,</span> <span class="s1">&#39;eleven&#39;</span><span class="p">,</span> <span class="s1">&#39;twelve&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<choice id="4" >
+<opt text="Output"  >
+<p>We cannot sum <code class="docutils literal notranslate"><span class="pre">str</span></code> elements in a list.</p>
+</opt>
+<opt text="<code>Error</code>"  correct="true">
+<p>Right!</p>
+</opt>
+</choice> 
+<p><strong>Question 5</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;The monster under my bed&#39;</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">]</span>
+</pre></div>
+</div>
+<choice id="5" >
+<opt text="Output">
+</opt>
+<opt text="<code>Error</code>"  correct="true" >
+<p>That’s right. We cannot concatenate together <code class="docutils literal notranslate"><span class="pre">lists</span></code> and <code class="docutils literal notranslate"><span class="pre">str</span></code> data types</p>
+</opt>
+</choice> 
+</exercise>
+<exercise id="20" title="True or False with Boolean Operators ">
+<p>Given the statement above, would the following result in a <code class="docutils literal notranslate"><span class="pre">True</span></code> of <code class="docutils literal notranslate"><span class="pre">False</span></code> value.</p>
+<p><strong>Question 1</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;hotels&#39;</span> <span class="o">!=</span> <span class="s1">&#39;homes&#39;</span> <span class="ow">and</span> <span class="mi">50</span> <span class="o">&lt;</span> <span class="mi">5000</span>
+</pre></div>
+</div>
+<choice id="1" >
+<opt text="True" correct="true" >
+<p>Both statements are true so the output is True.</p>
+</opt>
+<opt text="False" >
+<p><code class="docutils literal notranslate"><span class="pre">and</span></code> checks if all statements are True`.</p>
+</opt>
+</choice> 
+<p><strong>Question 2</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ow">not</span> <span class="p">(</span><span class="s1">&#39;hotels&#39;</span> <span class="o">!=</span> <span class="s1">&#39;homes&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+<choice id="2" >
+<opt text="True"  >
+<p>The statement is True and <code class="docutils literal notranslate"><span class="pre">not</span></code> checks if the statement is False.</p>
+</opt>
+<opt text="False" correct="true">
+<p>That’s right. The statement is not false so the output is False.</p>
+</opt>
+</choice> 
+<p><strong>Question 3</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ow">not</span> <span class="ow">not</span> <span class="p">(</span><span class="s1">&#39;hotels&#39;</span> <span class="o">!=</span> <span class="s1">&#39;homes&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<choice id="3" >
+<opt text="True" correct="true" >
+<p>The right!</p>
+</opt>
+<opt text="False" >
+<p>The statement <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">'hotels'</span> <span class="pre">!=</span> <span class="pre">'homes'</span> </code> is false so checking if that statement is False results in a True output.</p>
+</opt>
+</choice> 
+</exercise>
+<exercise id="21" title="Operations with Columns" type="slides, video">
+<slides source="module4/module4_21" shot = "1" start="114:01" end="120:43">
+</slides>
+</exercise>
+<exercise id="22" title="What's That Output? With Column Operations">
+<p>Here is my dataframe named <code class="docutils literal notranslate"><span class="pre">fruit_salad</span></code>:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:right head"><p></p></th>
+<th class="text-align:left head"><p>name</p></th>
+<th class="text-align:left head"><p>colour</p></th>
+<th class="text-align:left head"><p>location</p></th>
+<th class="text-align:left head"><p>seed</p></th>
+<th class="text-align:left head"><p>shape</p></th>
+<th class="text-align:left head"><p>sweetness</p></th>
+<th class="text-align:right head"><p>water-content</p></th>
+<th class="text-align:right head"><p>weight</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:right"><p>0</p></td>
+<td class="text-align:left"><p>apple</p></td>
+<td class="text-align:left"><p>red</p></td>
+<td class="text-align:left"><p>canada</p></td>
+<td class="text-align:left"><p>True</p></td>
+<td class="text-align:left"><p>round</p></td>
+<td class="text-align:left"><p>True</p></td>
+<td class="text-align:right"><p>84</p></td>
+<td class="text-align:right"><p>100</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>1</p></td>
+<td class="text-align:left"><p>banana</p></td>
+<td class="text-align:left"><p>yellow</p></td>
+<td class="text-align:left"><p>mexico</p></td>
+<td class="text-align:left"><p>False</p></td>
+<td class="text-align:left"><p>long</p></td>
+<td class="text-align:left"><p>True</p></td>
+<td class="text-align:right"><p>75</p></td>
+<td class="text-align:right"><p>120</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>2</p></td>
+<td class="text-align:left"><p>cantaloupe</p></td>
+<td class="text-align:left"><p>orange</p></td>
+<td class="text-align:left"><p>spain</p></td>
+<td class="text-align:left"><p>True</p></td>
+<td class="text-align:left"><p>round</p></td>
+<td class="text-align:left"><p>True</p></td>
+<td class="text-align:right"><p>90</p></td>
+<td class="text-align:right"><p>1360</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>3</p></td>
+<td class="text-align:left"><p>dragon-fruit</p></td>
+<td class="text-align:left"><p>megenta</p></td>
+<td class="text-align:left"><p>china</p></td>
+<td class="text-align:left"><p>True</p></td>
+<td class="text-align:left"><p>round</p></td>
+<td class="text-align:left"><p>False</p></td>
+<td class="text-align:right"><p>96</p></td>
+<td class="text-align:right"><p>600</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>4</p></td>
+<td class="text-align:left"><p>elderberry</p></td>
+<td class="text-align:left"><p>purple</p></td>
+<td class="text-align:left"><p>austria</p></td>
+<td class="text-align:left"><p>False</p></td>
+<td class="text-align:left"><p>round</p></td>
+<td class="text-align:left"><p>True</p></td>
+<td class="text-align:right"><p>80</p></td>
+<td class="text-align:right"><p>5</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>5</p></td>
+<td class="text-align:left"><p>fig</p></td>
+<td class="text-align:left"><p>purple</p></td>
+<td class="text-align:left"><p>turkey</p></td>
+<td class="text-align:left"><p>False</p></td>
+<td class="text-align:left"><p>oval</p></td>
+<td class="text-align:left"><p>False</p></td>
+<td class="text-align:right"><p>78</p></td>
+<td class="text-align:right"><p>40</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>6</p></td>
+<td class="text-align:left"><p>guava</p></td>
+<td class="text-align:left"><p>green</p></td>
+<td class="text-align:left"><p>mexico</p></td>
+<td class="text-align:left"><p>True</p></td>
+<td class="text-align:left"><p>oval</p></td>
+<td class="text-align:left"><p>True</p></td>
+<td class="text-align:right"><p>83</p></td>
+<td class="text-align:right"><p>450</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>7</p></td>
+<td class="text-align:left"><p>huckleberry</p></td>
+<td class="text-align:left"><p>blue</p></td>
+<td class="text-align:left"><p>canada</p></td>
+<td class="text-align:left"><p>True</p></td>
+<td class="text-align:left"><p>round</p></td>
+<td class="text-align:left"><p>True</p></td>
+<td class="text-align:right"><p>73</p></td>
+<td class="text-align:right"><p>5</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p>8</p></td>
+<td class="text-align:left"><p>kiwi</p></td>
+<td class="text-align:left"><p>brown</p></td>
+<td class="text-align:left"><p>china</p></td>
+<td class="text-align:left"><p>True</p></td>
+<td class="text-align:left"><p>round</p></td>
+<td class="text-align:left"><p>True</p></td>
+<td class="text-align:right"><p>80</p></td>
+<td class="text-align:right"><p>76</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p>9</p></td>
+<td class="text-align:left"><p>lemon</p></td>
+<td class="text-align:left"><p>yellow</p></td>
+<td class="text-align:left"><p>mexico</p></td>
+<td class="text-align:left"><p>False</p></td>
+<td class="text-align:left"><p>oval</p></td>
+<td class="text-align:left"><p>False</p></td>
+<td class="text-align:right"><p>83</p></td>
+<td class="text-align:right"><p>65</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Question 1</strong></p>
+<p>What would be the output of</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;seed&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+<choice id="1" >
+<opt text="<code>0</code>" >
+<p>Can we sum up a column of dtype <code class="docutils literal notranslate"><span class="pre">bool</span></code>? What values does it sum up?</p>
+</opt>
+<opt text="<code>1</code>" >
+<p>Can we sum up a column of dtype <code class="docutils literal notranslate"><span class="pre">bool</span></code>? What values does it sum up?</p>
+</opt>
+<opt text="<code>6</code>" correct="true">
+<p>Great!</p>
+</opt>
+<opt text="<code>Error</code>" >
+<p>Can we sum up a column of dtype <code class="docutils literal notranslate"><span class="pre">bool</span></code>? What values does it sum up?</p>
+</opt>
+</choice> 
+<p><strong>Question 2</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,[</span><span class="s1">&#39;seed&#39;</span><span class="p">,</span> <span class="s1">&#39;sweetness&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<choice id="2" >
+<opt text="A single value" >
+<p><code class="docutils literal notranslate"><span class="pre">axis=1</span></code> means we can sum up row-wise.</p>
+</opt>
+<opt text="2 values, one for each column">
+<p><code class="docutils literal notranslate"><span class="pre">axis=1</span></code> means we can sum up row-wise.</p>
+</opt>
+<opt text="A value for each row" correct="true" >
+<p>Well done!</p>
+</opt>
+<opt text="<code>Error</code>" >
+<p><code class="docutils literal notranslate"><span class="pre">axis=1</span></code> means we can sum up row-wise. We are calculating the number of <code class="docutils literal notranslate"><span class="pre">True</span></code> values total for <code class="docutils literal notranslate"><span class="pre">Seed</span></code> and <code class="docutils literal notranslate"><span class="pre">Sweetness</span></code>.</p>
+</opt>
+</choice> 
+<p><strong>Question 3</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;shape&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+<choice id="3" >
+<opt text="<code>round</code>" >
+<p><code class="docutils literal notranslate"><span class="pre">axis=1</span></code> means we can sum up row-wise.</p>
+</opt>
+<opt text="<code>13.4</code>">
+<p><code class="docutils literal notranslate"><span class="pre">axis=1</span></code> means we can sum up row-wise.</p>
+</opt>
+<opt text="All the values concatenated together">
+<p>Well done!</p>
+</opt>
+<opt text="<code>Error</code>" correct="true" >
+<p>We cannot take the mean of a column of dtype <code class="docutils literal notranslate"><span class="pre">object</span></code>.</p>
+</opt>
+</choice> 
+</exercise>
+<exercise id="23" title="Splitting a Column" type="slides, video">
+<slides source="module4/module4_23" shot = "1" start="120:47" end="123:26">
+</slides>
+</exercise>
+<exercise id="24" title="Practice Operations with Dataframe columns">
+<p><strong>Instructions:</strong><br />
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.</strong></p>
+<p>Let’s split up a column of dtype <code class="docutils literal notranslate"><span class="pre">object</span></code>.</p>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Split up the column <code class="docutils literal notranslate"><span class="pre">Birth</span> <span class="pre">Date</span></code> into 3 separate columns named <code class="docutils literal notranslate"><span class="pre">Birth_Day</span></code>, <code class="docutils literal notranslate"><span class="pre">Birth_Month</span></code> and <code class="docutils literal notranslate"><span class="pre">Birth_Year</span></code>.</p></li>
+<li><p>Name this new dataframe <code class="docutils literal notranslate"><span class="pre">birthdate_df</span></code>.</p></li>
+<li><p>Save these as columns in the <code class="docutils literal notranslate"><span class="pre">canucks</span></code> dataframe as dtype <code class="docutils literal notranslate"><span class="pre">int</span></code>.</p></li>
+</ul>
+<codeblock id="04_24">
+<ul class="simple">
+<li><p>Are you using <code class="docutils literal notranslate"><span class="pre">str.split('-',</span> <span class="pre">expand='True')</span></code>?</p></li>
+<li><p>Are you saving the columns from the <code class="docutils literal notranslate"><span class="pre">birthdate_df</span></code> back to the <code class="docutils literal notranslate"><span class="pre">canucks</span></code> dataframe?</p></li>
+</ul>
+</codeblock>
+</exercise>
+<exercise id="25" title="What Did We Just Learn?" type="slides, video">
+<slides source="module4/module4_25" shot="8" start="0:36" end="1:15">>
+</slides>
+</exercise>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "UBC-MDS/PPDS_book",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./modules/home"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Hayley Boyce, Mike Gelbart, Tiffany Timbers<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

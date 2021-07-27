@@ -1,0 +1,18 @@
+- file: intro
+
+- part: Modules
+  chapters:
+  - file: modules/module1.md
+    title: "Module 1:  Python & Pandas - An Unexpected Friendship"
+    sections:
+      - file: modules/module1/module1_01
+      - file: modules/module1/module1_03
+
+- part:  Coding Exercises
+  chapters:
+  - file: exercises/module1.md
+
+
+- part: Final Remarks and Attributions
+  chapters:
+    - file: modules_attribution

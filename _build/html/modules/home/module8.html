@@ -1,0 +1,1069 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>&lt;no title&gt; &#8212; Programming in Python for Data Science</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/video.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://hfboyce.github.io/ppds/intro.html/modules/home/module8.html" />
+    <link rel="shortcut icon" href="../../_static/icon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Programming in Python for Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  Modules
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module1.html">
+   Module 1:  Python &amp; Pandas - An Unexpected Friendship
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_01.html">
+     What is a dataframe?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_03.html">
+     What is Pandas?
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Coding Exercises
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module1.html">
+   Module 1: Python &amp; Pandas - An Unexpected Friendship
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_01.html">
+     What is a dataframe?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_03.html">
+     What is Pandas?
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/modules/home/module8.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/UBC-MDS/PPDS_book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/UBC-MDS/PPDS_book/issues/new?title=Issue%20on%20page%20%2Fmodules/home/module8.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/UBC-MDS/PPDS_book/edit/main/modules/home/module8.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <exercise id="0" title="Module Learning Outcomes" type="slides, video">
+<slides source="module8/module8_00" shot= "12" start="0:002" end="0:59">
+</slides>
+</exercise> 
+<exercise id="1" title="NumPy and 1D Arrays" type="slides,video">
+<slides source="module8/module8_01" shot = "2" start="92:32" end="102:1309">
+</slides>
+</exercise>
+<exercise id="2" title="NumPy and Array Questions">
+<p><strong>Question 1</strong></p>
+<p>Which of the following statements is correct?</p>
+<choice id="1" >
+<opt text="Pandas is built using NumPy"  correct="true">
+<p>Nice!</p>
+</opt>
+<opt text="NumPy is built using pandas">
+<p>NumPy arrays are the building blocks of Pandas dataframes</p>
+</opt>
+</choice> 
+<p><strong>Question 2</strong></p>
+<p>Which of the following statements is <em><strong>False</strong></em> ?</p>
+<choice id="2" >
+<opt text="NumPy arrays can be multi-dimensional">
+<p>This is very much true and a very helpful feature.</p>
+</opt>
+<opt text="NumPy contains constants and mathematical functions">
+<p>This is another benefit of NumPy as it contains multiple other functions and constants</p>
+</opt>
+<opt text="NumPy arrays can contain multiple data types"  correct="true">
+<p>NumPy arrays must have elements with a homogenous data type.</p>
+</opt>
+<opt text="<code>numpy.ndarray</code> is a data type">
+<p>We saw that <code class="docutils literal notranslate"><span class="pre">array</span></code> is a data type in the slides.</p>
+</opt>
+</choice>  
+<p><strong>Question 3</strong></p>
+<p>Which verbs would I use to make the following array?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">array</span><span class="p">([</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">])</span>
+</pre></div>
+</div>
+<choice id="3" >
+<opt text="<code>np.linspace(0, 30, 5)</code>"  >
+This would only produce 5 values (all equally spaced from 0 to 30)
+</opt>
+<opt text="<code>np.zeros(7)</code>" >
+This gives an array with only `0` elements. 
+</opt>
+<opt text="<code>np.ones(7)</code>">
+<p>This gives an array with only <code class="docutils literal notranslate"><span class="pre">1</span></code> elements.</p>
+</opt>
+<opt text="<code>np.arange(0, 35, 5)</code>" correct="true" >
+<p>Great!</p>
+</opt>
+</choice> 
+</exercise>
+<exercise id="3" title="More NumPy">
+<p>Look at the <a href="https://numpy.org/doc/stable/reference/routines.math.html" target="_blank">NumPy documentation</a> and identify  which of the following is <strong>not</strong> an existing NumPy function?</p>
+<choice id="1" >
+<opt text="<code>np.degrees()</code>"  >
+Are you looking at the <a href="https://numpy.org/doc/stable/reference/routines.math.html" target="_blank">NumPy documentation</a>?
+</opt>
+<opt text="<code>np.cross()</code>" >
+Are you looking at the <a href="https://numpy.org/doc/stable/reference/routines.math.html" target="_blank">NumPy documentation</a>?
+</opt>
+<opt text="<code>np.interp()</code>">
+<p>Are you looking at the <a href="https://numpy.org/doc/stable/reference/routines.math.html" target="_blank">NumPy documentation</a>?</p>
+</opt>
+<opt text="<code>np.reticulate()</code>" correct="true" >
+<p>Great!</p>
+</opt>
+</choice> 
+</exercise>
+<exercise id="4" title= "NumPy Practice">
+<p><strong>Instructions:</strong><br />
+Running a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.</strong></p>
+<p><em><strong>Make sure you remove the hash (<code class="docutils literal notranslate"><span class="pre">#</span></code>) symbol in the coding portions of this question.  We have commented them so that the line won’t execute and you can test your code after each step.</strong></em></p>
+<p>Let’s explore how Python compares lists and arrays.</p>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Create 2 lists of the same length and save each as objects named  <code class="docutils literal notranslate"><span class="pre">a_list</span></code> and <code class="docutils literal notranslate"><span class="pre">b_list</span></code>.</p></li>
+<li><p>Using Boolean operators, what is outputted when you test to see if they are equal?</p></li>
+</ul>
+<codeblock id="08_04a">
+<ul class="simple">
+<li><p>Are you using <code class="docutils literal notranslate"><span class="pre">[]</span></code> or <code class="docutils literal notranslate"><span class="pre">list()</span></code> notation?</p></li>
+<li><p>Are you using <code class="docutils literal notranslate"><span class="pre">==</span></code> to check if the lists are equal?</p></li>
+</ul>
+</codeblock>
+<choice id="1" >
+<opt text="A single Boolean (Either <code> True</code> or <code>False</code>)"  correct="true" >
+<p>This is checking if the lists are equal.</p>
+</opt>
+<opt text="A list containing a Boolean value for each pair of elements" >
+<p>Use the cell above to help yourself out.</p>
+</opt>
+</choice> 
+<p>Now let’s do the same exercises using arrays.</p>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Create 2 arrays of the same length and save each as objects named <code class="docutils literal notranslate"><span class="pre">a_array</span></code> and <code class="docutils literal notranslate"><span class="pre">b_array</span></code>.</p></li>
+<li><p>Using Boolean operators, what is outputted when you test to see if they are equal?</p></li>
+</ul>
+<codeblock id="08_04b">
+<ul class="simple">
+<li><p>Are you using <code class="docutils literal notranslate"><span class="pre">np.array()</span></code> with parentheses to make your arrays?</p></li>
+<li><p>Are you using <code class="docutils literal notranslate"><span class="pre">==</span></code> to check if the lists are equal?</p></li>
+</ul>
+</codeblock>
+<choice id="2" >
+<opt text="A single Boolean (Either <code> True</code> or <code>False</code>)"   >
+<p>Use the cell above to help yourself out.</p>
+</opt>
+<opt text="An array containing a Boolean value for each pair of elements" correct="true">
+<p>NumPy performs the operation element-wise and compares the elements that share the same index location.</p>
+</opt>
+</choice> 
+<p>This is an example of how useful arrays can be when doing numerical computation! To compare each element in a list would take more code and time for the same result.</p>
+</exercise>
+<exercise id="5" title="Multi-dimensional Arrays" type="slides,video">
+<slides source="module8/module8_05" shot = "2" start="102:19" end="108:37">
+</slides>
+</exercise>
+<exercise id="6" title="Make that Array">
+<p><strong>Question 1</strong></p>
+<p>Given this code, what array would be outputted?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+<choice id="1" >
+<opt text="<code>array([[1., 1., 1.], <br>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;  [1., 1., 1.], <br>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; [1., 1., 1.], <br>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; [1., 1., 1.]])</code>"  correct="true">
+<p>Nice work!</p>
+</opt>
+<opt text="<code>array([[1., 1., 1., 1.],<br>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; [1., 1., 1., 1.],<br>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; [1., 1., 1., 1.]])</code>" >
+<p>Remember that the number of rows precedes the number of columns.</p>
+</opt>
+<opt text="<code>array([[1., 1.],<br>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; [1., 1.],<br>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; [1., 1.]])</code>">
+<p>When we make arrays, it’s not like slicing where we exclude the last value.</p>
+</opt>
+<opt text="<code>array([[1., 1., 1.],<br>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; [1., 1., 1.]])</code>"  >
+<p>When we make arrays, it’s not like slicing where we exclude the last value.</p>
+</opt>
+</choice> 
+</exercise>
+<exercise id="7" title="Shape, Size, and Dimension">
+<p><strong>Question 1</strong></p>
+<p>What is the shape of the following array?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">array</span><span class="p">([[</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">,</span>  <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">],</span>
+       <span class="p">[</span> <span class="mi">8</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">]])</span>
+
+</pre></div>
+</div>
+<choice id="1" >
+<opt text="<code>(7, 2)</code>"  >
+<p>Are you getting your columns and rows mixed up?</p>
+</opt>
+<opt text="<code>(2, 7)</code>" >
+<p>Are you counting the number of columns correctly?</p>
+</opt>
+<opt text="<code>(8, 2)</code>">
+<p>Remember the number of rows precedes the number of columns.</p>
+</opt>
+<opt text="<code>(2, 8)</code>"  correct="true">
+<p>Great!</p>
+</opt>
+</choice> 
+<p><strong>Question 2</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">array</span><span class="p">([[[</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">,</span>  <span class="mi">4</span><span class="p">],</span>
+        <span class="p">[</span> <span class="mi">5</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">,</span>  <span class="mi">8</span><span class="p">,</span>  <span class="mi">9</span><span class="p">]],</span>
+
+       <span class="p">[[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">19</span><span class="p">]],</span>
+
+       <span class="p">[[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">24</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">29</span><span class="p">]]])</span>
+</pre></div>
+</div>
+<p>Given the above array, which code would result in the given output below?</p>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>30
+</pre></div>
+</div>
+<choice id="2" >
+<opt text="<code>.size</code>" correct="true">
+</opt>
+<opt text="<code>.ndim</code>" >
+This gives the dimension of the array, which would be 3, not 30. 
+</opt>
+<opt text="<code>.prod</code>">
+<p>This would result in an error.</p>
+</opt>
+<opt text="<code>.size()" >
+<p>Since these are attributes, there is no need for the parentheses.</p>
+</opt>
+</choice> 
+<p><strong>Question 3</strong></p>
+<p>Give an array with <code class="docutils literal notranslate"><span class="pre">shape</span></code> of <code class="docutils literal notranslate"><span class="pre">(2,3,4,2)</span></code>, What is it’s <code class="docutils literal notranslate"><span class="pre">.ndim</span></code>?</p>
+<choice id="3" >
+<opt text="2"  >
+<p>The values in the tuple do not answer this question.</p>
+</opt>
+<opt text="3" >
+<p>The values in the tuple do not answer this question.</p>
+</opt>
+<opt text="4" correct="true">
+<p>Bingo! You count the length of the tuple to find the dimension.</p>
+</opt>
+<opt text="5" >
+<p>What is the length of the tuple?</p>
+</opt>
+</choice> 
+</exercise>
+<exercise id="8" title="More Arrays Questions">
+<p>Use the following array named <code class="docutils literal notranslate"><span class="pre">hurray</span></code> to answer the next set of questions.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">array</span><span class="p">([[</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">],</span>
+       <span class="p">[</span> <span class="mi">3</span><span class="p">,</span>  <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">],</span>
+       <span class="p">[</span> <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">,</span>  <span class="mi">8</span><span class="p">],</span>
+       <span class="p">[</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">]])</span>
+</pre></div>
+</div>
+<p><strong>Question 1</strong></p>
+<p>Which code would I use to obtain the following output?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]])</span>
+</pre></div>
+</div>
+<choice id="2" >
+<opt text="<code>hurray[:3]</code>"  correct="true">
+<p>Nice!</p>
+</opt>
+<opt text="<code>hurray[,:3])</code>" >
+<p>You are slicing columns when you should be slicing rows.</p>
+</opt>
+<opt text="<code>hurray[,:2])</code>">
+<p>You are slicing columns when you should be slicing rows.</p>
+</opt>
+<opt text="<code>hurray[:2])</code>">
+<p>Remember the last index is excluded.</p>
+</opt>
+</choice> 
+<p><strong>Question 2</strong></p>
+<p>Which code would result in the following output?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">array</span><span class="p">([[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">]])</span>
+</pre></div>
+</div>
+<choice id="3" >
+<opt text="<code>hurray[3:4, 1:]</code>"  >
+<p>Remember that the last element is excluded from the selection.</p>
+</opt>
+<opt text="<code>hurray[2:4, 1:]</code>" >
+<p>Remember the first index value is included and the last value is excluded.</p>
+</opt>
+<opt text="<code>hurray[1:, 3:5]</code>">
+<p>Remember the number of rows precedes the number of columns.</p>
+</opt>
+<opt text="<code>hurray[3:5, 1:]</code>"  correct="true">
+<p>Great!</p>
+</opt>
+</choice> 
+<p><strong>Question 3</strong></p>
+<p>Which code would I use to obtain the following output?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">array</span><span class="p">([[</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">3</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">15</span><span class="p">],</span>
+       <span class="p">[</span> <span class="mi">1</span><span class="p">,</span>  <span class="mi">4</span><span class="p">,</span>  <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">16</span><span class="p">],</span>
+       <span class="p">[</span> <span class="mi">2</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mi">8</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">17</span><span class="p">]])</span>
+</pre></div>
+</div>
+<choice id="4" >
+<opt text="<code>hurray.t</code>"  >
+<p>Uppercase and lowercase characters are not considered equal in Python.</p>
+</opt>
+<opt text="<code>hurray.T</code>" correct="true">
+<p>Nice work!</p>
+</opt>
+<opt text="<code>np.T(hurray)</code>">
+<p><code class="docutils literal notranslate"><span class="pre">np.T</span></code> is not a valid function.</p>
+</opt>
+<opt text="<code>hurray.T()</code>"  >
+<p>Transposing does not require any parentheses.</p>
+</opt>
+</choice> 
+</exercise>
+<exercise id="9" title= "Making an Array">
+<p><strong>Instructions:</strong><br />
+Running a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.</strong></p>
+<p><em><strong>Make sure you remove the hash (<code class="docutils literal notranslate"><span class="pre">#</span></code>) symbol in the coding portions of this question.  We have commented them so that the line won’t execute and you can test your code after each step.</strong></em></p>
+<p>Let’s make an array and find its size and dimension.</p>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Create an array named <code class="docutils literal notranslate"><span class="pre">arr1</span></code> that contains only elements with values 1 and a shape of (3,5).</p></li>
+<li><p>Save the dimension and size of <code class="docutils literal notranslate"><span class="pre">arr1</span></code> in objects named <code class="docutils literal notranslate"><span class="pre">arr1_dim</span></code> and <code class="docutils literal notranslate"><span class="pre">arr1_size</span></code> respectively.</p></li>
+</ul>
+<codeblock id="08_09">
+<ul class="simple">
+<li><p>Are you using <code class="docutils literal notranslate"><span class="pre">.ones((3,5))</span></code>?</p></li>
+<li><p>Are you using <code class="docutils literal notranslate"><span class="pre">.ndim</span></code> and <code class="docutils literal notranslate"><span class="pre">.size</span></code>?</p></li>
+<li><p>Are you saving your objects as the correct names?</p></li>
+</ul>
+</codeblock>
+</exercise>
+<exercise id="10" title= "Array Practice">
+<p><strong>Instructions:</strong><br />
+Running a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.</strong></p>
+<p><em><strong>Make sure you remove the hash (<code class="docutils literal notranslate"><span class="pre">#</span></code>) symbol in the coding portions of this question.  We have commented them so that the line won’t execute and you can test your code after each step.</strong></em></p>
+<p>Let’s make a new array and transform it by slicing and transposing.</p>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Create an array named <code class="docutils literal notranslate"><span class="pre">arr2</span></code> using <code class="docutils literal notranslate"><span class="pre">np.linspace()</span></code> with 6 equally spaced values from 1 to 16 and a shape of (2,3) (You’ll need <code class="docutils literal notranslate"><span class="pre">.reshape()</span></code> for this!).</p></li>
+<li><p>Transpose the array and name it <code class="docutils literal notranslate"><span class="pre">arr2t</span></code>.</p></li>
+<li><p>Finally, slice the new object <code class="docutils literal notranslate"><span class="pre">arr2t</span></code> so it only includes the values 7 and 16. Save this as an object named <code class="docutils literal notranslate"><span class="pre">sliced_arr2t</span></code>.</p></li>
+</ul>
+<codeblock id="08_10">
+<ul class="simple">
+<li><p>Are you using <code class="docutils literal notranslate"><span class="pre">.reshape()</span></code> to change the dimension of np.linspace()?</p></li>
+<li><p>Are you using <code class="docutils literal notranslate"><span class="pre">.T</span></code>?</p></li>
+<li><p>Are you slicing with <code class="docutils literal notranslate"><span class="pre">[:,1]</span></code>?</p></li>
+</ul>
+</codeblock>
+</exercise>
+<exercise id="11" title="Working with Null Values" type="slides,video">
+<slides source="module8/module8_11" shot = "2" start="108:43" end="116:31">
+</slides>
+</exercise>
+<exercise id="12" title="Finding and Dropping Null Values Questions">
+<p><strong>Question 1</strong></p>
+<p>You run <code class="docutils literal notranslate"><span class="pre">.info()</span></code> on the <code class="docutils literal notranslate"><span class="pre">fruit_salad</span></code> dataframe and get the following output.</p>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 10 entries, 0 to 9
+Data columns (total 8 columns):
+ #   Column         Non-Null Count  Dtype  
+---  ------         --------------  -----  
+ 0   name           10 non-null     object 
+ 1   colour         10 non-null     object 
+ 2   location       10 non-null     object 
+ 3   seed           10 non-null     bool   
+ 4   shape          9 non-null      object 
+ 5   sweetness      10 non-null     bool   
+ 6   water_content  8 non-null      float64
+ 7   weight         10 non-null     int64  
+dtypes: bool(2), float64(1), int64(1), object(4)
+memory usage: 628.0+ bytes
+</pre></div>
+</div>
+<p>Which of the columns contain null values?
+<em>Hint: There could be more than one.</em></p>
+<choice id="1" >
+<opt text="<code>name</code>"  >
+<p>This column has all of its 10 rows with non-null values.</p>
+</opt>
+<opt text="<code>location</code>" >
+<p>This column has all of its 10 rows with non-null values.</p>
+</opt>
+<opt text="<code>shape</code>" correct="true">
+<p>Of the 10 rows (entries) only 9 have non-null values meaning this column contains a null value. Are there any others?</p>
+</opt>
+<opt text="<code>water_content</code>" correct="true">
+<p>Of the 10 rows (entries) only 8 have non-null values meaning this column contains a null value. Are there any others?</p>
+</opt>
+<opt text="<code>weight</code>">
+<p>This column has all of its 10 rows with non-null values.</p>
+</opt>
+</choice> 
+<p><strong>Question 2</strong></p>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>     name  height  diameter   age flowering
+0  Cherry    15.0         2  12.0      True
+1     Fir    20.0         4   4.0     False
+2  Willow    25.0         3   2.0      True
+3     Oak     NaN         2   NaN     False
+4     Oak    10.0         5   6.0       NaN
+</pre></div>
+</div>
+<p>Given the dataframe named <code class="docutils literal notranslate"><span class="pre">forest</span></code>, what code would you use to remove only the rows missing from the <code class="docutils literal notranslate"><span class="pre">age</span></code> column?</p>
+<choice id="2" >
+<opt text="<code>forest.drop(columns=['age'])</code>"  >
+<p>This is just dropping the entire <code class="docutils literal notranslate"><span class="pre">age</span></code> column!</p>
+</opt>
+<opt text="<code>pd.dropna(forest['age'])</code>" >
+<p><code class="docutils literal notranslate"><span class="pre">.dropna()</span></code> is not called in this manner.</p>
+</opt>
+<opt text="<code>pd.dropna(columns=['age'])</code>">
+<p>Are you using the correct argument?</p>
+</opt>
+<opt text="<code>forest.dropna(subset=['age'])</code>" correct="true">
+<p>Nice!</p>
+</opt>
+</choice>  
+</exercise>
+<exercise id="13" title="Filling Methods">
+<p>Use the <code class="docutils literal notranslate"><span class="pre">forest</span></code> dataframe below to answer the next 2 questions:</p>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>     name  height  diameter   age flowering
+0  Cherry    15.0         2  12.0      True
+1     Fir    20.0         4   4.0     False
+2  Willow    25.0         3   2.0      True
+3     Oak     NaN         2   3.0     False
+4     Oak    10.0         5   6.0     False
+</pre></div>
+</div>
+<p><strong>Question 1</strong></p>
+<p>Which code will replace the <code class="docutils literal notranslate"><span class="pre">NaN</span></code> value in the <code class="docutils literal notranslate"><span class="pre">height</span></code> column so the new dataframe looks like the one below?</p>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>     name  height  diameter  age  flowering
+0  Cherry    15.0         2   12       True
+1     Fir    20.0         4    4      False
+2  Willow    25.0         3    2       True
+3     Oak    17.5         2    3      False
+4     Oak    10.0         5    6      False
+</pre></div>
+</div>
+<choice id="1" >
+<opt text="<code>forest.fillna(value = forest['height'].mean())</code>"  correct="true">
+<p>Great!</p>
+</opt>
+<opt text="<code>forest.fillna(value = forest['height'].max())</code>" >
+<p>The max value in the <code class="docutils literal notranslate"><span class="pre">height</span></code> column is <code class="docutils literal notranslate"><span class="pre">25</span></code>, not <code class="docutils literal notranslate"><span class="pre">17.5</span></code>.</p>
+</opt>
+<opt text="<code>forest.fillna(method = 'bfill')</code>">
+<p>This value isn’t an option in the dataframe and would not be possible with <code class="docutils literal notranslate"><span class="pre">bfill</span></code>.</p>
+</opt>
+<opt text="<code>forest.fillna(method = 'ffill')</code>" >
+<p>This value isn’t an option in the dataframe and would not be possible with <code class="docutils literal notranslate"><span class="pre">ffill</span></code>.</p>
+</opt>
+</choice>  
+<p><strong>Question 2</strong></p>
+<p>Which code will replace the <code class="docutils literal notranslate"><span class="pre">NaN</span></code> value in the <code class="docutils literal notranslate"><span class="pre">height</span></code> column so the new dataframe looks like the one below?</p>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>     name  height  diameter  age  flowering
+0  Cherry    15.0         2   12       True
+1     Fir    20.0         4    4      False
+2  Willow    25.0         3    2       True
+3     Oak    10.0         2    3      False
+4     Oak    10.0         5    6      False
+</pre></div>
+</div>
+<choice id="2" >
+<opt text="<code>forest.fillna(value = 13)">
+<p>The <code class="docutils literal notranslate"><span class="pre">NaN</span></code> value is being filled with a value of 10, not 13.</p>
+</opt>
+<opt text="<code>forest.fillna(value = forest['height'].max())</code>" >
+<p>The max value in the <code class="docutils literal notranslate"><span class="pre">height</span></code> column is <code class="docutils literal notranslate"><span class="pre">25</span></code>, not <code class="docutils literal notranslate"><span class="pre">10</span></code>.</p>
+</opt>
+<opt text="<code>forest.fillna(method = 'bfill')</code>" correct="true">
+<p>Perfect!</p>
+</opt>
+<opt text="<code>forest.fillna(method = 'ffill')</code>" >
+<p><code class="docutils literal notranslate"><span class="pre">ffill</span></code> has the <code class="docutils literal notranslate"><span class="pre">NaN</span></code> value adopt the same value and the row that precedes it.</p>
+</opt>
+</choice>  
+</exercise>
+<exercise id="14" title= "Practice Filling Null Values">
+<p><strong>Instructions:</strong><br />
+Running a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.</strong></p>
+<p><em><strong>Make sure you remove the hash (<code class="docutils literal notranslate"><span class="pre">#</span></code>) symbol in the coding portions of this question.  We have commented them so that the line won’t execute and you can test your code after each step.</strong></em></p>
+<p>Let’s replace the values missing in the <code class="docutils literal notranslate"><span class="pre">canucks</span></code> dataframe with the salary mean.</p>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Replace the <code class="docutils literal notranslate"><span class="pre">NaN</span></code> values in the dataframe with the mean salary value.</p></li>
+<li><p>Save this as a new dataframe named <code class="docutils literal notranslate"><span class="pre">canucks_altered</span></code>.</p></li>
+<li><p>Display the <code class="docutils literal notranslate"><span class="pre">canucks_altered</span></code> dataframe.</p></li>
+</ul>
+<codeblock id="08_14">
+<ul class="simple">
+<li><p>Are you using <code class="docutils literal notranslate"><span class="pre">.fillna()</span></code>?</p></li>
+<li><p>Are you using the argument <code class="docutils literal notranslate"><span class="pre">value=canucks['Salary].mean()</span></code>?</p></li>
+</ul>
+</codeblock>
+</exercise>
+<exercise id="15" title= "Practice Identifying Null Values">
+<p><strong>Instructions:</strong><br />
+Running a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.</strong></p>
+<p><em><strong>Make sure you remove the hash (<code class="docutils literal notranslate"><span class="pre">#</span></code>) symbol in the coding portions of this question.  We have commented them so that the line won’t execute and you can test your code after each step.</strong></em></p>
+<p>Let’s practice using <code class="docutils literal notranslate"><span class="pre">.isnull()</span></code> in our data processing using the <code class="docutils literal notranslate"><span class="pre">canucks</span></code> dataset from earlier in this course.</p>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Identify any columns with null values in the <code class="docutils literal notranslate"><span class="pre">canucks</span></code> dataframe with <code class="docutils literal notranslate"><span class="pre">.info()</span></code> and save this as <code class="docutils literal notranslate"><span class="pre">canucks_info</span></code>.</p></li>
+<li><p>Create a new column in the dataframe named <code class="docutils literal notranslate"><span class="pre">Wealth</span></code> where all the values equal <code class="docutils literal notranslate"><span class="pre">&quot;comfortable&quot;</span></code>.</p></li>
+<li><p>Name the new dataframe <code class="docutils literal notranslate"><span class="pre">canucks_comf</span></code>.</p></li>
+<li><p>Do conditional value replacement, where if the value in the <code class="docutils literal notranslate"><span class="pre">Salary</span></code> column is null, we replace <code class="docutils literal notranslate"><span class="pre">&quot;comfortable&quot;</span></code> with <code class="docutils literal notranslate"><span class="pre">&quot;unknown&quot;</span></code>.</p></li>
+<li><p>Display the new <code class="docutils literal notranslate"><span class="pre">canucks_comf</span></code> dataframe.</p></li>
+</ul>
+<codeblock id="08_15">
+<ul class="simple">
+<li><p>Are you using <code class="docutils literal notranslate"><span class="pre">canucks.info()</span></code>?</p></li>
+<li><p>Are you creating <code class="docutils literal notranslate"><span class="pre">canucks_comf</span></code> with <code class="docutils literal notranslate"><span class="pre">canucks.assign(Wealth</span> <span class="pre">=</span> <span class="pre">&quot;comfortable&quot;)</span></code>?</p></li>
+<li><p>Are you using <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> to replace the values in the <code class="docutils literal notranslate"><span class="pre">Wealth</span></code> column?</p></li>
+<li><p>Are you using <code class="docutils literal notranslate"><span class="pre">canucks_comf['Salary'].isnull()</span></code> as your condition in <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code>?</p></li>
+</ul>
+</codeblock>
+</exercise>
+<exercise id="16" title="Working with Dates and Time" type="slides,video">
+<slides source="module8/module8_16" shot = "2" start="116:38" end="127:24">
+</slides>
+</exercise>
+<exercise id="17" title="Datetime Questions">
+<p><strong>Question 1</strong></p>
+<p>Which of the following dtypes measures an interval of time?</p>
+<choice id="1" >
+<opt text="Timestamp"  >
+<p>This is a snapshot in time.</p>
+</opt>
+<opt text="timedelta" correct="true">
+<p>Great work!</p>
+</opt>
+<opt text="datetime">
+<p>This is a dtype not a measurement</p>
+</opt>
+</choice> 
+<p><strong>Question 2</strong></p>
+<p>What code would you use to create a column with the name of the month from a datetime column?</p>
+<choice id="2" >
+<opt text="<code>td.month</code>" >
+<p>This will produce a numerical value, not the month name.</p>
+</opt>
+<opt text="<code>.month</code>">
+<p>This will produce a numerical value for a single Timestamp instead of a column.</p>
+</opt>
+<opt text="<code>td.month_name()</code>" correct="true">
+<p>You got it!</p>
+</opt>
+<opt text="<code>td.month_name</code>">
+<p>So close, but in this case, we need parentheses.</p>
+</opt>
+</choice>  
+<p><strong>Question 3</strong></p>
+<p>Which verb do we use to find the time interval between rows?</p>
+<choice id="3" >
+<opt text="<code>.diff()</code>" correct="true">
+<p>Way to go!</p>
+</opt>
+<opt text="<code>.difference()</code>">
+<p>Not quite.</p>
+</opt>
+<opt text="<code>differ()</code>" >
+<p>This isn’t the function we are looking for.</p>
+</opt>
+<opt text="<code>.differ</code>">
+<p>Maybe, review the notes a bit more before proceeding.</p>
+</opt>
+</choice> 
+</exercise>
+<exercise id="18" title= "Practice Processing Dates">
+<p><strong>Instructions:</strong><br />
+Running a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.</strong></p>
+<p><em><strong>Make sure you remove the hash (<code class="docutils literal notranslate"><span class="pre">#</span></code>) symbol in the coding portions of this question.  We have commented them so that the line won’t execute and you can test your code after each step.</strong></em></p>
+<p>Use the output of the following code chunk to help answer the next question.</p>
+<codeblock id="hockey_players">
+</codeblock>
+<p>Let’s read in data and parse a datetime column as well as calculate the hockey team’s oldest and youngest player.</p>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Read in the <code class="docutils literal notranslate"><span class="pre">canucks.csv</span></code> file from the data folder and parse the <code class="docutils literal notranslate"><span class="pre">Birth</span> <span class="pre">Date</span></code> column. Save this as an object named <code class="docutils literal notranslate"><span class="pre">canucks</span></code>.</p></li>
+<li><p>Find the oldest player’s date of birth and save the Timestamp as <code class="docutils literal notranslate"><span class="pre">oldest</span></code>.</p></li>
+<li><p>Find the youngest player’s date of birth and save the Timestamp as <code class="docutils literal notranslate"><span class="pre">youngest</span></code>.</p></li>
+<li><p>Find the age difference between the two players in years to 2 decimal places. Save this as an object name <code class="docutils literal notranslate"><span class="pre">age_range</span></code>.</p></li>
+<li><p>Display <code class="docutils literal notranslate"><span class="pre">age_range</span></code>.</p></li>
+</ul>
+<codeblock id="08_18">
+<ul class="simple">
+<li><p>Are you using the argument <code class="docutils literal notranslate"><span class="pre">parse_dates</span></code> while reading in the data?</p></li>
+<li><p>The oldest player has the <code class="docutils literal notranslate"><span class="pre">min()</span></code> date of birth.</p></li>
+<li><p>The youngest player has the <code class="docutils literal notranslate"><span class="pre">max()</span></code> date of birth.</p></li>
+<li><p>Are you subtracting the min value from the max value?</p></li>
+<li><p>Are you rounding to 2 decimal places?</p></li>
+</ul>
+</codeblock>
+</exercise>
+<exercise id="19" title="Introduction to Working with Strings" type="slides,video">
+<slides source="module8/module8_19" shot = "2" start="127:21" end="133:35">
+</slides>
+</exercise>
+<exercise id="20" title="String Questions">
+<p><strong>Question 1</strong></p>
+<p>What must we add to our string functions when processing columns of dtype <code class="docutils literal notranslate"><span class="pre">object</span></code>?</p>
+<choice id="1" >
+<opt text="<code>.ts</code>"  >
+<p>We use this for functions that work with time stamps</p>
+</opt>
+<opt text="<code>.str</code>" correct="true">
+<p>Great work!</p>
+</opt>
+<opt text="<code>.st</code>">
+<p>this is not quite right</p>
+</opt>
+</choice> 
+<p><strong>Question 2</strong></p>
+<p>Which function will remove leading or trailing characters from a string?</p>
+<choice id="2" >
+<opt text="<code>.split()</code>" >
+<p>This will produce a numerical value, not the month name.</p>
+</opt>
+<opt text="<code>.strip()</code>" correct="true">
+<p>Nice!</p>
+</opt>
+<opt text="<code>.string()</code>">
+<p>This isn’t a possible method.</p>
+</opt>
+<opt text="<code>.rstrip()</code>">
+<p>This function removes the trailing character specified in the argument.</p>
+</opt>
+</choice>  
+</exercise>
+<exercise id="21" title="Identify the String Code">  
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>           name   colour location   seed  shape  sweetness  water_content  weight
+0         apple      red   canada   True  round       True             84     100
+1        banana   yellow   mexico  False   long       True             75     120
+2    cantaloupe   orange    spain   True  round       True             90    1360
+3  dragon-fruit  magenta    china   True  round      False             96     600
+4    elderberry   purple  austria  False  round       True             80       5
+5           fig   purple   turkey  False   oval      False             78      40
+6         guava    green   mexico   True   oval       True             83     450
+7   huckleberry     blue   canada   True  round       True             73       5
+8          kiwi    brown    china   True  round       True             80      76
+9         lemon   yellow   mexico  False   oval      False             83      65
+
+</pre></div>
+</div>
+<p>Given the dataframe above named <code class="docutils literal notranslate"><span class="pre">fruit_salad</span></code>,  which code would produce the following output?<br />
+<em>Hint: Look at the <code class="docutils literal notranslate"><span class="pre">location</span></code> column.</em></p>
+<center><img src='/module8/output.png' width="80%"></center>
+<br>
+<choice id="1" >
+<opt text="<code>fruit_salad.assign(location=fruit_salad['location'].str.capitalize())</code>" correct="true">
+<p>Way to go!</p>
+</opt>
+<opt text="<code>fruit_salad.assign(location=fruit_salad['location'].capitalize())</code>">
+<p>This would result in an error.</p>
+</opt>
+<opt text="<code>fruit_salad.assign(location=fruit_salad['shape'].str.upper())</code>" >
+<p>The <code class="docutils literal notranslate"><span class="pre">shape</span></code> column doesn’t look uppercase to me.</p>
+</opt>
+<opt text="<code>fruit_salad.assign(location=fruit_salad['shape'].upper()</code>">
+<p>You seem to be missing an important part of you code.</p>
+</opt>
+</choice> 
+</exercise>
+<exercise id="22" title= "Practice Handling Strings">
+<p><strong>Instructions:</strong><br />
+Running a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.</strong></p>
+<p><em><strong>Make sure you remove the hash (<code class="docutils literal notranslate"><span class="pre">#</span></code>) symbol in the coding portions of this question.  We have commented them so that the line won’t execute and you can test your code after each step.</strong></em></p>
+<p>Use the output of the following code chunk to help answer the next question.</p>
+<codeblock id="hockey_players">
+</codeblock>
+<p>Let’s transform some of the columns in your canucks dataset. Let’s also see how many of the players have multiple <code class="docutils literal notranslate"><span class="pre">T</span></code>’s in their name.</p>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Convert the <code class="docutils literal notranslate"><span class="pre">Position</span></code> and <code class="docutils literal notranslate"><span class="pre">Country</span></code> columns into uppercase and save this in a dataframe named <code class="docutils literal notranslate"><span class="pre">canucks_upper</span></code>.</p></li>
+<li><p>Create a new column in the <code class="docutils literal notranslate"><span class="pre">canucks_upper</span></code> dataframe named <code class="docutils literal notranslate"><span class="pre">number_ts</span></code> where you count the total number of times the letter T (lowercase or uppercase) appears in their name.</p></li>
+<li><p>Save this dataframe named as <code class="docutils literal notranslate"><span class="pre">canucks_upper_ts</span></code>.</p></li>
+<li><p>How many players have multiple T’s in their name?</p></li>
+</ul>
+<codeblock id="08_22">
+<ul class="simple">
+<li><p>Are you using <code class="docutils literal notranslate"><span class="pre">.assign</span></code> and <code class="docutils literal notranslate"><span class="pre">.upper()</span></code>?</p></li>
+<li><p>You will have to convert the lower to <code class="docutils literal notranslate"><span class="pre">.lower()</span></code> first and then <code class="docutils literal notranslate"><span class="pre">.count('t')</span></code></p></li>
+<li><p>The number of players with <code class="docutils literal notranslate"><span class="pre">number_ts</span></code> greater than two can be calculated by filtering on that column and getting the <code class="docutils literal notranslate"><span class="pre">.shape</span></code> of the dataframe.</p></li>
+</ul>
+</codeblock>
+<p>How many players have the letter “T” in their name more than once?</p>
+<choice id="1" >
+<opt text="3"   >
+<p>There are more than that! Are you using <code class="docutils literal notranslate"><span class="pre">.shape[0]</span></code>?</p>
+</opt>
+<opt text="5" >
+<p>This is not right. Maybe check that you are counting both upper and lower cases of “T”.</p>
+</opt>
+<opt text="6" correct="True">
+<p>Great!</p>
+</opt>
+<opt text="7" >
+<p>Are you filtering the dataset correctly?</p>
+</opt>
+</choice> 
+</exercise>
+<exercise id="23" title="More Advanced String Processing" type="slides,video">
+<slides source="module8/module8_23" shot = "2" start="133:5111" end="138:00">
+</slides>
+</exercise>
+<exercise id="24" title="Advanced String Questions">
+<p><strong>Question 1</strong></p>
+<p>Which of the following would you use to replace string patterns with another string within a dataframe column?</p>
+<choice id="1" >
+<opt text="<code>.replace()</code>">
+<p>This would result in an error.</p>
+</opt>
+<opt text="<code>str.replace()</code>"   correct="true">
+<p>Way to go!</p>
+</opt>
+<opt text="<code>.contains()</code>" >
+<p>This checks if a substring is contained in a larger string.</p>
+</opt>
+<opt text="<code>.str.contains()</code>">
+<p>Unfortunately this is not the right verb in this case.</p>
+</opt>
+</choice> 
+<p><strong>Question 2</strong></p>
+<p>Is the following statement True or False?</p>
+<p><em>The <code class="docutils literal notranslate"><span class="pre">.contains()</span></code> verb will output a new dataframe that matches any values in a specific column and replaces it with your desired value.</em></p>
+<choice id="2" >
+<opt text="True" >
+<p><code class="docutils literal notranslate"><span class="pre">.contains()</span></code> actually will output a Boolean Series based on whether a given pattern is contained within a string of a Series.</p>
+</opt>
+<opt text="False" correct="true">
+<p>Great! You knew that it outputs a Boolean Series! The value replacement is using <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code>.</p>
+</opt>
+</choice>  
+</exercise>
+<exercise id="25" title="Strings">
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>           name   colour location   seed  shape  sweetness  water_content  weight
+0         apple      red   canada   True  round       True             84     100
+1        banana   yellow   mexico  False   long       True             75     120
+2    cantaloupe   orange    spain   True  round       True             90    1360
+3  dragon-fruit  magenta    china   True  round      False             96     600
+4    elderberry   purple  austria  False  round       True             80       5
+5           fig   purple   turkey  False   oval      False             78      40
+6         guava    green   mexico   True   oval       True             83     450
+7   huckleberry     blue   canada   True  round       True             73       5
+8          kiwi    brown    china   True  round       True             80      76
+9         lemon   yellow   mexico  False   oval      False             83      65
+
+</pre></div>
+</div>
+<p>Given the dataframe above named <code class="docutils literal notranslate"><span class="pre">fruit_salad</span></code>,  which code would produce the following dataframe with the new column <code class="docutils literal notranslate"><span class="pre">berry</span></code>?</p>
+<center><img src='/module8/output25.png' width="80%"></center> 
+<choice id="1" >
+<opt text="<code>fruit_salad.assign(name = fruit_salad['name'].contains('berry'))</code>">
+<p>This doesn’t contain the necessary <code class="docutils literal notranslate"><span class="pre">str.</span></code> and it appears to edit the <code class="docutils literal notranslate"><span class="pre">name</span></code> column.</p>
+</opt>
+<opt text="<code>fruit_salad.assign(name = fruit_salad['name'].str.contains('berry').replace(True))</code>">
+<p>Not the correct way of making a new column.</p>
+</opt>
+<opt text="<code>fruit_salad.assign(berry = fruit_salad['name'].str.replace('berry', True))</code>" >
+<p>This is not the correct syntax for this output.</p>
+</opt>
+<opt text="<code>fruit_salad.assign(berry = fruit_salad['name'].str.contains('berry'))</code>"  correct="true">
+<p>Nice work.</p>
+</opt>
+</choice> 
+</exercise>
+<exercise id="26" title= "Processing Strings in a Dataframe">
+<p><strong>Instructions:</strong><br />
+Running a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.</strong></p>
+<p><em><strong>Make sure you remove the hash (<code class="docutils literal notranslate"><span class="pre">#</span></code>) symbol in the coding portions of this question.  We have commented them so that the line won’t execute and you can test your code after each step.</strong></em></p>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">lego</span></code> dataframe to help answer the next question.</p>
+<codeblock id="lego_sets">
+</codeblock>
+<p>Let’s practice using the verbs we learned from the lesson to process a string column in our Lego dataset.</p>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Convert the <code class="docutils literal notranslate"><span class="pre">name</span></code> column in the <code class="docutils literal notranslate"><span class="pre">lego</span></code> dataset to lowercase and overwrite the dataframe by saving it as an object named <code class="docutils literal notranslate"><span class="pre">lego</span></code>.</p></li>
+<li><p>Filter the dataset to find all the Lego sets that contain <code class="docutils literal notranslate"><span class="pre">&quot;weetabix&quot;</span></code> in the <code class="docutils literal notranslate"><span class="pre">name</span></code> column.</p></li>
+<li><p>Save this as an object named <code class="docutils literal notranslate"><span class="pre">lego_weetabix</span></code>.</p></li>
+<li><p>Replace the word<code class="docutils literal notranslate"> <span class="pre">&quot;weetabix</span></code>” in the <code class="docutils literal notranslate"><span class="pre">name</span></code> column of the <code class="docutils literal notranslate"><span class="pre">lego_wetabix</span></code> dataframe with the string <code class="docutils literal notranslate"><span class="pre">&quot;cereal-brand&quot;</span></code>.</p></li>
+<li><p>Save this in an object called <code class="docutils literal notranslate"><span class="pre">lego_cereal</span></code>.</p></li>
+<li><p>If the row contains the word <code class="docutils literal notranslate"><span class="pre">&quot;promotional&quot;</span></code> in the <code class="docutils literal notranslate"><span class="pre">name</span></code> column, change the entire value to <code class="docutils literal notranslate"><span class="pre">&quot;cereal-brand</span> <span class="pre">freebie&quot;</span></code>.</p></li>
+<li><p>Display <code class="docutils literal notranslate"><span class="pre">lego_cereal</span></code>.</p></li>
+</ul>
+<codeblock id="08_26">
+<ul class="simple">
+<li><p>Are you using <code class="docutils literal notranslate"><span class="pre">.assign()</span></code> and <code class="docutils literal notranslate"><span class="pre">.lower()</span></code> to convert the name column to lowercase?</p></li>
+<li><p>Are you using <code class="docutils literal notranslate"><span class="pre">str.contains('weetabix')</span></code> to filter all the rows?</p></li>
+<li><p>You should be using <code class="docutils literal notranslate"><span class="pre">assign()</span></code> with <code class="docutils literal notranslate"><span class="pre">str.replace('weetabix',</span> <span class="pre">'cereal-brand')</span></code> to replace “weetabix”.</p></li>
+<li><p>You should be using  <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> and <code class="docutils literal notranslate"><span class="pre">str.contains('promotional')</span></code> (and a single <code class="docutils literal notranslate"><span class="pre">=</span></code>) to assign new row values.</p></li>
+</ul>
+</codeblock>
+</exercise>
+<exercise id="27" title="What Did We Just Learn?" type="slides, video">
+<slides source="module8/module8_end" shot="12" start="1:005" end="1:41">>
+</slides>
+</exercise>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "UBC-MDS/PPDS_book",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./modules/home"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Hayley Boyce, Mike Gelbart, Tiffany Timbers<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

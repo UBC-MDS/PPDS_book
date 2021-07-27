@@ -1,0 +1,846 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>&lt;no title&gt; &#8212; Programming in Python for Data Science</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/video.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://hfboyce.github.io/ppds/intro.html/modules/home/module3.html" />
+    <link rel="shortcut icon" href="../../_static/icon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Programming in Python for Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  Modules
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module1.html">
+   Module 1:  Python &amp; Pandas - An Unexpected Friendship
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_01.html">
+     What is a dataframe?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_03.html">
+     What is Pandas?
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Coding Exercises
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module1.html">
+   Module 1: Python &amp; Pandas - An Unexpected Friendship
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_01.html">
+     What is a dataframe?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_03.html">
+     What is Pandas?
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/modules/home/module3.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/UBC-MDS/PPDS_book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/UBC-MDS/PPDS_book/issues/new?title=Issue%20on%20page%20%2Fmodules/home/module3.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/UBC-MDS/PPDS_book/edit/main/modules/home/module3.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <exercise id="0" title="Module Learning Outcomes" type="slides,video">
+<slides source="module3/module3_00" shot="7" start="0:001" end="0:24">
+</slides>
+</exercise> 
+<exercise id="1" title="What is Tidy Data?" type="slides,video">
+<slides source="module3/module3_01" shot="1" start="43:56" end="47:32">
+</slides>
+</exercise>
+<exercise id="2" title="Tidy Data Questions">
+<p><strong>Question 1</strong></p>
+<p>The same data may be considered tidy for different shaped dataframes depending on the statistical questions .</p>
+<choice id="1" >
+<opt text='True' correct="true">
+<p>Good job!</p>
+</opt>
+<opt text= 'False' >
+<p>Tidy data depends quite often depends on the statistical question.</p>
+</opt>
+</choice> 
+<p><strong>Question 2</strong></p>
+<p>Which of the following does <strong>not</strong> characterize a tidy dataset?</p>
+<choice id="2" >
+<opt text="Each row is a single observation">
+<p>You may want to look over this before moving forward.</p>
+</opt>
+<opt text="Each column is a single variable">
+<p>You may want to look over this before moving forward.</p>
+</opt>
+<opt text="Each value is a single cell" >
+<p>You may want to look over this before moving forward.</p>
+</opt>
+<opt text="There are no <code>NaN</code> values in the dataset" correct="true">
+<p>You are right.  It is possible to still have tidy data with missing values.</p>
+</opt>
+</choice> 
+</exercise>
+<exercise id="3" title="Is it Tidy I ?">
+<p>Given the 3 tidy data criteria, would this dataframe be defined as tidy?</p>
+<center> <img src='/module3/Q3.png'  alt="404 image"/></center>
+<choice>
+<opt text="Yes">
+<p>Not quite!  Take a specific look at the column named <code class="docutils literal notranslate"><span class="pre">special_attack_defense</span></code>. Is this meeting criterion #3?</p>
+</opt>
+<opt text= "No" correct="true">
+<p>Good job!  Did you notice that <code class="docutils literal notranslate"><span class="pre">special_attack_defense</span></code> had two values per cell defying criterion #3?</p>
+</opt>
+</choice> 
+</exercise>
+<exercise id="4" title="Is it Tidy II?">
+<p>Given the 3 tidy data criteria, would this dataframe be defined as tidy?</p>
+<center> <img src='/module3/Q4.png'  alt="404 image"/></center>
+<choice>
+<opt text="Yes">
+<p>Not quite!  Do you notice anything about the rows?  Are they meeting Criterion #1?</p>
+</opt>
+<opt text= "No" correct="true">
+<p>Good job!  You must have seen the duplicate rows of <code class="docutils literal notranslate"><span class="pre">Ivysaur</span></code>, <code class="docutils literal notranslate"><span class="pre">Charmeleon</span></code> and <code class="docutils literal notranslate"><span class="pre">Squirtle</span></code>.</p>
+</opt>
+</choice> 
+</exercise>
+<exercise id="5" title="Statistical Questions and Tidy Data" type="slides,video">
+<slides source="module3/module3_05" shot="1" start="47:348" end="49:49">
+</slides>
+</exercise>
+<exercise id="6" title="Which is Tidy?">
+<p>Which of the following would be considered tidy data for the following statistical questions:</p>
+<p><em><strong>What factors are associated with fruit with seeds?</strong></em></p>
+<p><strong>Dataframe A</strong></p>
+<center> <img src='/module3/Q5a.png'  alt="404 image" width="60%"/></center>
+<p><strong>Dataframe B</strong></p>
+<center> <img src='/module3/Q5b.png'  alt="404 image" width="60%"/></center>
+<br>
+<choice>
+<opt text="Dataframe A">
+<p>Not quite! Maybe try re-reading over the content.</p>
+</opt>
+<opt text= "Dataframe B" correct="true">
+<p>Good job!</p>
+</opt>
+</choice> 
+</exercise>
+<exercise id="7" title="Tidy Data True or False">
+<p>Is the following statement true or false?</p>
+<p><em>A long dataframe is always a tidy dataframe.</em></p>
+<choice>
+<opt text="True">
+<p>Did you read this section?</p>
+</opt>
+<opt text= "False" correct="true">
+<p>Good job! Of course it depends on the statistical question!</p>
+</opt>
+</choice> 
+</exercise>
+<exercise id="8" title="Reshaping with Pivot" type="slides,video">
+<slides source="module3/module3_08" shot="1" start="49:50" end="55:47">
+</slides>
+</exercise>
+<exercise id="9" title="Pivoting Questions">
+<p><strong>Question 1</strong><br />
+We use <code class="docutils literal notranslate"><span class="pre">.pivot()</span></code> to convert a wider dataframe with multiple columns into a longer dataframe with fewer columns.</p>
+<choice id="1" >
+<opt text="True" >
+<p>The reverse is true.  Please review this section before continuing.</p>
+</opt>
+<opt text="False" correct="true">
+<p>Great work!</p>
+</opt>
+</choice> 
+<p><strong>Question 2</strong><br />
+Which of the following will reset your index?</p>
+<choice id="2" >
+<opt text="<code>.index_reset()</code>">
+<p>You may want to look over this before moving forward.</p>
+</opt>
+<opt text="<code>.reset_index()</code>" correct="true">
+<p>Good job!</p>
+</opt>
+</choice> 
+</exercise>
+<exercise id="10" title="Applying Pivot">
+<p><strong>Instructions:</strong><br />
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.</strong></p>
+<p>Let’s take a look at the new dataset named <code class="docutils literal notranslate"><span class="pre">lego</span></code>.</p>
+<codeblock id="lego_untidy">
+</codeblock>
+<p>Let’s convert the dataframe <code class="docutils literal notranslate"><span class="pre">lego</span></code> into a wider dataframe using <code class="docutils literal notranslate"><span class="pre">.pivot()</span></code>.</p>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Convert the untidy data into tidy data using <code class="docutils literal notranslate"><span class="pre">.pivot()</span></code>.</p></li>
+<li><p>Don’t forget to reset your index.</p></li>
+<li><p>Name the new dataframe <code class="docutils literal notranslate"><span class="pre">tidied_lego</span></code>.</p></li>
+<li><p>Save the mean number of parts (<code class="docutils literal notranslate"><span class="pre">num_parts</span></code>) of the Lego sets in an object named <code class="docutils literal notranslate"><span class="pre">set_parts_mean</span></code>. (We’ve added a verb named <code class="docutils literal notranslate"><span class="pre">.round()</span></code> to round to the nearest whole number)</p></li>
+</ul>
+<codeblock id="03_10">
+<ul class="simple">
+<li><p>Are you pivoting the correct column named <code class="docutils literal notranslate"><span class="pre">lego_info</span></code> with <code class="docutils literal notranslate"><span class="pre">values='value'</span></code>?</p></li>
+<li><p>Are you resetting your index after you pivot?</p></li>
+</ul>
+</codeblock>
+</exercise>
+<exercise id="11" title="Reshaping with Pivot Table" type="slides,video">
+<slides source="module3/module3_11" shot="1" start="55:49" end="61:37">
+</slides>
+</exercise>
+</exercise>
+<exercise id="12" title="Pivot Table Questions">
+<p><strong>Question 1</strong><br />
+Which of the following does <em><strong>NOT</strong></em> continue to execute when there are duplicate rows in the dataframe?</p>
+<choice id="1" >
+<opt text="<code>.pivot_table()</code>">
+<p>You may want to look over this before moving forward.</p>
+</opt>
+<opt text="<code>.pivot()</code>" correct="true">
+<p>Great studying!</p>
+</opt>
+</choice> 
+<p><strong>Question 2</strong><br />
+What must we do before we use pivot table?</p>
+<choice id="2" >
+<opt text="Check for duplicate values of the columns in the arguments <code>index</code> and <code>columns</code>" correct="true" >
+<p>This is extremely important so we don’t get averaging values! Well done.</p>
+</opt>
+<opt text="Remove any <code>NaN</code>s from the dataframe">
+<p>This is extremely important so you will want to look over this before moving forward.</p>
+</opt>
+</choice> 
+</exercise>
+<exercise id="13" title="Applying Pivot Table">
+<p><strong>Instructions:</strong><br />
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.</strong></p>
+<p><em><strong>Make sure you remove the hash (<code class="docutils literal notranslate"><span class="pre">#</span></code>) symbol in the coding portions of this question.  We have commented them so that the line won’t execute and you can test your code after each step.</strong></em></p>
+<p>Let’s convert the dataframe <code class="docutils literal notranslate"><span class="pre">lego</span></code> into wider data but this time preserve all the columns in the dataframe by using <code class="docutils literal notranslate"><span class="pre">.pivot_table()</span></code>.</p>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Convert the untidy data into tidy data using <code class="docutils literal notranslate"><span class="pre">.pivot_table()</span></code> making sure to keep all the columns.</p></li>
+<li><p>Assign your new dataframe <code class="docutils literal notranslate"><span class="pre">set_num</span></code> as your index.</p></li>
+<li><p>Name the new dataframe <code class="docutils literal notranslate"><span class="pre">tidied_lego</span></code>.</p></li>
+<li><p>Find the mean number of parts for each production year and save it in an object name <code class="docutils literal notranslate"><span class="pre">year_parts_mean</span></code>. (We’ve added a verb named <code class="docutils literal notranslate"><span class="pre">.round()</span></code> to round to the nearest whole number)</p></li>
+</ul>
+<codeblock id="03_13">
+<ul class="simple">
+<li><p>Are you using the correct arguments such as <code class="docutils literal notranslate"><span class="pre">index</span></code>, <code class="docutils literal notranslate"><span class="pre">columns</span></code>, and <code class="docutils literal notranslate"><span class="pre">values</span></code>?</p></li>
+<li><p>Are you pivoting the correct column named <code class="docutils literal notranslate"><span class="pre">lego_info</span></code> with <code class="docutils literal notranslate"><span class="pre">values='value'</span></code>?</p></li>
+<li><p>Are you resetting your index again after you pivot?</p></li>
+</ul>
+</codeblock>
+<p>Which year has the highest average number of parts?<br />
+<em>Hint: use <code class="docutils literal notranslate"><span class="pre">.sort_values()</span></code>.</em></p>
+<choice id="1" >
+<opt text='2016'>
+<p>Are your sorting by <code class="docutils literal notranslate"><span class="pre">ascending=False</span></code>?</p>
+</opt>
+<opt text='2006'>
+<p>Are your sorting by <code class="docutils literal notranslate"><span class="pre">ascending=False</span></code>?</p>
+</opt>
+<opt text= '2017' correct="true">
+<p>Good job!</p>
+</opt>
+<opt text='2007'>
+<p>Are your sorting by <code class="docutils literal notranslate"><span class="pre">ascending=False</span></code>?</p>
+</opt>
+</choice> 
+</exercise>
+<exercise id="14" title="Reshaping with Melt" type="slides,video">
+<slides source="module3/module3_14" shot="1" start="61:39" end="63:50">
+</slides>
+</exercise>
+<exercise id="15" title="Melting Questions">
+<p><strong>Question 1</strong><br />
+We use <code class="docutils literal notranslate"><span class="pre">.melt()</span></code> to convert a wide dataframe with multiple columns into a longer dataframe with fewer columns.</p>
+<choice id="1" >
+<opt text="True"  correct="true" >
+<p>Great work!</p>
+</opt>
+<opt text="False">
+<p>It may be a good idea to look over the last section again.</p>
+</opt>
+</choice> 
+<p><strong>Question 2</strong><br />
+<code class="docutils literal notranslate"><span class="pre">.melt()</span></code> has the same arguments as <code class="docutils literal notranslate"><span class="pre">.pivot()</span></code>.</p>
+<choice id="2" >
+<opt text='True'>
+<p>It may be a good idea to look over the last section again.</p>
+</opt>
+<opt text= 'False' correct="true">
+<p>Good job!</p>
+</opt>
+</choice> 
+<p><strong>Question 3</strong><br />
+<code class="docutils literal notranslate"><span class="pre">.melt()</span></code>  and <code class="docutils literal notranslate"><span class="pre">.pivot()</span></code> always transform the data into tidy data.</p>
+<choice id="3" >
+<opt text='True'>
+<p>It may be a good idea to look over the last section again.</p>
+</opt>
+<opt text= 'False' correct="true">
+<p>Good job!  Just because the data is transformed doesn’t mean that it’s transformed for the better!</p>
+</opt>
+</choice> 
+</exercise>
+<exercise id="16" title="Applying Melt">
+<p><strong>Instructions:</strong><br />
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.</strong></p>
+<p><em><strong>Make sure you remove the hash (<code class="docutils literal notranslate"><span class="pre">#</span></code>) symbol in the coding portions of this question.  We have commented them so that the line won’t execute and you can test your code after each step.</strong></em></p>
+<p>Let’s take a look at some new untidy data that we have named <code class="docutils literal notranslate"><span class="pre">lego</span></code>.</p>
+<codeblock id="lego_untidy2">
+</codeblock>
+<p>Let’s melt this so that the 2 new columns named <code class="docutils literal notranslate"><span class="pre">matte</span></code> and <code class="docutils literal notranslate"><span class="pre">transparent</span></code> become a single one.  These columns refer to the opacity of the blocks and the values refer to the number of pieces of each included in the set. Since our variable of interest in this scenario is <code class="docutils literal notranslate"><span class="pre">opacity</span></code>, we need to combine the two measurements into one column.</p>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">melt</span></code> the dataframe columns <code class="docutils literal notranslate"><span class="pre">matte</span></code> and <code class="docutils literal notranslate"><span class="pre">transparent</span></code> into a single column named <code class="docutils literal notranslate"><span class="pre">opacity</span></code> and name the values column <code class="docutils literal notranslate"><span class="pre">quantity</span></code>.</p></li>
+<li><p>Name the new dataframe <code class="docutils literal notranslate"><span class="pre">tidied_lego</span></code>.</p></li>
+</ul>
+<codeblock id="03_16">
+<ul class="simple">
+<li><p>Are you melting the correct columns named <code class="docutils literal notranslate"><span class="pre">matte</span></code> and <code class="docutils literal notranslate"><span class="pre">transparent</span></code>?</p></li>
+<li><p>Are you making sure to use all the columns (except <code class="docutils literal notranslate"><span class="pre">matte</span></code> and  <code class="docutils literal notranslate"><span class="pre">transparent</span></code> in the argument <code class="docutils literal notranslate"><span class="pre">id_vars</span></code>?</p></li>
+</ul>
+</codeblock>
+</choice> 
+</exercise>
+<exercise id="17" title="Concatenation" type="slides,video">
+<slides source="module3/module3_17" shot="1" start="63:5310" end="70:32">
+</slides>
+</exercise>
+<exercise id="18" title="Concat questions">
+<p><strong>Question 1</strong><br />
+If we wanted to concatenate Dataframe A with Dataframe B horizontally, what do we need to make sure <strong>before</strong> proceeding?</p>
+<choice id="1" >
+<opt text="There are no <code>NaN</code> values">
+<p>We can still concatenate with missing values.</p>
+</opt>
+<opt text= "The order of the rows in each dataframe are the same"  correct="true">
+<p>Good job!</p>
+</opt>
+<opt text= "The columns are not duplicated">
+<p>We can remove duplicated columns after concatenation.</p>
+</opt>
+</choice> 
+<p><strong>Question 2</strong><br />
+Which of the following statements are correct?</p>
+<choice id="2" >
+<opt text='Concatenating horizontally requires the argument <code>axis=1</code>', correct="true">
+<p>Good job!  Maybe more solutions are correct…</p>
+</opt>
+<opt text='Concatenating vertically requires the argument <code>axis=0</code>'  correct="true">
+<p>Good job!  Did you get multiple correct answers?</p>
+</opt>
+<opt text='Concatenating vertically requires the argument <code>axis=1</code>'>
+<p>I think you got mixed up.  Try reading over the notes again.</p>
+</opt>
+<opt text='Concatenating horizontally requires the argument <code>axis=0</code>'>
+<p>I think you got mixed up.  Try reading over the notes again.</p>
+</opt>
+</choice> 
+</exercise>
+<exercise id="19" title="Concatenating Vertically">
+<p><strong>Instructions:</strong>
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.</strong></p>
+<p><em><strong>Make sure you remove the hash (<code class="docutils literal notranslate"><span class="pre">#</span></code>) symbol in the coding portions of this question.  We have commented them so that the line won’t execute and you can test your code after each step.</strong></em></p>
+<p>Sometimes we accumulate additional data that we need to combine with our existing data.  In the following question, we need to combine our dataframes to have a complete collection of all the Lego sets that exist.</p>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Combine the two dataframes <a href="https://github.com/UBC-MDS/MCL-DSCI-011-programming-in-python/blob/master/data/lego_top.csv" target="_blank"><code class="docutils literal notranslate"><span class="pre">lego_top</span></code></a> and  <a href="https://github.com/UBC-MDS/MCL-DSCI-011-programming-in-python/blob/master/data/lego_bottom.csv" target="_blank"><code class="docutils literal notranslate"><span class="pre">lego_bottom</span></code></a>  vertically to make one large complete dataframe.</p></li>
+<li><p>Name the new dataframe <code class="docutils literal notranslate"><span class="pre">full_set</span></code>.</p></li>
+<li><p>Save the new dimension of <code class="docutils literal notranslate"><span class="pre">full_set</span></code> in an object named <code class="docutils literal notranslate"><span class="pre">full_set_shape</span></code>.</p></li>
+<li><p>Display the new dataframe.</p></li>
+</ul>
+<codeblock id="03_19">
+<ul class="simple">
+<li><p>Are you using <code class="docutils literal notranslate"><span class="pre">pd.concat()</span></code>?</p></li>
+<li><p>Are you concatenating in the correct order with <code class="docutils literal notranslate"><span class="pre">lego_top</span></code> first and <code class="docutils literal notranslate"><span class="pre">lego_bottom</span></code> second?</p></li>
+<li><p>Are you putting your dataframes within square brackets?</p></li>
+<li><p>Are you using <code class="docutils literal notranslate"><span class="pre">axis=0</span></code></p></li>
+<li><p>Are you using <code class="docutils literal notranslate"><span class="pre">.shape</span></code> to find the dimension of the new dataframe?</p></li>
+</ul>
+</codeblock>
+</exercise>
+<exercise id="20" title="Concatenating Horizontally">
+<p><strong>Instructions:</strong><br />
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.</strong></p>
+<p><em><strong>Make sure you remove the hash (<code class="docutils literal notranslate"><span class="pre">#</span></code>) symbol in the coding portions of this question.  We have commented them so that the line won’t execute and you can test your code after each step.</strong></em></p>
+<p>Our goal is to obtain a dataframe with the <code class="docutils literal notranslate"><span class="pre">lego_set</span></code> names and the total amount of pieces in each set but we only have 2 Lego dataframes (with the same indexes).  One dataframe has the set names and the other contains information amount the number of matte and transparent pieces included in each set.  Complete this question by using <code class="docutils literal notranslate"><span class="pre">pd.concat()</span></code> and techniques we learned in the previous model.</p>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Combine the two dataframes horizontally to make 1 large complete dataframe and name the new dataframe <code class="docutils literal notranslate"><span class="pre">lego_full</span></code>.</p></li>
+<li><p>Drop any duplicated columns using <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> and <code class="docutils literal notranslate"><span class="pre">.duplicate()</span></code>and save this new dataframe as <code class="docutils literal notranslate"><span class="pre">washed_lego</span></code>.</p></li>
+<li><p>Make a new column named <code class="docutils literal notranslate"><span class="pre">total_pieces</span></code> by adding up columns <code class="docutils literal notranslate"><span class="pre">matte</span></code> and <code class="docutils literal notranslate"><span class="pre">transparent</span></code>.</p></li>
+<li><p>Sort the dataframe by <code class="docutils literal notranslate"><span class="pre">total_pieces</span></code> in descending order.</p></li>
+<li><p>Save this in an object named <code class="docutils literal notranslate"><span class="pre">lego_details</span></code>.</p></li>
+<li><p>Display the new dataframe.</p></li>
+</ul>
+<codeblock id="03_20">
+<ul class="simple">
+<li><p>Are you using <code class="docutils literal notranslate"><span class="pre">pd.concat()</span></code>?</p></li>
+<li><p>Are you concatenating the dataframes <code class="docutils literal notranslate"><span class="pre">lego_base</span></code> with <code class="docutils literal notranslate"><span class="pre">lego_opacity</span></code>?</p></li>
+<li><p>Are you putting your dataframes within square brackets?</p></li>
+<li><p>Are you removing any duplicated columns?</p></li>
+<li><p>Are you using <code class="docutils literal notranslate"><span class="pre">axis=1</span></code>?</p></li>
+<li><p>Are you using <code class="docutils literal notranslate"><span class="pre">.assign()</span></code> to make a new column named <code class="docutils literal notranslate"><span class="pre">total_pieces</span></code>?</p></li>
+<li><p>Are you using using <code class="docutils literal notranslate"><span class="pre">.sort_values()</span></code> with the argument <code class="docutils literal notranslate"><span class="pre">ascending=False</span></code></p></li>
+</ul>
+</codeblock>
+</exercise>
+<exercise id="21" title="Joining Dataframes using Merge" type="slides,video">
+<slides source="module3/module3_21" shot="1" start="70:3401" end="78:13">
+</slides>
+</exercise>
+<exercise id="22" title="Merge Questions">
+<p><strong>Question 1</strong><br />
+Which of the following are <strong>not</strong> ways in which you can join dataframes using <code class="docutils literal notranslate"><span class="pre">.merge()</span></code>?</p>
+<choice id="1" >
+<opt text="Vertically"  correct="true" >
+<p>Great work!  We cannot join dataframes vertically with <code class="docutils literal notranslate"><span class="pre">.merge()</span></code>.</p>
+</opt>
+<opt text="Outer">
+<p>“Outer” joins are possible with the <code class="docutils literal notranslate"><span class="pre">how</span></code> argument in <code class="docutils literal notranslate"><span class="pre">merge()</span></code>.</p>
+</opt>
+<opt text="Inner">
+<p>“Inner” joins are possible with the <code class="docutils literal notranslate"><span class="pre">how</span></code> argument in <code class="docutils literal notranslate"><span class="pre">merge()</span></code>.</p>
+</opt>
+<opt text="Left">
+<p>“Left” joins are possible with the <code class="docutils literal notranslate"><span class="pre">how</span></code> argument in <code class="docutils literal notranslate"><span class="pre">merge()</span></code>.</p>
+</opt>
+<opt text="Right">
+<p>“Right” joins are possible with the <code class="docutils literal notranslate"><span class="pre">how</span></code> argument in <code class="docutils literal notranslate"><span class="pre">merge()</span></code>.</p>
+</opt>
+</choice> 
+<p><strong>Question 2</strong><br />
+Which join is the default when using <code class="docutils literal notranslate"><span class="pre">.merge()</span></code>?</p>
+<choice id="2" >
+<opt text='Outer'>
+<p>Are you confusing the default join for <code class="docutils literal notranslate"><span class="pre">.pd.concat()</span></code>?</p>
+</opt>
+<opt text= 'Inner' correct="true">
+<p>Good job!  Unlike <code class="docutils literal notranslate"><span class="pre">.pd.concat()</span></code>, “inner” is the default join for <code class="docutils literal notranslate"><span class="pre">.merge()</span></code>.</p>
+</opt>
+<opt text='Left'>
+<p>This is an option for the argument <code class="docutils literal notranslate"><span class="pre">how</span></code> but not the default.</p>
+</opt>
+<opt text='Vertical'>
+<p>Are you confusing <code class="docutils literal notranslate"><span class="pre">.merge()</span></code> with <code class="docutils literal notranslate"><span class="pre">.pd.concat()</span></code>?</p>
+</opt>
+</choice> 
+<p><strong>Question 3</strong><br />
+What is the similarity between all 4 types of joins?</p>
+<choice id="3" >
+<opt text="They all need at least 1 of the dataframe's identifying key column to be an index">
+<p>It may be a good idea to look over the last section again.</p>
+</opt>
+<opt text= 'They all will produce a dataframe with columns from both of the initial dataframes' correct="true">
+<p>Good job!  Just because the data is transformed doesn’t mean that it’s transformed for the better!</p>
+</opt>
+<opt text='They all produce rows with <code>NaN</code> values'>
+<p>What about inner joins that only result in the rows present in both dataframes?</p>
+</opt>
+<opt text='They all must have the same dimensions'>
+<p>It’s still possible to have dataframes that have completely different dimensions joined together.</p>
+</opt>
+</choice> 
+</exercise>
+<exercise id="23" title="Merging I">
+<p><strong>Instructions:</strong><br />
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.</strong></p>
+<p><em><strong>Make sure you remove the hash (<code class="docutils literal notranslate"><span class="pre">#</span></code>) symbol in the coding portions of this question.  We have commented them so that the line won’t execute and you can test your code after each step.</strong></em></p>
+<p>In this exercise, you are going to join two dataframes <code class="docutils literal notranslate"><span class="pre">lego_inventory_parts.csv</span></code> and <code class="docutils literal notranslate"><span class="pre">lego-colors.csv</span></code> and answer a few multiple-choice questions.  The multiple-choice questions are being asked with the intention of using the code cell to write your own code in any way that helps to answer the question.</p>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Combine the two dataframes to make 1 large complete dataframe by using an outer join.</p></li>
+<li><p>Make sure to set the argument <code class="docutils literal notranslate"><span class="pre">indicator</span></code> to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+<li><p>Name the new dataframe <code class="docutils literal notranslate"><span class="pre">lego_tower</span></code>.</p></li>
+</ul>
+<codeblock id="03_23">
+<ul class="simple">
+<li><p>Are you naming your new dataframe <code class="docutils literal notranslate"><span class="pre">lego_tower</span></code>?</p></li>
+<li><p>Are you using the arguments  <code class="docutils literal notranslate"><span class="pre">left_on='color_id'</span></code>, <code class="docutils literal notranslate"><span class="pre">right_on=id</span></code>,  <code class="docutils literal notranslate"><span class="pre">how='outer'</span></code> and <code class="docutils literal notranslate"><span class="pre">indicator=True</span></code>?</p></li>
+</ul>
+</codeblock>
+<p><strong>Question 1</strong><br />
+Which of the following colours doesn’t have any pieces in inventory?<br />
+<em>Hint: You can filter using the <code class="docutils literal notranslate"><span class="pre">_merge</span></code> column.</em></p>
+<choice id="1" >
+<opt text='Chrome Blue'>
+<p>You may want to try filtering using the <code class="docutils literal notranslate"><span class="pre">_merge</span></code> column</p>
+</opt>
+<opt text= 'Rust'>
+<p>You may want to try filtering using the <code class="docutils literal notranslate"><span class="pre">_merge</span></code> column</p>
+</opt>
+<opt text='Reddish Lilac' correct="true">
+<p>Good job!  You must have used <code class="docutils literal notranslate"><span class="pre">lego_tower[lego_tower['_merge']</span> <span class="pre">==</span> <span class="pre">&quot;right_only&quot;]</span></code></p>
+</opt>
+<opt text='Metallic Silver'>
+<p>You may want to try filtering using the <code class="docutils literal notranslate"><span class="pre">_merge</span></code> column</p>
+</opt>
+</choice> 
+<p><strong>Question 2</strong><br />
+Which colour has the largest number of pieces in the inventory?<br />
+<em>Hint: You can use <code class="docutils literal notranslate"><span class="pre">.groupby()</span></code>  and <code class="docutils literal notranslate"><span class="pre">.sum()</span></code> to find the total amount of pieces for each set. Also<code class="docutils literal notranslate"><span class="pre">.sort_values()</span></code> may come in handy.</em></p>
+<choice id="2" >
+<opt text='White'>
+<p>You can use <code class="docutils literal notranslate"><span class="pre">lego_tower.groupby('name').sum().sort_values('quantity',</span> <span class="pre">ascending=False)</span></code> to help answer this.</p>
+</opt>
+<opt text= 'Blue'>
+<p>You can use <code class="docutils literal notranslate"><span class="pre">lego_tower.groupby('name').sum().sort_values('quantity',</span> <span class="pre">ascending=False)</span></code> to help answer this.</p>
+</opt>
+<opt text='Black' correct="true">
+<p>Wonderful!  Did you use <code class="docutils literal notranslate"><span class="pre">lego_tower.groupby('name').sum().sort_values('quantity',</span> <span class="pre">ascending=False)</span></code>?</p>
+</opt>
+<opt text='Metallic Silver'>
+<p>You can use <code class="docutils literal notranslate"><span class="pre">lego_tower.groupby('name').sum().sort_values('quantity',</span> <span class="pre">ascending=False)</span></code> to help answer this.</p>
+</opt>
+</choice> 
+<p><strong>Question 3</strong><br />
+How many Lego pieces from the <code class="docutils literal notranslate"><span class="pre">lego_inventory</span></code> dataframe do not have any matching rows in the <code class="docutils literal notranslate"><span class="pre">lego_colors</span></code> dataframe?<br />
+<em>Hint: Filtering on the <code class="docutils literal notranslate"><span class="pre">_merge</span></code> column and using <code class="docutils literal notranslate"><span class="pre">.shape</span></code> can be useful here.</em></p>
+<choice id="3" >
+<opt text='0' correct="true">
+<p>You got it!  All the pieces have matching rows from the <code class="docutils literal notranslate"><span class="pre">lego_colors</span></code> dataframe.  This code <code class="docutils literal notranslate"><span class="pre">lego_tower[lego_tower['_merge']</span> <span class="pre">==</span> <span class="pre">&quot;left_only&quot;].shape</span></code> explains that there are 0 rows.</p>
+</opt>
+<opt text= '1'>
+<p>Maybe explore the <code class="docutils literal notranslate"><span class="pre">_merge</span></code> column by filtering or grouping and see if there are any <code class="docutils literal notranslate"><span class="pre">left_only</span></code> values.</p>
+</opt>
+<opt text='2'>
+<p>Maybe explore the <code class="docutils literal notranslate"><span class="pre">_merge</span></code> column by filtering or grouping and see if there are any <code class="docutils literal notranslate"><span class="pre">left_only</span></code> values.</p>
+</opt>
+<opt text='3'>
+<p>Maybe explore the <code class="docutils literal notranslate"><span class="pre">_merge</span></code> column by filtering or grouping and see if there are any <code class="docutils literal notranslate"><span class="pre">left_only</span></code> values.</p>
+</opt>
+</choice> 
+</exercise>
+<exercise id="24" title="Merging II">
+<p><strong>Instructions:</strong><br />
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.</strong></p>
+<p><em><strong>Make sure you remove the hash (<code class="docutils literal notranslate"><span class="pre">#</span></code>) symbol in the coding portions of this question.  We have commented them so that the line won’t execute and you can test your code after each step.</strong></em></p>
+<p>This question may be a bit more challenging.  We are wondering about the inventory of a store.  We want to see which Lego sets are in stock and if so how many?  After all, the store needs to make sure there are enough sets in stock to meet demand.</p>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Combine the two dataframes to make one large complete dataframe by using an inner join.</p></li>
+<li><p>Name the new dataframe <code class="docutils literal notranslate"><span class="pre">lego_stock</span></code>.</p></li>
+<li><p>Group the new dataframe by <code class="docutils literal notranslate"><span class="pre">set_num</span></code> and find how many groups there are using <code class="docutils literal notranslate"><span class="pre">.ngroups</span></code></p></li>
+</ul>
+<p>This question is in two parts and we are going to walk you through how to tackle it.</p>
+<codeblock id="03_24a">
+<ul class="simple">
+<li><p>Are you naming your new dataframe <code class="docutils literal notranslate"><span class="pre">lego_stock</span></code>?</p></li>
+<li><p>Are you using the arguments  <code class="docutils literal notranslate"><span class="pre">left_on='set_num'</span></code>, <code class="docutils literal notranslate"><span class="pre">right_index=True</span></code> and <code class="docutils literal notranslate"><span class="pre">how='inner'</span></code>?</p></li>
+<li><p>Are you grouping my using <code class="docutils literal notranslate"><span class="pre">groupby('set_num</span></code>)?</p></li>
+</ul>
+</codeblock>
+<p>Ah, it appears we have multiple rows for some of the same sets.</p>
+<p>Although it shows initially the we have 2846 different sets due to the number of rows in <code class="docutils literal notranslate"><span class="pre">lego_stock</span></code>, when we group them by <code class="docutils literal notranslate"><span class="pre">set_num</span></code> we actually only get 2306 different sets. This means that we have some rows with the same <code class="docutils literal notranslate"><span class="pre">set_num</span></code> but with different inventory quantities.</p>
+<p>How are we going to get the stock quantity of each set now?<br />
+We are going to have to sum up the quantity of each set using <code class="docutils literal notranslate"><span class="pre">.groupby()</span></code> and<code class="docutils literal notranslate"><span class="pre">.agg()</span></code>.</p>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">.groupby()</span></code> and <code class="docutils literal notranslate"><span class="pre">.agg()</span></code> to sum up the quantity of each set and save this as <code class="docutils literal notranslate"><span class="pre">store_inventory</span></code>.</p></li>
+<li><p>Inner join <code class="docutils literal notranslate"><span class="pre">store_inventory</span></code> with <code class="docutils literal notranslate"><span class="pre">lego_sets</span></code> and use chaining to sort the dataframe in descending order based on in-stock quantity</p></li>
+<li><p>Save this new dataframe as  <code class="docutils literal notranslate"><span class="pre">store_inventory_details</span></code>.</p></li>
+<li><p>Display the new dataframe.</p></li>
+</ul>
+<codeblock id="03_24b">
+<ul class="simple">
+<li><p>Are you naming your new dataframe <code class="docutils literal notranslate"><span class="pre">store_inventory</span></code>?</p></li>
+<li><p>Are you aggregating using <code class="docutils literal notranslate"><span class="pre">.agg({'quantity':'sum'})</span></code>?</p></li>
+<li><p>Are you using the arguments <code class="docutils literal notranslate"><span class="pre">left_index=True,</span> <span class="pre">right_index=True,</span> <span class="pre">how='inner'</span></code>?</p></li>
+<li><p>Are you sorting in descending order of <code class="docutils literal notranslate"><span class="pre">quantity</span></code>?</p></li>
+</ul>
+</codeblock>
+<p>Now we can return to our initial problem of identifying how many Lego sets are in stock.</p>
+<p><strong>Question 1</strong><br />
+How many different Lego sets are in stock?</p>
+<choice id="1" >
+<opt text='11673'>
+<p>Did you look at the wrong dataframe?</p>
+</opt>
+<opt text='2846'>
+<p>Did you look at the wrong dataframe?</p>
+</opt>
+<opt text='3654' >
+<p>Did you look at the wrong dataframe?</p>
+</opt>
+<opt text='2306' correct="true">
+<p>You got it!</p>
+</opt>
+</choice> 
+<p><strong>Question 2</strong><br />
+What’s the largest quantity of stock available by any particular Lego set?</p>
+<choice id="2" >
+<opt text='12'>
+<p>Did you look at the wrong dataframe?</p>
+</opt>
+<opt text='1'>
+<p>Did you look at the wrong dataframe?</p>
+</opt>
+<opt text='60' correct="true">
+<p>Great!  You saw the top quantity of <code class="docutils literal notranslate"><span class="pre">lego_stock</span></code>.</p>
+</opt>
+<opt text='65'>
+<p>Did you look at the wrong dataframe?</p>
+</opt>
+</choice> 
+</exercise>
+<exercise id="25" title="What Did We Just Learn?" type="slides,video">
+<slides source="module3/module3_25" shot ="7" start="0:255" end="1:08">>
+</slides>
+</exercise>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "UBC-MDS/PPDS_book",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./modules/home"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Hayley Boyce, Mike Gelbart, Tiffany Timbers<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

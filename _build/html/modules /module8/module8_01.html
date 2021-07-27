@@ -1,0 +1,738 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NumPy and 1D Arrays &#8212; Programming in Python for Data Science</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/video.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://hfboyce.github.io/ppds/intro.html/modules /module8/module8_01.html" />
+    <link rel="shortcut icon" href="../../_static/icon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Programming in Python for Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/modules /module8/module8_01.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/UBC-MDS/PPDS_book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/UBC-MDS/PPDS_book/issues/new?title=Issue%20on%20page%20%2Fmodules /module8/module8_01.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/UBC-MDS/PPDS_book/edit/main/modules /module8/module8_01.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   NumPy and 1D Arrays
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-numpy">
+     What is NumPy?
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#so-what-is-an-array">
+     So What is an Array?
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-1d-arrays">
+     Creating 1D Arrays
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#elementwise-operations">
+     Elementwise operations
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#slicing-and-indexing-1d-arrays">
+     Slicing and Indexing 1D Arrays
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#boolean-indexing">
+     Boolean Indexing
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#why-numpy">
+     Why NumPy?
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#numpy-constants-and-functions">
+     NumPy Constants and Functions
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#numpy-functions">
+     NumPy Functions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lets-apply-what-we-learned">
+   Let’s apply what we learned!
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="numpy-and-1d-arrays">
+<h1>NumPy and 1D Arrays<a class="headerlink" href="#numpy-and-1d-arrays" title="Permalink to this headline">¶</a></h1>
+<p>Notes:</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Although we have not formally introduced you to NumPy, the name may
+sound familiar since we’ve been subtly hinting at its existence for a
+little while now.</p>
+<p>In the last Module, we’ve had you import this library for practice.</p>
+<p>So what is NumPy?</p>
+<hr class="docutils" />
+<div class="section" id="what-is-numpy">
+<h2>What is NumPy?<a class="headerlink" href="#what-is-numpy" title="Permalink to this headline">¶</a></h2>
+<p><strong>NumPy</strong> -&gt; <strong>“Numerical Python extensions”</strong>.</p>
+<p>NumPy offers:</p>
+<ul class="simple">
+<li><p>Arrays</p></li>
+<li><p>Mathematical Constants</p></li>
+<li><p>Mathematical Functions</p></li>
+</ul>
+<p>Notes:</p>
+<p>The name NumPy is derived from <strong>“Numerical Python extensions”</strong>.</p>
+<p>NumPy is a Python library used primarily for computing involving
+numbers. It is especially useful as it provides a multidimensional array
+object, called an <em><strong>array</strong></em>.</p>
+<p>In addition, NumPy also offers numerous other mathematical functions
+used in the domain of Linear Algebra and Calculus.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="so-what-is-an-array">
+<h2>So What is an Array?<a class="headerlink" href="#so-what-is-an-array" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">my_list</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4, 5]
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">my_array</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>array([1, 2, 3, 4, 5])
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">my_array</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;numpy.ndarray&#39;&gt;
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>A NumPy array is somewhat like a list.</p>
+<p>They are considered their own data type.</p>
+<p>We can see this by using <code class="docutils literal notranslate"><span class="pre">type</span></code> on an array.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;hi&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;hi&quot;</span><span class="p">))</span>
+<span class="n">my_array</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>array([&#39;1&#39;, &#39;hi&#39;], dtype=&#39;&lt;U21&#39;)
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Soon, we’ll start to see that although lists and arrays appear quite
+similar, they have some key differences.</p>
+<p>A list can contain multiple data types, while an array cannot.</p>
+<p>In this case, <code class="docutils literal notranslate"><span class="pre">1</span></code> was converted to a <code class="docutils literal notranslate"><span class="pre">'1'</span></code> in quotations, which
+signifies that it is now a string.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="creating-1d-arrays">
+<h2>Creating 1D Arrays<a class="headerlink" href="#creating-1d-arrays" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="n">my_array</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>array([1, 2, 3, 4])
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0.])
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>array([1., 1., 1., 1.])
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>We can make arrays from lists as well as tuples.</p>
+<p>There are also several built-in NumPy functions that create different
+arrays with patterns and requirements.</p>
+<p><code class="docutils literal notranslate"><span class="pre">np.zeros()</span></code> will create an array containing <code class="docutils literal notranslate"><span class="pre">0</span></code> for each element, and
+the input argument specifies the size.</p>
+<p>Here we specified 10, so our array has 10 elements.</p>
+<p>Similarly, <code class="docutils literal notranslate"><span class="pre">np.ones()</span></code> does the same thing except with an array of
+elements with <code class="docutils literal notranslate"><span class="pre">1</span></code> values.</p>
+<p>Now we’ve specified 4 as the input, and so this array has 4 elements.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>array([0, 1, 2, 3, 4])
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> 
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>array([0, 2, 4, 6, 8])
+</pre></div>
+</div>
+<p>Notes:</p>
+<p><code class="docutils literal notranslate"><span class="pre">np.arange()</span></code> similarly to <code class="docutils literal notranslate"><span class="pre">range()</span></code> can take 1, 2 or 3 input arguments
+and will produce an array in a similar way that <code class="docutils literal notranslate"><span class="pre">range()</span></code> produces a
+sequence.</p>
+<p>If there are 3 input arguments, the first 2 are where the interval
+values start and stop respectively, and the third argument gives the
+step size between values.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>array([1.        , 1.44444444, 1.88888889, 2.33333333, 2.77777778, 3.22222222, 3.66666667, 4.11111111, 4.55555556, 5.        ])
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> 
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>array([0.51939439, 0.84917657, 0.04400428, 0.68715007, 0.23389854])
+</pre></div>
+</div>
+<p>Notes:</p>
+<p><code class="docutils literal notranslate"><span class="pre">np.linspace()</span></code> will produce an array containing the number of elements
+specified by the 3rd argument’s value, containing values between the
+first 2 arguments values.</p>
+<p>For example, this code will produce 10, equally spaced values from 1 to
+5.</p>
+<p>Notice the elements in <code class="docutils literal notranslate"><span class="pre">np.linspace()</span></code> arrays are defaulted to type
+<code class="docutils literal notranslate"><span class="pre">float</span></code>.</p>
+<p>We can also produce an array with random values using
+<code class="docutils literal notranslate"><span class="pre">np.random.rand()</span></code>.</p>
+<p>Here, we have random numbers uniformly distributed from 0 to 1.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="elementwise-operations">
+<h2>Elementwise operations<a class="headerlink" href="#elementwise-operations" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">array1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">array1</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>array([1., 1., 1., 1.])
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">array2</span> <span class="o">=</span> <span class="n">array1</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">array2</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>array([2., 2., 2., 2.])
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">array1</span> <span class="o">+</span> <span class="n">array2</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>array([3., 3., 3., 3.])
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">array1</span> <span class="o">*</span> <span class="n">array2</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>array([2., 2., 2., 2.])
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Let’s talk about how operations are calculated with arrays.</p>
+<p>We discussed that array and lists are similar but not quite the same.</p>
+<p>Arrays are designed for convenience mathematically, so arrays operate in
+an element-wise manner.</p>
+<p>When we do operations, the operation is done to each element in the
+array.</p>
+<p>If we add to our array, 1 is added to each element in the array.</p>
+<p>If we add two arrays together, the element at identical index positions
+are added.</p>
+<p>Similarly, if we multiply 2 arrays together, the index at each position
+are multiplied together.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">list_1</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">list_1</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>TypeError: can only concatenate list (not &quot;int&quot;) to list
+
+Detailed traceback: 
+  File &quot;&lt;string&gt;&quot;, line 1, in &lt;module&gt;
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>This is much more convenient than using a list.</p>
+<p>We can’t simply add 1 to a list. Instead, we get an error</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">list_1</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+
+<span class="n">list_2</span> <span class="o">=</span>  <span class="p">[</span><span class="n">elem</span> <span class="o">+</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">list_1</span><span class="p">]</span>
+<span class="n">list_2</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>[2, 2, 2, 2]
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">list_3</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">list_1</span><span class="p">)):</span>
+  <span class="n">list_3</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">list_1</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">+</span> <span class="n">list_2</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+  
+<span class="n">list_3</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>[3, 3, 3, 3]
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>If we wanted the same operations done with lists, we would have to use a
+loop or list comprehension to obtain the same results.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="slicing-and-indexing-1d-arrays">
+<h2>Slicing and Indexing 1D Arrays<a class="headerlink" href="#slicing-and-indexing-1d-arrays" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">arr</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>7
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>array([2, 3, 4, 5])
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>9
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>When it comes to slicing, 1D arrays are sliced in the same manner that
+lists are.</p>
+<p>We can obtain an individual location by putting the index position in
+square brackets.</p>
+<p>And just like slicing dataframes with <code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code>, when we want an
+interval of values, the first value in the bracket is included, and the
+last value is excluded.</p>
+<p>To obtain elements from right to left, we use negative integers.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="boolean-indexing">
+<h2>Boolean Indexing<a class="headerlink" href="#boolean-indexing" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grade_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">98</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">103</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">67</span><span class="p">,</span> <span class="mi">107</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">104</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">105</span><span class="p">])</span>
+<span class="n">grade_array</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>array([ 98,  87, 103,  92,  67, 107,  78, 104,  85, 105])
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">threshold</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">98</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">103</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">67</span><span class="p">,</span> <span class="mi">107</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">104</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">105</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">100</span>
+<span class="n">threshold</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>array([False, False,  True, False, False,  True, False,  True, False,  True])
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grade_array</span><span class="p">[</span><span class="n">threshold</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">grade_array</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>array([ 98,  87, 100,  92,  67, 100,  78, 100,  85, 100])
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Let’s now explore Boolean indexing.</p>
+<p>Let’s take a 1D array that consists of 10 elements.</p>
+<p>Remember that when we do most operations, it occurs in an element-wise
+manner.</p>
+<p>Perhaps we are grading exams that contain bonus marks.</p>
+<p>The max possible allowed mark on the exam is 100%, so we must cap the
+grades, so any mark greater than 100 is set to 100. First, we check
+which values are greater than 100.</p>
+<p>This produces an array containing Boolean values, which we store in the
+object <code class="docutils literal notranslate"><span class="pre">threshold</span></code>.</p>
+<p>The first and second elements are <code class="docutils literal notranslate"><span class="pre">False</span></code> since both 98 and 87 and not
+larger than 100. However, the 3rd element is <code class="docutils literal notranslate"><span class="pre">True</span></code> since 103 is larger
+than 100.</p>
+<p>We now can replace all those values that have a <code class="docutils literal notranslate"><span class="pre">True</span></code> Boolean, with a
+new value; in this case, let’s assign them a value of 100, the maximum
+possible allowed grade.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">new_grade_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">98</span><span class="p">,</span><span class="mi">87</span><span class="p">,</span><span class="mi">103</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span><span class="mi">67</span><span class="p">,</span> <span class="mi">107</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">104</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">105</span><span class="p">])</span>
+<span class="n">new_grade_array</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>array([ 98,  87, 103,  92,  67, 107,  78, 104,  85, 105])
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">new_grade_array</span><span class="p">[</span><span class="n">new_grade_array</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">new_grade_array</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>array([ 98,  87, 100,  92,  67, 100,  78, 100,  85, 100])
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>We could also shorten the whole process and avoid making <code class="docutils literal notranslate"><span class="pre">threshold</span></code> by
+using the following code.</p>
+<p>You’ll notice that we use similar filtering square bracket notation that
+we did using pandas!</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="why-numpy">
+<h2>Why NumPy?<a class="headerlink" href="#why-numpy" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                        name mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+0                  100% Bran   N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
+1          100% Natural Bran   Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
+2                   All-Bran   K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
+3  All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
+4             Almond Delight   R  Cold       110        2    2     200    1.0   14.0       8       1        25      3     1.0  0.75  34.384843
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">cereal</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;calories&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;numpy.int64&#39;&gt;
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="p">[</span><span class="s1">&#39;calories&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>array([ 70, 120,  70,  50, 110, 110, 110, 130,  90,  90, 120, 110, 120, 110, 110, 110, 100, 110, 110, 110, 100, 110, 100, 100, 110, 110, 100, 120, 120, 110, 100, 110, 100, 110, 120, 120, 110, 110, 110, 140, 110, 100, 110, 100, 150, 150, 160, 100, 120, 140,  90, 130, 120, 100,  50,  50, 100, 100, 120, 100,  90, 110, 110,  80,  90,  90, 110, 110,  90, 110, 140, 100, 110, 110, 100, 100, 110])
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>So why, NumPy?</p>
+<p>Lists are often used with a similar purpose of arrays, but they are slow
+to process.</p>
+<p>Because of this, NumPy is used to create many other structures.</p>
+<p>In fact, let’s refresh ourselves on certain values in a dataframe.</p>
+<p>Remember when we obtained the data type of a specific value in a
+dataframe?</p>
+<p>We obtained this <code class="docutils literal notranslate"><span class="pre">&lt;class</span> <span class="pre">'numpy.int64'&gt;</span></code>, which we originally ignored.</p>
+<p>This is because a pandas dataframe is built off of a multidimensional
+(2D specifically) array!</p>
+<p>We will explain more about multidimensional arrays in the next set of
+slides.</p>
+<p>We can actually convert an entire pandas column into an array pretty
+easily using <code class="docutils literal notranslate"><span class="pre">np.to_numpy()</span></code>.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="numpy-constants-and-functions">
+<h2>NumPy Constants and Functions<a class="headerlink" href="#numpy-constants-and-functions" title="Permalink to this headline">¶</a></h2>
+<img alt="404 image" src="module8/pi.gif" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>3.141592653589793
+</pre></div>
+</div>
+<img alt="404 image" src="module8/inf.gif" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">inf</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>inf
+</pre></div>
+</div>
+<img alt="404 image" src="module8/e.gif" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">e</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>2.718281828459045
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>NumPy also offers an assortment of handy mathematical constants and
+functions.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="numpy-functions">
+<h2>NumPy Functions<a class="headerlink" href="#numpy-functions" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">prod</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>6
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">20</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>array([ 3, 15])
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>2.0
+</pre></div>
+</div>
+<p>The full list of mathematical functions are available at this
+<a href="https://numpy.org/doc/stable/reference/routines.math.html" target="_blank">NumPy
+website</a>.</p>
+<p>Notes:</p>
+<p>NumPy’s functions include but are not limited to:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">np.prod()</span></code> which calculates the product of values in an array</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.diff()</span></code> which calculates the difference between element (left
+element subtracted from the right element)</p></li>
+<li><p>And other functions such as <code class="docutils literal notranslate"><span class="pre">np.log()</span></code> or trigonometric ones like
+<code class="docutils literal notranslate"><span class="pre">np.sin()</span></code></p></li>
+</ul>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="lets-apply-what-we-learned">
+<h1>Let’s apply what we learned!<a class="headerlink" href="#lets-apply-what-we-learned" title="Permalink to this headline">¶</a></h1>
+<p>Notes: <br></p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "UBC-MDS/PPDS_book",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./modules /module8"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Hayley Boyce, Mike Gelbart, Tiffany Timbers<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

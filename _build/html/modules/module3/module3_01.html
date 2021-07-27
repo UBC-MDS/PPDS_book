@@ -1,0 +1,481 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tidy data &#8212; Programming in Python for Data Science</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/video.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://hfboyce.github.io/ppds/intro.html/modules/module3/module3_01.html" />
+    <link rel="shortcut icon" href="../../_static/icon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Programming in Python for Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  Modules
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module1.html">
+   Module 1:  Python &amp; Pandas - An Unexpected Friendship
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_01.html">
+     What is a dataframe?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_03.html">
+     What is Pandas?
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Coding Exercises
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module1.html">
+   Module 1: Python &amp; Pandas - An Unexpected Friendship
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_01.html">
+     What is a dataframe?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_03.html">
+     What is Pandas?
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/modules/module3/module3_01.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/UBC-MDS/PPDS_book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/UBC-MDS/PPDS_book/issues/new?title=Issue%20on%20page%20%2Fmodules/module3/module3_01.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/UBC-MDS/PPDS_book/edit/main/modules/module3/module3_01.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Tidy data
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-the-concept-of-tidy-data">
+     What is the concept of tidy data?
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#criterion-1-each-row-is-a-single-observation">
+     Criterion #1: Each row is a single observation
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#criterion-2-each-variable-is-a-single-column">
+     Criterion #2: Each variable is a single column
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#criterion-3-each-value-is-a-single-cell">
+     Criterion #3: Each value is a single cell
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Criterion #1 Each row is a single observation
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Criterion #2: Each variable is a single column
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lets-practice-what-we-know-about-tidy-data-first">
+   Let’s practice what we know about tidy data first!
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="tidy-data">
+<h1>Tidy data<a class="headerlink" href="#tidy-data" title="Permalink to this headline">¶</a></h1>
+<p>Notes: <br></p>
+<hr class="docutils" />
+<div class="section" id="what-is-the-concept-of-tidy-data">
+<h2>What is the concept of tidy data?<a class="headerlink" href="#what-is-the-concept-of-tidy-data" title="Permalink to this headline">¶</a></h2>
+<p>Tidy data satisfies the following three criteria:</p>
+<ul class="simple">
+<li><p>Each row is a single observation,</p></li>
+<li><p>Each variable is a single column, and</p></li>
+<li><p>Each value is a single cell (i.e., its row, column position in the
+dataframe is not shared with another value)</p></li>
+</ul>
+<center>
+<a class="reference internal image-reference" href="https://d33wubrfki0l68.cloudfront.net/6f1ddb544fc5c69a2478e444ab8112fb0eea23f8/91adc/images/tidy-1.png"><img alt="https://d33wubrfki0l68.cloudfront.net/6f1ddb544fc5c69a2478e444ab8112fb0eea23f8/91adc/images/tidy-1.png" src="https://d33wubrfki0l68.cloudfront.net/6f1ddb544fc5c69a2478e444ab8112fb0eea23f8/91adc/images/tidy-1.png" style="width: 550px;" /></a>
+</center>
+<p><em>Image Source: <a class="reference external" href="https://r4ds.had.co.nz/">R for Data Science</a> by Garrett
+Grolemund &amp; Hadley Wickham</em></p>
+<p>What a variable and an observation is may depend on your immediate goal.</p>
+<p>Notes: When we first hear “tidy data”, you likely think of clean,
+organized, and orderly data. The same applies here, however, the concept
+of <em><strong>tidy data</strong></em> stems from
+<a href="https://vita.had.co.nz/papers/tidy-data.pdf" target="_blank">a
+paper </a> written by renowned data scientist Hadley Wickham in 2014.</p>
+<p>We tidy our data in such a way so that we can create a standard across
+multiple analysis tools. It changes the focus from figuring out the
+logistics of how the data is structured, to answering the actual
+analysis question being asked.</p>
+<p>This approach allows us to standardize input arguments of certain
+analysis verbs like <code class="docutils literal notranslate"><span class="pre">.describe()</span></code> and other predictive methods.</p>
+<hr class="docutils" />
+<p><em><strong>Are protein and calories content associated with different cereal
+manufacturers?</strong></em></p>
+<center>
+<a class="reference internal image-reference" href="module3/tidy-table.png"><img alt="module3/tidy-table.png" src="module3/tidy-table.png" style="width: 550px;" /></a>
+</center>
+<p>Notes: Let’s explore some different versions of our cereal dataset and
+determine if they fit the <em>tidy</em> criteria given the statistical question
+below:</p>
+<p><em><strong>Are protein and calories content associated with different cereal
+manufacturers?</strong></em></p>
+<p>Here are a few rows from our unaltered cereal dataset.</p>
+<p>Does it fit all three criteria?</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="criterion-1-each-row-is-a-single-observation">
+<h2>Criterion #1: Each row is a single observation<a class="headerlink" href="#criterion-1-each-row-is-a-single-observation" title="Permalink to this headline">¶</a></h2>
+<center>
+<a class="reference internal image-reference" href="module3/tidy-crit1.png"><img alt="module3/tidy-crit1.png" src="module3/tidy-crit1.png" style="width: 550px;" /></a>
+</center>
+<p>Notes: From the dataframe we can see that each cereal has its own row.
+Criterion #1 is met!</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="criterion-2-each-variable-is-a-single-column">
+<h2>Criterion #2: Each variable is a single column<a class="headerlink" href="#criterion-2-each-variable-is-a-single-column" title="Permalink to this headline">¶</a></h2>
+<center>
+<a class="reference internal image-reference" href="module3/tidy-crit2.png"><img alt="module3/tidy-crit2.png" src="module3/tidy-crit2.png" style="width: 550px;" /></a>
+</center>
+<p>Notes: From the dataframe we can see that each of the variables <code class="docutils literal notranslate"><span class="pre">name</span></code>,
+<code class="docutils literal notranslate"><span class="pre">mfr</span></code>, <code class="docutils literal notranslate"><span class="pre">calories</span></code> and <code class="docutils literal notranslate"><span class="pre">protein</span></code> have their own column. We can validate
+that criterion #2 is also met.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="criterion-3-each-value-is-a-single-cell">
+<h2>Criterion #3: Each value is a single cell<a class="headerlink" href="#criterion-3-each-value-is-a-single-cell" title="Permalink to this headline">¶</a></h2>
+<center>
+<a class="reference internal image-reference" href="module3/tidy-crit3.png"><img alt="module3/tidy-crit3.png" src="module3/tidy-crit3.png" style="width: 550px;" /></a>
+</center>
+<p>Notes: The variable value for each cereal has it’s own cell, confirming
+that criterion #3 is met!</p>
+<hr class="docutils" />
+<center>
+<a class="reference internal image-reference" href="module3/tidy2-table.png"><img alt="module3/tidy2-table.png" src="module3/tidy2-table.png" style="width: 500px;" /></a>
+<center>
+<p>Notes: As expected, the cereal data we have been working with is <em>tidy
+data</em> for our statistical question.<br />
+Let’s look at a longer dataframe with the same information where this is
+not the case.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="id1">
+<h2>Criterion #1 Each row is a single observation<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<center>
+<a class="reference internal image-reference" href="module3/tidy2-crit1.png"><img alt="module3/tidy2-crit1.png" src="module3/tidy2-crit1.png" style="width: 400px;" /></a>
+</center>
+<p>Notes: From the dataframe we can see that each observation has its own
+row. There are 2 rows per cereal but each row is unique.<br />
+We can confirm that criterion 1 is met.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="id2">
+<h2>Criterion #2: Each variable is a single column<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<center>
+<a class="reference internal image-reference" href="module3/tidy2-crit2.png"><img alt="module3/tidy2-crit2.png" src="module3/tidy2-crit2.png" style="width: 400px;" /></a>
+</center>
+<p>Notes: It looks like we have a problem here. In this dataframe, two of
+our variables we are measuring for our statistical question are
+contained in a single column. This is making the data untidy and
+potentially a problem to work with.<br />
+For example, what if I wanted to know the average calorie content of the
+cereals?</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal2</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>           name mfr nutrition  value
+0   Apple Jacks   K   protein      2
+1   Bran Flakes   P   protein      3
+2      Cheerios   G   protein      6
+3    Honey-comb   P   protein      1
+..          ...  ..       ...    ...
+10   Honey-comb   P  calories    110
+11  Raisin Bran   K  calories    120
+12    Special K   K  calories    110
+13     Wheaties   G  calories    100
+
+[14 rows x 4 columns]
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal2</span><span class="p">[</span><span class="n">cereal2</span><span class="p">[</span><span class="s1">&#39;nutrition&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;calories&#39;</span><span class="p">][</span><span class="s1">&#39;value&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>107.14285714285714
+</pre></div>
+</div>
+<p>If we had tidy data we could have simply done:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="p">[</span><span class="s1">&#39;calories&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>107.14285714285714
+</pre></div>
+</div>
+<p>Notes: The dataframe <code class="docutils literal notranslate"><span class="pre">cereal2</span></code> shows our untidy data from the previous
+slide. We could either groupby nutrition value or filter on <code class="docutils literal notranslate"><span class="pre">calories</span></code>
+first before getting our results to calculate the mean, but if we had
+tidy data, we could have calculated the mean directly from the
+<code class="docutils literal notranslate"><span class="pre">calories</span></code> column.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="lets-practice-what-we-know-about-tidy-data-first">
+<h1>Let’s practice what we know about tidy data first!<a class="headerlink" href="#lets-practice-what-we-know-about-tidy-data-first" title="Permalink to this headline">¶</a></h1>
+<p>Notes: <br></p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "UBC-MDS/PPDS_book",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./modules/module3"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Hayley Boyce, Mike Gelbart, Tiffany Timbers<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

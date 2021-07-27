@@ -1,0 +1,749 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Making choices with conditional statements &#8212; Programming in Python for Data Science</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/video.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://hfboyce.github.io/ppds/intro.html/modules /module5/module5_01.html" />
+    <link rel="shortcut icon" href="../../_static/icon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Programming in Python for Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/modules /module5/module5_01.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/UBC-MDS/PPDS_book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/UBC-MDS/PPDS_book/issues/new?title=Issue%20on%20page%20%2Fmodules /module5/module5_01.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/UBC-MDS/PPDS_book/edit/main/modules /module5/module5_01.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Making choices with conditional statements
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#syntax">
+     Syntax
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#structure">
+     Structure
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#keywords-if-else">
+     Keywords - if, else
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#keywords-elif">
+     Keywords - elif
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#order-matters">
+     Order matters
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#inline">
+     Inline
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#python-keyword-in">
+       Python Keyword “in”
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lets-apply-what-we-learned">
+   Let’s apply what we learned!
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="making-choices-with-conditional-statements">
+<h1>Making choices with conditional statements<a class="headerlink" href="#making-choices-with-conditional-statements" title="Permalink to this headline">¶</a></h1>
+<p>Notes:</p>
+<br>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="p">[</span><span class="n">cereal</span><span class="p">[</span><span class="s1">&#39;mfr&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;K&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                         name mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+2                    All-Bran   K  Cold        70        4    1     260    9.0    7.0       5     320        25      3    1.00  0.33  59.425505
+3   All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3    1.00  0.50  93.704912
+6                 Apple Jacks   K  Cold       110        2    0     125    1.0   11.0      14      30        25      2    1.00  1.00  33.174094
+16                Corn Flakes   K  Cold       100        2    0     290    1.0   21.0       2      35        25      1    1.00  1.00  45.863324
+17                  Corn Pops   K  Cold       110        1    0      90    1.0   13.0      12      20        25      2    1.00  1.00  35.782791
+..                        ...  ..   ...       ...      ...  ...     ...    ...    ...     ...     ...       ...    ...     ...   ...        ...
+58                Raisin Bran   K  Cold       120        3    1     210    5.0   14.0      12     240        25      2    1.33  0.75  39.259197
+60             Raisin Squares   K  Cold        90        2    0       0    2.0   15.0       6     110        25      3    1.00  0.50  55.333142
+62              Rice Krispies   K  Cold       110        2    0     290    0.0   22.0       3      35        25      1    1.00  1.00  40.560159
+66                     Smacks   K  Cold       110        2    1      70    1.0    9.0      15      40        25      2    1.00  0.75  31.230054
+67                  Special K   K  Cold       110        6    0     230    1.0   16.0       3      55        25      1    1.00  1.00  53.131324
+
+[23 rows x 16 columns]
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>In the last Module, we explored the different data types and structures
+that Python offers.</p>
+<p>It’s at this point in the course where we learn how to ask Python to
+make a decision, depending on conditions.</p>
+<p>We did something similar when we filtered a dataframe using conditions
+like finding all the rows with a specific column value.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_name</span> <span class="o">=</span> <span class="s1">&#39;Hayley&#39;</span> 
+
+<span class="k">if</span> <span class="n">my_name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;hayley&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;My name is Hayley too!&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">my_name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;totoro&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Interesting, I loved that movie!&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;That&#39;s a great name.&quot;</span><span class="p">)</span>
+  
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Nice to meet you!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>My name is Hayley too!
+Nice to meet you!
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Let’s start with an example of what the syntax looks like.</p>
+<p>Perhaps we want to introduce ourselves in our code by using the object
+called <code class="docutils literal notranslate"><span class="pre">my_name</span></code>.</p>
+<p>We’ve assigned <code class="docutils literal notranslate"><span class="pre">'Hayley'</span></code> to the object <code class="docutils literal notranslate"><span class="pre">my_name</span></code> in this example.</p>
+<p>We use a verb called <code class="docutils literal notranslate"><span class="pre">print()</span></code> that simply prints the object or string
+set as an argument.</p>
+<p>We can see that since the object <code class="docutils literal notranslate"><span class="pre">my_name</span></code> is equal to <code class="docutils literal notranslate"><span class="pre">Hayley</span></code>, the
+output is <code class="docutils literal notranslate"><span class="pre">My</span> <span class="pre">name</span> <span class="pre">is</span> <span class="pre">Hayley</span> <span class="pre">too</span></code>, followed by the regular
+non-conditional code <code class="docutils literal notranslate"><span class="pre">Nice</span> <span class="pre">to</span> <span class="pre">meet</span> <span class="pre">you!</span></code>.</p>
+<hr class="docutils" />
+<center>
+<a class="reference internal image-reference" href="module5/iftrue.png"><img alt="module5/iftrue.png" src="module5/iftrue.png" style="width: 100%;" /></a>
+</center>
+<p>Notes:</p>
+<p>Python looks at the first condition <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">my_name.lower()</span> <span class="pre">==</span> <span class="pre">'Hayley'</span></code> and
+since it evaluates to <code class="docutils literal notranslate"><span class="pre">True</span></code>, it prints the code under the statement,
+which is <code class="docutils literal notranslate"><span class="pre">'My</span> <span class="pre">name</span> <span class="pre">is</span> <span class="pre">Hayley</span> <span class="pre">too!'</span></code></p>
+<p>Python passes the other <code class="docutils literal notranslate"><span class="pre">print()</span></code> statements from the <code class="docutils literal notranslate"><span class="pre">elif</span></code> and <code class="docutils literal notranslate"><span class="pre">else</span></code>
+conditions and continues to run the regular code <code class="docutils literal notranslate"><span class="pre">'Nice</span> <span class="pre">to</span> <span class="pre">meet</span> <span class="pre">you!</span></code>.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_name</span> <span class="o">=</span> <span class="s1">&#39;Totoro&#39;</span> 
+
+<span class="k">if</span> <span class="n">my_name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;hayley&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;My name is Hayley too!&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">my_name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;totoro&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Interesting, I loved that movie!&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;That&#39;s a great name.&quot;</span><span class="p">)</span>
+  
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Nice to meet you!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>Interesting, I loved that movie!
+Nice to meet you!
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Now what happens if the object is equal to something else?</p>
+<p>This time, the object <code class="docutils literal notranslate"><span class="pre">my_name</span></code> has a value now of <code class="docutils literal notranslate"><span class="pre">Totoro</span></code>.</p>
+<p>We see the output is <code class="docutils literal notranslate"><span class="pre">Interesting,</span> <span class="pre">I</span> <span class="pre">loved</span> <span class="pre">that</span> <span class="pre">movie!</span> <span class="pre">Nice</span> <span class="pre">to</span> <span class="pre">meet</span> <span class="pre">you!</span></code></p>
+<p>What is happening here?</p>
+<hr class="docutils" />
+<center>
+<a class="reference internal image-reference" href="module5/eliftrue.png"><img alt="module5/eliftrue.png" src="module5/eliftrue.png" style="width: 100%;" /></a>
+</center>
+<p>Notes:</p>
+<p>Python ignores the code under the first condition <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">my_name.lower()</span> <span class="pre">==</span> <span class="pre">'hayley'</span></code> since it evaluates to <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>Instead, Python continues to the next condition <code class="docutils literal notranslate"><span class="pre">elif</span> <span class="pre">my_name.lower()</span> <span class="pre">==</span> <span class="pre">'totoro'</span></code>which is <code class="docutils literal notranslate"><span class="pre">True</span></code>. It then executes the code under it, which
+prints <code class="docutils literal notranslate"><span class="pre">'Interesting,</span> <span class="pre">I</span> <span class="pre">loved</span> <span class="pre">that</span> <span class="pre">movie!'</span></code>.</p>
+<p>Python then skips over the next lines of code and goes straight to
+printing <code class="docutils literal notranslate"><span class="pre">'Nice</span> <span class="pre">to</span> <span class="pre">meet</span> <span class="pre">you!'</span></code>.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_name</span> <span class="o">=</span> <span class="s1">&#39;Desmond&#39;</span> 
+
+<span class="k">if</span> <span class="n">my_name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;hayley&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;My name is Hayley too!&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">my_name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;totoro&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Interesting, I loved that movie!&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;That&#39;s a great name.&quot;</span><span class="p">)</span>
+  
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Nice to meet you!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>That&#39;s a great name.
+Nice to meet you!
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Now we try something that meets neither the first or second conditions.</p>
+<p>When <code class="docutils literal notranslate"><span class="pre">my_name</span></code> is equal to <code class="docutils literal notranslate"><span class="pre">Desmond</span></code>, the first 2 conditions both
+evaluate to <code class="docutils literal notranslate"><span class="pre">False</span></code>, and the last condition executes and prints <code class="docutils literal notranslate"><span class="pre">That's</span> <span class="pre">a</span> <span class="pre">great</span> <span class="pre">name.</span></code>.</p>
+<p>It executes the regular code <code class="docutils literal notranslate"><span class="pre">print('Nice</span> <span class="pre">to</span> <span class="pre">meet</span> <span class="pre">you!')</span></code> just like
+before.</p>
+<hr class="docutils" />
+<center>
+<a class="reference internal image-reference" href="module5/elsetrue.png"><img alt="module5/elsetrue.png" src="module5/elsetrue.png" style="width: 100%;" /></a>
+</center>
+<p>Notes:</p>
+<p>Here we see that neither the first or second conditions are met, so the
+<code class="docutils literal notranslate"><span class="pre">else</span></code> condition is executed before printing the regular non-conditioned
+code.</p>
+<hr class="docutils" />
+<div class="section" id="syntax">
+<h2>Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_name</span> <span class="o">=</span> <span class="s1">&#39;Hayley&#39;</span> 
+
+<span class="k">if</span> <span class="n">my_name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;hayley&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;My name is Hayley too!&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">my_name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;totoro&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Interesting, I loved that movie!&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;That&#39;s a great name.&quot;</span><span class="p">)</span>
+  
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Nice to meet you!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>My name is Hayley too!
+Nice to meet you!
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Python conditional statements contains 2 important things:</p>
+<ul class="simple">
+<li><p>A strict structure.</p></li>
+<li><p>The keyword <code class="docutils literal notranslate"><span class="pre">if</span></code> and optional keywords <code class="docutils literal notranslate"><span class="pre">else</span></code> and <code class="docutils literal notranslate"><span class="pre">elif</span></code>.</p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="structure">
+<h2>Structure<a class="headerlink" href="#structure" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_name</span> <span class="o">=</span> <span class="s1">&#39;Hayley&#39;</span> 
+
+<span class="k">if</span> <span class="n">my_name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;hayley&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;My name is Hayley too!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>My name is Hayley too!
+</pre></div>
+</div>
+<p>The structure of a choice is as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">SOME_BOOLEAN</span><span class="p">:</span>
+    <span class="n">statement</span> <span class="n">body</span> 
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>The structure of a choice is as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">SOME_BOOLEAN</span><span class="p">:</span>
+    <span class="n">statement</span> <span class="n">body</span> 
+</pre></div>
+</div>
+<p>Each conditional expression must end with a colon <code class="docutils literal notranslate"><span class="pre">:</span></code> and code to be
+executed if the condition is met must all must be indented with 4 spaces
+(or consistent indentation) in the <strong>statement body</strong>.</p>
+<p>In the example above:</p>
+<p><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">my_name.lower()</span> <span class="pre">==</span> <span class="pre">'hayley'</span></code> is the Boolean statement and</p>
+<p><code class="docutils literal notranslate"><span class="pre">print(&quot;My</span> <span class="pre">name</span> <span class="pre">is</span> <span class="pre">Hayley</span> <span class="pre">too!&quot;)</span></code> is the statement body.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="keywords-if-else">
+<h2>Keywords - if, else<a class="headerlink" href="#keywords-if-else" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_name</span> <span class="o">=</span> <span class="s1">&#39;Mia&#39;</span> 
+
+<span class="k">if</span> <span class="n">my_name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;hayley&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;My name is Hayley too!&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">my_name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;totoro&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Interesting, I loved that movie!&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;That&#39;s a great name.&quot;</span><span class="p">)</span>
+  
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Nice to meet you!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>That&#39;s a great name.
+Nice to meet you!
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>An <code class="docutils literal notranslate"><span class="pre">if</span></code> keyword is needed for any conditional.</p>
+<p>If the Boolean value is <code class="docutils literal notranslate"><span class="pre">True</span></code>, the body of the statement (which is
+anything indented under it) will be executed.</p>
+<p>If the expression is <code class="docutils literal notranslate"><span class="pre">False</span></code>, the body of the statement is not executed,
+and it continues to the next line of non-indented code outside the body.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">else</span></code> expression will execute if the conditional expressions above
+it are <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>The keyword <code class="docutils literal notranslate"><span class="pre">else</span></code> can only occur once following an <code class="docutils literal notranslate"><span class="pre">if</span></code> condition and
+are optional to the code.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="keywords-elif">
+<h2>Keywords - elif<a class="headerlink" href="#keywords-elif" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_name</span> <span class="o">=</span> <span class="s1">&#39;Totoro&#39;</span> 
+
+<span class="k">if</span> <span class="n">my_name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;hayley&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;My name is Hayley too!&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">my_name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;totoro&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Interesting, I loved that movie!&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;That&#39;s a great name.&quot;</span><span class="p">)</span>
+  
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Nice to meet you!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>Interesting, I loved that movie!
+Nice to meet you!
+</pre></div>
+</div>
+<p>Notes:</p>
+<p><code class="docutils literal notranslate"><span class="pre">elif</span></code> stands for <em><strong>else if</strong></em>. It allows us to check if different
+conditions evaluate to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<p>When the <code class="docutils literal notranslate"><span class="pre">elif</span></code> expression evaluates to <code class="docutils literal notranslate"><span class="pre">True</span></code>, then the body of the
+statement is executed, just like an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement.</p>
+<p>In the case we saw before when <code class="docutils literal notranslate"><span class="pre">my_name</span> <span class="pre">=</span> <span class="pre">'Totoro'</span></code>, the <code class="docutils literal notranslate"><span class="pre">elif</span></code>
+condition <code class="docutils literal notranslate"><span class="pre">my_name.lower()</span> <span class="pre">==</span> <span class="pre">'totoro'</span></code> evaluates to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">my_name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;hayley&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;My name is Hayley too!&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">my_name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;totoro&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Interesting, I loved that movie!&#39;</span><span class="p">)</span>
+<span class="k">elif</span>  <span class="n">my_name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;Desmond&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;That&#39;s a great name.&quot;</span><span class="p">)</span>
+  
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Nice to meet you!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_name</span> <span class="o">=</span> <span class="s1">&#39;Hayley&#39;</span> 
+
+<span class="k">elif</span> <span class="n">my_name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;totoro&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Interesting, I loved that movie!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>Error: invalid syntax (&lt;string&gt;, line 2)
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Unlike <code class="docutils literal notranslate"><span class="pre">else</span></code> statements, <code class="docutils literal notranslate"><span class="pre">elif</span></code> statements can be used multiple times
+in a decision process.</p>
+<p>But <code class="docutils literal notranslate"><span class="pre">elif</span></code> statements <strong>MUST</strong> always follow an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement or an
+error will occur like we see here.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="order-matters">
+<h2>Order matters<a class="headerlink" href="#order-matters" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">item</span> <span class="o">=</span> <span class="mi">13</span> 
+
+<span class="k">if</span> <span class="n">item</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="n">magnitude</span> <span class="o">=</span> <span class="s1">&#39;Between 10 and 20&#39;</span>
+<span class="k">elif</span> <span class="n">item</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">:</span>
+    <span class="n">magnitude</span> <span class="o">=</span> <span class="s1">&#39;Greater than 20&#39;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">magnitude</span> <span class="o">=</span> <span class="s1">&#39;10 or less&#39;</span>
+ 
+<span class="n">magnitude</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>&#39;Between 10 and 20&#39;
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>The order we chose for the statement for the <code class="docutils literal notranslate"><span class="pre">if</span></code> and <code class="docutils literal notranslate"><span class="pre">elif</span></code> statements
+is important and can result in different outputs.</p>
+<p>Let’s explore this in the next example using inequalities with numbers.</p>
+<p>In this case, our <code class="docutils literal notranslate"><span class="pre">item</span></code> object, which equals 13 here, is greater than
+10, so our first condition holds true, and so magnitude is assigned a
+value of <code class="docutils literal notranslate"><span class="pre">'Between</span> <span class="pre">10</span> <span class="pre">and</span> <span class="pre">20'</span></code></p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">item</span> <span class="o">=</span> <span class="mi">25</span> 
+
+<span class="k">if</span> <span class="n">item</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="n">magnitude</span> <span class="o">=</span> <span class="s1">&#39;Between 10 and 20&#39;</span>
+<span class="k">elif</span> <span class="n">item</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">:</span>
+    <span class="n">magnitude</span> <span class="o">=</span> <span class="s1">&#39;Greater than 20&#39;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">magnitude</span> <span class="o">=</span> <span class="s1">&#39;10 or less&#39;</span>
+ 
+<span class="n">magnitude</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>&#39;Between 10 and 20&#39;
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Let’s see what happens with an <code class="docutils literal notranslate"><span class="pre">item</span></code> value equal to 25.</p>
+<p><code class="docutils literal notranslate"><span class="pre">magnitude</span></code> is still assigned a value of <code class="docutils literal notranslate"><span class="pre">'Between</span> <span class="pre">10</span> <span class="pre">and</span> <span class="pre">20'</span></code>, but our
+item is greater than 20!</p>
+<hr class="docutils" />
+<center>
+<a class="reference internal image-reference" href="module5/order1.png"><img alt="module5/order1.png" src="module5/order1.png" style="width: 70%;" /></a>
+</center>
+<p>Notes:</p>
+<p><code class="docutils literal notranslate"><span class="pre">item</span></code> is taken out of the stream at first <code class="docutils literal notranslate"><span class="pre">if</span></code> condition, so it doesn’t
+get a chance to see the <code class="docutils literal notranslate"><span class="pre">elif</span></code> statement even though it would result in
+a <code class="docutils literal notranslate"><span class="pre">True</span></code> value.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">item</span> <span class="o">=</span> <span class="mi">25</span> 
+
+<span class="k">if</span> <span class="n">item</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">:</span>
+    <span class="n">magnitude</span> <span class="o">=</span> <span class="s1">&#39;Greater than 20&#39;</span>
+<span class="k">elif</span> <span class="n">item</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="n">magnitude</span> <span class="o">=</span> <span class="s1">&#39;Between 10 and 20&#39;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">magnitude</span> <span class="o">=</span> <span class="s1">&#39;10 or less&#39;</span>
+ 
+<span class="n">magnitude</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>&#39;Greater than 20&#39;
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>This can be fixed by rearranging the conditional statements.</p>
+<p>Instead, we put <code class="docutils literal notranslate"><span class="pre">item</span> <span class="pre">&gt;</span> <span class="pre">20</span></code> as the first condition followed by the
+condition <code class="docutils literal notranslate"><span class="pre">item</span> <span class="pre">&gt;</span> <span class="pre">10</span></code>.</p>
+<p>Now a value of 25 gives the desired output of <code class="docutils literal notranslate"><span class="pre">greater</span> <span class="pre">than</span> <span class="pre">20</span></code>.</p>
+<hr class="docutils" />
+<center>
+<a class="reference internal image-reference" href="module5/order2.png"><img alt="module5/order2.png" src="module5/order2.png" style="width: 70%;" /></a>
+</center>
+<p>Notes:</p>
+<p>Here we can see that the first condition is <code class="docutils literal notranslate"><span class="pre">True</span></code> and executes the code
+in the statement body - This statement body assigns the object
+<code class="docutils literal notranslate"><span class="pre">magnitude</span></code> a value of <code class="docutils literal notranslate"><span class="pre">'Greater</span> <span class="pre">than</span> <span class="pre">20'</span></code>.</p>
+<p>Python then passes the other conditions and executes <code class="docutils literal notranslate"><span class="pre">magnitude</span></code>.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">item</span> <span class="o">=</span> <span class="mi">13</span> 
+
+<span class="k">if</span> <span class="n">item</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">:</span>
+    <span class="n">magnitude</span> <span class="o">=</span> <span class="s1">&#39;Greater than 20&#39;</span>
+<span class="k">elif</span> <span class="n">item</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="n">magnitude</span> <span class="o">=</span> <span class="s1">&#39;Between 10 and 20&#39;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">magnitude</span> <span class="o">=</span> <span class="s1">&#39;10 or less&#39;</span>
+ 
+<span class="n">magnitude</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>&#39;Between 10 and 20&#39;
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>But what about if <code class="docutils literal notranslate"><span class="pre">item</span></code> was equal to 13?</p>
+<p>In this case, <code class="docutils literal notranslate"><span class="pre">magnitude</span></code> results in a value of <code class="docutils literal notranslate"><span class="pre">'Between</span> <span class="pre">10</span> <span class="pre">and</span> <span class="pre">20'</span></code>,
+which is what we expect.</p>
+<hr class="docutils" />
+<center>
+<a class="reference internal image-reference" href="module5/order3.png"><img alt="module5/order3.png" src="module5/order3.png" style="width: 70%;" /></a>
+</center>
+<p>Notes:</p>
+<p>Since 13 doesn’t meet the first condition <code class="docutils literal notranslate"><span class="pre">item</span> <span class="pre">&gt;</span> <span class="pre">20</span></code>, Python passes it
+and moves onto the second condition <code class="docutils literal notranslate"><span class="pre">item</span> <span class="pre">&gt;</span> <span class="pre">10</span></code>, which assigns
+<code class="docutils literal notranslate"><span class="pre">magnitude</span></code> the value <code class="docutils literal notranslate"><span class="pre">Between</span> <span class="pre">10</span> <span class="pre">and</span> <span class="pre">20</span></code>.</p>
+<p>It skips the <code class="docutils literal notranslate"><span class="pre">else</span></code> statement since one of the statements above was
+already evaluated to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="inline">
+<h2>Inline<a class="headerlink" href="#inline" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">item</span> <span class="o">=</span> <span class="mi">13</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="k">if</span>  <span class="n">item</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="n">magnitude</span> <span class="o">=</span> <span class="s1">&#39;Greater than 10&#39;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">magnitude</span> <span class="o">=</span> <span class="s1">&#39;10 or less&#39;</span>
+    
+<span class="n">magnitude</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>&#39;Greater than 10&#39;
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">magnitude</span> <span class="o">=</span> <span class="s2">&quot;Greater than 10&quot;</span> <span class="k">if</span> <span class="n">item</span> <span class="o">&gt;</span> <span class="mi">10</span> <span class="k">else</span> <span class="s2">&quot;10 or less&quot;</span>
+<span class="n">magnitude</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>&#39;Greater than 10&#39;
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>In situations where we have only <code class="docutils literal notranslate"><span class="pre">if</span></code> and <code class="docutils literal notranslate"><span class="pre">else</span></code> statements, we have the
+ability to put it all in a single line of code.</p>
+<p>Let’s test this on our object <code class="docutils literal notranslate"><span class="pre">item</span></code>.</p>
+<p>The original conditional statements below checks if the item is greater
+than 10 and assigns a value of <code class="docutils literal notranslate"><span class="pre">greater</span> <span class="pre">than</span> <span class="pre">10</span></code> if it’s <code class="docutils literal notranslate"><span class="pre">True</span></code> and a
+value of <code class="docutils literal notranslate"><span class="pre">10</span> <span class="pre">or</span> <span class="pre">less</span></code> otherwise.</p>
+<p>The 4 lines used for the conditional statements can be compressed into a
+single one.</p>
+<p>Both syntaxes are acceptable, depending on your preference.</p>
+<p>This type of syntax is only possible for decisions that involve only
+<code class="docutils literal notranslate"><span class="pre">if</span></code> and <code class="docutils literal notranslate"><span class="pre">else</span></code> conditions.</p>
+<hr class="docutils" />
+<div class="section" id="python-keyword-in">
+<h3>Python Keyword “in”<a class="headerlink" href="#python-keyword-in" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">exercises</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;burpees&#39;</span><span class="p">,</span> <span class="s1">&#39;lunges&#39;</span><span class="p">,</span> <span class="s1">&#39;squats&#39;</span><span class="p">,</span> <span class="s1">&#39;curls&#39;</span><span class="p">,</span> <span class="s1">&#39;deadlifts&#39;</span><span class="p">]</span>
+
+<span class="s1">&#39;squats&#39;</span> <span class="ow">in</span> <span class="n">exercises</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="s1">&#39;squats&#39;</span> <span class="ow">in</span> <span class="n">exercises</span><span class="p">:</span>
+    <span class="n">sore</span> <span class="o">=</span> <span class="s2">&quot;Extreme&quot;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">sore</span> <span class="o">=</span> <span class="s2">&quot;Not sore&quot;</span>
+<span class="n">sore</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>&#39;Extreme&#39;
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>We’ve already seen that conditions evaluate to a Boolean.</p>
+<p>So far, we’ve seen a lot of Boolean evaluated from equalities and
+inequalities, but that’s not all.</p>
+<p>There are many different keywords we can use to obtain a Boolean value,
+but one that you may use often is the keyword <code class="docutils literal notranslate"><span class="pre">in</span></code>.</p>
+<p>We can use the keyword <code class="docutils literal notranslate"><span class="pre">in</span></code> to check if a certain value is contained in
+a list or dictionary.</p>
+<p>We can pair this with a conditional statement like we did before to have
+Python makes decisions.</p>
+<p>In this example, we are checking if <code class="docutils literal notranslate"><span class="pre">squats</span></code> is contained in our list
+<code class="docutils literal notranslate"><span class="pre">exercises</span></code>.</p>
+<p>We can see that <code class="docutils literal notranslate"><span class="pre">squats</span></code> exists at position 2 in the list, and therefore
+the object <code class="docutils literal notranslate"><span class="pre">sore</span></code> is assigned a value of <code class="docutils literal notranslate"><span class="pre">Extreme</span></code>.</p>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="lets-apply-what-we-learned">
+<h1>Let’s apply what we learned!<a class="headerlink" href="#lets-apply-what-we-learned" title="Permalink to this headline">¶</a></h1>
+<p>Notes:</p>
+<br>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "UBC-MDS/PPDS_book",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./modules /module5"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Hayley Boyce, Mike Gelbart, Tiffany Timbers<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

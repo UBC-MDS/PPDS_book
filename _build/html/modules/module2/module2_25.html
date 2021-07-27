@@ -1,0 +1,663 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grouping and aggregating &#8212; Programming in Python for Data Science</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/video.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://hfboyce.github.io/ppds/intro.html/modules/module2/module2_25.html" />
+    <link rel="shortcut icon" href="../../_static/icon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Programming in Python for Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  Modules
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module1.html">
+   Module 1:  Python &amp; Pandas - An Unexpected Friendship
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_01.html">
+     What is a dataframe?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_03.html">
+     What is Pandas?
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Coding Exercises
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module1.html">
+   Module 1: Python &amp; Pandas - An Unexpected Friendship
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_01.html">
+     What is a dataframe?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_03.html">
+     What is Pandas?
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/modules/module2/module2_25.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/UBC-MDS/PPDS_book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/UBC-MDS/PPDS_book/issues/new?title=Issue%20on%20page%20%2Fmodules/module2/module2_25.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/UBC-MDS/PPDS_book/edit/main/modules/module2/module2_25.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Grouping and aggregating
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-groupby">
+   Using groupby
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#summary-statistics-with-groups">
+     Summary Statistics with Groups
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aggregating-dataframes">
+     Aggregating dataframes
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aggregating-groupby-objects">
+     Aggregating groupby objects
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extra-fancy-aggregation">
+     Extra Fancy Aggregation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lets-apply-what-we-learned">
+   Let’s apply what we learned!
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="grouping-and-aggregating">
+<h1>Grouping and aggregating<a class="headerlink" href="#grouping-and-aggregating" title="Permalink to this headline">¶</a></h1>
+<p>Notes:</p>
+<br>
+<hr class="docutils" />
+<p><em><em>Which manufacturer has the highest mean sugar content?</em></em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="p">[</span><span class="s1">&#39;mfr&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>K    23
+G    22
+P     9
+Q     8
+R     8
+N     6
+A     1
+Name: mfr, dtype: int64
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Often, we are interested in examining specific groups in our data.</p>
+<p>Perhaps the question we want to answer from the cereal dataset is:</p>
+<p><em><em>Which manufacturer has the highest mean sugar content?</em></em></p>
+<p>We found in Module 1 using <code class="docutils literal notranslate"><span class="pre">.value_counts()</span></code> that there are 7 different
+manufacturers; K, G, P, R, Q, N and A.</p>
+<hr class="docutils" />
+<p>Let’s start with “K”:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="p">[</span><span class="n">cereal</span><span class="p">[</span><span class="s1">&#39;mfr&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;K&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()[[</span><span class="s1">&#39;sugars&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>sugars    7.565217
+dtype: float64
+</pre></div>
+</div>
+<p>Next “G”:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="p">[</span><span class="n">cereal</span><span class="p">[</span><span class="s1">&#39;mfr&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;G&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()[[</span><span class="s1">&#39;sugars&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>sugars    7.954545
+dtype: float64
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>To find the mean sugar content of each manufacturer, we could filter on
+each manufacturer and calculate the mean sugar content using <code class="docutils literal notranslate"><span class="pre">.mean()</span></code>.
+We can chain to make this process a little faster too.</p>
+<p>Let’s start with “K” and then next “G”.</p>
+<p>We could do this for the remaining 5 manufacturers. However, it’s
+obvious that this is time-consuming and a lot of work to do this
+repeatedly.</p>
+<p>Imagine how tedious this would be if we had 100 different manufacturers?</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="using-groupby">
+<h1>Using groupby<a class="headerlink" href="#using-groupby" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mfr_group</span> <span class="o">=</span> <span class="n">cereal</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;mfr&#39;</span><span class="p">)</span>
+<span class="n">mfr_group</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x11947fd60&gt;
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Pandas has a solution for this.</p>
+<p>It’s not uncommon to be interested in examining specific groups in our
+data. Hence there is a verb that is helpful in grouping like-rows
+together.</p>
+<p><code class="docutils literal notranslate"><span class="pre">.groupby()</span></code> allows us to group our data based on a specified column.</p>
+<p>Let’s group our cereal dataframe on the <code class="docutils literal notranslate"><span class="pre">mfr</span></code> column and save it as
+object <code class="docutils literal notranslate"><span class="pre">mfr_group</span></code>.</p>
+<p>This returns a <code class="docutils literal notranslate"><span class="pre">DataFrame</span> <span class="pre">GroupBy</span></code> object.</p>
+<hr class="docutils" />
+<center>
+</center>
+<p>Notes:</p>
+<p>For example if we only had two manufacturers, the output would look like
+this.</p>
+<p>What exactly is a groubpy object though?</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mfr_group</span><span class="o">.</span><span class="n">groups</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>{&#39;A&#39;: [43], &#39;G&#39;: [5, 7, 11, 12, 13, 14, 18, 22, 31, 36, 40, 42, 47, 51, 59, 69, 70, 71, 72, 73, 75, 76], &#39;K&#39;: [2, 3, 6, 16, 17, 19, 21, 24, 25, 26, 28, 38, 39, 46, 48, 49, 50, 53, 58, 60, 62, 66, 67], &#39;N&#39;: [0, 20, 63, 64, 65, 68], &#39;P&#39;: [9, 27, 29, 30, 32, 33, 34, 37, 52], &#39;Q&#39;: [1, 10, 35, 41, 54, 55, 56, 57], &#39;R&#39;: [4, 8, 15, 23, 44, 45, 61, 74]}
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">DataFrame</span> <span class="pre">GroupBy</span></code> object contains information about the groups of
+the dataframe.</p>
+<p>We can access it with the <code class="docutils literal notranslate"><span class="pre">.groups</span></code> attribute (noun).</p>
+<p>Reading carefully, we can see there are 7 groups: <code class="docutils literal notranslate"><span class="pre">A</span></code>, <code class="docutils literal notranslate"><span class="pre">G</span></code>, <code class="docutils literal notranslate"><span class="pre">K</span></code>, <code class="docutils literal notranslate"><span class="pre">N</span></code>,
+<code class="docutils literal notranslate"><span class="pre">P</span></code>, <code class="docutils literal notranslate"><span class="pre">Q</span></code> and <code class="docutils literal notranslate"><span class="pre">R</span></code>, and it lists the index labels (cereal names) in each
+group.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mfr_group</span><span class="o">.</span><span class="n">groups</span><span class="p">[</span><span class="s1">&#39;K&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>Int64Index([2, 3, 6, 16, 17, 19, 21, 24, 25, 26, 28, 38, 39, 46, 48, 49, 50, 53, 58, 60, 62, 66, 67], dtype=&#39;int64&#39;)
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>We can obtain all the row index names of a group by specifying the group
+name in square brackets after the <code class="docutils literal notranslate"><span class="pre">groups</span></code> method.</p>
+<p>Take the group <code class="docutils literal notranslate"><span class="pre">K</span></code> as an example.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mfr_group</span><span class="o">.</span><span class="n">get_group</span><span class="p">(</span><span class="s1">&#39;K&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                         name mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+2                    All-Bran   K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
+3   All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
+6                 Apple Jacks   K  Cold       110        2    0     125    1.0   11.0      14      30        25      2     1.0  1.00  33.174094
+16                Corn Flakes   K  Cold       100        2    0     290    1.0   21.0       2      35        25      1     1.0  1.00  45.863324
+..                        ...  ..   ...       ...      ...  ...     ...    ...    ...     ...     ...       ...    ...     ...   ...        ...
+60             Raisin Squares   K  Cold        90        2    0       0    2.0   15.0       6     110        25      3     1.0  0.50  55.333142
+62              Rice Krispies   K  Cold       110        2    0     290    0.0   22.0       3      35        25      1     1.0  1.00  40.560159
+66                     Smacks   K  Cold       110        2    1      70    1.0    9.0      15      40        25      2     1.0  0.75  31.230054
+67                  Special K   K  Cold       110        6    0     230    1.0   16.0       3      55        25      1     1.0  1.00  53.131324
+
+[23 rows x 16 columns]
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>We can get the full dataframe of the group <code class="docutils literal notranslate"><span class="pre">K</span></code> alone using the method
+<code class="docutils literal notranslate"><span class="pre">.get_group()</span></code>.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="p">[</span><span class="s1">&#39;mfr&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>K    23
+G    22
+P     9
+Q     8
+R     8
+N     6
+A     1
+Name: mfr, dtype: int64
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mfr_group</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>mfr
+A     1
+G    22
+K    23
+N     6
+P     9
+Q     8
+R     8
+dtype: int64
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Similarly to how we made frequency tables using <code class="docutils literal notranslate"><span class="pre">.value_counts()</span></code>, we
+can now use <code class="docutils literal notranslate"><span class="pre">.size()</span></code> to obtain the number of rows in each group:</p>
+<hr class="docutils" />
+<div class="section" id="summary-statistics-with-groups">
+<h2>Summary Statistics with Groups<a class="headerlink" href="#summary-statistics-with-groups" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mfr_group</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>       calories   protein       fat      sodium     fiber      carbo    sugars      potass   vitamins     shelf    weight      cups     rating
+mfr                                                                                                                                           
+A    100.000000  4.000000  1.000000    0.000000  0.000000  16.000000  3.000000   95.000000  25.000000  2.000000  1.000000  1.000000  54.850917
+G    111.363636  2.318182  1.363636  200.454545  1.272727  14.727273  7.954545   85.227273  35.227273  2.136364  1.049091  0.875000  34.485852
+K    108.695652  2.652174  0.608696  174.782609  2.739130  15.130435  7.565217  103.043478  34.782609  2.347826  1.077826  0.796087  44.038462
+N     86.666667  2.833333  0.166667   37.500000  4.000000  16.000000  1.833333  121.000000   8.333333  1.666667  0.971667  0.778333  67.968567
+P    108.888889  2.444444  0.888889  146.111111  2.777778  13.222222  8.777778  113.888889  25.000000  2.444444  1.064444  0.714444  41.705744
+Q     95.000000  2.625000  1.750000   92.500000  1.337500  10.250000  5.500000   74.375000  12.500000  2.375000  0.875000  0.823750  42.915990
+R    115.000000  2.500000  1.250000  198.125000  1.875000  17.625000  6.125000   89.500000  25.000000  2.000000  1.000000  0.871250  41.542997
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mfr_group</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                        name  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+mfr                                                                                                                                       
+A                      Maypo   Hot       100        4    1       0    0.0   16.0       3      95        25      2    1.00  1.00  54.850917
+G        Wheaties Honey Gold  Cold       140        6    3     290    4.0   21.0      14     230       100      3    1.50  1.50  51.592193
+K                  Special K  Cold       160        6    3     320   14.0   22.0      15     330       100      3    1.50  1.00  93.704912
+N    Strawberry Fruit Wheats   Hot       100        4    1     130   10.0   21.0       6     280        25      3    1.00  1.00  74.472949
+P      Post Nat. Raisin Bran  Cold       120        3    3     210    6.0   17.0      15     260        25      3    1.33  1.33  53.371007
+Q             Quaker Oatmeal   Hot       120        5    5     220    2.7   14.0      12     135        25      3    1.00  1.00  63.005645
+R                 Wheat Chex  Cold       150        4    3     280    4.0   23.0      11     170        25      3    1.00  1.13  49.787445
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>What now?</p>
+<p>Grouping doesn’t answer our initial question of <em><strong>Which manufacturer
+has the highest mean sugar content?</strong></em></p>
+<p>Where do we go from here?</p>
+<p>We need to calculate the mean sugar content in each manufacturing
+group! With a groupby object, this is super simple, as shown here.</p>
+<p>Using <code class="docutils literal notranslate"><span class="pre">.mean()</span></code> on our groupby object answers the initial question and
+confirms that manufacturer “P” has the highest mean sugar content across
+cereals.</p>
+<p>See how convenient this was to do in comparison to our initial method?
+Not only does this give us the result quicker, but it also gives us the
+mean of each column of the dataframe.</p>
+<p>Think of how many filtering and mean calculations would have to be done
+if we were to do this using our initial approach.</p>
+<p>Of course, using groups is not limited to finding only the mean. We can
+do the same thing for other statistics too like <code class="docutils literal notranslate"><span class="pre">.min()</span></code> and <code class="docutils literal notranslate"><span class="pre">.max()</span></code>,
+or many other operations.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="aggregating-dataframes">
+<h2>Aggregating dataframes<a class="headerlink" href="#aggregating-dataframes" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>calories    106.883117
+protein       2.545455
+fat           1.012987
+sodium      159.675325
+               ...    
+shelf         2.207792
+weight        1.029610
+cups          0.821039
+rating       42.665705
+Length: 13, dtype: float64
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>calories    106.883117
+protein       2.545455
+fat           1.012987
+sodium      159.675325
+               ...    
+shelf         2.207792
+weight        1.029610
+cups          0.821039
+rating       42.665705
+Length: 13, dtype: float64
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>In situations where we want to collect multiple statistics together, we
+can aggregate them in one step using a verb called <code class="docutils literal notranslate"><span class="pre">.agg()</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">.agg()</span></code> can be used on its own using a single measurement, without
+<code class="docutils literal notranslate"><span class="pre">.groupby()</span></code>.</p>
+<p>Using <code class="docutils literal notranslate"><span class="pre">.agg()</span></code> with only a <code class="docutils literal notranslate"><span class="pre">mean</span></code> input is essentially the same thing as
+calling the statistic <code class="docutils literal notranslate"><span class="pre">mean()</span></code> on the dataframe.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s1">&#39;max&#39;</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">,</span> <span class="s1">&#39;median&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                       name  mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+max     Wheaties Honey Gold    R   Hot     160.0      6.0  5.0   320.0   14.0   23.0    15.0   330.0     100.0    3.0     1.5  1.50  93.704912
+min               100% Bran    A  Cold      50.0      1.0  0.0     0.0    0.0    1.0     0.0     1.0       0.0    1.0     0.5  0.25  18.042851
+median                  NaN  NaN   NaN     110.0      3.0  1.0   180.0    2.0   14.0     7.0    90.0      25.0    2.0     1.0  0.75  40.400208
+</pre></div>
+</div>
+<p>Notes:</p>
+<p><code class="docutils literal notranslate"><span class="pre">.agg()</span></code> gets a chance to really shine when we want several specific
+measures.</p>
+<p>Let’s say we want the <code class="docutils literal notranslate"><span class="pre">max</span></code>, <code class="docutils literal notranslate"><span class="pre">min</span></code> and <code class="docutils literal notranslate"><span class="pre">median</span></code>. We specify them in
+square brackets within our <code class="docutils literal notranslate"><span class="pre">.agg()</span></code> method.</p>
+<p>This produces a convenient dataframe giving the value for each
+statistic, for each column.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="aggregating-groupby-objects">
+<h2>Aggregating groupby objects<a class="headerlink" href="#aggregating-groupby-objects" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mfr_group</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s1">&#39;max&#39;</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">,</span> <span class="s1">&#39;median&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>    calories             protein            fat            sodium             fiber             carbo              sugars            potass            vitamins            shelf            weight               cups                  rating                      
+         max  min median     max min median max min median    max  min median   max  min median   max   min median    max min median    max min median      max min median   max min median    max   min median   max   min median        max        min     median
+mfr                                                                                                                                                                                                                                                                
+A        100  100    100       4   4    4.0   1   1      1      0    0    0.0   0.0  0.0    0.0  16.0  16.0  16.00      3   3    3.0     95  95   95.0       25  25   25.0     2   2    2.0   1.00  1.00    1.0  1.00  1.00  1.000  54.850917  54.850917  54.850917
+G        140  100    110       6   1    2.0   3   1      1    290  140  200.0   4.0  0.0    1.5  21.0  10.5  14.25     14   1    8.5    230  25   80.0      100  25   25.0     3   1    2.0   1.50  1.00    1.0  1.50  0.50  0.875  51.592193  19.823573  36.181877
+K        160   50    110       6   1    3.0   3   0      0    320    0  170.0  14.0  0.0    1.0  22.0   7.0  15.00     15   0    7.0    330  20   60.0      100  25   25.0     3   1    3.0   1.50  1.00    1.0  1.00  0.33  0.750  93.704912  29.924285  40.560159
+N        100   70     90       4   2    3.0   1   0      0    130    0    7.5  10.0  1.0    3.0  21.0   5.0  17.50      6   0    0.0    280   1  107.5       25   0    0.0     3   1    1.5   1.00  0.83    1.0  1.00  0.33  0.835  74.472949  59.363993  68.319429
+P        120   90    110       3   1    3.0   3   0      1    210   45  160.0   6.0  0.0    3.0  17.0  11.0  13.00     15   3   10.0    260  25   90.0       25  25   25.0     3   1    3.0   1.33  1.00    1.0  1.33  0.25  0.670  53.371007  28.025765  40.917047
+Q        120   50    100       5   1    2.5   5   0      2    220    0   75.0   2.7  0.0    1.5  14.0   1.0  12.00     12   0    6.0    135  15   72.5       25   0   12.5     3   1    2.5   1.00  0.50    1.0  1.00  0.50  0.875  63.005645  18.042851  47.419974
+R        150   90    110       4   1    2.0   3   0      1    280   95  200.0   4.0  0.0    2.0  23.0  14.0  16.50     11   2    5.5    170   1   97.5       25  25   25.0     3   1    2.0   1.00  1.00    1.0  1.13  0.67  0.875  49.787445  34.139765  41.721976
+</pre></div>
+</div>
+<p>Notes:</p>
+<p><code class="docutils literal notranslate"><span class="pre">.agg()</span></code> is particularly useful with groupby objects.</p>
+<p>Let’s try it on our manufacturer <code class="docutils literal notranslate"><span class="pre">groupby</span></code> object named <code class="docutils literal notranslate"><span class="pre">mfr_group</span></code>.</p>
+<p>This gives us a value for each group and for each statistic we
+specified.</p>
+<p>For example:</p>
+<p>Look at the ‘150’ in the bottom row on the far left under <code class="docutils literal notranslate"><span class="pre">calories</span></code>.
+The interpretation is that, for cases where the manufacturer is ‘R’, the
+max number of calories is 150.</p>
+<p>In a similar manner if the manufacturer is ‘P’ the minumum amount of
+sodium is 45.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="extra-fancy-aggregation">
+<h2>Extra Fancy Aggregation<a class="headerlink" href="#extra-fancy-aggregation" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mfr_group</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s2">&quot;calories&quot;</span><span class="p">:[</span><span class="s1">&#39;max&#39;</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">],</span>
+               <span class="s2">&quot;rating&quot;</span><span class="p">:[</span><span class="s1">&#39;sum&#39;</span><span class="p">],</span>  
+               <span class="s2">&quot;sugars&quot;</span><span class="p">:[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;median&#39;</span><span class="p">]})</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>    calories            rating    sugars       
+         max  min          sum      mean median
+mfr                                            
+A        100  100    54.850917  3.000000    3.0
+G        140  100   758.688737  7.954545    8.5
+K        160   50  1012.884634  7.565217    7.0
+N        100   70   407.811403  1.833333    0.0
+P        120   90   375.351697  8.777778   10.0
+Q        120   50   343.327919  5.500000    6.0
+R        150   90   332.343977  6.125000    5.5
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>You might have noticed that when we used <code class="docutils literal notranslate"><span class="pre">.agg()</span></code>, we calculated the
+same 3 statistics for every column in the dataframe. But we can also
+calculate different statistics for different columns.</p>
+<p>Let’s say we are concerned about the <code class="docutils literal notranslate"><span class="pre">max</span></code> and <code class="docutils literal notranslate"><span class="pre">min</span></code> calorie values, the
+total <code class="docutils literal notranslate"><span class="pre">sum</span></code> of the ratings and the <code class="docutils literal notranslate"><span class="pre">mean</span></code> and <code class="docutils literal notranslate"><span class="pre">median</span></code> sugar content for
+each manufacturing group.</p>
+<p>We can achieve this by wrapping everything in curly brackets and using a
+colon to separate the column name from the statistics values. We need to
+put the statistics within square brackets.</p>
+<p>The code is a bit more complicated, but the result is a bit easier to
+read.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="lets-apply-what-we-learned">
+<h1>Let’s apply what we learned!<a class="headerlink" href="#lets-apply-what-we-learned" title="Permalink to this headline">¶</a></h1>
+<p>Notes: <br></p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "UBC-MDS/PPDS_book",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./modules/module2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Hayley Boyce, Mike Gelbart, Tiffany Timbers<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

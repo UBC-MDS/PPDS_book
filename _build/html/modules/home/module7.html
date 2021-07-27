@@ -1,0 +1,651 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>&lt;no title&gt; &#8212; Programming in Python for Data Science</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/video.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://hfboyce.github.io/ppds/intro.html/modules/home/module7.html" />
+    <link rel="shortcut icon" href="../../_static/icon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Programming in Python for Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  Modules
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module1.html">
+   Module 1:  Python &amp; Pandas - An Unexpected Friendship
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_01.html">
+     What is a dataframe?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_03.html">
+     What is Pandas?
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Coding Exercises
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module1.html">
+   Module 1: Python &amp; Pandas - An Unexpected Friendship
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_01.html">
+     What is a dataframe?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_03.html">
+     What is Pandas?
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/modules/home/module7.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/UBC-MDS/PPDS_book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/UBC-MDS/PPDS_book/issues/new?title=Issue%20on%20page%20%2Fmodules/home/module7.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/UBC-MDS/PPDS_book/edit/main/modules/home/module7.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <exercise id="0" title="Module Learning Outcomes" type="slides, video">
+<slides source="module7/module7_00" shot = "11" start="0:001" end="0:48">
+</slides>
+</exercise> 
+<exercise id="1" title="Importing Python Libraries" type="slides, video">
+<slides source="module7/module7_01" shot = "4" start="00:003" end="02:52">
+</slides>
+</exercise>
+<exercise id="2" title="Importing packages ">
+<p><strong>Question 1</strong></p>
+<p>How would you import a package named <code class="docutils literal notranslate"><span class="pre">numpy</span></code>?</p>
+<choice id="1" >
+<opt text="<code>import numpy </code>"  correct="true">
+<p>This is the basic way to import a Python package.</p>
+</opt>
+<opt text="<code>as np import numpy </code>">
+<p>Unfortunately, this would not import <code class="docutils literal notranslate"><span class="pre">numpy</span></code>.</p>
+</opt>
+<opt text="<code>from numpy import numpy</code>">
+<p>Are you sure you read the slides properly?</p>
+</opt>
+</choice> 
+<p><strong>Question 2</strong></p>
+<p>How would you import <code class="docutils literal notranslate"><span class="pre">numpy</span></code> if you wanted to refer to it as <code class="docutils literal notranslate"><span class="pre">np</span></code>?</p>
+<choice id="2" >
+<opt text="<code>as np import numpy </code>">
+<p>This would actually result in an error!</p>
+</opt>
+<opt text="<code>Import numpy As np</code>">
+<p>Be careful with capitals. In this case, when you use capitalization, neither <code class="docutils literal notranslate"><span class="pre">Import</span></code> nor <code class="docutils literal notranslate"><span class="pre">As</span></code> are Python keywords.</p>
+</opt>
+<opt text="<code>import numpy as np </code>"  correct="true">
+<p>Nice work!</p>
+</opt>
+<opt text="<code>As np Import numpy </code>">
+<p>This is not the correct way to import, and it uses capitalization on keywords which is incorrect.</p>
+</opt>
+</choice>  
+</exercise>
+<exercise id="3" title="Importing a Package Function">
+<p>How would you import the square root function <code class="docutils literal notranslate"><span class="pre">sqrt</span></code> from the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> package?</p>
+<choice id="1" >
+<opt text="<code>import sqrt from numpy</code>"  >
+<p>Maybe try ordering this differently?</p>
+</opt>
+<opt text="<code>from numpy import sqrt</code>"  correct="true">
+<p>Great!</p>
+</opt>
+<opt text="<code>from sqrt import numpy</code>">
+<p>We are importing only the <code class="docutils literal notranslate"><span class="pre">sqrt</span></code> function from the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> package.</p>
+</opt>
+<opt text="<code>import numpy from sqrt</code>"  >
+<p><code class="docutils literal notranslate"><span class="pre">sqrt</span></code> is a single function that we want to import from <code class="docutils literal notranslate"><span class="pre">numpy</span></code>.</p>
+</opt>
+</choice> 
+</exercise>
+<exercise id="4" title= "Importing Packages... Again">
+<p><strong>Instructions:</strong><br />
+Running a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.</strong></p>
+<p><em><strong>Make sure you remove the hash (<code class="docutils literal notranslate"><span class="pre">#</span></code>) symbol in the coding portions of this question.  We have commented them so that the line won’t execute and you can test your code after each step.</strong></em></p>
+<p>Ok, so we’ve seen this <code class="docutils literal notranslate"><span class="pre">numpy</span></code> package, let’s actually load in one of the functions and use it! If you are wondering what this package does, don’t worry, you’ll learn more of this in the next module. <code class="docutils literal notranslate"><span class="pre">numpy</span></code> has a function called <code class="docutils literal notranslate"><span class="pre">power()</span></code>.</p>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Import the <code class="docutils literal notranslate"><span class="pre">power()</span></code> function from the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> package.</p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">power()</span></code> function to find  7 to the power of 5 and save it in an object named <code class="docutils literal notranslate"><span class="pre">power7_5</span></code> - you may want to use <code class="docutils literal notranslate"><span class="pre">?power</span></code> to see what arguments the function requires.</p></li>
+<li><p>Display your results.</p></li>
+</ul>
+<codeblock id="07_04">
+<ul class="simple">
+<li><p>Are you using <code class="docutils literal notranslate"><span class="pre">power(7,</span> <span class="pre">5)</span></code>?</p></li>
+<li><p>Are you importing using <code class="docutils literal notranslate"><span class="pre">from</span></code>?</p></li>
+</ul>
+</codeblock>
+</exercise>
+<exercise id="5" title="Working with Other Files" type="slides, video">
+<slides source="module7/module7_05" shot = "4" start="02:561" end="07:56">
+</slides>
+</exercise>
+<exercise id="6" title="Importing Your Own Functions Questions">
+<p><strong>Question 1</strong></p>
+<p>Where do you save your files so you can import them into new Jupyter notebooks?</p>
+<choice id="1" >
+<opt text="<code>.python</code>">
+<p>Not quite but you are on the right track.</p>
+</opt>
+<opt text="<code>.py</code>" correct="true">
+<p>Nice!</p>
+</opt>
+<opt text="<code>.ipynb</code>">
+<p>This is a Jupyter notebook file, not a file to import a function from.</p>
+</opt>
+</choice> 
+<p><strong>Question 2</strong></p>
+<p>Is the following statement True or False?</p>
+<p><em>You can import files containing functions in a similar way to how you import Python libraries</em></p>
+<choice id="2" >
+<opt text="True" correct="true">
+<p>That’s right! This makes things easy for us.</p>
+</opt>
+<opt text="False">
+<p>Note quite, Python uses a similar importing style for libraries and saved scripts.</p>
+</opt>
+</choice>  
+</exercise>
+<exercise id="7" title="More Importing Your Own Functions Questions">
+<p>If I have a file named <code class="docutils literal notranslate"><span class="pre">baking.py</span></code> containing functions like <code class="docutils literal notranslate"><span class="pre">cake()</span></code> and <code class="docutils literal notranslate"><span class="pre">scones()</span></code> and I want to import it into a Jupyter notebook using the alias <code class="docutils literal notranslate"><span class="pre">bake</span></code>, which of the following would be required?</p>
+<choice id="1" >
+<opt text="<code>import cake from baking</code>"  >
+<p><code class="docutils literal notranslate"><span class="pre">cake</span></code> is the function name, not the library.</p>
+</opt>
+<opt text="<code>from baking import bake</code>" >
+<p>this isn’t quite right. <code class="docutils literal notranslate"><span class="pre">bake</span></code> is an alias, not a package.</p>
+</opt>
+<opt text="<code>import baking as bake</code>"  correct="true">
+<p>This is right!</p>
+</opt>
+<opt text="<code>import bake as scone</code>"  >
+<p>The alias we want to call <code class="docutils literal notranslate"><span class="pre">baking</span></code> is <code class="docutils literal notranslate"><span class="pre">bake</span></code>, not <code class="docutils literal notranslate"><span class="pre">scone</span></code>.</p>
+</opt>
+</choice> 
+</exercise>
+<exercise id="8" title="Testing Your Own Functions with Pytest" type="slides, video">
+<slides source="module7/module7_08" shot = "4" start="08:03" end="12:59">
+</slides>
+</exercise>
+<exercise id="9" title="Using Pytest Questions">
+<p><strong>Question 1</strong></p>
+<p>When you make a function from a unit test, what naming guideline does your function have to follow for <code class="docutils literal notranslate"><span class="pre">pytest</span></code> to work?</p>
+<choice id="1" >
+<opt text="The function must end with <code>test</code>">
+<p>It should not end with <code class="docutils literal notranslate"><span class="pre">test</span></code>, but the word “test” should be included in the name.</p>
+</opt>
+<opt text="The function must begin with <code>test</code>" correct="true">
+<p>Great!</p>
+</opt>
+<opt text="The function must end with <code>pytest</code>">
+<p><code class="docutils literal notranslate"><span class="pre">pytest</span></code> does not need to be used in the function name.</p>
+</opt>
+<opt text="The function must begin with <code>pytest</code>">
+<p><code class="docutils literal notranslate"><span class="pre">pytest</span></code> does not need to be used in the function name.</p>
+</opt>
+</choice> 
+<p><strong>Question 2</strong></p>
+<p>Where are your unit test functions saved?</p>
+<choice id="2" >
+<opt text="In the same Jupyter notebook">
+<p>This would defy the DRY principle if wanted to test our function in multiple different notebooks.</p>
+</opt>
+<opt text="In the same file as the function you are testing">
+<p>Not if we want to use <code class="docutils literal notranslate"><span class="pre">pytest</span></code>!</p>
+</opt>
+<opt text="In a seperate <code>.py</code> file"  correct="true">
+<p>Great!</p>
+</opt>
+<opt text="In a seperate Jupyter notebook">
+<p><code class="docutils literal notranslate"><span class="pre">pytest</span></code> would not be able to check the tests in a separate Jupyter notebook.</p>
+</opt>
+</choice>  
+</exercise>
+<exercise id="10" title="More Questions on Using Pytest">
+<p>I have a function named <code class="docutils literal notranslate"><span class="pre">travel_location()</span></code> stored in a file named <code class="docutils literal notranslate"><span class="pre">travelling.py</span></code> and unit tests that checks this function stored in a file named <code class="docutils literal notranslate"><span class="pre">test_travelling.py</span></code>.<br />
+How would I check my function using <code class="docutils literal notranslate"><span class="pre">pytest</span></code>?</p>
+<choice id="1" >
+<opt text="<code>pytest travel_location</code>"  >
+<p>You do not need to use your function name.</p>
+</opt>
+<opt text="<code>pytest travelling</code>" >
+<p>The unit tests are not stored in the <code class="docutils literal notranslate"><span class="pre">travelling.py</span></code> script.</p>
+</opt>
+<opt text="<code>pytest tests</code>">
+<p>You need to specify a file!</p>
+</opt>
+<opt text="<code>pytest test_travelling</code>" correct="true" >
+<p>Nice!</p>
+</opt>
+</choice> 
+</exercise>
+<exercise id="11" title= "Making a Test Function">
+<p><strong>Instructions:</strong><br />
+Running a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.</strong></p>
+<p><em><strong>Make sure you remove the hash (<code class="docutils literal notranslate"><span class="pre">#</span></code>) symbol in the coding portions of this question.  We have commented them so that the line won’t execute and you can test your code after each step.</strong></em></p>
+<p>Let’s do the first step in testing the function <code class="docutils literal notranslate"><span class="pre">find_force()</span></code> with <code class="docutils literal notranslate"><span class="pre">pytest</span></code> by converting the tests provided for into an appropriate function.</p>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Take these unit tests we wrote and compile them together in a function to test the function <code class="docutils literal notranslate"><span class="pre">find_force()</span></code>.</p></li>
+<li><p>Don’t forget to give it a name compliant with <code class="docutils literal notranslate"><span class="pre">pytest</span></code>’s needs.</p></li>
+</ul>
+<codeblock id="07_11">
+<ul class="simple">
+<li><p>Are you naming it something starting with <code class="docutils literal notranslate"><span class="pre">test</span></code>?</p></li>
+<li><p>Are you remembering these functions do not need to return anything?</p></li>
+<li><p>These functions do not take any arguments.</p></li>
+</ul>
+</codeblock>
+</exercise>
+<exercise id="12" title="Automatic Style Formatters" type="slides, video">
+<slides source="module7/module7_12" shot = "4" start="13:03" end="26:00">
+</slides>
+</exercise>
+<exercise id="13" title="Flake8 and Black">
+<p><strong>Question 1</strong></p>
+<p>Which of the following tools will modify your code?</p>
+<choice id="1" >
+<opt text="<code>PEP8</code>"  >
+<p>This is a style guide, not a library to modify your code.</p>
+</opt>
+<opt text="<code>flake8</code>">
+<p>This tool will suggest changes but will not change your code.</p>
+</opt>
+<opt text="<code>blue</code>" >
+<p>This is not a style guide nor is it a formatter, in fact, we are not sure what this is either!</p>
+</opt>
+<opt text="<code>black</code>" correct="true">
+<p>Great work.</p>
+</opt>
+</choice> 
+<p><strong>Question 2</strong></p>
+<p>Which of the following formatting would Black <strong>NOT</strong> fix?</p>
+<choice id="2" >
+<opt text="Trailing white space">
+<p>Black will remove unnecessary white space!</p>
+</opt>
+<opt text="Adding white space where necessary">
+<p>Black will add white space where appropriate.</p>
+</opt>
+<opt text="Fixing grammar in comments"  correct="true">
+<p>Nice work!</p>
+</opt>
+<opt text="Indentations">
+<p>Black fixes indentations thankfully!</p>
+</opt>
+</choice>  
+</exercise>
+<exercise id="14" title="Formatting your Code">
+<p><strong>Instructions:</strong><br />
+Running a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.</strong></p>
+<p><em><strong>Make sure you remove the hash (<code class="docutils literal notranslate"><span class="pre">#</span></code>) symbol in the coding portions of this question.  We have commented them so that the line won’t execute and you can test your code after each step.</strong></em></p>
+<p>Let’s take the function named <code class="docutils literal notranslate"><span class="pre">cleanup()</span></code> which drops duplicate rows and columns. Rewrite the function code (not the docstring) so that it’s written with necessary spaces and indentations.</p>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Amend the function <code class="docutils literal notranslate"><span class="pre">cleanup()</span></code> so that it adopts an approach that has spaces where necessary and blank space is removed. Make sure that you have indentations and empty lines where necessary.</p></li>
+</ul>
+<codeblock id="07_14">
+<ul class="simple">
+<li><p>Are you adding spaces between operators?</p></li>
+<li><p>Are you removing spaces where appropriate?</p></li>
+<li><p>Did you fix the indentation error?</p></li>
+<li><p>How about removing the blank lines before the return statement?</p></li>
+</ul>
+</codeblock>
+</exercise>
+<exercise id="15" title="Formatting That Can't Be Fixed Automatically" type="slides, video">
+<slides source="module7/module7_15" shot = "4" start="26:05" end="31:47">
+</slides>
+</exercise>
+<exercise id="16" title="Writing Useful Comments">
+<p>Given the code here:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">candy</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;candybars.csv&#39;</span><span class="p">)</span>
+<span class="n">chocolate</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;chocolate_types.csv&#39;</span><span class="p">)</span>
+
+
+<span class="n">dessert</span> <span class="o">=</span> <span class="n">candy</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">chocolate</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Which of following comments are suitable?<br />
+<em>Hint: there could be more than 1</em></p>
+<choice id="1" >
+<opt text="<code># Combine dataframes and drops NaN values</code>"  correct="true">
+<p>Great!</p>
+</opt>
+<opt text="<code># Merge dataframes</code>"  >
+<p>This could be a bit more useful, what about the <code class="docutils literal notranslate"><span class="pre">.dropna()</span></code>?</p>
+</opt>
+<opt text="<code># Combines the candy and chocolate dataframes and only keeps rows that both dataframes have in common, then removes any rows with missing values</code>">
+<p>This is a bit excessive.</p>
+</opt>
+<opt text="No comment is needed here"  correct="true">
+<p>Since the code is somewhat explanatory, a comment isn’t completely mandatory.</p>
+</opt>
+</choice> 
+</exercise>
+<exercise id="17" title="Choosing Good Variable Names">
+<p><strong>Question 1</strong></p>
+<p>Which of the following is an acceptable variable name?</p>
+<choice id="1" >
+<opt text="<code>bool</code>"  >
+<p>This is a Python keyword and is not an acceptable object name.</p>
+</opt>
+<opt text="<code>AppleTrees</code>" >
+<p>It’s not good styling to have capitalizations in your variable names.</p>
+</opt>
+<opt text="<code>Hotel_Df</code>">
+<p>It’s not good styling to have capitalizations in your variable names.</p>
+</opt>
+<opt text="<code>paper_sales</code>" correct="true">
+<p>Nice!</p>
+</opt>
+</choice> 
+<p><strong>Question 2</strong></p>
+<p>I have a dataframe that contains different flowers, their seasonality, and where they are found in the world.</p>
+<p>Which of the following is the most suitable name for this dataframe?</p>
+<choice id="2" >
+<opt text="<code>flowers_seasonality_location</code>">
+<p>We find this a bit long-winded. Is it necessary to add the columns to the object name?</p>
+</opt>
+<opt text="<code>FLOWERS</code>">
+<p>Please don’t use all capitals for your object names.</p>
+</opt>
+<opt text="<code>flowers_df</code>"  correct="true">
+<p>Nice work!</p>
+</opt>
+<opt text="<code>flw</code>">
+<p>I think we should try and make this a more readable object name.</p>
+</opt>
+</choice>  
+</exercise>
+<exercise id="18" title="The Python Debugger" type="slides, video">
+<slides source="module7/module7_18" shot = "4" start="31:512" end="40:541">
+</slides>
+</exercise>
+<exercise id="19" title="Using the Python Debugger">
+<p><strong>Question 1</strong></p>
+<p>How is the Python debugger helpful?</p>
+<choice id="1" >
+<opt text="It can help explain where your code is failing"  correct="true">
+<p>This is exactly why the Python debugger is useful!</p>
+</opt>
+<opt text="It tells us where our code could be more efficient">
+<p>The Python debugger can’t improve code that works.</p>
+</opt>
+<opt text="It removes any of the code that is not following the DRY principle">
+<p>The Python debugger helps with <em>debugging</em> and not with adhering to the DRY principle.</p>
+</opt>
+</choice> 
+<p><strong>Question 2</strong></p>
+<p>Which of the following can we use from the Python Debugger to examine our code and inspect our variables?</p>
+<choice id="2" >
+<opt text="<code>break()</code>">
+<p>Almost but not quite.</p>
+</opt>
+<opt text="<code>tracepoint()</code>">
+<p>This is not the function but the ending sure sounds familiar…</p>
+</opt>
+<opt text="<code>traceback()</code>">
+<p>This does seem plausible, doesn’t it? Unfortunately, this isn’t correct.</p>
+</opt>
+<opt text="<code>breakpoint()</code>" correct="true">
+<p>You got it!</p>
+</opt>
+</choice>  
+</exercise>
+<exercise id="20" title="What Did We Just Learn?" type="slides, video">
+<slides source="module7/module7_end" shot="11" start="0:49" end="1:32">>
+</slides>
+</exercise>
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "UBC-MDS/PPDS_book",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./modules/home"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Hayley Boyce, Mike Gelbart, Tiffany Timbers<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

@@ -1,0 +1,449 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slicing Rows using .loc[] &#8212; Programming in Python for Data Science</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/video.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://hfboyce.github.io/ppds/intro.html/modules /module1/module1_07.html" />
+    <link rel="shortcut icon" href="../../_static/icon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Programming in Python for Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/modules /module1/module1_07.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/UBC-MDS/PPDS_book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/UBC-MDS/PPDS_book/issues/new?title=Issue%20on%20page%20%2Fmodules /module1/module1_07.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/UBC-MDS/PPDS_book/edit/main/modules /module1/module1_07.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Slicing Rows using .loc[]
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cereal-data">
+     Cereal Data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lets-try-it-out">
+   Let’s try it out!
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="slicing-rows-using-loc">
+<h1>Slicing Rows using .loc[]<a class="headerlink" href="#slicing-rows-using-loc" title="Permalink to this headline">¶</a></h1>
+<p>Notes:</p>
+<br>
+<hr class="docutils" />
+<div class="section" id="cereal-data">
+<h2>Cereal Data<a class="headerlink" href="#cereal-data" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+  
+<span class="n">cereal</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;cereal.csv&#39;</span><span class="p">)</span>
+<span class="n">cereal</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                        name mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+0                  100% Bran   N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
+1          100% Natural Bran   Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
+2                   All-Bran   K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
+3  All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
+4             Almond Delight   R  Cold       110        2    2     200    1.0   14.0       8       1        25      3     1.0  0.75  34.384843
+</pre></div>
+</div>
+<p>Attribution:<br />
+<em>“<a class="reference external" href="https://www.kaggle.com/crawford/80-cereals/">80 Cereals</a>” (c) by
+<a class="reference external" href="https://www.linkedin.com/in/crawforc3/">Chris Crawford</a> is licensed
+under <a class="reference external" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0
+Unported</a></em></p>
+<p>Notes:</p>
+<p>Congratulations on writing your first code!</p>
+<p>We have read in our data, and we know the dimensions. Well, now what?</p>
+<p>Let’s go over how we would <strong>index</strong>, <strong>slice</strong>, and <strong>select</strong> certain
+columns or rows of our data.</p>
+<p>Let’s start by importing pandas and loading in a dataset named
+<code class="docutils literal notranslate"><span class="pre">cereal.csv,</span></code> and we will save it as <code class="docutils literal notranslate"><span class="pre">cereal.</span></code></p>
+<p>We can see all the columns and the first 5 rows of the dataframe using
+<code class="docutils literal notranslate"><span class="pre">.head()</span></code></p>
+<p>Let’s say we only want certain rows, however, of the dataframe or
+certain columns.</p>
+<p>We talked about how <code class="docutils literal notranslate"><span class="pre">.head()</span></code> will generate the first few rows of a
+dataframe (5 as default), but what if we wanted the rows from 5-10?</p>
+<p>The first column of this dataframe is called the <code class="docutils literal notranslate"><span class="pre">index.</span></code></p>
+<p>Each row has a label (the index) as well as a position. In this case,
+the index label of an observation is the same as it’s position.</p>
+<p>This doesn’t always have to be the case. We can assign another column as
+the index; however, we will wait to discuss this in the next module.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                         name mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+0                   100% Bran   N  Cold        70        4    1     130   10.0    5.0       6     280        25      3    1.00  0.33  68.402973
+1           100% Natural Bran   Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3    1.00  1.00  33.983679
+2                    All-Bran   K  Cold        70        4    1     260    9.0    7.0       5     320        25      3    1.00  0.33  59.425505
+3   All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3    1.00  0.50  93.704912
+4              Almond Delight   R  Cold       110        2    2     200    1.0   14.0       8       1        25      3    1.00  0.75  34.384843
+5     Apple Cinnamon Cheerios   G  Cold       110        2    2     180    1.5   10.5      10      70        25      1    1.00  0.75  29.509541
+6                 Apple Jacks   K  Cold       110        2    0     125    1.0   11.0      14      30        25      2    1.00  1.00  33.174094
+7                     Basic 4   G  Cold       130        3    2     210    2.0   18.0       8     100        25      3    1.33  0.75  37.038562
+8                   Bran Chex   R  Cold        90        2    1     200    4.0   15.0       6     125        25      1    1.00  0.67  49.120253
+9                 Bran Flakes   P  Cold        90        3    0     210    5.0   13.0       5     190        25      3    1.00  0.67  53.313813
+10               Cap&#39;n&#39;Crunch   Q  Cold       120        1    2     220    0.0   12.0      12      35        25      2    1.00  0.75  18.042851
+11                   Cheerios   G  Cold       110        6    2     290    2.0   17.0       1     105        25      1    1.00  1.25  50.764999
+12      Cinnamon Toast Crunch   G  Cold       120        1    3     210    0.0   13.0       9      45        25      2    1.00  0.75  19.823573
+13                   Clusters   G  Cold       110        3    2     140    2.0   13.0       7     105        25      3    1.00  0.50  40.400208
+14                Cocoa Puffs   G  Cold       110        1    1     180    0.0   12.0      13      55        25      2    1.00  1.00  22.736446
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Here are the first 15 rows of the dataframe.</p>
+<p>Let’s talk about observation 4 which is named <code class="docutils literal notranslate"><span class="pre">Almond</span> <span class="pre">Delight</span></code>. Its
+index label is <code class="docutils literal notranslate"><span class="pre">4</span></code> as well as it’s index position.</p>
+<p>If you just went and counted those again and started screaming “5! It’s
+the fifth position”, that’s OK. In the Python language, we start
+counting at position 0 (then 1, 2, 3, and 4 for Almond Delight).</p>
+<hr class="docutils" />
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                         name mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+0                   100% Bran   N  Cold        70        4    1     130   10.0    5.0       6     280        25      3    1.00  0.33  68.402973
+1           100% Natural Bran   Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3    1.00  1.00  33.983679
+2                    All-Bran   K  Cold        70        4    1     260    9.0    7.0       5     320        25      3    1.00  0.33  59.425505
+3   All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3    1.00  0.50  93.704912
+4              Almond Delight   R  Cold       110        2    2     200    1.0   14.0       8       1        25      3    1.00  0.75  34.384843
+5     Apple Cinnamon Cheerios   G  Cold       110        2    2     180    1.5   10.5      10      70        25      1    1.00  0.75  29.509541
+6                 Apple Jacks   K  Cold       110        2    0     125    1.0   11.0      14      30        25      2    1.00  1.00  33.174094
+7                     Basic 4   G  Cold       130        3    2     210    2.0   18.0       8     100        25      3    1.33  0.75  37.038562
+8                   Bran Chex   R  Cold        90        2    1     200    4.0   15.0       6     125        25      1    1.00  0.67  49.120253
+9                 Bran Flakes   P  Cold        90        3    0     210    5.0   13.0       5     190        25      3    1.00  0.67  53.313813
+10               Cap&#39;n&#39;Crunch   Q  Cold       120        1    2     220    0.0   12.0      12      35        25      2    1.00  0.75  18.042851
+11                   Cheerios   G  Cold       110        6    2     290    2.0   17.0       1     105        25      1    1.00  1.25  50.764999
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">5</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                       name mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+5   Apple Cinnamon Cheerios   G  Cold       110        2    2     180    1.5   10.5      10      70        25      1    1.00  0.75  29.509541
+6               Apple Jacks   K  Cold       110        2    0     125    1.0   11.0      14      30        25      2    1.00  1.00  33.174094
+7                   Basic 4   G  Cold       130        3    2     210    2.0   18.0       8     100        25      3    1.33  0.75  37.038562
+8                 Bran Chex   R  Cold        90        2    1     200    4.0   15.0       6     125        25      1    1.00  0.67  49.120253
+9               Bran Flakes   P  Cold        90        3    0     210    5.0   13.0       5     190        25      3    1.00  0.67  53.313813
+10             Cap&#39;n&#39;Crunch   Q  Cold       120        1    2     220    0.0   12.0      12      35        25      2    1.00  0.75  18.042851
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Now let’s say we want all 5 rows past <code class="docutils literal notranslate"><span class="pre">Almond</span> <span class="pre">Delight</span></code>. That means we
+want the rows from <code class="docutils literal notranslate"><span class="pre">Apple</span> <span class="pre">Cinnamon</span> <span class="pre">Cheerios</span></code> to <code class="docutils literal notranslate"><span class="pre">Cap'n'Crunch</span></code>.</p>
+<p>We will use <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> with square brackets to cut the dataframe from
+“Apple Cinnamon Cheerios” to “Cap’n’Crunch,” keeping the columns and
+everything between.</p>
+<p>This code is written as <code class="docutils literal notranslate"><span class="pre">cereal.loc[5:10]</span></code>, and it can be interpreted as
+<em>“Obtain the rows in the dataframe located from <code class="docutils literal notranslate"><span class="pre">5</span></code> to <code class="docutils literal notranslate"><span class="pre">10</span></code>.”</em></p>
+<hr class="docutils" />
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                       name mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+5   Apple Cinnamon Cheerios   G  Cold       110        2    2     180    1.5   10.5      10      70        25      1    1.00  0.75  29.509541
+6               Apple Jacks   K  Cold       110        2    0     125    1.0   11.0      14      30        25      2    1.00  1.00  33.174094
+7                   Basic 4   G  Cold       130        3    2     210    2.0   18.0       8     100        25      3    1.33  0.75  37.038562
+8                 Bran Chex   R  Cold        90        2    1     200    4.0   15.0       6     125        25      1    1.00  0.67  49.120253
+9               Bran Flakes   P  Cold        90        3    0     210    5.0   13.0       5     190        25      3    1.00  0.67  53.313813
+10             Cap&#39;n&#39;Crunch   Q  Cold       120        1    2     220    0.0   12.0      12      35        25      2    1.00  0.75  18.042851
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">5</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;calories&#39;</span><span class="p">:</span><span class="s1">&#39;fiber&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>    calories  protein  fat  sodium  fiber
+5        110        2    2     180    1.5
+6        110        2    0     125    1.0
+7        130        3    2     210    2.0
+8         90        2    1     200    4.0
+9         90        3    0     210    5.0
+10       120        1    2     220    0.0
+</pre></div>
+</div>
+<p>The general format to slice both rows and columns together looks like
+this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>`cereal.loc[&#39;row name start&#39;:&#39;row name end&#39;, &#39;column name start&#39;:&#39;column name end&#39;]`
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>What if we only wanted certain columns now?</p>
+<p>Perhaps we were only interested in the <code class="docutils literal notranslate"><span class="pre">calories</span></code> to <code class="docutils literal notranslate"><span class="pre">fiber</span></code> columns of
+the “Apple Cinnamon Cheerios” to “Cap’n’Crunch” rows?</p>
+<p>We put in the interval of our desired rows first, and then the columns,
+and we separate these values with a comma.</p>
+<p><code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> is used to slice columns and rows by <strong>label</strong>, and within an
+interval.</p>
+<p>The general format to slice both rows and columns together looks like
+this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;row name start&#39;</span><span class="p">:</span><span class="s1">&#39;row name end&#39;</span><span class="p">,</span> <span class="s1">&#39;column name start&#39;</span><span class="p">:</span><span class="s1">&#39;column name end&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">loc</span><span class="p">[:</span><span class="mi">6</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                        name mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+0                  100% Bran   N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
+1          100% Natural Bran   Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
+2                   All-Bran   K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
+3  All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
+4             Almond Delight   R  Cold       110        2    2     200    1.0   14.0       8       1        25      3     1.0  0.75  34.384843
+5    Apple Cinnamon Cheerios   G  Cold       110        2    2     180    1.5   10.5      10      70        25      1     1.0  0.75  29.509541
+6                Apple Jacks   K  Cold       110        2    0     125    1.0   11.0      14      30        25      2     1.0  1.00  33.174094
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">loc</span><span class="p">[:</span><span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;sugars&#39;</span><span class="p">:]</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>   sugars  potass  vitamins  shelf  weight  cups     rating
+0       6     280        25      3     1.0  0.33  68.402973
+1       8     135         0      3     1.0  1.00  33.983679
+2       5     320        25      3     1.0  0.33  59.425505
+3       0     330        25      3     1.0  0.50  93.704912
+4       8       1        25      3     1.0  0.75  34.384843
+5      10      70        25      1     1.0  0.75  29.509541
+6      14      30        25      2     1.0  1.00  33.174094
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>There is a handy shortcut for slices that include the beginning of a
+dataframe to a specified row or column label or a specified row or
+column label to the end of a dataframe.</p>
+<p>For example if we want all the rows up to “Apple Jacks” which has a
+label equal to 6, we could omit the first label in the code all
+together. So we can write <code class="docutils literal notranslate"><span class="pre">cereal.loc[:6]</span></code>.</p>
+<p>Or we can do something similar for the end of a dataframe. Let’s say now
+we want all the rows up to <code class="docutils literal notranslate"><span class="pre">Apple</span> <span class="pre">Jacks</span></code> and only the columns from
+<code class="docutils literal notranslate"><span class="pre">sugars</span></code> onward to the end of the dataframe. What we would write in this
+case is <code class="docutils literal notranslate"><span class="pre">cereal.loc[:6,</span> <span class="pre">'sugars':]</span></code>.</p>
+<p>We would omit the ending label this time after the <code class="docutils literal notranslate"><span class="pre">:</span></code> (colon) .</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="lets-try-it-out">
+<h1>Let’s try it out!<a class="headerlink" href="#lets-try-it-out" title="Permalink to this headline">¶</a></h1>
+<p>Notes:</p>
+<br>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "UBC-MDS/PPDS_book",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./modules /module1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Hayley Boyce, Mike Gelbart, Tiffany Timbers<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

@@ -1,0 +1,641 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction to Functions &#8212; Programming in Python for Data Science</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/video.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://hfboyce.github.io/ppds/intro.html/modules/module5/module5_19.html" />
+    <link rel="shortcut icon" href="../../_static/icon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Programming in Python for Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  Modules
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module1.html">
+   Module 1:  Python &amp; Pandas - An Unexpected Friendship
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_01.html">
+     What is a dataframe?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_03.html">
+     What is Pandas?
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Coding Exercises
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module1.html">
+   Module 1: Python &amp; Pandas - An Unexpected Friendship
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_01.html">
+     What is a dataframe?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_03.html">
+     What is Pandas?
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/modules/module5/module5_19.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/UBC-MDS/PPDS_book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/UBC-MDS/PPDS_book/issues/new?title=Issue%20on%20page%20%2Fmodules/module5/module5_19.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/UBC-MDS/PPDS_book/edit/main/modules/module5/module5_19.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Introduction to Functions
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#functions-and-the-dry-principle">
+     Functions and the DRY principle
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#syntax">
+     Syntax
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#designing-good-functions">
+     Designing Good Functions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lets-apply-what-we-learned">
+   Let’s apply what we learned!
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="introduction-to-functions">
+<h1>Introduction to Functions<a class="headerlink" href="#introduction-to-functions" title="Permalink to this headline">¶</a></h1>
+<p>Notes: <br></p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;cereal.csv&#39;</span><span class="p">)</span>
+<span class="n">cereal</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                        name mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+0                  100% Bran   N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
+1          100% Natural Bran   Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
+2                   All-Bran   K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
+3  All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
+4             Almond Delight   R  Cold       110        2    2     200    1.0   14.0       8       1        25      3     1.0  0.75  34.384843
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">addition</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+<span class="n">addition</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>15
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Functions may feel like we are introducing something new, but we have
+been using them for the last 4 and a half modules.</p>
+<p>Back in Module 1, we compared functions and methods to verbs as they
+both complete actions.</p>
+<p><code class="docutils literal notranslate"><span class="pre">pd.read_csv()</span></code> is a function which reads in a dataframe.</p>
+<p>And <code class="docutils literal notranslate"><span class="pre">sum()</span></code> is a function that adds all the values in a list.</p>
+<hr class="docutils" />
+<div class="section" id="functions-and-the-dry-principle">
+<h2>Functions and the DRY principle<a class="headerlink" href="#functions-and-the-dry-principle" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">squared</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+
+<span class="n">squared</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">numbers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">squared</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">numbers</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">squared</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">numbers</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">squared</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>[4, 9, 25]
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">squared</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span> 
+    <span class="n">squared</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">number</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">squared</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>[4, 9, 25]
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>In the last section, we discussed how loops helped avoid redundant code.</p>
+<p>We wrote code, which created a new list containing the square of the
+elements.</p>
+<p>Using a loop for this helped our coding style somewhat, but now we have
+a new problem.</p>
+<p>What happens if we want to do the same process to multiple lists all
+named differently?</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">larger_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">11</span><span class="p">]</span>
+<span class="n">promoted_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">73</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span> <span class="mi">95</span><span class="p">]</span>
+<span class="n">executive_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">121</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">103</span><span class="p">,</span> <span class="mi">183</span><span class="p">,</span> <span class="mi">222</span><span class="p">,</span> <span class="mi">214</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Perhaps I have 3 other lists that I want to do the same operations on?</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">larger_numbers_squared</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">larger_numbers</span><span class="p">:</span> 
+    <span class="n">larger_numbers_squared</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">number</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">larger_numbers_squared</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>[25, 1936, 3025, 529, 121]
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">even_larger_numbers_squared</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">promoted_numbers</span><span class="p">:</span> 
+    <span class="n">even_larger_numbers_squared</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">number</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">even_larger_numbers_squared</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>[5329, 7056, 9025]
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">extra_larger_numbers_squared</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">executive_numbers</span><span class="p">:</span> 
+    <span class="n">extra_larger_numbers_squared</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">number</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">extra_larger_numbers_squared</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>[10000, 14641, 62500, 10609, 33489, 49284, 45796]
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Now I will have to <em><strong>repeat</strong></em> the same code just so it applies to
+these lists too.</p>
+<p>This definitely violates the DRY principle. The question now is <em><strong>“Is
+there a better way?”</strong></em> and luckily, there is!</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">squared</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span> 
+    <span class="n">squared</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">number</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">squared</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">squares_a_list</span><span class="p">(</span><span class="n">numerical_list</span><span class="p">):</span>
+    <span class="n">new_squared_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+    
+    <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numerical_list</span><span class="p">:</span>
+        <span class="n">new_squared_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">number</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">new_squared_list</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">squares_a_list</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>[4, 9, 25]
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>We have the ability to make our own function and use them just like how
+we use functions like <code class="docutils literal notranslate"><span class="pre">pd.read_csv()</span></code> and <code class="docutils literal notranslate"><span class="pre">len()</span></code>.</p>
+<p>We can convert the code in the last slide into our very own function and
+use it like we use Python built-in ones.</p>
+<p>We can call our new function using the same syntax as a Python built-in
+function too.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="syntax">
+<h2>Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">squares_a_list</span><span class="p">(</span><span class="n">numerical_list</span><span class="p">):</span>
+    <span class="n">new_squared_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+    
+    <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numerical_list</span><span class="p">:</span>
+        <span class="n">new_squared_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">number</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">new_squared_list</span>
+</pre></div>
+</div>
+<p>Let’s take a look at the how we define a function:</p>
+<center>
+<a class="reference internal image-reference" href="module5/function-def.png"><img alt="module5/function-def.png" src="module5/function-def.png" style="width: 55%;" /></a>
+</center>
+<p>Notes:</p>
+<p>Let’s take a look at how we define a function:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">def</span></code> is a python keyword that tells Python that anything indented
+after this belongs to a function.</p></li>
+<li><p>Next, we give it a <strong>Function name</strong>. Like any object, we need to
+name it.</p>
+<ul>
+<li><p>In this case, we have named our function <code class="docutils literal notranslate"><span class="pre">squares_a_list</span></code>.</p></li>
+<li><p>We cannot name it any existing function names.</p></li>
+</ul>
+</li>
+<li><p>Following our function name, we specify any <strong>Parameters/Arguments</strong>
+that the function requires.</p>
+<ul>
+<li><p>Python calls these “<strong>parameters</strong>”; however, we have been
+calling these “<strong>arguments</strong>”.</p></li>
+<li><p>This is what the function needs as an input in order for us to
+perform some actions on an existing object.</p></li>
+<li><p>We can have multiple parameters or no parameters at all.</p></li>
+<li><p>In our function, we have a single parameter named
+<code class="docutils literal notranslate"><span class="pre">numerical_list</span></code>.</p></li>
+</ul>
+</li>
+<li><p>Lastly, we end the line with a <strong>Colon</strong></p>
+<ul>
+<li><p>Just like loops and conditionals, a function required its first
+defining line to end with a colon.</p></li>
+</ul>
+</li>
+</ul>
+<hr class="docutils" />
+<center>
+<a class="reference internal image-reference" href="module5/function-rest.png"><img alt="module5/function-rest.png" src="module5/function-rest.png" style="width: 60%;" /></a>
+</center>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">not_a_great_function</span><span class="p">(</span><span class="n">numerical_list</span><span class="p">):</span>
+    <span class="n">new_squared_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numerical_list</span><span class="p">:</span>
+        <span class="n">new_squared_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">number</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">new_squared_list</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">not_a_great_function</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>In the body of a function, all the code is indented 4 spaces and further
+indented for loops and conditions.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">return</span></code> statement is crucial to a function for returning the
+desired output.</p>
+<p>In our previous function, a new list was returned.</p>
+<p>If the function does not return anything, then you won’t get a value to
+assign to an object.</p>
+<p>It does all the work, but never sends the result back to the code that
+called it.</p>
+<p>(See no value is returned when we call it!)</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">squares_a_list</span><span class="p">(</span><span class="n">numerical_list</span><span class="p">):</span>
+    <span class="n">new_squared_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+    
+    <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numerical_list</span><span class="p">:</span>
+        <span class="n">new_squared_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">number</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">new_squared_list</span>
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>We can now call this function and specify each of our lists of interest
+as the input argument:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">numbers.</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">larger_numbers</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">promoted_numbers</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">executive_numbers</span></code></p></li>
+</ul>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">squares_a_list</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>[1, 4, 9, 16]
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">larger_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">11</span><span class="p">]</span>
+<span class="n">squares_a_list</span><span class="p">(</span><span class="n">larger_numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>[25, 1936, 3025, 529, 121]
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">promoted_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">73</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span> <span class="mi">95</span><span class="p">]</span>
+<span class="n">squares_a_list</span><span class="p">(</span><span class="n">promoted_numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>[5329, 7056, 9025]
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">executive_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">121</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">103</span><span class="p">,</span> <span class="mi">183</span><span class="p">,</span> <span class="mi">222</span><span class="p">,</span> <span class="mi">214</span><span class="p">]</span>
+<span class="n">squares_a_list</span><span class="p">(</span><span class="n">executive_numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>[10000, 14641, 62500, 10609, 33489, 49284, 45796]
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>This function is now recycled on all of our lists and meets the DRY
+principle.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">larger_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">11</span><span class="p">]</span>
+<span class="n">promoted_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">73</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span> <span class="mi">95</span><span class="p">]</span>
+<span class="n">executive_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">121</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">103</span><span class="p">,</span> <span class="mi">183</span><span class="p">,</span> <span class="mi">222</span><span class="p">,</span> <span class="mi">214</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">list_of_numbers</span> <span class="ow">in</span> <span class="p">[</span><span class="n">numbers</span><span class="p">,</span> <span class="n">larger_numbers</span><span class="p">,</span> <span class="n">promoted_numbers</span><span class="p">,</span> <span class="n">executive_numbers</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">squares_a_list</span><span class="p">(</span><span class="n">list_of_numbers</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>[1, 4, 9, 16]
+[25, 1936, 3025, 529, 121]
+[5329, 7056, 9025]
+[10000, 14641, 62500, 10609, 33489, 49284, 45796]
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>We could get even more fancy and put all the lists into one large list
+(so now you have a list of lists).</p>
+<p>Then you could loop over the list and call the function each time.</p>
+<p>This example leads us to our next point.</p>
+<p>Just because we <em><strong>could</strong></em> do this doesn’t necessarily mean we
+<em><strong>should</strong></em>.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="designing-good-functions">
+<h2>Designing Good Functions<a class="headerlink" href="#designing-good-functions" title="Permalink to this headline">¶</a></h2>
+<p>There is some ambiguity for how and when to design a function.</p>
+<ul class="simple">
+<li><p>Should <code class="docutils literal notranslate"><span class="pre">squares_a_list()</span></code> be a function if I’m only ever using it
+once?</p></li>
+<li><p>Should the loop be inside the function, or outside?</p></li>
+</ul>
+<!-- end list -->
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">squares_a_list</span><span class="p">(</span><span class="n">numerical_list</span><span class="p">):</span>
+    <span class="n">new_squared_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+    
+    <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numerical_list</span><span class="p">:</span>
+        <span class="n">new_squared_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">number</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">new_squared_list</span>
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>There is some ambiguity for how and when to design a function.<br />
+For instance:</p>
+<ul class="simple">
+<li><p>Should <code class="docutils literal notranslate"><span class="pre">squares_a_list()</span></code> be a function if I’m only ever using it
+once? What about Twice?</p></li>
+<li><p>Should the loop be inside the function, or outside?</p></li>
+</ul>
+<p>This comes down to personal opinion.</p>
+<p>Some may say that the function <code class="docutils literal notranslate"><span class="pre">squares_a_list()</span></code> does a bit too much to
+keep things understandable.</p>
+<p>Designing effective functions will be discussed in Module 6.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="lets-apply-what-we-learned">
+<h1>Let’s apply what we learned!<a class="headerlink" href="#lets-apply-what-we-learned" title="Permalink to this headline">¶</a></h1>
+<p>Notes: <br></p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "UBC-MDS/PPDS_book",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./modules/module5"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Hayley Boyce, Mike Gelbart, Tiffany Timbers<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

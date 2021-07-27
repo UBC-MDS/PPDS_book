@@ -1,0 +1,836 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Python data types &#8212; Programming in Python for Data Science</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/video.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://hfboyce.github.io/ppds/intro.html/modules /module4/module4_01.html" />
+    <link rel="shortcut icon" href="../../_static/icon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Programming in Python for Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/modules /module4/module4_01.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/UBC-MDS/PPDS_book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/UBC-MDS/PPDS_book/issues/new?title=Issue%20on%20page%20%2Fmodules /module4/module4_01.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/UBC-MDS/PPDS_book/edit/main/modules /module4/module4_01.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Python data types
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#values-and-objects">
+     Values and Objects
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-types">
+     Data Types
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#numerical-data-types">
+     Numerical Data Types
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#int">
+       <strong>
+        Int
+       </strong>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#float">
+       <strong>
+        Float
+       </strong>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nan">
+     NaN
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nonetype">
+     NoneType
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#booleans">
+     Booleans
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#strings">
+     Strings
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#string-verbs">
+     String Verbs
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#casting">
+     Casting
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lets-practice-what-we-learned">
+   Let’s practice what we learned!
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="python-data-types">
+<h1>Python data types<a class="headerlink" href="#python-data-types" title="Permalink to this headline">¶</a></h1>
+<p>Notes: <br></p>
+<hr class="docutils" />
+<div class="section" id="values-and-objects">
+<h2>Values and Objects<a class="headerlink" href="#values-and-objects" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>We have been working with <strong>values</strong>, which are pieces of data that
+a computer program works with, such as a number or text.</p></li>
+<li><p>We have been assigning a lot of these <strong>values</strong> (with the
+assignment operator <code class="docutils literal notranslate"><span class="pre">=</span></code>) to <strong>objects</strong>.</p></li>
+</ul>
+<!-- end list -->
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pet</span> <span class="o">=</span> <span class="s1">&#39;Fido&#39;</span> 
+<span class="n">pet</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>&#39;Fido&#39;
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">age</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>6
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>In the last few sections, you may have had questions like:</p>
+<p><em><strong>“Why are some values in quotation marks while others are not?”</strong></em>,</p>
+<p><em><strong>“What are these square brackets we keep using in our verb
+arguments?”</strong></em> or</p>
+<p><em><strong>“Why can we take the mean of some columns and not others?”</strong></em> .</p>
+<p>We’ll be answering these questions in this module.</p>
+<p>Python needs to categorize things to make sense of them.</p>
+<p>Let’s start with some basics.</p>
+<p>In these cases, <code class="docutils literal notranslate"><span class="pre">pet</span></code> and <code class="docutils literal notranslate"><span class="pre">age</span></code> are <strong>objects</strong>, and <code class="docutils literal notranslate"><span class="pre">Fido</span></code> and <code class="docutils literal notranslate"><span class="pre">6</span></code> are
+<strong>values.</strong></p>
+<p>These objects can be named anything that begins with a letter and is not
+“special python words” like <strong>range</strong>, <strong>for</strong>, <strong>if</strong>, <strong>else</strong>, etc.
+(we will talk about some of those in the next module).</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="data-types">
+<h2>Data Types<a class="headerlink" href="#data-types" title="Permalink to this headline">¶</a></h2>
+<p>Here are some data types built-in to the Python language:</p>
+<ul class="simple">
+<li><p>Integers - <code class="docutils literal notranslate"><span class="pre">int</span></code></p></li>
+<li><p>Floating-point numbers - <code class="docutils literal notranslate"><span class="pre">float</span></code></p></li>
+<li><p>Strings - <code class="docutils literal notranslate"><span class="pre">str</span></code></p></li>
+<li><p>Booleans -<code class="docutils literal notranslate"><span class="pre">bool</span></code></p></li>
+<li><p>Lists - <code class="docutils literal notranslate"><span class="pre">list</span></code></p></li>
+<li><p>Tuples - <code class="docutils literal notranslate"><span class="pre">tuple</span></code></p></li>
+<li><p>Sets - <code class="docutils literal notranslate"><span class="pre">set</span></code></p></li>
+<li><p>Dictionaries - <code class="docutils literal notranslate"><span class="pre">dict</span></code></p></li>
+</ul>
+<p>Notes:</p>
+<p>Values, as we saw in our <code class="docutils literal notranslate"><span class="pre">Fido</span></code> and <code class="docutils literal notranslate"><span class="pre">6</span></code> examples, can be a variety of
+different things that get classified by Python as <strong>data types</strong>.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="numerical-data-types">
+<h2>Numerical Data Types<a class="headerlink" href="#numerical-data-types" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="int">
+<h3><strong>Int</strong><a class="headerlink" href="#int" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="mi">6</span> 
+<span class="nb">type</span><span class="p">(</span><span class="n">age</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;int&#39;&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="float">
+<h3><strong>Float</strong><a class="headerlink" href="#float" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="mf">6.0</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">age</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;float&#39;&gt;
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>You’ve likely noticed that we have not needed to put any quotation marks
+around number values. Python recognizes numbers as one of two possible
+types.</p>
+<p>Either as an <em><strong>integer</strong></em> called an <code class="docutils literal notranslate"><span class="pre">int</span></code> type or a <em><strong>floating-point
+number</strong></em> called a <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p>
+<p>An <code class="docutils literal notranslate"><span class="pre">int</span></code> value is a whole number that is either positive, negative, or
+zero.</p>
+<p>We can use the verb <code class="docutils literal notranslate"><span class="pre">type()</span></code> to find out how Python classifies the value
+that is stored in an object.</p>
+<p><code class="docutils literal notranslate"><span class="pre">6</span></code> is of type <code class="docutils literal notranslate"><span class="pre">int</span></code>.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">float</span></code> value is a real number in decimal form. That means even if we
+have a whole number if it contains a decimal point, it is considered a
+<code class="docutils literal notranslate"><span class="pre">float</span></code>.</p>
+<p>In contrast, <code class="docutils literal notranslate"><span class="pre">6.0</span></code> is if type <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="nan">
+<h2>NaN<a class="headerlink" href="#nan" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">weather</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>      month  season  31st
+0  february  winter   NaN
+1     march  spring  31.0
+2     march  spring   NaN
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nan_value</span> <span class="o">=</span> <span class="n">weather</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;31st&#39;</span><span class="p">]</span>
+<span class="n">nan_value</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>nan
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">nan_value</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;numpy.float64&#39;&gt;
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Something you may have noticed in our Pandas dataframes are <code class="docutils literal notranslate"><span class="pre">NaN</span></code>
+values.</p>
+<p>This stands for <strong>Not A Number</strong>, and it is a special value used to
+represent missing data in pandas.</p>
+<p>Contrary to its acronym, it is considered a numeric value, specifically
+of type <code class="docutils literal notranslate"><span class="pre">float</span></code>!</p>
+<p>Ignore the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> and <code class="docutils literal notranslate"><span class="pre">64</span></code> for now and concentrate on the <code class="docutils literal notranslate"><span class="pre">float</span></code>
+classification for now. We will be discussing NumPy more in Module 8.</p>
+<p>Unlike other values, <code class="docutils literal notranslate"><span class="pre">NaN</span></code> cannot be converted to any other type other
+than a <code class="docutils literal notranslate"><span class="pre">float.</span></code></p>
+</div>
+<hr class="docutils" />
+<div class="section" id="nonetype">
+<h2>NoneType<a class="headerlink" href="#nonetype" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name_of_bed_monster</span> <span class="o">=</span> <span class="kc">None</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">name_of_bed_monster</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;NoneType&#39;&gt;
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Unlike <code class="docutils literal notranslate"><span class="pre">NaN</span></code> which is a special <code class="docutils literal notranslate"><span class="pre">float</span></code> value, <code class="docutils literal notranslate"><span class="pre">NoneType</span></code> is its own
+type, with only one possible value, <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<p>Let’s say we need to save the name of the monster living under my bed in
+an object. Unfortunately, we have yet to introduce ourselves to him, so
+we are not sure what his name is. We also need to keep track that we are
+missing this information.</p>
+<p>We’ve seen this data type in our assignments when we replace the <code class="docutils literal notranslate"><span class="pre">None</span></code>
+provided with our solution. Since we still need to have the object
+created for the structure of our assignments, we simply use <code class="docutils literal notranslate"><span class="pre">None</span></code> to
+indicate the object exists but is devoid of information.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="booleans">
+<h2>Booleans<a class="headerlink" href="#booleans" title="Permalink to this headline">¶</a></h2>
+<p>The Boolean (<code class="docutils literal notranslate"><span class="pre">bool</span></code>) type has two values: <strong>True</strong> and <strong>False</strong>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;bool&#39;&gt;
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">weather</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>      month  season  31st
+0  february  winter   NaN
+1     march  spring  31.0
+2     march  spring   NaN
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">weather</span><span class="p">[</span><span class="s1">&#39;season&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;winter&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>0     True
+1    False
+2    False
+Name: season, dtype: bool
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>The Boolean type has two values: <strong>True</strong> and <strong>False</strong>. As you can see
+at the top, the value <code class="docutils literal notranslate"><span class="pre">False</span></code> is of type <code class="docutils literal notranslate"><span class="pre">bool</span></code> for Boolean.</p>
+<p>We have seen this data type when we were filtering our dataframes with
+conditions.</p>
+<p>In pandas, a condition is evaluated and produces a column indicating
+whether the condition was met or not for each row.</p>
+<p>This column is a Boolean type.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="strings">
+<h2>Strings<a class="headerlink" href="#strings" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Single quotes, e.g., <code class="docutils literal notranslate"><span class="pre">'Hello'</span></code></p></li>
+<li><p>Double quotes, e.g., <code class="docutils literal notranslate"><span class="pre">&quot;Goodbye&quot;</span></code></p></li>
+<li><p>Triple single quotes, e.g., <code class="docutils literal notranslate"><span class="pre">'''Yesterday'''</span></code></p></li>
+<li><p>Triple double quotes, e.g., <code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;Tomorrow&quot;&quot;&quot;</span></code></p></li>
+</ul>
+<!-- end list -->
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name_of_bed_monster</span> <span class="o">=</span> <span class="s1">&#39;Mike Wazowski&#39;</span>
+<span class="n">name_of_bed_monster</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>&#39;Mike Wazowski&#39;
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name_of_bed_monster</span> <span class="o">=</span> <span class="s2">&quot;Mike Wazowski&quot;</span>
+<span class="n">name_of_bed_monster</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>&#39;Mike Wazowski&#39;
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name_of_bed_monster</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;Mike Wazowski&quot;&quot;&quot;</span>
+<span class="n">name_of_bed_monster</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>&#39;Mike Wazowski&#39;
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Text is stored as a data type called a string (<code class="docutils literal notranslate"><span class="pre">str</span></code>).</p>
+<p>We think of a string as a sequence of characters enclosed in some form
+of quotations.</p>
+<p>We’ve been mostly using single quotations for strings up until this
+point, but you can enclose them with different types of quotation marks,
+as shown here.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">saying</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;Mike Wazowski said: &quot;My name&#39;s Mike Wazowski!&quot;&#39;&#39;&#39;</span>
+<span class="n">saying</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>&#39;Mike Wazowski said: &quot;My name\&#39;s Mike Wazowski!&quot;&#39;
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">missing_bed_monster</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="n">missing_bed_monster</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>&#39;&#39;
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">missing_bed_monster</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;str&#39;&gt;
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>If the string contains quotation marks or apostrophes, we can use double
+quotes or triple single quotes, or triple-double quotes to define the
+string.</p>
+<p>What about empty quotations? When we discussed <code class="docutils literal notranslate"><span class="pre">None</span></code> type, and we
+didn’t yet know the monster’s name, we could have also set it to an
+empty string, as shown here. The benefit of this approach is that we’re
+already setting the type of the object to string, rather than NoneType.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="string-verbs">
+<h2>String Verbs<a class="headerlink" href="#string-verbs" title="Permalink to this headline">¶</a></h2>
+<p>There are
+<a href="https://docs.python.org/3/library/stdtypes.html#string-methods" target="_blank">A
+variety of different methods</a> to transform strings or extract
+information from them.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name_of_bed_monster</span> <span class="o">=</span> <span class="s1">&#39;Mike Wazowski&#39;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">len()</span></code>:</p></li>
+</ul>
+<!-- end list -->
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">name_of_bed_monster</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>13
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">.upper()</span></code>:</p></li>
+</ul>
+<!-- end list -->
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name_of_bed_monster</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>&#39;MIKE WAZOWSKI&#39;
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">.lower()</span></code>:</p></li>
+</ul>
+<!-- end list -->
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name_of_bed_monster</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>&#39;mike wazowski&#39;
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>There are
+<a href="https://docs.python.org/3/library/stdtypes.html#string-methods" target="_blank">A
+variety of different methods</a> to transform strings or extract
+information from them. Here are a few of them.</p>
+<ul class="simple">
+<li><p>We can obtain the number of characters in a string with <code class="docutils literal notranslate"><span class="pre">len()</span></code>.</p></li>
+<li><p>We can change the cases to capitals with <code class="docutils literal notranslate"><span class="pre">.upper()</span></code>.</p></li>
+<li><p>Or change the cases to lower case with <code class="docutils literal notranslate"><span class="pre">.lower()</span></code>.</p></li>
+</ul>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name_of_bed_monster</span> <span class="o">=</span> <span class="s1">&#39;Mike Wazowski&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name_of_bed_monster</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name_of_bed_monster</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;K&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>We can also count the number of times a substring or character is
+present in a string with <code class="docutils literal notranslate"><span class="pre">.count()</span></code>.</p>
+<p>It’s important to note that many of these verbs are case sensitive!</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="casting">
+<h2>Casting<a class="headerlink" href="#casting" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">int</span></code> to <code class="docutils literal notranslate"><span class="pre">float</span></code>:</p></li>
+</ul>
+<!-- end list -->
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">number_of_floating_balloons</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">number_of_floating_balloons</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;float&#39;&gt;
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>An <code class="docutils literal notranslate"><span class="pre">int</span></code> to a <code class="docutils literal notranslate"><span class="pre">str</span></code>:</p></li>
+</ul>
+<!-- end list -->
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">number_of_balloon_strings</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">number_of_balloon_strings</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;str&#39;&gt;
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">float</span></code> to an <code class="docutils literal notranslate"><span class="pre">int</span></code> (it will round down to the nearest full
+integer).</p></li>
+</ul>
+<!-- end list -->
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">number_of_balloons</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">4.99</span><span class="p">)</span>
+<span class="n">number_of_balloons</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Sometimes we need to explicitly transform an object from one type to
+another, which is called <em><strong>casting</strong></em>.</p>
+<p>We can do this for some types, but not all.</p>
+<p>To cast an object to a new type, we use verbs corresponding to the
+desired type, such as <code class="docutils literal notranslate"><span class="pre">int()</span></code>, <code class="docutils literal notranslate"><span class="pre">float()</span></code>, <code class="docutils literal notranslate"><span class="pre">bool()</span></code> or <code class="docutils literal notranslate"><span class="pre">str()</span></code>.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">bool</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">bool</span><span class="p">(</span><span class="mf">5.0</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>1.0
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>We can even convert <code class="docutils literal notranslate"><span class="pre">int</span></code> and <code class="docutils literal notranslate"><span class="pre">float</span></code> values to <code class="docutils literal notranslate"><span class="pre">bool</span></code> values.</p>
+<p>Values of <code class="docutils literal notranslate"><span class="pre">0</span></code> or <code class="docutils literal notranslate"><span class="pre">0.0</span></code> are converted to <code class="docutils literal notranslate"><span class="pre">False,</span></code> and all other numeric
+are converted to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<p>We can convert Boolean values to <code class="docutils literal notranslate"><span class="pre">int</span></code> and <code class="docutils literal notranslate"><span class="pre">float</span></code> values where <code class="docutils literal notranslate"><span class="pre">False</span></code>
+is 0 or 0.0 respectively and <code class="docutils literal notranslate"><span class="pre">True</span></code> is 1 or 1.0.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">str</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>&#39;True&#39;
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">str</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>&#39;None&#39;
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">str</span><span class="p">(</span><span class="mf">3.2</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>&#39;3.2&#39;
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>As suspected, the same applies to strings: Most data types can be
+converted to strings easily.</p>
+<p>We don’t even need to use <code class="docutils literal notranslate"><span class="pre">type()</span></code> here as we can see, both values now
+have quotations surrounding the value, meaning they are strings.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span><span class="p">(</span><span class="s1">&#39;0&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>0.0
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">bool</span><span class="p">(</span><span class="s1">&#39;True&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">bool</span><span class="p">(</span><span class="s1">&#39;False&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">bool</span><span class="p">(</span><span class="s1">&#39;0&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Casting strings into other data types is a bit more problematic.</p>
+<p>Sometimes it works correctly.</p>
+<p>Other times it does not give us what we expected, as we can see here -
+the string False is converted to the Boolean True. Be careful when
+casting types!</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">bool</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">bool</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span><span class="p">(</span><span class="s1">&#39;five&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>ValueError: could not convert string to float: &#39;five&#39;
+
+Detailed traceback: 
+  File &quot;&lt;string&gt;&quot;, line 1, in &lt;module&gt;
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>In fact, only the empty string gets cast to False; every other string is
+considered True when turned into a Boolean.</p>
+<p>Often, we may not be able to cast a string at all.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">bool</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>TypeError: float() argument must be a string or a number, not &#39;NoneType&#39;
+
+Detailed traceback: 
+  File &quot;&lt;string&gt;&quot;, line 1, in &lt;module&gt;
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>These nuisances can be expected with <code class="docutils literal notranslate"><span class="pre">NoneType</span></code> values as well.</p>
+<p>In summary, take care when casting values.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="lets-practice-what-we-learned">
+<h1>Let’s practice what we learned!<a class="headerlink" href="#lets-practice-what-we-learned" title="Permalink to this headline">¶</a></h1>
+<p>Notes:</p>
+<p><br>Something you may have noticed in our Pandas dataframes are <code class="docutils literal notranslate"><span class="pre">NaN</span></code>
+values.</p>
+<p>This stands for <strong>Not A Number</strong>, and it is a special value used to
+represent missing data in pandas.</p>
+<p>Contrary to its acronym, it is considered a numeric value, specifically
+of type <code class="docutils literal notranslate"><span class="pre">float</span></code>!</p>
+<p>Ignore the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> and <code class="docutils literal notranslate"><span class="pre">64</span></code> for now and concentrate on the <code class="docutils literal notranslate"><span class="pre">float</span></code>
+classification for now. We will be discussing NumPy more in Module 8.</p>
+<p>Unlike other values, <code class="docutils literal notranslate"><span class="pre">NaN</span></code> cannot be converted to any other type other
+than a <code class="docutils literal notranslate"><span class="pre">float.</span></code></p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "UBC-MDS/PPDS_book",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./modules /module4"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Hayley Boyce, Mike Gelbart, Tiffany Timbers<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

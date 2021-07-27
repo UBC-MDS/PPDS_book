@@ -1,0 +1,913 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>&lt;no title&gt; &#8212; Programming in Python for Data Science</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/video.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://hfboyce.github.io/ppds/intro.html/modules/home/module5.html" />
+    <link rel="shortcut icon" href="../../_static/icon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Programming in Python for Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  Modules
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module1.html">
+   Module 1:  Python &amp; Pandas - An Unexpected Friendship
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_01.html">
+     What is a dataframe?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_03.html">
+     What is Pandas?
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Coding Exercises
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module1.html">
+   Module 1: Python &amp; Pandas - An Unexpected Friendship
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_01.html">
+     What is a dataframe?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_03.html">
+     What is Pandas?
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/modules/home/module5.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/UBC-MDS/PPDS_book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/UBC-MDS/PPDS_book/issues/new?title=Issue%20on%20page%20%2Fmodules/home/module5.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/UBC-MDS/PPDS_book/edit/main/modules/home/module5.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <exercise id="0" title="Module Learning Outcomes" type="slides, video">
+<slides source="module5/module5_00" shot = "9" start="0:006" end="0:50">
+</slides>
+</exercise> 
+<exercise id="1" title="Making Choices with Conditional Statements" type="slides, video">
+<slides source="module5/module5_01" shot = "2" start="0:06" end="10:195">
+</slides>
+</exercise>
+<exercise id="2" title="Quick Questions with Conditionals">
+<p><strong>Question 1</strong></p>
+<p>Every conditional decision <strong>MUST</strong> have which of the following:</p>
+<choice id="1" >
+<opt text="<code>if</code>" correct="true">
+<p>Well done!</p>
+</opt>
+<opt text="<code>elif</code>">
+<p>When we tell python to make a decision based on conditionals, an <code class="docutils literal notranslate"><span class="pre">elif</span></code> statement is optional.</p>
+</opt>
+<opt text="<code>else</code>">
+<p>We can still write functioning code without an <code class="docutils literal notranslate"><span class="pre">else</span></code> condition.</p>
+</opt>
+</choice> 
+<p><strong>Question 2</strong></p>
+<p>Given the code below, what is the value of the object <code class="docutils literal notranslate"><span class="pre">speed</span></code>?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">time</span> <span class="o">=</span> <span class="mi">150</span>
+
+<span class="k">if</span> <span class="n">time</span>  <span class="o">&lt;</span> <span class="mi">120</span><span class="p">:</span>
+    <span class="n">speed</span> <span class="o">=</span> <span class="s1">&#39;Fast&#39;</span>
+<span class="k">elif</span> <span class="n">time</span> <span class="o">&lt;</span> <span class="mi">180</span><span class="p">:</span>
+    <span class="n">speed</span> <span class="o">=</span> <span class="s1">&#39;Average&#39;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">speed</span> <span class="o">=</span> <span class="s1">&#39;Slow&#39;</span>
+<span class="n">speed</span>
+</pre></div>
+</div>
+<choice id="2" >
+<opt text="<code>Fast</code>" >
+<p>150 is not less than 120 so we would need to proceed to the next condition.</p>
+</opt>
+<opt text="<code>Average</code>" correct="true">
+<p>Well done.</p>
+</opt>
+<opt text="<code>Slow</code>">
+<p>150 is not greater than 180, so it would not enter the body of the <code class="docutils literal notranslate"><span class="pre">else</span></code> condition.</p>
+</opt>
+</choice>  
+<p><strong>Question 3</strong></p>
+<p>Given the code below, what is the value of the object <code class="docutils literal notranslate"><span class="pre">expensive</span></code>?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">price</span> <span class="o">=</span> <span class="mi">150</span>
+
+<span class="k">if</span> <span class="n">price</span> <span class="o">&gt;</span> <span class="mi">50</span><span class="p">:</span>
+    <span class="n">expensive</span> <span class="o">=</span> <span class="s1">&#39;moderately&#39;</span>
+<span class="k">elif</span> <span class="n">price</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
+    <span class="n">expensive</span> <span class="o">=</span> <span class="s1">&#39;valuable&#39;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">expensive</span> <span class="o">=</span> <span class="s1">&#39;affordable&#39;</span>
+<span class="n">expensive</span>
+</pre></div>
+</div>
+<choice id="3" >
+<opt text="<code>moderately</code>" correct="true">
+<p>Well done.</p>
+</opt>
+<opt text="<code>valuable</code>">
+<p>Proceeding to the body of this condition isn’t possible since the first condition was met.</p>
+</opt>
+<opt text="<code>affordable</code>">
+<p>Remember what happens when the first condition is met?  It gets removed from the stream.</p>
+</opt>
+</choice> 
+</exercise>
+<exercise id="3" title="Will it Run with Conditionals">
+<p>Which of the following code wouldn’t result in an error?</p>
+<p>A)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">price</span> <span class="o">&gt;</span> <span class="mi">100</span>
+    <span class="n">expensive</span> <span class="o">=</span> <span class="s1">&#39;valuable&#39;</span>
+<span class="k">else</span>
+    <span class="n">expensive</span> <span class="o">=</span> <span class="s1">&#39;affordable&#39;</span>
+<span class="n">expensive</span>
+</pre></div>
+</div>
+<p>B)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">price</span> <span class="o">&gt;</span> <span class="mi">50</span><span class="p">:</span>
+<span class="n">expensive</span> <span class="o">=</span> <span class="s1">&#39;moderately&#39;</span>
+<span class="k">elif</span> <span class="n">price</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
+<span class="n">expensive</span> <span class="o">=</span> <span class="s1">&#39;valuable&#39;</span>
+<span class="k">else</span><span class="p">:</span>
+<span class="n">expensive</span> <span class="o">=</span> <span class="s1">&#39;affordable&#39;</span>
+<span class="n">expensive</span>
+</pre></div>
+</div>
+<p>C)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">price</span> <span class="o">&gt;</span> <span class="mi">50</span><span class="p">:</span>
+    <span class="n">expensive</span> <span class="o">=</span> <span class="s1">&#39;moderately&#39;</span>
+<span class="n">expensive</span>
+</pre></div>
+</div>
+<choice id="1" >
+<opt text="A">
+<p>This code seems to be missing colons in the statement.</p>
+</opt>
+<opt text="B" >
+<p>Are you sure the structure is correct?</p>
+</opt>
+<opt text="C" correct="true">
+<p>Great work.</p>
+</opt>
+</choice> 
+</exercise>
+<exercise id="4" title="Creating Conditional Statements">
+<p><strong>Instructions:</strong><br />
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.</strong></p>
+<p><em><strong>Make sure you remove the hash (<code class="docutils literal notranslate"><span class="pre">#</span></code>) symbol in the coding portions of this question.  We have commented them so that the line won’t execute and you can test your code after each step.</strong></em></p>
+<p>Let’s practice making decisions with conditional statements.
+We are going to the gym and our exercise plan takes different amounts of reps. let’s make conditional statements that depend on the name of the exercises.</p>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Make <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code>, and <code class="docutils literal notranslate"><span class="pre">else</span></code> statements for the following conditions:</p>
+<ul>
+<li><p>if the exercise value is <code class="docutils literal notranslate"><span class="pre">lunges</span></code>, set an object value named <code class="docutils literal notranslate"><span class="pre">reps</span></code> to 20.</p></li>
+<li><p>if the exercise value is <code class="docutils literal notranslate"><span class="pre">squats</span></code>, set <code class="docutils literal notranslate"><span class="pre">reps</span></code> to 25</p></li>
+<li><p>if the exercise value is <code class="docutils literal notranslate"><span class="pre">burpees</span></code>, set <code class="docutils literal notranslate"><span class="pre">reps</span></code> to 15</p></li>
+<li><p>If the exercise value is anything else, set <code class="docutils literal notranslate"><span class="pre">reps</span></code> to 10.</p></li>
+</ul>
+</li>
+<li><p>Display the value of <code class="docutils literal notranslate"><span class="pre">reps</span></code>.</p></li>
+</ul>
+<codeblock id="05_04">
+<ul class="simple">
+<li><p>Are you using double equal signs  (<code class="docutils literal notranslate"><span class="pre">==</span></code>) to make a conditional statement?</p></li>
+<li><p>Are you using a single <code class="docutils literal notranslate"><span class="pre">if</span></code> statement and 2 <code class="docutils literal notranslate"><span class="pre">elif</span></code> statements?</p></li>
+</ul>
+</codeblock>
+<p><strong>Question</strong><br />
+What is the output of the code above?</p>
+<choice id="1" >
+<opt text="<code>20</code>" >
+<p>This is the value if <code class="docutils literal notranslate"><span class="pre">exercise</span></code> is  <code class="docutils literal notranslate"><span class="pre">lunges</span></code>.</p>
+</opt>
+<opt text="<code>25</code>">
+<p>This is the value if <code class="docutils literal notranslate"><span class="pre">exercise</span></code> is  <code class="docutils literal notranslate"><span class="pre">squats</span></code>.</p>
+</opt>
+<opt text="<code>15</code>" correct="true">
+<p>Great!</p>
+</opt>
+<opt text="<code>10</code>">
+<p>This is the default for all other values of  <code class="docutils literal notranslate"><span class="pre">exercise</span></code> that are not <code class="docutils literal notranslate"><span class="pre">lunges</span></code>, <code class="docutils literal notranslate"><span class="pre">squats</span></code> or <code class="docutils literal notranslate"><span class="pre">burpees</span></code>.
+</opt></p>
+</choice> 
+</exercise>
+<exercise id="5" title="Creating an Inline if/else Statement">
+<p><strong>Instructions:</strong><br />
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.</strong></p>
+<p><em><strong>Make sure you remove the hash (<code class="docutils literal notranslate"><span class="pre">#</span></code>) symbol in the coding portions of this question.  We have commented them so that the line won’t execute and you can test your code after each step.</strong></em></p>
+<p>Let’s try to make inline conditional statements using <code class="docutils literal notranslate"><span class="pre">if</span></code> and <code class="docutils literal notranslate"><span class="pre">else</span></code>.
+the variable <code class="docutils literal notranslate"><span class="pre">cups_of_tea</span></code> is the number of cups of tea Ben drank last week.</p>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Make an inline if/else statement that satisfies the following conditions:</p>
+<ul>
+<li><p>if the data type of <code class="docutils literal notranslate"><span class="pre">cups_of_tea</span></code> is of type <code class="docutils literal notranslate"><span class="pre">list</span></code>, then set and object named <code class="docutils literal notranslate"><span class="pre">tea_amount</span></code> to the sum of the elements.</p></li>
+<li><p>if the data type is anything else, set <code class="docutils literal notranslate"><span class="pre">tea_amount</span></code> to the string <code class="docutils literal notranslate"><span class="pre">'cannot</span> <span class="pre">sum'</span></code>.</p></li>
+</ul>
+</li>
+<li><p>Display the result of <code class="docutils literal notranslate"><span class="pre">tea_amount</span></code>.</p></li>
+</ul>
+<codeblock id="05_05">
+<ul class="simple">
+<li><p>To check the data type of <code class="docutils literal notranslate"><span class="pre">cups_of_tea</span></code>, you can use <code class="docutils literal notranslate"><span class="pre">type(cups_of_tea)</span> <span class="pre">==</span> <span class="pre">list</span></code>.</p></li>
+<li><p>Are you using <code class="docutils literal notranslate"><span class="pre">sum()</span></code> to sum up the elements in a list?</p></li>
+</ul>
+</codeblock>
+<p><strong>Question 1</strong><br />
+What is the output of the code above?</p>
+<choice id="1" >
+<opt text="<code>18</code>" >
+<p>Did you add an extra element to <code class="docutils literal notranslate"><span class="pre">cups_of_tea</span></code>?</p>
+</opt>
+<opt text="<code>16</code>" correct="true">
+<p>Great!</p>
+</opt>
+<opt text="<code>cannot sum</code>" >
+<p><code class="docutils literal notranslate"><span class="pre">cups_of_tea</span></code> is a list and should be able to sum up the elements.</p>
+</opt>
+<opt text="<code>Error</code>">
+<p>The code you made above should not result in an error message.
+</opt></p>
+</choice> 
+</exercise>
+<exercise id="6" title="Repeated Iterations (Loops)" type="slides, video">
+<slides source="module5/module5_06" shot = "2" start="10:26" end="15:37">
+</slides>
+</exercise>
+<exercise id="7" title="Repeated Iterations Questions">
+<p><strong>Question 1</strong></p>
+<p>the <em><strong>DRY</strong></em> principle aims to avoid what?</p>
+<choice id="1" >
+<opt text="Multiple elements that are the same value">
+<p>Sometimes we may need to have objects that contain the same values.</p>
+</opt>
+<opt text="Repeated code"  correct="true">
+<p>Great!</p>
+</opt>
+<opt text="Object of type <code>None</code>">
+<p><code class="docutils literal notranslate"><span class="pre">NoneType</span></code> can be very useful.  Why would we want to avoid them?</p>
+</opt>
+</choice> 
+<p><strong>Question 2</strong></p>
+<p>Which of the following code result in an output?</p>
+<p>A)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sentence</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Once&#39;</span><span class="p">,</span> <span class="s1">&#39;upon&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;time&#39;</span><span class="p">]</span>
+<span class="n">word_length</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">sentence</span><span class="p">:</span> 
+<span class="n">word_length</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>B)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sentence</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Once&#39;</span><span class="p">,</span> <span class="s1">&#39;upon&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;time&#39;</span><span class="p">]</span>
+<span class="n">word_length</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<span class="n">name</span> <span class="ow">in</span> <span class="n">sentence</span><span class="p">:</span> 
+  <span class="n">word_length</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>C)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sentence</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Once&#39;</span><span class="p">,</span> <span class="s1">&#39;upon&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;time&#39;</span><span class="p">]</span>
+<span class="n">word_length</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">sentence</span><span class="p">:</span> 
+    <span class="n">word_length</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>D)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sentence</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Once&#39;</span><span class="p">,</span> <span class="s1">&#39;upon&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;time&#39;</span><span class="p">]</span>
+<span class="n">word_length</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">sentence</span>
+    <span class="n">word_length</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+</pre></div>
+</div>
+<choice id="2" >
+<opt text="A">
+<p>This code seems to be missing colons the loop body indentation</p>
+</opt>
+<opt text="B" >
+<p>This is missing the important keywork <code class="docutils literal notranslate"><span class="pre">for</span></code>!</p>
+</opt>
+<opt text="C" correct="true">
+<p>Great work.</p>
+</opt>
+<opt text="D">
+<p>This is missing the colon in the first line of the loop.</p>
+</opt>
+</choice> 
+</exercise>
+<exercise id="8" title= "Practice Iterating Over a Collection">
+<p><strong>Instructions:</strong><br />
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.</strong></p>
+<p><em><strong>Make sure you remove the hash (<code class="docutils literal notranslate"><span class="pre">#</span></code>) symbol in the coding portions of this question.  We have commented them so that the line won’t execute and you can test your code after each step.</strong></em></p>
+<p>We’ve learned about iterating , now it’s time to apply this!
+We have a list that contains all elements of type <code class="docutils literal notranslate"><span class="pre">float</span></code>.  We want to create a new list that casts each element to type <code class="docutils literal notranslate"><span class="pre">int</span></code>.</p>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Create a new empty list named <code class="docutils literal notranslate"><span class="pre">integer_list</span></code>.</p></li>
+<li><p>Iterate over all the items in <code class="docutils literal notranslate"><span class="pre">float_list</span></code>. Cast the element to data type <code class="docutils literal notranslate"><span class="pre">int</span></code> and append it to <code class="docutils literal notranslate"><span class="pre">integer_list</span></code>.</p></li>
+<li><p>Display the value of <code class="docutils literal notranslate"><span class="pre">integer_list</span></code>.</p></li>
+</ul>
+<codeblock id="05_08">
+<ul class="simple">
+<li><p>Are you starting your loop with <code class="docutils literal notranslate"><span class="pre">for</span></code> and using a <code class="docutils literal notranslate"><span class="pre">colon</span></code> for the first line?</p></li>
+<li><p>Are you indenting each line of code in the loop?</p></li>
+<li><p>Are you appending the int value to the new list with <code class="docutils literal notranslate"><span class="pre">integer_list.append(int('variable-name-chose'))</span></code></p></li>
+</ul>
+</codeblock>
+</exercise>
+<exercise id="9" title="Range, Dictionaries and Comprehensions" type="slides, video">
+<slides source="module5/module5_09" shot = "2" start="15:43" end="19:11">
+</slides>
+</exercise>
+<exercise id="10" title=" Range  Questions">
+<p>What is the output of the following code?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numericals</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">numericals</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+<span class="n">numericals</span>
+</pre></div>
+</div>
+<choice id="1" >
+<opt text="<code>[30, 35, 40, 45, 50, 55, 60]</code>" >
+<p>Remember how <code class="docutils literal notranslate"><span class="pre">iloc[]</span></code> worked?  The starting number was inclusive and the ending number was exclusive.</p>
+</opt>
+<opt text="<code>[30, 35, 40, 45, 50, 55]</code>" correct="true">
+<p>Well done.</p>
+</opt>
+<opt text="<code>[60, 55, 50, 45, 40, 35, 30]</code>">
+<p>To have a list going backward, the skip rate step would be negative.</p>
+</opt>
+<opt text="<code>[30, 40, 50, 60]</code>">
+<p>The skip rate is 5, not 10
+.<br />
+</opt></p>
+</choice> 
+</exercise>
+<exercise id="11" title= "Practice Iterating using Range">
+<p><strong>Instructions:</strong><br />
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.</strong></p>
+<p><em><strong>Make sure you remove the hash (<code class="docutils literal notranslate"><span class="pre">#</span></code>) symbol in the coding portions of this question.  We have commented them so that the line won’t execute and you can test your code after each step.</strong></em></p>
+<p>Let’s make a loop again but this time let’s practice using the <code class="docutils literal notranslate"><span class="pre">range()</span></code> verb.</p>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Iterate over a range from 50 to 10, stepping down 4 integers at a time.</p></li>
+<li><p>Print the square of each number for each iteration.</p></li>
+</ul>
+<codeblock id="05_11">
+<ul class="simple">
+<li><p>Are you using <code class="docutils literal notranslate"><span class="pre">range(50,10,-4)</span></code>?</p></li>
+<li><p>Are you starting your loop with <code class="docutils literal notranslate"><span class="pre">for</span></code> and using a <code class="docutils literal notranslate"><span class="pre">colon</span></code> for the first line?</p></li>
+<li><p>Are you indenting each line of code in the loop?</p></li>
+</ul>
+</codeblock>
+<p><strong>Question 1</strong><br />
+How many numbers does the code above print out?</p>
+<choice id="1" >
+<opt text="8" >
+<p>Are you sure you used the right values in <code class="docutils literal notranslate"><span class="pre">range()</span></code>?</p>
+</opt>
+<opt text="9" >
+<p>Are you sure you used the right values in <code class="docutils literal notranslate"><span class="pre">range()</span></code>?</p>
+</opt>
+<opt text="10" correct="true">
+<p>Great!</p>
+</opt>
+<opt text="11">
+<p>Are you sure you used the right values in <code class="docutils literal notranslate"><span class="pre">range()</span></code>?</p>
+</opt>
+</choice> 
+</exercise>
+<exercise id="12" title= "Applying Range with Dataframes">
+<p><strong>Instructions:</strong><br />
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.</strong></p>
+<p><em><strong>Make sure you remove the hash (<code class="docutils literal notranslate"><span class="pre">#</span></code>) symbol in the coding portions of this question.  We have commented them so that the line won’t execute and you can test your code after each step.</strong></em></p>
+<p>Let’s read in multiple dataframes together and concatenate them vertically to one large dataframe using a loop and the <code class="docutils literal notranslate"><span class="pre">range()</span></code> function.</p>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>There are 4 dataframes named <code class="docutils literal notranslate"><span class="pre">pkm1.csv</span></code> to <code class="docutils literal notranslate"><span class="pre">pkm4.csv</span></code>. that we wish to load in and vertically concatenate together.</p></li>
+<li><p>Fill in the blanks so the code reads in each dataframe according to their differing file name and concatenates them together.</p></li>
+<li><p>Display the final dataframe.</p></li>
+</ul>
+<codeblock id="05_12">
+<ul class="simple">
+<li><p>Are you using <code class="docutils literal notranslate"><span class="pre">pd.concat()</span></code>?</p></li>
+<li><p>Are you adding <code class="docutils literal notranslate"><span class="pre">.csv</span></code> to the <code class="docutils literal notranslate"><span class="pre">string</span></code> object?</p></li>
+<li><p>Are you using <code class="docutils literal notranslate"><span class="pre">pd.read_csv()</span></code>?</p></li>
+<li><p>Are you indenting each line of code in the loop?</p></li>
+</ul>
+</codeblock>
+</exercise>
+<exercise id="13" title="Nested Loops" type="slides, video">
+<slides source="module5/module5_13" shot = "2" start="19:17" end="24:01">
+</slides>
+</exercise>
+<exercise id="14" title="Nested Loop Questions">
+<p><strong>Question 1</strong></p>
+<p>Given the code below, how many times does the line <code class="docutils literal notranslate"><span class="pre">print('Hurray')</span></code> get executed?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hurray&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This is fun!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<choice id="1" >
+<opt text="48">
+<p>Keep track of the step increment the values are increasing by in the outer loop.</p>
+</opt>
+<opt text="49">
+<p>Keep track of the step increment the values are increasing by in the outer loop.</p>
+</opt>
+<opt text="4">
+<p>Focus your attention on the outer loop and the number of times it executes the code in its body.</p>
+</opt>
+<opt text="5" correct="true">
+<p>Well done!  The outer loop calls <code class="docutils literal notranslate"><span class="pre">print('Hurray')</span></code> 5 times.</p>
+</opt>
+</choice> 
+<p><strong>Question 2</strong></p>
+<p>Given the code above, how many times does the line <code class="docutils literal notranslate"><span class="pre">print(&quot;This</span> <span class="pre">is</span> <span class="pre">fun!&quot;)</span></code> get executed?</p>
+<choice id="2" >
+<opt text="48">
+<p>We know the outer loop iterates 5 times and the inner loop iterates 4 times (0,2,4,6).</p>
+</opt>
+<opt text="25">
+<p>We know the outer loop iterates 5 times and the inner loop iterates 4 times (0,2,4,6).</p>
+</opt>
+<opt text="20" correct="true">
+<p>We know the outer loop iterates 5 times and the inner loop iterates 4 times (0,2,4,6). We must multiply those numbers together and get 20.</p>
+</opt>
+<opt text="5" >
+<p>We know the outer loop iterates 5 times and the inner loop iterates 4 times (0,2,4,6).</p>
+</opt>
+</choice> 
+</exercise>
+<exercise id="15" title= "Making a Nested Loop">
+<p><strong>Instructions:</strong><br />
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.</strong></p>
+<p><em><strong>Make sure you remove the hash (<code class="docutils literal notranslate"><span class="pre">#</span></code>) symbol in the coding portions of this question.  We have commented them so that the line won’t execute and you can test your code after each step.</strong></em></p>
+<p>Let’s count how many letters are contained in the dishes of a menu!
+We have a list named <code class="docutils literal notranslate"><span class="pre">menu</span></code> that contains multiples lists. We want to calculate how many character are contain in the entire <code class="docutils literal notranslate"><span class="pre">menu</span></code>.</p>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Make an object named <code class="docutils literal notranslate"><span class="pre">charater_count</span></code> and give it a value of 0.</p></li>
+<li><p>Make an outer loop that iterates over each list of the <code class="docutils literal notranslate"><span class="pre">menu</span></code> list.</p></li>
+<li><p>Make an inner loop that iterates over each element in the nested list and add the length of it to <code class="docutils literal notranslate"><span class="pre">charater_count</span></code>.</p></li>
+<li><p>Display the value of <code class="docutils literal notranslate"><span class="pre">charater_count</span></code> outside both loops.</p></li>
+</ul>
+<codeblock id="05_15">
+<p>Are you using 4 indentations for each loop?
+Are you putting <code class="docutils literal notranslate"><span class="pre">character_count</span> <span class="pre">=</span> <span class="pre">character_count</span> <span class="pre">+</span> <span class="pre">len(dish)</span></code> in the inner loop?</p>
+</codeblock>
+</exercise>
+<exercise id="16" title="Repeated Iterations with Conditions" type="slides, video">
+<slides source="module5/module5_16" shot = "2" start="24:085" end="27:472">
+</slides>
+</exercise>
+<exercise id="17" title="Conditional Loop Questions">
+<p><strong>Question 1</strong></p>
+<p>Which of the following is another syntax for the code below?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">supply</span> <span class="o">=</span> <span class="n">supply</span> <span class="o">-</span> <span class="mi">1</span>  
+</pre></div>
+</div>
+<choice id="1" >
+<opt text="<code>supply =- 1 </code>" >
+<p>Double-check the order of the operators.</p>
+</opt>
+<opt text="<code>supply - 1  = supply </code>">
+<p>The left side of the equal sign is reserved for object assignment!</p>
+</opt>
+<opt text="<code>supply -= 1</code>" correct="true">
+<p>Great!</p>
+</opt>
+</choice> 
+<p><strong>Question 2</strong></p>
+<p>Given the code below, what is the expected output?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">parking_lot</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="o">-</span><span class="mi">12</span><span class="p">,</span>  <span class="mi">110</span><span class="p">,</span> <span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="o">-</span><span class="mi">40</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">92</span><span class="p">]</span>
+<span class="n">parking_tickets</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">stall</span> <span class="ow">in</span> <span class="n">parking_lot</span><span class="p">:</span> 
+    <span class="k">if</span> <span class="n">stall</span> <span class="o">&lt;</span><span class="mi">0</span><span class="p">:</span>
+        <span class="n">parking_tickets</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">parking_tickets</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="nb">sum</span><span class="p">(</span><span class="n">parking_tickets</span><span class="p">)</span>
+</pre></div>
+</div>
+<choice id="2" >
+<opt text="<code>3</code>" correct="true">
+<p>Well done!</p>
+</opt>
+<opt text="<code>[False, True, False, True, False, False, True, False]</code>">
+<p>Did you miss that the code is taking the  <code class="docutils literal notranslate"><span class="pre">sum()</span></code> of the list?</p>
+</opt>
+<opt text="<code>7</code>">
+<p>this is the number of false values.</p>
+</opt>
+</choice> 
+<p><strong>Question 3</strong></p>
+<p>Given the code below, what is the expected output?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">parking_lot</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span><span class="o">-</span><span class="mi">12</span><span class="p">,</span>  <span class="mi">110</span><span class="p">,</span> <span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="o">-</span><span class="mi">40</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">92</span><span class="p">]</span>
+<span class="n">parking_tickets</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">stall</span> <span class="ow">in</span> <span class="n">parking_lot</span><span class="p">:</span> 
+    <span class="k">if</span> <span class="n">stall</span> <span class="o">&lt;</span><span class="mi">0</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">parking_tickets</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">sum</span><span class="p">(</span><span class="n">parking_tickets</span><span class="p">)</span>
+
+</pre></div>
+</div>
+<choice id="3" >
+<opt text="<code>3</code>" >
+<p>Did you review what <code class="docutils literal notranslate"><span class="pre">break</span></code> means?</p>
+</opt>
+<opt text="<code>Error</code>">
+<p>Did you review what <code class="docutils literal notranslate"><span class="pre">break</span></code> means?</p>
+</opt>
+<opt text="<code>0</code>" correct="true">
+<p>Nice work!</p>
+</opt>
+</choice> 
+</exercise>
+<exercise id="18" title= "Practice Iterating Over a Collection">
+<p><strong>Instructions:</strong><br />
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.</strong></p>
+<p><em><strong>Make sure you remove the hash (<code class="docutils literal notranslate"><span class="pre">#</span></code>) symbol in the coding portions of this question.  We have commented them so that the line won’t execute and you can test your code after each step.</strong></em></p>
+<p>For the last few Modules, we have been playing with different dataframes.  In this question, we have stored them in a list named <code class="docutils literal notranslate"><span class="pre">dataframes</span></code>.<br />
+Let’s count how many of these dataframes have more than 1000 rows.</p>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Make an object named <code class="docutils literal notranslate"><span class="pre">count</span></code> and assign it a value of 0.</p></li>
+<li><p>Loop through the dataframes and count how many of them have more than 1000 rows.</p></li>
+<li><p><em>Hint: you can use <code class="docutils literal notranslate"><span class="pre">.shape[0]</span></code> to access the number of rows in a dataframe.</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">count</span></code> should increase by 1 if the dataframe has more than 1000 rows and 0 otherwise.</p></li>
+<li><p>Display the value of <code class="docutils literal notranslate"><span class="pre">count</span></code>.</p></li>
+</ul>
+<codeblock id="05_18">
+<ul class="simple">
+<li><p>Did you use <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">data.shape[0]</span> <span class="pre">&gt;1000:</span></code> as you if statement?</p></li>
+<li><p>You don’t necessarily need an else statement here.</p></li>
+</ul>
+</codeblock>
+<p><strong>Question</strong><br />
+Does the code above used to read in the dataframes adhere to the DRY principle?</p>
+<choice id="1" >
+<opt text="Yes" >
+<p>It seems that we are repetitively using <code class="docutils literal notranslate"><span class="pre">pd.read_csv()</span></code>. Remember what we did in exercise 12?</p>
+</opt>
+<opt text="No" correct="true">
+<p>We can read in all our data with a loop (In fact, you did this exercise 12!)</p>
+</opt>
+<opt text="No but this can't be avoided" >
+<p>With repetitive code, there is generally always a manner to reduce redundant code.</p>
+</opt>
+</choice> 
+</exercise>
+<exercise id="19" title="Functions" type="slides, video">
+<slides source="module5/module5_19" shot = "2" start="27:54" end="33:20">
+</slides>
+</exercise>
+<exercise id="20" title="Function Questions">
+<p><strong>Question 1</strong></p>
+<p>What Python keyword is needed to begin the construction of a function?</p>
+<choice id="1" >
+<opt text="<code>fun</code>">
+<p>Unfortunately, <code class="docutils literal notranslate"><span class="pre">fun</span></code> is not a python keyword, but it would have been <code class="docutils literal notranslate"><span class="pre">fun</span></code> if it was!</p>
+</opt>
+<opt text="<code>funct</code>">
+<p>Maybe look back at the material again</p>
+</opt>
+<opt text="<code>def </code>"  correct="true">
+<p>Nice work!</p>
+</opt>
+<opt text="<code>define </code>">
+<p>We are defining a function but python doesn’t have <code class="docutils literal notranslate"><span class="pre">define</span></code> as a keyword.</p>
+</opt>
+</choice> 
+<p><strong>Question 2</strong></p>
+<p>What does the function below return?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_stars</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;**&quot;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;**&quot;</span>
+    <span class="k">return</span>
+</pre></div>
+</div>
+<choice id="2" >
+<opt text="<code>None</code>" correct="true">
+<p>Well done.</p>
+</opt>
+<opt text="A string surrounded by stars">
+<p>Does it really return anything?</p>
+</opt>
+<opt text="<code>Error</code>">
+<p>Are you seeing an error that we aren’t?</p>
+</opt>
+</choice> 
+</exercise>
+<exercise id="21" title= "Making a Function from Existing Code">
+<p><strong>Instructions:</strong><br />
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.</strong></p>
+<p><em><strong>Make sure you remove the hash (<code class="docutils literal notranslate"><span class="pre">#</span></code>) symbol in the coding portions of this question.  We have commented them so that the line won’t execute and you can test your code after each step.</strong></em></p>
+<p>Let’s practice converting existing code into a function so that it complies with the DRY principle.</p>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Using the code provided, transform it into a function named <code class="docutils literal notranslate"><span class="pre">uppercase_count</span></code></p></li>
+<li><p>The function should take in one argument and return the number of uppercases in the string</p></li>
+<li><p>Test it on the string <code class="docutils literal notranslate"><span class="pre">I</span> <span class="pre">hope</span> <span class="pre">you've</span> <span class="pre">Been</span> <span class="pre">Learning</span> <span class="pre">ALOT!</span></code></p></li>
+</ul>
+<codeblock id="05_21">
+<ul class="simple">
+<li><p>Are you defining your function with <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">uppercase_count(string):</span></code>?</p></li>
+<li><p>Are you returning the object <code class="docutils literal notranslate"><span class="pre">uppercase_num</span></code>?</p></li>
+</ul>
+</codeblock>
+</exercise>
+<exercise id="22" title= "Making a Function">
+<p><strong>Instructions:</strong><br />
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.</strong></p>
+<p><em><strong>Make sure you remove the hash (<code class="docutils literal notranslate"><span class="pre">#</span></code>) symbol in the coding portions of this question.  We have commented them so that the line won’t execute and you can test your code after each step.</strong></em></p>
+<p>Let’s practice making a function that returns the BMI (Body Mass Index) given a person’s weight and height.</p>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Define a function and give it the name <code class="docutils literal notranslate"><span class="pre">BMI_calculator</span></code>.</p></li>
+<li><p>It should take 2 arguments which can be called <code class="docutils literal notranslate"><span class="pre">height</span></code>, and <code class="docutils literal notranslate"><span class="pre">weight</span></code>.</p></li>
+<li><p>BMI can be calculated as:</p></li>
+</ul>
+<center><img src='/module5/CodeCogsEqn.gif'  alt="404 image"/></center>
+<br>
+<ul class="simple">
+<li><p>Make sure the function returns the calculated BMI.</p></li>
+<li><p>Once you have created your function, use it to calculate the BMI of a person with a height of 62 inches and a weight of 105 lbs.</p></li>
+<li><p>Save this in an object name <code class="docutils literal notranslate"><span class="pre">bmi_calc</span></code>.</p></li>
+</ul>
+<codeblock id="05_22">
+<ul class="simple">
+<li><p>Are you defining your function with <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">bmi_calculator(height,</span> <span class="pre">weight):</span></code></p></li>
+<li><p>Are you returning <code class="docutils literal notranslate"><span class="pre">(weight/(height**2))</span> <span class="pre">*</span> <span class="pre">702</span></code>?</p></li>
+<li><p>To use it, are you running <code class="docutils literal notranslate"><span class="pre">bmi_calculator(62,</span> <span class="pre">105)</span></code>?</p></li>
+</ul>
+</codeblock>
+</exercise>
+<exercise id="23" title="What Did We Just Learn?" type="slides, video">
+<slides source="module5/module5_end" shot = "9" start="0:51" end="1:35">>
+</slides>
+</exercise>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "UBC-MDS/PPDS_book",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./modules/home"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Hayley Boyce, Mike Gelbart, Tiffany Timbers<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

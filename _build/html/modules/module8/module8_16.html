@@ -1,0 +1,954 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Working with Dates and Time &#8212; Programming in Python for Data Science</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/video.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://hfboyce.github.io/ppds/intro.html/modules/module8/module8_16.html" />
+    <link rel="shortcut icon" href="../../_static/icon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Programming in Python for Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  Modules
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module1.html">
+   Module 1:  Python &amp; Pandas - An Unexpected Friendship
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_01.html">
+     What is a dataframe?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_03.html">
+     What is Pandas?
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Coding Exercises
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module1.html">
+   Module 1: Python &amp; Pandas - An Unexpected Friendship
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_01.html">
+     What is a dataframe?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_03.html">
+     What is Pandas?
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/modules/module8/module8_16.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/UBC-MDS/PPDS_book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/UBC-MDS/PPDS_book/issues/new?title=Issue%20on%20page%20%2Fmodules/module8/module8_16.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/UBC-MDS/PPDS_book/edit/main/modules/module8/module8_16.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Working with Dates and Time
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pandas-parse-dates">
+     Pandas parse_dates
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#diff">
+     .diff()
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#timedelta">
+     timedelta
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lets-apply-what-we-learned">
+   Let’s apply what we learned!
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="working-with-dates-and-time">
+<h1>Working with Dates and Time<a class="headerlink" href="#working-with-dates-and-time" title="Permalink to this headline">¶</a></h1>
+<p>Notes:</p>
+<br>
+<hr class="docutils" />
+<center>
+<a class="reference internal image-reference" href="module4/full.png"><img alt="module4/full.png" src="module4/full.png" style="width: 100%;" /></a>
+</center>
+<p>Notes:</p>
+<p>It wasn’t too long ago in Module 4, where we briefly mentioned another
+column dtype called <code class="docutils literal notranslate"><span class="pre">datetime64</span></code> and <code class="docutils literal notranslate"><span class="pre">timedelta[ns]</span></code>.</p>
+<p>Dates and times can be a bit tricky and require a specific data type so
+that analysis can be done correctly.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cycling</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                Date            Name  Type  Time  Distance                       Comments
+0  Sep-10-2019 17:13  Afternoon Ride  Ride  2084     12.62                          Rain 
+1  Sep-11-2019 06:52    Morning Ride  Ride  2531     13.03                           rain
+2  Sep-11-2019 17:23  Afternoon Ride  Ride  1863     12.52      Wet road but nice whether
+3  Sep-12-2019 07:06    Morning Ride  Ride  2192     12.84   Stopped for photo of sunrise
+4  Sep-12-2019 17:28  Afternoon Ride  Ride  1891     12.48  Tired by the end of the week.
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cycling</span><span class="o">.</span><span class="n">dtypes</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>Date         object
+Name         object
+Type         object
+Time          int64
+Distance    float64
+Comments     object
+dtype: object
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Let’s take our cycling dataset as an example.</p>
+<p>Our date column in our cycling dataframe currently has a dtype value of
+<code class="docutils literal notranslate"><span class="pre">object</span></code>.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cycling</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                 Date            Name  Type  Time  Distance                                   Comments
+21  Oct-01-2019 06:53    Morning Ride  Ride  2118     12.71                  Rested after the weekend!
+22  Oct-01-2019 17:15  Afternoon Ride  Ride  1732       NaN                       Legs feeling strong!
+23  Oct-02-2019 06:45    Morning Ride  Ride  2222     12.82             Beautiful morning! Feeling fit
+24  Oct-02-2019 17:13  Afternoon Ride  Ride  1756       NaN      A little tired today but good weather
+25  Oct-03-2019 06:46    Morning Ride  Ride  2134     13.06           Bit tired today but good weather
+26  Oct-03-2019 17:45  Afternoon Ride  Ride  1724     12.52                               Feeling good
+27  Oct-04-2019 06:47    Morning Ride  Ride  2182     12.68                                   Wet road
+28  Oct-04-2019 18:08  Afternoon Ride  Ride  1870     12.63           Very tired, riding into the wind
+29  Oct-10-2019 07:55    Morning Ride  Ride  2149     12.70              Really cold! But feeling good
+30  Oct-10-2019 18:10  Afternoon Ride  Ride  1841     12.59        Feeling good after a holiday break!
+31  Oct-11-2019 07:47    Morning Ride  Ride  2463     12.79               Stopped for photo of sunrise
+32  Oct-11-2019 18:16  Afternoon Ride  Ride  1843     11.79  Bike feeling tight, needs an oil and pump
+0   Sep-10-2019 17:13  Afternoon Ride  Ride  2084     12.62                                      Rain 
+1   Sep-11-2019 06:52    Morning Ride  Ride  2531     13.03                                       rain
+2   Sep-11-2019 17:23  Afternoon Ride  Ride  1863     12.52                  Wet road but nice whether
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>When we try to sort these values, it doesn’t recognize the day or month
+values and will sort them in some ascending order that is not temporal.</p>
+<p>We can see that this sorted starts with October 1st, 2019, followed by
+September 10th, 2019, and then September 11th, 2019.</p>
+<p>Python is purely sorting the rows by month and not taking the day into
+consideration.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cycling</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                Date            Name  Type  Time  Distance                       Comments
+0  Sep-10-2019 17:13  Afternoon Ride  Ride  2084     12.62                          Rain 
+1  Sep-11-2019 06:52    Morning Ride  Ride  2531     13.03                           rain
+2  Sep-11-2019 17:23  Afternoon Ride  Ride  1863     12.52      Wet road but nice whether
+3  Sep-12-2019 07:06    Morning Ride  Ride  2192     12.84   Stopped for photo of sunrise
+4  Sep-12-2019 17:28  Afternoon Ride  Ride  1891     12.48  Tired by the end of the week.
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dates</span> <span class="o">=</span> <span class="p">(</span><span class="n">cycling</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                           <span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="s1">&#39;Date&#39;</span><span class="p">,</span>
+                                              <span class="mi">1</span><span class="p">:</span><span class="s1">&#39;Time&#39;</span><span class="p">}))</span>
+<span class="n">dates</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>          Date   Time
+0  Sep-10-2019  17:13
+1  Sep-11-2019  06:52
+2  Sep-11-2019  17:23
+3  Sep-12-2019  07:06
+4  Sep-12-2019  17:28
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>We can try parsing dates ourselves, but that can be difficult and
+time-consuming.</p>
+<p>To demonstrate this, let’s make an attempt at parsing the <code class="docutils literal notranslate"><span class="pre">Date</span></code> column
+in our <code class="docutils literal notranslate"><span class="pre">cycling</span></code> dataframe, which currently has an <code class="docutils literal notranslate"><span class="pre">object</span></code> dtype.</p>
+<p>First, we would need to split the column separating the date and the
+time and rename the labels 0 and 1 to <code class="docutils literal notranslate"><span class="pre">Date</span></code> and <code class="docutils literal notranslate"><span class="pre">Time</span></code> respectively.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dates</span> <span class="o">=</span> <span class="p">(</span><span class="n">dates</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="s1">&#39;Month&#39;</span><span class="p">,</span>
+                                                                     <span class="mi">1</span><span class="p">:</span><span class="s1">&#39;Day&#39;</span><span class="p">,</span>
+                                                                     <span class="mi">2</span><span class="p">:</span><span class="s1">&#39;Year&#39;</span><span class="p">}))</span>
+<span class="n">dates</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>  Month Day  Year
+0   Sep  10  2019
+1   Sep  11  2019
+2   Sep  11  2019
+3   Sep  12  2019
+4   Sep  12  2019
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Once again, we need to split the date column using <code class="docutils literal notranslate"><span class="pre">str.split(),</span></code> which
+we learned in Module 4, and separate it into columns for the year, month
+and day.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dates</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>&#39;10&#39;
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">dates</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;str&#39;&gt;
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Currently, the values in <code class="docutils literal notranslate"><span class="pre">dates</span></code> are of type <code class="docutils literal notranslate"><span class="pre">str</span></code>, so we would not be
+able to sort them in a temporal manner.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cycling_dates</span> <span class="o">=</span> <span class="p">(</span><span class="n">cycling</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">Year</span> <span class="o">=</span> <span class="n">dates</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">),</span>
+                                <span class="n">Month</span> <span class="o">=</span>  <span class="n">dates</span><span class="p">[</span><span class="s1">&#39;Month&#39;</span><span class="p">],</span>
+                                <span class="n">Day</span> <span class="o">=</span> <span class="n">dates</span><span class="p">[</span><span class="s1">&#39;Day&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">))</span>
+                                <span class="p">)</span>
+<span class="n">cycling_dates</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                Date            Name  Type  Time  Distance                   Comments  Year Month  Day
+0  Sep-10-2019 17:13  Afternoon Ride  Ride  2084     12.62                      Rain   2019   Sep   10
+1  Sep-11-2019 06:52    Morning Ride  Ride  2531     13.03                       rain  2019   Sep   11
+2  Sep-11-2019 17:23  Afternoon Ride  Ride  1863     12.52  Wet road but nice whether  2019   Sep   11
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cycling_dates</span> <span class="o">=</span> <span class="n">cycling_dates</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="s1">&#39;Month&#39;</span><span class="p">,</span> <span class="s1">&#39;Day&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">,</span>
+                                      <span class="s1">&#39;Type&#39;</span><span class="p">,</span> <span class="s1">&#39;Time&#39;</span><span class="p">,</span> <span class="s1">&#39;Distance&#39;</span><span class="p">,</span> <span class="s1">&#39;Comments&#39;</span><span class="p">]]</span>
+<span class="n">cycling_dates</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>   Year Month  Day            Name  Type  Time  Distance                   Comments
+0  2019   Sep   10  Afternoon Ride  Ride  2084     12.62                      Rain 
+1  2019   Sep   11    Morning Ride  Ride  2531     13.03                       rain
+2  2019   Sep   11  Afternoon Ride  Ride  1863     12.52  Wet road but nice whether
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>We must convert the columns to integers values and add them to the
+<code class="docutils literal notranslate"><span class="pre">cycling_dates</span></code> dataframe.</p>
+<p>We are then going to select and reorder the columns in the dataframe, so
+the new date columns are on the left side.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cycling_dates</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="s1">&#39;Month&#39;</span><span class="p">,</span> <span class="s1">&#39;Day&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>    Year Month  Day            Name  Type  Time  Distance                               Comments
+21  2019   Oct    1    Morning Ride  Ride  2118     12.71              Rested after the weekend!
+22  2019   Oct    1  Afternoon Ride  Ride  1732       NaN                   Legs feeling strong!
+23  2019   Oct    2    Morning Ride  Ride  2222     12.82         Beautiful morning! Feeling fit
+24  2019   Oct    2  Afternoon Ride  Ride  1756       NaN  A little tired today but good weather
+25  2019   Oct    3    Morning Ride  Ride  2134     13.06       Bit tired today but good weather
+..   ...   ...  ...             ...   ...   ...       ...                                    ...
+16  2019   Sep   25  Afternoon Ride  Ride  1775     12.10                   Feeling really tired
+17  2019   Sep   26    Morning Ride  Ride  2124     12.65           Stopped for photo of sunrise
+18  2019   Sep   26  Afternoon Ride  Ride  1860     12.52                                raining
+19  2019   Sep   27    Morning Ride  Ride  2350     12.91        Detour around trucks at Jericho
+20  2019   Sep   27  Afternoon Ride  Ride  1712     12.47           Tired by the end of the week
+
+[33 rows x 8 columns]
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Now we try to sort them, but how do we sort the <code class="docutils literal notranslate"><span class="pre">month</span></code> column?</p>
+<p>It now incorrectly sorts the rows by listing the October rows before
+September.</p>
+<p>It must be quite evident that we really don’t want to do it this way,
+right?</p>
+<p>There are a lot of limitations, and we haven’t yet separated the time.</p>
+<p>Calculating the time between dates now can also be extremely difficult.</p>
+<p>(The differing number of days in months is a contributing factor.)</p>
+<p>Thankfully we don’t have to do it this way.</p>
+<p>Pandas have some built-in functions that will make our lives much
+easier.</p>
+<p>By the end of this slide deck, we will be able to answer the question of
+<em>what was Tom’s longest time between rides</em>.</p>
+<p>This is a question that without pandas, would have taken hours, instead
+of minutes.</p>
+<hr class="docutils" />
+<div class="section" id="pandas-parse-dates">
+<h2>Pandas parse_dates<a class="headerlink" href="#pandas-parse-dates" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cycling</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;cycling_data.csv&#39;</span><span class="p">)</span>
+<span class="n">cycling</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                Date            Name  Type  Time  Distance                   Comments
+0  Sep-10-2019 17:13  Afternoon Ride  Ride  2084     12.62                      Rain 
+1  Sep-11-2019 06:52    Morning Ride  Ride  2531     13.03                       rain
+2  Sep-11-2019 17:23  Afternoon Ride  Ride  1863     12.52  Wet road but nice whether
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cycling</span><span class="o">.</span><span class="n">dtypes</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>Date         object
+Name         object
+Type         object
+Time          int64
+Distance    float64
+Comments     object
+dtype: object
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Remember How Pandas is built using the NumPy library?</p>
+<p>Well in a similar way, Pandas datetime verbs are built using the
+built-in Python library;
+<a href="https://docs.python.org/3/library/datetime.html" target="_blank"><code class="docutils literal notranslate"><span class="pre">datetime</span></code>
+</a>.</p>
+<p>We can parse our data at the same time as we read in our dataframe using
+the argument <code class="docutils literal notranslate"><span class="pre">parse_dates</span></code>.</p>
+<p>Originally the <code class="docutils literal notranslate"><span class="pre">Date</span></code> column adopts a dtype of <code class="docutils literal notranslate"><span class="pre">object</span></code> when the data is
+read in.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cycling_dates</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;cycling_data.csv&#39;</span><span class="p">,</span> <span class="n">parse_dates</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">])</span>
+<span class="n">cycling_dates</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                 Date            Name  Type  Time  Distance                       Comments
+0 2019-09-10 17:13:00  Afternoon Ride  Ride  2084     12.62                          Rain 
+1 2019-09-11 06:52:00    Morning Ride  Ride  2531     13.03                           rain
+2 2019-09-11 17:23:00  Afternoon Ride  Ride  1863     12.52      Wet road but nice whether
+3 2019-09-12 07:06:00    Morning Ride  Ride  2192     12.84   Stopped for photo of sunrise
+4 2019-09-12 17:28:00  Afternoon Ride  Ride  1891     12.48  Tired by the end of the week.
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cycling_dates</span><span class="o">.</span><span class="n">dtypes</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>Date        datetime64[ns]
+Name                object
+Type                object
+Time                 int64
+Distance           float64
+Comments            object
+dtype: object
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Using the <code class="docutils literal notranslate"><span class="pre">parse_dates</span></code>argument with <code class="docutils literal notranslate"><span class="pre">pd.read_csv()</span></code>, transforms the
+column so that so that it now adopts a <code class="docutils literal notranslate"><span class="pre">datetime64</span></code> dtype.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cycling_dates</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                  Date            Name  Type  Time  Distance                                   Comments
+0  2019-09-10 17:13:00  Afternoon Ride  Ride  2084     12.62                                      Rain 
+1  2019-09-11 06:52:00    Morning Ride  Ride  2531     13.03                                       rain
+2  2019-09-11 17:23:00  Afternoon Ride  Ride  1863     12.52                  Wet road but nice whether
+3  2019-09-12 07:06:00    Morning Ride  Ride  2192     12.84               Stopped for photo of sunrise
+4  2019-09-12 17:28:00  Afternoon Ride  Ride  1891     12.48              Tired by the end of the week.
+..                 ...             ...   ...   ...       ...                                        ...
+28 2019-10-04 18:08:00  Afternoon Ride  Ride  1870     12.63           Very tired, riding into the wind
+29 2019-10-10 07:55:00    Morning Ride  Ride  2149     12.70              Really cold! But feeling good
+30 2019-10-10 18:10:00  Afternoon Ride  Ride  1841     12.59        Feeling good after a holiday break!
+31 2019-10-11 07:47:00    Morning Ride  Ride  2463     12.79               Stopped for photo of sunrise
+32 2019-10-11 18:16:00  Afternoon Ride  Ride  1843     11.79  Bike feeling tight, needs an oil and pump
+
+[33 rows x 6 columns]
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Now that we have a datetime column which expresses when Tom began his
+journey, we can sort our dataframe in a temporal manner, properly now:</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;cycling_data_split_time.csv&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>   Year Month  Day      Clock            Name  Type  Time  Distance                      Comments
+0  2019   Sep   10   17:13:04  Afternoon Ride  Ride  2084     12.62                          Rain
+1  2019   Sep   11   06:52:18    Morning Ride  Ride  2531     13.03                          rain
+2  2019   Sep   11   17:23:50  Afternoon Ride  Ride  1863     12.52     Wet road but nice weather
+3  2019   Sep   12   07:06:19    Morning Ride  Ride  2192     12.84  Stopped for photo of sunrise
+4  2019   Sep   12   17:28:05  Afternoon Ride  Ride  1891     12.48  Tired by the end of the week
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;cycling_data_split_time.csv&#39;</span><span class="p">,</span>
+              <span class="n">parse_dates</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Date&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="s1">&#39;Month&#39;</span><span class="p">,</span> <span class="s1">&#39;Day&#39;</span><span class="p">,</span> <span class="s1">&#39;Clock&#39;</span><span class="p">]})</span>
+              <span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                 Date            Name  Type  Time  Distance                      Comments
+0 2019-09-10 17:13:04  Afternoon Ride  Ride  2084     12.62                          Rain
+1 2019-09-11 06:52:18    Morning Ride  Ride  2531     13.03                          rain
+2 2019-09-11 17:23:50  Afternoon Ride  Ride  1863     12.52     Wet road but nice weather
+3 2019-09-12 07:06:19    Morning Ride  Ride  2192     12.84  Stopped for photo of sunrise
+4 2019-09-12 17:28:05  Afternoon Ride  Ride  1891     12.48  Tired by the end of the week
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>As another example, our date data may be split between multiple columns.</p>
+<p>We can combine the <code class="docutils literal notranslate"><span class="pre">Year</span></code>, <code class="docutils literal notranslate"><span class="pre">Month</span></code>, and <code class="docutils literal notranslate"><span class="pre">Day</span></code> columns to a single
+datetime column by using a dictionary within the <code class="docutils literal notranslate"><span class="pre">parse_dates</span></code> argument.</p>
+<p>The dictionary key indicates the new column name, and the dictionary
+value is a list with the multiple date columns to combine.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cycling</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;cycling_data.csv&#39;</span><span class="p">)</span>
+<span class="n">cycling</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                Date            Name  Type  Time  Distance                       Comments
+0  Sep-10-2019 17:13  Afternoon Ride  Ride  2084     12.62                          Rain 
+1  Sep-11-2019 06:52    Morning Ride  Ride  2531     13.03                           rain
+2  Sep-11-2019 17:23  Afternoon Ride  Ride  1863     12.52      Wet road but nice whether
+3  Sep-12-2019 07:06    Morning Ride  Ride  2192     12.84   Stopped for photo of sunrise
+4  Sep-12-2019 17:28  Afternoon Ride  Ride  1891     12.48  Tired by the end of the week.
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cycling</span><span class="o">.</span><span class="n">dtypes</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>Date         object
+Name         object
+Type         object
+Time          int64
+Distance    float64
+Comments     object
+dtype: object
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>What if we need to convert a column into dtype <code class="docutils literal notranslate"><span class="pre">datetime</span></code> after reading
+in our data?</p>
+<p>That’s not a problem! We have <code class="docutils literal notranslate"><span class="pre">pd.to_datetime()</span></code> to transform columns
+of an already existing dataframe.</p>
+<p>Let’s use our original <code class="docutils literal notranslate"><span class="pre">cycling</span></code> dataframe where <code class="docutils literal notranslate"><span class="pre">Date</span></code> is still of
+dtype <code class="docutils literal notranslate"><span class="pre">object</span></code>.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">new_cycling</span> <span class="o">=</span> <span class="n">cycling</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">Date</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">cycling</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">]))</span>
+<span class="n">new_cycling</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                 Date            Name  Type  Time  Distance                       Comments
+0 2019-09-10 17:13:00  Afternoon Ride  Ride  2084     12.62                          Rain 
+1 2019-09-11 06:52:00    Morning Ride  Ride  2531     13.03                           rain
+2 2019-09-11 17:23:00  Afternoon Ride  Ride  1863     12.52      Wet road but nice whether
+3 2019-09-12 07:06:00    Morning Ride  Ride  2192     12.84   Stopped for photo of sunrise
+4 2019-09-12 17:28:00  Afternoon Ride  Ride  1891     12.48  Tired by the end of the week.
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">new_cycling</span><span class="o">.</span><span class="n">dtypes</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>Date        datetime64[ns]
+Name                object
+Type                object
+Time                 int64
+Distance           float64
+Comments            object
+dtype: object
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>To convert <code class="docutils literal notranslate"><span class="pre">Date</span></code> to a datetime dtype, we use <code class="docutils literal notranslate"><span class="pre">pd.to_datetime()</span></code> and
+<code class="docutils literal notranslate"><span class="pre">assign()</span></code>.</p>
+<p>Now in the <code class="docutils literal notranslate"><span class="pre">new_cycling</span></code> dataframe, we see that the column <code class="docutils literal notranslate"><span class="pre">Date</span></code> is now
+of type <code class="docutils literal notranslate"><span class="pre">datetime64[ns]</span></code></p>
+<p>Ok, but what if I don’t want the full datetime value, and I want a
+column with only a portion of it, like the month or year?</p>
+<hr class="docutils" />
+<a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#time-date-components" target="_blank">
+Pandas datetime tools</a>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">.dt.day_name()</span></code> for the day of the week:</p></li>
+</ul>
+<!-- end list -->
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">new_cycling</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">day_name</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>0      Tuesday
+1    Wednesday
+2    Wednesday
+3     Thursday
+4     Thursday
+Name: Date, dtype: object
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">new_cycling</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">weekday</span> <span class="o">=</span> <span class="n">new_cycling</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">day_name</span><span class="p">())</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                 Date            Name  Type  Time  Distance                       Comments    weekday
+0 2019-09-10 17:13:00  Afternoon Ride  Ride  2084     12.62                          Rain     Tuesday
+1 2019-09-11 06:52:00    Morning Ride  Ride  2531     13.03                           rain  Wednesday
+2 2019-09-11 17:23:00  Afternoon Ride  Ride  1863     12.52      Wet road but nice whether  Wednesday
+3 2019-09-12 07:06:00    Morning Ride  Ride  2192     12.84   Stopped for photo of sunrise   Thursday
+4 2019-09-12 17:28:00  Afternoon Ride  Ride  1891     12.48  Tired by the end of the week.   Thursday
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>No worries, we can add a new column to our dataframe in a similar as we
+did before, but now we can extract a portion of the <code class="docutils literal notranslate"><span class="pre">datetime</span></code> column by
+using
+<a href="https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#time-date-components" target="_blank">one
+of the many pandas datetime tools</a>.</p>
+<p>Here are a couple of examples:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">.dt.day_name()</span></code> for the day of the week, which we can pair this
+with <code class="docutils literal notranslate"><span class="pre">.assign()</span></code> to add this as a column in the dataframe.</p></li>
+</ul>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">new_cycling</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">day</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>0    10
+1    11
+2    11
+3    12
+4    12
+Name: Date, dtype: int64
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">new_cycling</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">day</span> <span class="o">=</span> <span class="n">new_cycling</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">day</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                 Date            Name  Type  Time  Distance                       Comments  day
+0 2019-09-10 17:13:00  Afternoon Ride  Ride  2084     12.62                          Rain    10
+1 2019-09-11 06:52:00    Morning Ride  Ride  2531     13.03                           rain   11
+2 2019-09-11 17:23:00  Afternoon Ride  Ride  1863     12.52      Wet road but nice whether   11
+3 2019-09-12 07:06:00    Morning Ride  Ride  2192     12.84   Stopped for photo of sunrise   12
+4 2019-09-12 17:28:00  Afternoon Ride  Ride  1891     12.48  Tired by the end of the week.   12
+</pre></div>
+</div>
+<p>Notes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">.dt.day</span></code> for the day which we can again use with <code class="docutils literal notranslate"><span class="pre">.assign()</span></code> to add
+it to our dataframe.</p></li>
+</ul>
+<hr class="docutils" />
+<p>Here are some of the most common useful datetime tools:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">.dt.year</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.dt.month</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.dt.month_name()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.dt.day</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.dt.day_name()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.dt.hour</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.dt.minute</span></code></p></li>
+</ul>
+<p>For a full list, refer to
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Timestamp.html#:~:text=Timestamp%20is%20the%20pandas%20equivalent,oriented%20data%20structures%20in%20pandas.&text=Value%20to%20be%20converted%20to%20Timestamp.&text=Offset%20which%20Timestamp%20will%20have." target="_blank">the
+attributes and methods section of the Timestamp documentation</a>.</p>
+<p>Notes:</p>
+<p>There is some inconsistency with these verbs. You can see that some use
+parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code> and some do not.</p>
+<p>Using the <code class="docutils literal notranslate"><span class="pre">.dt</span></code> portion of these can only be used on a pandas Series. We
+can extract the day, month, year, hour, or minute from a single datetime
+value, using the same nouns but omitting the <code class="docutils literal notranslate"><span class="pre">.dt</span></code>.</p>
+<p>Let’s see how that’s possible.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">new_cycling</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                 Date            Name  Type  Time  Distance                       Comments
+0 2019-09-10 17:13:00  Afternoon Ride  Ride  2084     12.62                          Rain 
+1 2019-09-11 06:52:00    Morning Ride  Ride  2531     13.03                           rain
+2 2019-09-11 17:23:00  Afternoon Ride  Ride  1863     12.52      Wet road but nice whether
+3 2019-09-12 07:06:00    Morning Ride  Ride  2192     12.84   Stopped for photo of sunrise
+4 2019-09-12 17:28:00  Afternoon Ride  Ride  1891     12.48  Tired by the end of the week.
+</pre></div>
+</div>
+<p>If I select the first example in row 1 of our <code class="docutils literal notranslate"><span class="pre">new_cycling</span></code> dataset,
+you’ll notice that it outputs something called a <code class="docutils literal notranslate"><span class="pre">Timestamp</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">timestamp_ex</span> <span class="o">=</span> <span class="n">new_cycling</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;Date&#39;</span><span class="p">]</span>
+<span class="n">timestamp_ex</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>Timestamp(&#39;2019-09-11 06:52:00&#39;)
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>If I select the first example in row 1 of our <code class="docutils literal notranslate"><span class="pre">new_cycling</span></code> dataset,
+you’ll notice that it outputs something called a <code class="docutils literal notranslate"><span class="pre">Timestamp</span></code>.</p>
+<p>This is a pandas data type.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">timestamp_ex</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>Timestamp(&#39;2019-09-11 06:52:00&#39;)
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">timestamp_ex</span><span class="o">.</span><span class="n">month_name</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>&#39;September&#39;
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">timestamp_ex</span><span class="o">.</span><span class="n">day</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>11
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">timestamp_ex</span><span class="o">.</span><span class="n">hour</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>6
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Timestamps show a snapshot of when an event has occurred. Timestamps are
+complete with both dates and times. If the date and time are not
+available in your original data, Python will fill in any temporal
+unknowns with default values (often with <code class="docutils literal notranslate"><span class="pre">00:00:00</span></code> for time, if only
+the date was provided).</p>
+<p>To obtain the month name, day, or hour from the Timestamp, we can use
+the same nouns in the previous slide without <code class="docutils literal notranslate"><span class="pre">.dt</span></code>.</p>
+<p>Here we get the <code class="docutils literal notranslate"><span class="pre">.mount_name()</span></code>, the <code class="docutils literal notranslate"><span class="pre">.day</span></code> and the <code class="docutils literal notranslate"><span class="pre">.hour</span></code> of a single
+value by using the same verbs as before but omitting the <code class="docutils literal notranslate"><span class="pre">.dt</span></code></p>
+</div>
+<hr class="docutils" />
+<div class="section" id="diff">
+<h2>.diff()<a class="headerlink" href="#diff" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cycling_intervals</span> <span class="o">=</span> <span class="n">new_cycling</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span>
+<span class="n">cycling_intervals</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>0                NaT
+1    0 days 13:39:00
+2    0 days 10:31:00
+3    0 days 13:43:00
+4    0 days 10:22:00
+           ...      
+28   0 days 11:21:00
+29   5 days 13:47:00
+30   0 days 10:15:00
+31   0 days 13:37:00
+32   0 days 10:29:00
+Name: Date, Length: 33, dtype: timedelta64[ns]
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>In our analysis, it might be important to know how frequent events occur
+and the time between them.</p>
+<p><code class="docutils literal notranslate"><span class="pre">.diff()</span></code> is a useful function for that.</p>
+<p>This outputs a pandas Series with the time that occurs between rows. As
+you can see, there was a 10 hour and 22minute gap between Tom’s third
+and forth bike rides. Wow - that’s a long workday!”</p>
+<p>Here, you’ll now notice a new dtype at the bottom of our new pandas
+Series named
+<a href="https://docs.python.org/2/library/datetime.html" target="_blank"><code class="docutils literal notranslate"><span class="pre">timedelta64</span></code></a>.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="timedelta">
+<h2>timedelta<a class="headerlink" href="#timedelta" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cycling_intervals</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>Timedelta(&#39;0 days 13:39:00&#39;)
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cycling_intervals</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">seconds</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>49140
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sec_per_hour</span> <span class="o">=</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span>
+<span class="n">cycling_intervals</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">seconds</span> <span class="o">/</span> <span class="n">sec_per_hour</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>13.65
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Unlike a <code class="docutils literal notranslate"><span class="pre">Timestamp</span></code> that represents a snapshot in time, <code class="docutils literal notranslate"><span class="pre">timedelta</span></code>
+represents a duration or an interval of time.</p>
+<p>Here we can obtain the time between 2 trips.</p>
+<p>Measurement can only be extracted from the timedelta object using either
+<code class="docutils literal notranslate"><span class="pre">days</span></code>, <code class="docutils literal notranslate"><span class="pre">seconds</span></code>, and <code class="docutils literal notranslate"><span class="pre">microseconds</span></code> verbs.</p>
+<p>Here we obtain the number of seconds.</p>
+<p>We can convert them into other units by using simple operations.</p>
+<p>In this case, we convert it to hours by dividing it by the number of
+seconds in an hour.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cycling_intervals</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>Timedelta(&#39;5 days 13:47:00&#39;)
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cycling_intervals</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>Timedelta(&#39;0 days 10:15:00&#39;)
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">interval_range</span> <span class="o">=</span> <span class="n">cycling_intervals</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">cycling_intervals</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="n">interval_range</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>Timedelta(&#39;5 days 03:32:00&#39;)
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Timedelta objects have a lot of functionality.</p>
+<p>We can use a summary statistic verbs with them.</p>
+<p>For example, we can calculate the maximum amount of time between rides.</p>
+<p>As well as the minimum.</p>
+<p>We can also do a simple operation with them, like finding the range.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="lets-apply-what-we-learned">
+<h1>Let’s apply what we learned!<a class="headerlink" href="#lets-apply-what-we-learned" title="Permalink to this headline">¶</a></h1>
+<p>Notes:</p>
+<br>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "UBC-MDS/PPDS_book",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./modules/module8"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Hayley Boyce, Mike Gelbart, Tiffany Timbers<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

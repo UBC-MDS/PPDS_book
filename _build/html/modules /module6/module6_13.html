@@ -1,0 +1,498 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Defensive programming using exceptions &#8212; Programming in Python for Data Science</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/video.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://hfboyce.github.io/ppds/intro.html/modules /module6/module6_13.html" />
+    <link rel="shortcut icon" href="../../_static/icon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Programming in Python for Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/modules /module6/module6_13.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/UBC-MDS/PPDS_book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/UBC-MDS/PPDS_book/issues/new?title=Issue%20on%20page%20%2Fmodules /module6/module6_13.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/UBC-MDS/PPDS_book/edit/main/modules /module6/module6_13.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Defensive programming using exceptions
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exceptions">
+     Exceptions
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#why-raise-exceptions">
+     Why raise Exceptions
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exception-types">
+     Exception types
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exception-documentation">
+     Exception Documentation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lets-apply-what-we-learned">
+   Let’s apply what we learned!
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="defensive-programming-using-exceptions">
+<h1>Defensive programming using exceptions<a class="headerlink" href="#defensive-programming-using-exceptions" title="Permalink to this headline">¶</a></h1>
+<p>Notes:</p>
+<br>
+<hr class="docutils" />
+<p><em><strong>Defensive programming</strong></em>: Code written in such a way that if errors
+do occur, they are handled in a graceful, fast and informative manner.</p>
+<p><em><strong>Exceptions</strong></em>: Used in <em><strong>Defensive programming</strong></em> to disrupts the
+normal flow of instructions. When Python encounters code that it cannot
+execute, it will throw an <em><strong>exception</strong></em>.</p>
+<p>Notes:</p>
+<p>We all know that mistakes are a regular part of life.</p>
+<p>In coding, every line of code is at risk for potential errors, so
+naturally, we want a way of defending our functions against potential
+issues.</p>
+<p><em><strong>Defensive programming</strong></em> is code written in such a way that, if
+errors do occur, they are handled in a graceful, fast and informative
+manner.</p>
+<p>If something goes wrong, we don’t want the code to crash on its own
+terms - we want it to fail gracefully, in a way we pre-determined.</p>
+<p>To help soften the landing, we write code that throws our own
+<em><strong>Exceptions</strong></em>.</p>
+<p><em><strong>Exceptions</strong></em> are used in <em><strong>Defensive programming</strong></em> to disrupt the
+normal flow of instructions. When Python encounters code that it cannot
+execute, it will throw an <em><strong>exception</strong></em>.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">exponent_a_list</span><span class="p">(</span><span class="n">numerical_list</span><span class="p">,</span> <span class="n">exponent</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    <span class="n">new_exponent_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numerical_list</span><span class="p">:</span>
+        <span class="n">new_exponent_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">number</span> <span class="o">**</span> <span class="n">exponent</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">new_exponent_list</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numerical_string</span> <span class="o">=</span> <span class="s2">&quot;123&quot;</span>
+<span class="n">exponent_a_list</span><span class="p">(</span><span class="n">numerical_string</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>TypeError: unsupported operand type(s) for ** or pow(): &#39;str&#39; and &#39;int&#39;
+
+Detailed traceback: 
+  File &quot;&lt;string&gt;&quot;, line 1, in &lt;module&gt;
+  File &quot;&lt;string&gt;&quot;, line 4, in exponent_a_list
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Before we dive into exceptions, let’s revisit our function
+<code class="docutils literal notranslate"><span class="pre">exponent_a_list()</span></code>.</p>
+<p>It works somewhat well, but what happens if we try to use it with an
+input string instead of a list.</p>
+<p>We get an error that explains a little bit of what’s causing the issue
+but not directly.</p>
+<p>This error, called a TypeError here, is itself a Python exception. But
+the error message, which is a default Python message, is not super
+clear.</p>
+<p>This is where raising our own <code class="docutils literal notranslate"><span class="pre">Exception</span></code> steps in to help.</p>
+<hr class="docutils" />
+<div class="section" id="exceptions">
+<h2>Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">exponent_a_list</span><span class="p">(</span><span class="n">numerical_list</span><span class="p">,</span> <span class="n">exponent</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+
+    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">numerical_list</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">list</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;You are not using a list for the numerical_list input.&quot;</span><span class="p">)</span>
+
+    <span class="n">new_exponent_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numerical_list</span><span class="p">:</span>
+        <span class="n">new_exponent_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">number</span> <span class="o">**</span> <span class="n">exponent</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">new_exponent_list</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numerical_string</span> <span class="o">=</span> <span class="s2">&quot;123&quot;</span>
+<span class="n">exponent_a_list</span><span class="p">(</span><span class="n">numerical_string</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>Exception: You are not using a list for the numerical_list input.
+
+Detailed traceback: 
+  File &quot;&lt;string&gt;&quot;, line 1, in &lt;module&gt;
+  File &quot;&lt;string&gt;&quot;, line 4, in exponent_a_list
+</pre></div>
+</div>
+<p>(Note that in the interest of avoiding new syntax, we are using a simple
+way of checking if an object is of a certain data type. For a more
+robust approach see
+<a href="https://docs.python.org/3/library/functions.html#isinstance" target="_blank">here</a>.)</p>
+<p>Notes:</p>
+<p>Exceptions disrupt the regular execution of our code. When we raise an
+<code class="docutils literal notranslate"><span class="pre">Exception</span></code>, we are forcing our own error with our own message.</p>
+<p>If we wanted to raise an exception to solve the problem on the last
+slide, we could do the following.</p>
+<hr class="docutils" />
+<p><br> <br></p>
+<center>
+<a class="reference internal image-reference" href="module6/exception2.png"><img alt="module6/exception2.png" src="module6/exception2.png" style="width: 100%;" /></a>
+</center>
+<p>Notes:</p>
+<p>Let’s take a closer look.</p>
+<p>The first line of code is an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement - what needs to occur to
+trigger this new code we’ve written.</p>
+<p>This code translates to <em>“If <code class="docutils literal notranslate"><span class="pre">numerical_list</span></code> is not of the type
+<code class="docutils literal notranslate"><span class="pre">list</span></code>…”</em>.</p>
+<p>The second line does the complaining.</p>
+<p>We tell it to <code class="docutils literal notranslate"><span class="pre">raise</span></code> an <code class="docutils literal notranslate"><span class="pre">Exception</span></code> (throw an error) with this message.</p>
+<p>Now we get an error message that is straightforward on why our code is
+failing.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Exception:</span> <span class="pre">You</span> <span class="pre">are</span> <span class="pre">not</span> <span class="pre">using</span> <span class="pre">a</span> <span class="pre">list</span> <span class="pre">for</span> <span class="pre">the</span> <span class="pre">numerical_list</span> <span class="pre">input.</span></code></p>
+<p>I hope we can agree that this message is easier to decipher than the
+original.</p>
+<p>The new message made the cause of the error much clearer to the user,
+making our function more usable.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="why-raise-exceptions">
+<h2>Why raise Exceptions<a class="headerlink" href="#why-raise-exceptions" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">numerical_list</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">list</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;You are not using a list for the numerical_list input.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Here we check if <code class="docutils literal notranslate"><span class="pre">numerical_list</span></code> is of the type we expect it to be, in
+this case, a <code class="docutils literal notranslate"><span class="pre">list</span></code>.</p>
+<p>Checking the datatype is a helpful exception since the user can quickly
+correct for a simple mistake.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="exception-types">
+<h2>Exception types<a class="headerlink" href="#exception-types" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">numerical_list</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">list</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;You are not using a list for the numerical_list input.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<a href="https://docs.python.org/3/library/exceptions.html#Exception" target="_blank">
+Here is a full list containing other types of exceptions available</a>.
+<p>Notes:</p>
+<p>Let’s now learn more about the possible different types of Exceptions.</p>
+<p>The exception type called <code class="docutils literal notranslate"><span class="pre">Exception</span></code> is a generic, catch-all exception
+type.</p>
+<p>There are also
+<a href="https://docs.python.org/3/library/exceptions.html#Exception" target="_blank">many
+other</a> exception types; for example, you may have encountered
+<code class="docutils literal notranslate"><span class="pre">ValueError</span></code> or a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> at some point.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Exception</span></code>, which is used in our previous examples, may not be the best
+option for the raises we made.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">numerical_list</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">list</span><span class="p">:</span>
+   <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;You are not using a list for the numerical_list input.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">exponent_a_list</span><span class="p">(</span><span class="n">numerical_list</span><span class="p">,</span> <span class="n">exponent</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+
+    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">numerical_list</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">list</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;You are not using a list for the numerical_list input.&quot;</span><span class="p">)</span>
+
+    <span class="n">new_exponent_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numerical_list</span><span class="p">:</span>
+        <span class="n">new_exponent_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">number</span> <span class="o">**</span> <span class="n">exponent</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">new_exponent_list</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">numerical_string</span> <span class="o">=</span> <span class="s2">&quot;123&quot;</span>
+<span class="n">exponent_a_list</span><span class="p">(</span><span class="n">numerical_string</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>TypeError: You are not using a list for the numerical_list input.
+
+Detailed traceback: 
+  File &quot;&lt;string&gt;&quot;, line 1, in &lt;module&gt;
+  File &quot;&lt;string&gt;&quot;, line 4, in exponent_a_list
+</pre></div>
+</div>
+<p>For the full list of exception types take a look at
+<a href="https://docs.python.org/3/library/exceptions.html" target="_blank">this
+resource</a>.</p>
+<p>Notes:</p>
+<p>Let’s take a look now at the exception we wrote that checks if the input
+value for <code class="docutils literal notranslate"><span class="pre">numerical_list</span></code> was the correct type.</p>
+<p>Since this is a type error, a better-raised exception over <code class="docutils literal notranslate"><span class="pre">Exception</span></code>
+would be <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>.</p>
+<p>Let’s make our correction here and change <code class="docutils literal notranslate"><span class="pre">Exception</span></code> in our function to
+<code class="docutils literal notranslate"><span class="pre">TypeError</span></code>.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="exception-documentation">
+<h2>Exception Documentation<a class="headerlink" href="#exception-documentation" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">exponent_a_list</span><span class="p">(</span><span class="n">numerical_list</span><span class="p">,</span> <span class="n">exponent</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Creates a new list containing specified exponential values of the input list. </span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    numerical_list : list</span>
+<span class="sd">        The list from which to calculate exponential values from</span>
+<span class="sd">    exponent : int or float, optional</span>
+<span class="sd">        The exponent value (the default is 2, which implies the square).</span>
+<span class="sd">        </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    new_exponent_list : list</span>
+<span class="sd">        A new list containing the exponential value specified of each </span>
+<span class="sd">        of the elements from the input list </span>
+<span class="sd">        </span>
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    TypeError</span>
+<span class="sd">        If the input argument numerical_list is not of type list</span>
+<span class="sd">        </span>
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; exponent_a_list([1, 2, 3, 4])</span>
+<span class="sd">    [1, 4, 9, 16]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Now that we can write exceptions, it’s important to document them.</p>
+<p>It’s a good idea to include details of any included exceptions in our
+function’s docstring.</p>
+<p>Under the NumPy docstring format, we explain our raised exception after
+the “<em><strong>Returns</strong></em>” section.</p>
+<p>We first specify the exception type and then an explanation of what
+causes the exception to be raised.</p>
+<p>For example, we’ve added a “Raises” section in our <code class="docutils literal notranslate"><span class="pre">exponent_a_list</span></code>
+docstring here.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="lets-apply-what-we-learned">
+<h1>Let’s apply what we learned!<a class="headerlink" href="#lets-apply-what-we-learned" title="Permalink to this headline">¶</a></h1>
+<p>Notes:</p>
+<br>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "UBC-MDS/PPDS_book",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./modules /module6"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Hayley Boyce, Mike Gelbart, Tiffany Timbers<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

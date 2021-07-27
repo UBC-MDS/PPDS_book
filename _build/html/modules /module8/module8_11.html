@@ -1,0 +1,638 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Working with Null Values &#8212; Programming in Python for Data Science</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/video.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://hfboyce.github.io/ppds/intro.html/modules /module8/module8_11.html" />
+    <link rel="shortcut icon" href="../../_static/icon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Programming in Python for Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/modules /module8/module8_11.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/UBC-MDS/PPDS_book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/UBC-MDS/PPDS_book/issues/new?title=Issue%20on%20page%20%2Fmodules /module8/module8_11.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/UBC-MDS/PPDS_book/edit/main/modules /module8/module8_11.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Working with Null Values
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#info-on-missing-values">
+     Info on missing values
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dropping-null-values">
+     Dropping Null Values
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#replacing-null-values">
+     Replacing Null Values
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lets-apply-what-we-learned">
+   Let’s apply what we learned!
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="working-with-null-values">
+<h1>Working with Null Values<a class="headerlink" href="#working-with-null-values" title="Permalink to this headline">¶</a></h1>
+<p>Notes:</p>
+<br>
+<hr class="docutils" />
+<p><strong>Null</strong>: The human-readable term of a value that is missing from the
+dataframe.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>nan
+</pre></div>
+</div>
+<p>Missing values are sometimes referred to as <code class="docutils literal notranslate"><span class="pre">NA</span></code> values.</p>
+<p>In this course, we generally refer to them as both <em><strong>null</strong></em> and <code class="docutils literal notranslate"><span class="pre">NaN</span></code>
+values.</p>
+<p>Notes:</p>
+<p>In the real world of data analysis, it’s uncommon that we have a perfect
+dataset ready to be used. In fact, in most cases, cleaning and wrangling
+data will be an ongoing and time-consuming project. No matter how
+complete or well planned a database may seem, a data analyst will almost
+always encounter <em><strong>null</strong></em> values.</p>
+<p>A “null” is the human-readable term of a value that is missing from the
+dataframe. Remember, in Module 4 we discussed <code class="docutils literal notranslate"><span class="pre">NaN</span></code> being of type
+<code class="docutils literal notranslate"><span class="pre">float</span></code>? Python translates null values in numerical columns to <code class="docutils literal notranslate"><span class="pre">NaN</span></code>.
+Well, <code class="docutils literal notranslate"><span class="pre">NaN</span></code> is a constant that comes from the NumPy library.</p>
+<p>In some cases, missing values are sometimes referred to as <code class="docutils literal notranslate"><span class="pre">NA</span></code> values
+because of how they are handled in other programming languages.</p>
+<p>This is reflected in some of the names of the functions we use to handle
+them.</p>
+<p>In this course, we generally refer to them as both <em><strong>null</strong></em> and <code class="docutils literal notranslate"><span class="pre">NaN</span></code>
+values.</p>
+<hr class="docutils" />
+<div class="section" id="info-on-missing-values">
+<h2>Info on missing values<a class="headerlink" href="#info-on-missing-values" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 77 entries, 0 to 76
+Data columns (total 6 columns):
+ #   Column    Non-Null Count  Dtype  
+---  ------    --------------  -----  
+ 0   name      77 non-null     object 
+ 1   mfr       77 non-null     object 
+ 2   calories  77 non-null     int64  
+ 3   fat       77 non-null     int64  
+ 4   fiber     77 non-null     float64
+ 5   rating    77 non-null     float64
+dtypes: float64(2), int64(2), object(2)
+memory usage: 3.7+ KB
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>A good rule of thumb when conducting an analysis is to check early on
+how complete the dataset is.</p>
+<p><code class="docutils literal notranslate"><span class="pre">.info()</span></code> is similar to <code class="docutils literal notranslate"><span class="pre">.dtypes</span></code>, but in addition to the dtype of each
+column, it includes the total number of non-null values contained in
+each column.</p>
+<p>Let’s try it out on a subset of our <code class="docutils literal notranslate"><span class="pre">cereal</span></code> dataset.</p>
+<p>Here we see the total number of rows at the top with <code class="docutils literal notranslate"><span class="pre">RangeIndex:</span> <span class="pre">77</span> <span class="pre">entries,</span> <span class="pre">0</span> <span class="pre">to</span> <span class="pre">76</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Non-Null</span> <span class="pre">Count</span></code> column specifies the number of non-null values.</p>
+<p>In this case, we have a complete dataframe with zero null values for
+each column.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cycling</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                  Date            Name  Type  Time  Distance                                   Comments
+0  2019-09-09 07:13:00    Morning Ride  Ride  2084     12.62                                       Rain
+1  2019-09-09 20:52:00  Afternoon Ride  Ride  2531     13.03                                       rain
+2  2019-09-10 07:23:00    Morning Ride  Ride  1863       NaN                  Wet road but nice weather
+3  2019-09-10 21:06:00  Afternoon Ride  Ride  2192     12.84               Stopped for photo of sunrise
+..                 ...             ...   ...   ...       ...                                        ...
+29 2019-10-08 20:55:00  Afternoon Ride  Ride  2149     12.70              Really cold! But feeling good
+30 2019-10-09 07:10:00    Morning Ride  Ride  1841     12.59        Feeling good after a holiday break!
+31 2019-10-09 20:47:00  Afternoon Ride  Ride  2463     12.79               Stopped for photo of sunrise
+32 2019-10-10 07:16:00    Morning Ride  Ride  1843     11.79  Bike feeling tight, needs an oil and pump
+
+[33 rows x 6 columns]
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Let’s take a look at a case where we are not so lucky. <code class="docutils literal notranslate"><span class="pre">cycling</span></code> is a
+subset of a dataset that contains the bicycling trips
+<a href="https://www.tomasbeuzen.com/" target="_blank">Tomas Beuzen</a>,
+a UBC postdoc rode his bike to campus and back during the fall 2019
+semester.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cycling</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 33 entries, 0 to 32
+Data columns (total 6 columns):
+ #   Column    Non-Null Count  Dtype         
+---  ------    --------------  -----         
+ 0   Date      33 non-null     datetime64[ns]
+ 1   Name      33 non-null     object        
+ 2   Type      33 non-null     object        
+ 3   Time      33 non-null     int64         
+ 4   Distance  30 non-null     float64       
+ 5   Comments  33 non-null     object        
+dtypes: datetime64[ns](1), float64(1), int64(1), object(3)
+memory usage: 1.7+ KB
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Using <code class="docutils literal notranslate"><span class="pre">.info()</span></code> with this new data, we get the following.</p>
+<p>We can see that there is a total of 33 entries (rows).</p>
+<p>We see that the <code class="docutils literal notranslate"><span class="pre">Distance</span></code> column only contains 30 non-null values out
+of a possible 33.</p>
+<p>This would mean that 3 values are missing from this column.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cycling</span><span class="p">[</span><span class="s1">&#39;Distance&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>0     False
+1     False
+2      True
+3     False
+      ...  
+29    False
+30    False
+31    False
+32    False
+Name: Distance, Length: 33, dtype: bool
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>We can use <code class="docutils literal notranslate"><span class="pre">.isnull()</span></code> on a particular column to obtain a Boolean series
+indicating if each row is a null value.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cycling</span><span class="p">[</span><span class="n">cycling</span><span class="p">[</span><span class="s1">&#39;Distance&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()]</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                  Date          Name  Type  Time  Distance                               Comments
+2  2019-09-10 07:23:00  Morning Ride  Ride  1863       NaN              Wet road but nice weather
+22 2019-09-30 07:15:00  Morning Ride  Ride  1732       NaN                   Legs feeling strong!
+24 2019-10-01 07:13:00  Morning Ride  Ride  1756       NaN  A little tired today but good weather
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cycling</span><span class="p">[</span><span class="n">cycling</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)]</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                  Date          Name  Type  Time  Distance                               Comments
+2  2019-09-10 07:23:00  Morning Ride  Ride  1863       NaN              Wet road but nice weather
+22 2019-09-30 07:15:00  Morning Ride  Ride  1732       NaN                   Legs feeling strong!
+24 2019-10-01 07:13:00  Morning Ride  Ride  1756       NaN  A little tired today but good weather
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>We can pair <code class="docutils literal notranslate"><span class="pre">.isnull()</span></code> with our filtering method to obtain the rows
+that contain null values in the <code class="docutils literal notranslate"><span class="pre">Distance</span></code> column of the dataframe.</p>
+<p>Here, we see the 3 rows of our dataframe that contain null values.</p>
+<p>If we wanted to filter all the rows that contain null values and not
+just in the <code class="docutils literal notranslate"><span class="pre">Distance</span></code> column, we could use the verb <code class="docutils literal notranslate"><span class="pre">.any()</span></code> on the
+full dataframe.</p>
+<p>We only have <code class="docutils literal notranslate"><span class="pre">NaN</span></code> values in the <code class="docutils literal notranslate"><span class="pre">Distance</span></code> column, so the same 3 rows
+are outputted as before.</p>
+<hr class="docutils" />
+<p>We will be discussing the following 2 simple ways of working with
+missing values:</p>
+<ul class="simple">
+<li><p><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.dropna.html" target="_blank"><code class="docutils literal notranslate"><span class="pre">.dropna()</span></code></a></p></li>
+<li><p><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.fillna.html" target="_blank"><code class="docutils literal notranslate"><span class="pre">.fillna()</span></code></a></p></li>
+</ul>
+<p>Notes:</p>
+<p>Now that we have identified that our dataframe contains null values,
+what can we do about them?</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="dropping-null-values">
+<h2>Dropping Null Values<a class="headerlink" href="#dropping-null-values" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">trips_removed</span> <span class="o">=</span> <span class="n">cycling</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">trips_removed</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                  Date            Name  Type  Time  Distance                                   Comments
+0  2019-09-09 07:13:00    Morning Ride  Ride  2084     12.62                                       Rain
+1  2019-09-09 20:52:00  Afternoon Ride  Ride  2531     13.03                                       rain
+3  2019-09-10 21:06:00  Afternoon Ride  Ride  2192     12.84               Stopped for photo of sunrise
+4  2019-09-11 07:28:00    Morning Ride  Ride  1891     12.48               Tired by the end of the week
+..                 ...             ...   ...   ...       ...                                        ...
+29 2019-10-08 20:55:00  Afternoon Ride  Ride  2149     12.70              Really cold! But feeling good
+30 2019-10-09 07:10:00    Morning Ride  Ride  1841     12.59        Feeling good after a holiday break!
+31 2019-10-09 20:47:00  Afternoon Ride  Ride  2463     12.79               Stopped for photo of sunrise
+32 2019-10-10 07:16:00    Morning Ride  Ride  1843     11.79  Bike feeling tight, needs an oil and pump
+
+[30 rows x 6 columns]
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>The easiest and simplest way of handling nulls values is to remove those
+rows from the dataset.</p>
+<p>In a fashion similar to dropping columns, we can drop rows if they
+contain a <code class="docutils literal notranslate"><span class="pre">NaN</span></code> value.</p>
+<p>It’s important that we take some necessary precautions and not drop a
+large portion of the data.</p>
+<p>In our example above, if we were to remove the 3 rows we identified to
+contain <code class="docutils literal notranslate"><span class="pre">NaN</span></code> values, we do it in the following way.</p>
+<p>Notice that index 2 was removed, and we only have 30 rows in our
+dataframe now.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cycling</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Type&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                  Date            Name  Type  Time  Distance                                   Comments
+0  2019-09-09 07:13:00    Morning Ride  Ride  2084     12.62                                       Rain
+1  2019-09-09 20:52:00  Afternoon Ride  Ride  2531     13.03                                       rain
+2  2019-09-10 07:23:00    Morning Ride  Ride  1863       NaN                  Wet road but nice weather
+3  2019-09-10 21:06:00  Afternoon Ride  Ride  2192     12.84               Stopped for photo of sunrise
+..                 ...             ...   ...   ...       ...                                        ...
+29 2019-10-08 20:55:00  Afternoon Ride  Ride  2149     12.70              Really cold! But feeling good
+30 2019-10-09 07:10:00    Morning Ride  Ride  1841     12.59        Feeling good after a holiday break!
+31 2019-10-09 20:47:00  Afternoon Ride  Ride  2463     12.79               Stopped for photo of sunrise
+32 2019-10-10 07:16:00    Morning Ride  Ride  1843     11.79  Bike feeling tight, needs an oil and pump
+
+[33 rows x 6 columns]
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>By default, all the rows with <code class="docutils literal notranslate"><span class="pre">NaN</span></code> values in any column will be
+considered when dropping rows; however, if we only want to drop rows
+with <code class="docutils literal notranslate"><span class="pre">NaN</span></code> values in certain columns, we can use the <code class="docutils literal notranslate"><span class="pre">subset</span></code> argument.</p>
+<p>Since in this code, we subsetting the column <code class="docutils literal notranslate"><span class="pre">Type</span></code> which has no <code class="docutils literal notranslate"><span class="pre">NaN</span></code>
+values, no rows were dropped from the dataframe, and we still have 33
+rows.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cycling</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Distance&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                  Date            Name  Type  Time  Distance                                   Comments
+0  2019-09-09 07:13:00    Morning Ride  Ride  2084     12.62                                       Rain
+1  2019-09-09 20:52:00  Afternoon Ride  Ride  2531     13.03                                       rain
+3  2019-09-10 21:06:00  Afternoon Ride  Ride  2192     12.84               Stopped for photo of sunrise
+4  2019-09-11 07:28:00    Morning Ride  Ride  1891     12.48               Tired by the end of the week
+..                 ...             ...   ...   ...       ...                                        ...
+29 2019-10-08 20:55:00  Afternoon Ride  Ride  2149     12.70              Really cold! But feeling good
+30 2019-10-09 07:10:00    Morning Ride  Ride  1841     12.59        Feeling good after a holiday break!
+31 2019-10-09 20:47:00  Afternoon Ride  Ride  2463     12.79               Stopped for photo of sunrise
+32 2019-10-10 07:16:00    Morning Ride  Ride  1843     11.79  Bike feeling tight, needs an oil and pump
+
+[30 rows x 6 columns]
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>The rows do get dropped when we subset on the <code class="docutils literal notranslate"><span class="pre">Distance</span></code> column.</p>
+<p>Alternatively, if you have a column missing a large portion of data, the
+best option may be to drop that column instead of the rows with missing
+values.</p>
+<p>This will keep more of your data instead of dropping and losing most of
+your data.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="replacing-null-values">
+<h2>Replacing Null Values<a class="headerlink" href="#replacing-null-values" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cycling_zero_fill</span> <span class="o">=</span> <span class="n">cycling</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">cycling_zero_fill</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                  Date            Name  Type  Time  Distance                                   Comments
+0  2019-09-09 07:13:00    Morning Ride  Ride  2084     12.62                                       Rain
+1  2019-09-09 20:52:00  Afternoon Ride  Ride  2531     13.03                                       rain
+2  2019-09-10 07:23:00    Morning Ride  Ride  1863      0.00                  Wet road but nice weather
+3  2019-09-10 21:06:00  Afternoon Ride  Ride  2192     12.84               Stopped for photo of sunrise
+..                 ...             ...   ...   ...       ...                                        ...
+29 2019-10-08 20:55:00  Afternoon Ride  Ride  2149     12.70              Really cold! But feeling good
+30 2019-10-09 07:10:00    Morning Ride  Ride  1841     12.59        Feeling good after a holiday break!
+31 2019-10-09 20:47:00  Afternoon Ride  Ride  2463     12.79               Stopped for photo of sunrise
+32 2019-10-10 07:16:00    Morning Ride  Ride  1843     11.79  Bike feeling tight, needs an oil and pump
+
+[33 rows x 6 columns]
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Alternately, if we have a small dataset and we don’t want to rid
+ourselves of any data, we may prefer to replace <code class="docutils literal notranslate"><span class="pre">NaN</span></code> with a particular
+value.</p>
+<p>We can do so with <code class="docutils literal notranslate"><span class="pre">.fillna()</span></code>.</p>
+<p>Perhaps it’s missing from the data because he didn’t cycle that
+particular day. Replacing the <code class="docutils literal notranslate"><span class="pre">NaN</span></code> value with 0, in this case, would
+make sense.</p>
+<p>Now index 2 now has a <code class="docutils literal notranslate"><span class="pre">Distance</span></code> of <code class="docutils literal notranslate"><span class="pre">0.00</span></code>.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cycling</span><span class="p">[</span><span class="s1">&#39;Distance&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>12.67
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cycling_mean_fill</span> <span class="o">=</span> <span class="n">cycling</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">cycling</span><span class="p">[</span><span class="s1">&#39;Distance&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">cycling_mean_fill</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                  Date            Name  Type  Time  Distance                                   Comments
+0  2019-09-09 07:13:00    Morning Ride  Ride  2084     12.62                                       Rain
+1  2019-09-09 20:52:00  Afternoon Ride  Ride  2531     13.03                                       rain
+2  2019-09-10 07:23:00    Morning Ride  Ride  1863     12.67                  Wet road but nice weather
+3  2019-09-10 21:06:00  Afternoon Ride  Ride  2192     12.84               Stopped for photo of sunrise
+..                 ...             ...   ...   ...       ...                                        ...
+29 2019-10-08 20:55:00  Afternoon Ride  Ride  2149     12.70              Really cold! But feeling good
+30 2019-10-09 07:10:00    Morning Ride  Ride  1841     12.59        Feeling good after a holiday break!
+31 2019-10-09 20:47:00  Afternoon Ride  Ride  2463     12.79               Stopped for photo of sunrise
+32 2019-10-10 07:16:00    Morning Ride  Ride  1843     11.79  Bike feeling tight, needs an oil and pump
+
+[33 rows x 6 columns]
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Maybe a better decision would be to replace the values in <code class="docutils literal notranslate"><span class="pre">Distance</span></code>
+with the mean to avoid outliers.</p>
+<p>First, we can calculate the mean rounded to 2 decimal places as 12.67,
+and include that in the <code class="docutils literal notranslate"><span class="pre">value</span></code> argument in the <code class="docutils literal notranslate"><span class="pre">.fillna()</span></code> verb.</p>
+<p>We can now see the value in <code class="docutils literal notranslate"><span class="pre">Distance</span></code> for index 2 change to <code class="docutils literal notranslate"><span class="pre">12.67</span></code>.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cycling</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;bfill&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                  Date            Name  Type  Time  Distance                                   Comments
+0  2019-09-09 07:13:00    Morning Ride  Ride  2084     12.62                                       Rain
+1  2019-09-09 20:52:00  Afternoon Ride  Ride  2531     13.03                                       rain
+2  2019-09-10 07:23:00    Morning Ride  Ride  1863     12.84                  Wet road but nice weather
+3  2019-09-10 21:06:00  Afternoon Ride  Ride  2192     12.84               Stopped for photo of sunrise
+..                 ...             ...   ...   ...       ...                                        ...
+29 2019-10-08 20:55:00  Afternoon Ride  Ride  2149     12.70              Really cold! But feeling good
+30 2019-10-09 07:10:00    Morning Ride  Ride  1841     12.59        Feeling good after a holiday break!
+31 2019-10-09 20:47:00  Afternoon Ride  Ride  2463     12.79               Stopped for photo of sunrise
+32 2019-10-10 07:16:00    Morning Ride  Ride  1843     11.79  Bike feeling tight, needs an oil and pump
+
+[33 rows x 6 columns]
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>We could also fill using certain methods.</p>
+<p><em><strong>“bfill”</strong></em> uses the next valid row observation to fill the <code class="docutils literal notranslate"><span class="pre">NaN</span></code>:</p>
+<p>Index 2 adopts the distance value of <code class="docutils literal notranslate"><span class="pre">12.84</span></code> from index 3.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cycling</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;ffill&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                  Date            Name  Type  Time  Distance                                   Comments
+0  2019-09-09 07:13:00    Morning Ride  Ride  2084     12.62                                       Rain
+1  2019-09-09 20:52:00  Afternoon Ride  Ride  2531     13.03                                       rain
+2  2019-09-10 07:23:00    Morning Ride  Ride  1863     13.03                  Wet road but nice weather
+3  2019-09-10 21:06:00  Afternoon Ride  Ride  2192     12.84               Stopped for photo of sunrise
+..                 ...             ...   ...   ...       ...                                        ...
+29 2019-10-08 20:55:00  Afternoon Ride  Ride  2149     12.70              Really cold! But feeling good
+30 2019-10-09 07:10:00    Morning Ride  Ride  1841     12.59        Feeling good after a holiday break!
+31 2019-10-09 20:47:00  Afternoon Ride  Ride  2463     12.79               Stopped for photo of sunrise
+32 2019-10-10 07:16:00    Morning Ride  Ride  1843     11.79  Bike feeling tight, needs an oil and pump
+
+[33 rows x 6 columns]
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">method</span></code> argument value <em><strong>“ffill”</strong></em> propagates the last valid
+observation forward to next.</p>
+<p>Here, we see that index 2 adopts the value <code class="docutils literal notranslate"><span class="pre">13.03</span></code> from index 1.</p>
+<p><code class="docutils literal notranslate"><span class="pre">bfill</span></code> and <code class="docutils literal notranslate"><span class="pre">ffill</span></code> are methods usually adopted when dealing with
+columns organized by date.</p>
+<p>This way, an observation can adopt a similar value to those near it.</p>
+<p>We will explore date columns in the next slide deck.</p>
+<p>Remember, these are only a few methods that can be used in simple
+situations.</p>
+<p>In some scenarios, more complex methods of handling missing values may
+need to be used for effective analysis.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="lets-apply-what-we-learned">
+<h1>Let’s apply what we learned!<a class="headerlink" href="#lets-apply-what-we-learned" title="Permalink to this headline">¶</a></h1>
+<p>Notes:</p>
+<br>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "UBC-MDS/PPDS_book",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./modules /module8"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Hayley Boyce, Mike Gelbart, Tiffany Timbers<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

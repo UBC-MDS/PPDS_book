@@ -1,0 +1,606 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Concatenation &#8212; Programming in Python for Data Science</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/video.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://hfboyce.github.io/ppds/intro.html/modules /module3/module3_17.html" />
+    <link rel="shortcut icon" href="../../_static/icon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Programming in Python for Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/modules /module3/module3_17.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/UBC-MDS/PPDS_book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/UBC-MDS/PPDS_book/issues/new?title=Issue%20on%20page%20%2Fmodules /module3/module3_17.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/UBC-MDS/PPDS_book/edit/main/modules /module3/module3_17.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Concatenation
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Concatenation
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#horizontal-concatenation">
+     Horizontal Concatenation
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vertical-concatenation">
+     Vertical Concatenation
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#be-careful-of-order">
+     Be careful of order!
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#remember">
+       Remember…
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lets-apply-what-we-learned">
+   Let’s apply what we learned!
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="concatenation">
+<h1>Concatenation<a class="headerlink" href="#concatenation" title="Permalink to this headline">¶</a></h1>
+<p>Notes: <br></p>
+<hr class="docutils" />
+<p>There are 2 different verbs we will use for joining dataframes together:</p>
+<ul class="simple">
+<li><p><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.concat.html" target="_blank"><code class="docutils literal notranslate"><span class="pre">pd.concat()</span></code></a></p></li>
+<li><p><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge.html" target="_blank"><code class="docutils literal notranslate"><span class="pre">.merge()</span></code></a></p></li>
+</ul>
+<p>Notes: Up until this moment, we have been working with a single
+dataframe.</p>
+<p>Many organizations split their data into multiple tables and join them
+together, depending on what columns they need for their analysis.</p>
+<p>There are 2 different verbs we will use for joining dataframes together:</p>
+<ul class="simple">
+<li><p><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.concat.html" target="_blank"><code class="docutils literal notranslate"><span class="pre">pd.concat()</span></code></a>;
+A forceful way of joining dataframes across rows or columns. A
+useful analogy is the gluing or taping of 2 pieces of paper together
+so the shapes match up.</p></li>
+<li><p><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge.html" target="_blank"><code class="docutils literal notranslate"><span class="pre">.merge()</span></code></a>
+A more precision based approach for combining data on common columns
+or indices. This can be compared to stitching fabric together so
+that the pattern/print lines up.</p></li>
+</ul>
+<hr class="docutils" />
+<div class="section" id="id1">
+<h2>Concatenation<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<center>
+<a class="reference internal image-reference" href="module3/concatx.gif"><img alt="module3/concatx.gif" src="module3/concatx.gif" style="width: 630px;" /></a>
+</center>
+<p>Notes:</p>
+<p>Concatenation works extremely well when you have similar dataframes,
+which both share identical column or row index labels.</p>
+<p><code class="docutils literal notranslate"><span class="pre">pd.concat()</span></code> can glue the 2 dataframes together either horizontally or
+vertically.</p>
+<p>In this animation, you can see that the pieces are joined in the order
+that was presented, and the pattern does not necessarily match up.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">candy</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;candybars.csv&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">loc</span><span class="p">[:</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;peanuts&#39;</span><span class="p">]</span>
+<span class="n">candy</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>           name  weight  chocolate  peanuts
+0  Coffee Crisp      50          1        0
+1  Butterfinger     184          1        1
+2          Skor      39          1        0
+3      Smarties      45          1        0
+4          Twix      58          1        0
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>For the next couple of examples, we are going to look at concatenating a
+subset of our original candy bars dataframe.</p>
+<p>This dataframe has 5 rows and 4 columns.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="horizontal-concatenation">
+<h2>Horizontal Concatenation<a class="headerlink" href="#horizontal-concatenation" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">candy</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>           name  weight  chocolate  peanuts
+0  Coffee Crisp      50          1        0
+1  Butterfinger     184          1        1
+2          Skor      39          1        0
+3      Smarties      45          1        0
+4          Twix      58          1        0
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">candy2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;candy_bars2.csv&#39;</span><span class="p">)</span>
+<span class="n">candy2</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>           name  calories  fat  sugar
+0  Coffee Crisp       260   13     25
+1  Butterfinger       798   30     72
+2          Skor       209   12     23
+3      Smarties       210    6     33
+4          Twix       250   12     25
+</pre></div>
+</div>
+<p>Notes:</p>
+<p><code class="docutils literal notranslate"><span class="pre">candy_bars2.csv</span></code> is a new dataframe that has additional nutritional
+information about each candy bar like the columns <code class="docutils literal notranslate"><span class="pre">calories</span></code> <code class="docutils literal notranslate"><span class="pre">fat</span></code> and
+<code class="docutils literal notranslate"><span class="pre">sugar</span></code>. You’ll notice that this dataframe has the same number and order
+of candy bars.</p>
+<p>We want to combine <code class="docutils literal notranslate"><span class="pre">candy2</span></code> with <code class="docutils literal notranslate"><span class="pre">candy</span></code> horizontally.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">candy_nutrition</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">candy</span><span class="p">,</span> <span class="n">candy2</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">candy_nutrition</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>           name  weight  chocolate  peanuts          name  calories  fat  sugar
+0  Coffee Crisp      50          1        0  Coffee Crisp       260   13     25
+1  Butterfinger     184          1        1  Butterfinger       798   30     72
+2          Skor      39          1        0          Skor       209   12     23
+3      Smarties      45          1        0      Smarties       210    6     33
+4          Twix      58          1        0          Twix       250   12     25
+</pre></div>
+</div>
+<p>This results in the same 4 rows but now we have 8 columns.</p>
+<p>Notes:</p>
+<p>We can combine these two dataframes using <code class="docutils literal notranslate"><span class="pre">pd.concat()</span></code>, but we need to
+clarify on which axis to combine.</p>
+<p>We use square brackets around the dataframes we wish to glue together.
+In the context of dataframes, it’s normal to refer to <code class="docutils literal notranslate"><span class="pre">axis=1</span></code> as the
+columns of the dataframe and <code class="docutils literal notranslate"><span class="pre">axis=0</span></code> as the rows.</p>
+<p>Since we are performing a horizontal concatenation, we need to use the
+argument <code class="docutils literal notranslate"><span class="pre">axis=1</span></code> to glue them along the column axis.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">candy_nutrition</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>           name  weight  chocolate  peanuts          name  calories  fat  sugar
+0  Coffee Crisp      50          1        0  Coffee Crisp       260   13     25
+1  Butterfinger     184          1        1  Butterfinger       798   30     72
+2          Skor      39          1        0          Skor       209   12     23
+3      Smarties      45          1        0      Smarties       210    6     33
+4          Twix      58          1        0          Twix       250   12     25
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">candy_nutrition</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="o">~</span><span class="n">candy_nutrition</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()]</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>           name  weight  chocolate  peanuts  calories  fat  sugar
+0  Coffee Crisp      50          1        0       260   13     25
+1  Butterfinger     184          1        1       798   30     72
+2          Skor      39          1        0       209   12     23
+3      Smarties      45          1        0       210    6     33
+4          Twix      58          1        0       250   12     25
+</pre></div>
+</div>
+<p>Notes: After inspection, we can see that there are 2 <code class="docutils literal notranslate"><span class="pre">name</span></code> columns,
+which isn’t necessary.</p>
+<p>Is there a convenient way to remove duplicated columns? Fortunately
+there is!</p>
+<p>We can remove any duplicate columns by using both <code class="docutils literal notranslate"><span class="pre">.duplicated()</span></code>,
+<code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> and the <em>Tilde</em> operator we discussed in Module 2.</p>
+<p>This removed one of the <code class="docutils literal notranslate"><span class="pre">name</span></code> columns. But let’s inspect this code a
+bit more carefully.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">candy_nutrition</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>array([False, False, False, False,  True, False, False, False])
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">~</span><span class="n">candy_nutrition</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>array([ True,  True,  True,  True, False,  True,  True,  True])
+</pre></div>
+</div>
+<p>Notes:</p>
+<p><code class="docutils literal notranslate"><span class="pre">.columns.duplicated()</span></code> shows us whether a column is duplicated by
+assigning the column position with either a <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code> value.</p>
+<p>Since we need to instead keep all <code class="docutils literal notranslate"><span class="pre">False</span></code> columns and not the <code class="docutils literal notranslate"><span class="pre">True</span></code>
+values, we can easily use the <em>Tilde</em> operator to convert all the
+<code class="docutils literal notranslate"><span class="pre">False</span></code> values to <code class="docutils literal notranslate"><span class="pre">True</span></code> and vice-versa.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">candy_nutrition_cleaned</span> <span class="o">=</span> <span class="n">candy_nutrition</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="o">~</span><span class="n">candy_nutrition</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()]</span>
+<span class="n">candy_nutrition_cleaned</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>           name  weight  chocolate  peanuts  calories  fat  sugar
+0  Coffee Crisp      50          1        0       260   13     25
+1  Butterfinger     184          1        1       798   30     72
+2          Skor      39          1        0       209   12     23
+3      Smarties      45          1        0       210    6     33
+4          Twix      58          1        0       250   12     25
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>When we combine this with <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> to select which columns to display,
+Python will only select columns that were not identified as duplicates.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="vertical-concatenation">
+<h2>Vertical Concatenation<a class="headerlink" href="#vertical-concatenation" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">candy</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>           name  weight  chocolate  peanuts
+0  Coffee Crisp      50          1        0
+1  Butterfinger     184          1        1
+2          Skor      39          1        0
+3      Smarties      45          1        0
+4          Twix      58          1        0
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">candy_more</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;candybars_more.csv&#39;</span><span class="p">)</span>
+<span class="n">candy_more</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>           name  weight  chocolate  peanuts
+0  Kinder Bueno      43          1        0
+1    5th Avenue      56          1        1
+2        Crunch      44          1        0
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>The new dataset <code class="docutils literal notranslate"><span class="pre">candybars_more.csv</span></code> has 3 additional candy bars that we
+wish to add to the original <code class="docutils literal notranslate"><span class="pre">candy</span></code> dataframe. The columns in this
+dataframe have the same order as in the <code class="docutils literal notranslate"><span class="pre">candy</span></code> dataframe.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">large_candybars</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">candy</span><span class="p">,</span> <span class="n">candy_more</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">large_candybars</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>           name  weight  chocolate  peanuts
+0  Coffee Crisp      50          1        0
+1  Butterfinger     184          1        1
+2          Skor      39          1        0
+3      Smarties      45          1        0
+4          Twix      58          1        0
+0  Kinder Bueno      43          1        0
+1    5th Avenue      56          1        1
+2        Crunch      44          1        0
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>When we want to vertically combine dataframes (add rows), we use the
+argument <code class="docutils literal notranslate"><span class="pre">axis=0</span></code> with <code class="docutils literal notranslate"><span class="pre">pd.concat()</span></code>.</p>
+<p>After combining them, there are now 8 rows and the same 4 columns. But
+wait! The index column has non-unique values.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">large_candybars</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>           name  weight  chocolate  peanuts
+0  Coffee Crisp      50          1        0
+1  Butterfinger     184          1        1
+2          Skor      39          1        0
+3      Smarties      45          1        0
+4          Twix      58          1        0
+0  Kinder Bueno      43          1        0
+1    5th Avenue      56          1        1
+2        Crunch      44          1        0
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">large_candybars_cleaned</span> <span class="o">=</span> <span class="n">large_candybars</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">large_candybars_cleaned</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>           name  weight  chocolate  peanuts
+0  Coffee Crisp      50          1        0
+1  Butterfinger     184          1        1
+2          Skor      39          1        0
+3      Smarties      45          1        0
+4          Twix      58          1        0
+5  Kinder Bueno      43          1        0
+6    5th Avenue      56          1        1
+7        Crunch      44          1        0
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>We can reset the index with <code class="docutils literal notranslate"><span class="pre">reset_index()</span></code> and the argument <code class="docutils literal notranslate"><span class="pre">drop=True</span></code>
+to remove the original index:</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="be-careful-of-order">
+<h2>Be careful of order!<a class="headerlink" href="#be-careful-of-order" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">candy</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>           name  weight  chocolate  peanuts
+0  Coffee Crisp      50          1        0
+1  Butterfinger     184          1        1
+2          Skor      39          1        0
+3      Smarties      45          1        0
+4          Twix      58          1        0
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">snacksize_candybars</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;snacksize_candybars.csv&#39;</span><span class="p">)</span>
+<span class="n">snacksize_candybars</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>           name  calories  fat  sugar
+0  Butterfinger       798   30     72
+1          Skor       209   12     23
+2          Twix       250   12     25
+3  Coffee Crisp       260   13     25
+4      Smarties       210    6     33
+</pre></div>
+</div>
+<p>Notes:</p>
+<p><code class="docutils literal notranslate"><span class="pre">pd.concat()</span></code> is great when our dataframes have the same order for each
+observation. What happens if our dataframes have different orders for
+the candy bars?</p>
+<p>Let’s use a horizontal concatenation example with the
+dataframe<code class="docutils literal notranslate"><span class="pre">snacksize_candybars.csv</span></code>. This data contains the candy bars
+from <code class="docutils literal notranslate"><span class="pre">candy</span></code> in a shuffled order.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">candy</span><span class="p">,</span> <span class="n">snacksize_candybars</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>           name  weight  chocolate  peanuts          name  calories  fat  sugar
+0  Coffee Crisp      50          1        0  Butterfinger       798   30     72
+1  Butterfinger     184          1        1          Skor       209   12     23
+2          Skor      39          1        0          Twix       250   12     25
+3      Smarties      45          1        0  Coffee Crisp       260   13     25
+4          Twix      58          1        0      Smarties       210    6     33
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>What happens when we concatenate <code class="docutils literal notranslate"><span class="pre">candy</span></code> and <code class="docutils literal notranslate"><span class="pre">snacksize_candybars</span></code> now
+that it has shuffled mix-matched rows?</p>
+<p>Oh no. This does not look good. You can see that the 2 <code class="docutils literal notranslate"><span class="pre">name</span></code> columns
+have different values in each row, which means this concatenation would
+produce incorrect results!</p>
+<hr class="docutils" />
+<div class="section" id="remember">
+<h3>Remember…<a class="headerlink" href="#remember" title="Permalink to this headline">¶</a></h3>
+<center>
+<a class="reference internal image-reference" href="module3/concatx.gif"><img alt="module3/concatx.gif" src="module3/concatx.gif" style="width: 600px;" /></a>
+</center>
+<p>Notes:</p>
+<p>The biggest takeaway remark with concatenation is that it works well
+when we are trying to glue two dataframes together horizontally or
+vertically where the rows and columns are in the same order.</p>
+<p>If your dataframes don’t have the same row values, your data will be
+displayed incorrectly, and therefore, your results will also have no
+meaning.</p>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="lets-apply-what-we-learned">
+<h1>Let’s apply what we learned!<a class="headerlink" href="#lets-apply-what-we-learned" title="Permalink to this headline">¶</a></h1>
+<p>Notes: <br></p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "UBC-MDS/PPDS_book",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./modules /module3"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Hayley Boyce, Mike Gelbart, Tiffany Timbers<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

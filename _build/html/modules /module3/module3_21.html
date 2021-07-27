@@ -1,0 +1,587 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Joining dataframes using merge &#8212; Programming in Python for Data Science</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/video.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://hfboyce.github.io/ppds/intro.html/modules /module3/module3_21.html" />
+    <link rel="shortcut icon" href="../../_static/icon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Programming in Python for Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/modules /module3/module3_21.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/UBC-MDS/PPDS_book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/UBC-MDS/PPDS_book/issues/new?title=Issue%20on%20page%20%2Fmodules /module3/module3_21.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/UBC-MDS/PPDS_book/edit/main/modules /module3/module3_21.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Joining dataframes using merge
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#introducing-the-data">
+     Introducing the Data
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#key-columns">
+     Key Columns
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how">
+     how
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#indicator">
+     indicator
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lets-apply-what-we-learned">
+   Let’s apply what we learned!
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="joining-dataframes-using-merge">
+<h1>Joining dataframes using merge<a class="headerlink" href="#joining-dataframes-using-merge" title="Permalink to this headline">¶</a></h1>
+<p>Notes: <br></p>
+<hr class="docutils" />
+<center>
+<a class="reference internal image-reference" href="module3/mergex.gif"><img alt="module3/mergex.gif" src="module3/mergex.gif" style="width: 800px;" /></a>
+</center>
+<p>Notes:</p>
+<p>We discussed concatenation in the last section and it how it glues
+dataframes together, but what if we needed to combine dataframes of
+different sizes where rows need to be matched up?</p>
+<p><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge.html" target="_blank"><code class="docutils literal notranslate"><span class="pre">.merge()</span></code></a>
+is a verb that give more precision and options when we join dataframes.</p>
+<p>We compared <code class="docutils literal notranslate"><span class="pre">.merge()</span></code> in the last section to stitching fabric together,
+where we line up the patterns of each piece of cloth.</p>
+<p>Unlike <code class="docutils literal notranslate"><span class="pre">pd.concat()</span></code>, <code class="docutils literal notranslate"><span class="pre">.merge()</span></code> can only combined dataframes
+horizontally but it can do so in many different ways.</p>
+<hr class="docutils" />
+<div class="section" id="introducing-the-data">
+<h2>Introducing the Data<a class="headerlink" href="#introducing-the-data" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">candy</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;candybars.csv&#39;</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;weight&#39;</span><span class="p">,</span> <span class="s1">&#39;chocolate&#39;</span><span class="p">,</span> <span class="s1">&#39;peanuts&#39;</span><span class="p">])</span>
+<span class="n">candy</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>           name  weight  chocolate  peanuts
+0  Coffee Crisp      50          1        0
+1  Butterfinger     184          1        1
+2          Skor      39          1        0
+3      Smarties      45          1        0
+4          Twix      58          1        0
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>With <code class="docutils literal notranslate"><span class="pre">.merge()</span></code>, we need to identify a column in each dataframe that
+acts as a connection between them.</p>
+<p>It’s a column where the values in Dataframe A are the same values to
+those in Dataframe B.</p>
+<p>In the easiest situations both columns are named the same thing, but
+that doesn’t have to be the case.</p>
+<p>Let’s use a subset of the candy bars dataset to explain this concept
+further.</p>
+<p><code class="docutils literal notranslate"><span class="pre">candy</span></code> has a column labeled <code class="docutils literal notranslate"><span class="pre">name</span></code> which has unique candy bar names.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">candy</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>           name  weight  chocolate  peanuts
+0  Coffee Crisp      50          1        0
+1  Butterfinger     184          1        1
+2          Skor      39          1        0
+3      Smarties      45          1        0
+4          Twix      58          1        0
+</pre></div>
+</div>
+<p>Let’s load in the next dataset:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">candy2m</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;candybars_merge.csv&#39;</span><span class="p">)</span>
+<span class="n">candy2m</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>   id_number  calories  fat  sugar chocolate_bar
+0      45623       798   30   72.0  Butterfinger
+1      34534       262    8   40.0  3 Musketeers
+2      32686       220   12   25.0          Aero
+3      12482       260   13   25.0  Coffee Crisp
+4      85254       244   16   41.2  Kinder Bueno
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>This dataframe has new columns and rows not in the <code class="docutils literal notranslate"><span class="pre">candy</span></code> dataframe (<code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">Musketeers</span></code>, <code class="docutils literal notranslate"><span class="pre">Aero</span></code>, and <code class="docutils literal notranslate"><span class="pre">Kinder</span> <span class="pre">Bueno</span></code>). We can see that a column named
+<code class="docutils literal notranslate"><span class="pre">chocolate_bar</span></code> is the same variable as the <code class="docutils literal notranslate"><span class="pre">name</span></code> column in the <code class="docutils literal notranslate"><span class="pre">candy</span></code>
+dataframe.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">candy</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">candy</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">candy2m</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>When we combine dataframes using <code class="docutils literal notranslate"><span class="pre">.merge()</span></code>, it’s quite different than
+<code class="docutils literal notranslate"><span class="pre">pd.concat()</span></code>.</p>
+<p>First, we decide which dataframe will be our left dataframe by
+implementing the merge verb on the selected dataframe. We are going to
+choose <code class="docutils literal notranslate"><span class="pre">candy</span></code> as our left dataframe.</p>
+<p>Next, we specify the right dataframe as the first argument in
+<code class="docutils literal notranslate"><span class="pre">.merge()</span></code>. In our case, that’s <code class="docutils literal notranslate"><span class="pre">candy2m</span></code>.</p>
+<p>The last step, which is the bulk of the work, is specifying the
+arguments.</p>
+<p>We need to make sure we indicate which columns are the identifying key
+columns for each dataframe and what type of joining we want in our
+resulting dataframe.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="key-columns">
+<h2>Key Columns<a class="headerlink" href="#key-columns" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">.merge()</span></code> needs arguments that identify a common <strong>key</strong> column. This
+is a column present in both dataframes which contain common values.</p>
+<p>To choose our key columns in each dataframe, we use the following
+arguments:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">left_on</span></code> - The left dataframe identifying key column label.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">right_on</span></code> - The right dataframe identifying key column label.</p></li>
+</ul>
+<p>Notes:</p>
+<p><code class="docutils literal notranslate"><span class="pre">.merge()</span></code> needs arguments that identify a common <strong>key</strong> column. This
+is a column present in both dataframes which contain common values.</p>
+<p>Key columns do not need to be named identically.</p>
+<p>To choose our key columns in each dataframe, we use the following
+arguments:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">left_on</span></code> - The left dataframe identifying key column label.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">right_on</span></code> - The right dataframe identifying key column label.</p></li>
+</ul>
+<p>For example:<br />
+Dataframe A can have a column labeled <code class="docutils literal notranslate"><span class="pre">cereal,</span></code> and Dataframe B could
+have a column labeled <code class="docutils literal notranslate"><span class="pre">product_name</span></code> that both share cereal names.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">candy</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>           name  weight  chocolate  peanuts
+0  Coffee Crisp      50          1        0
+1  Butterfinger     184          1        1
+2          Skor      39          1        0
+3      Smarties      45          1        0
+4          Twix      58          1        0
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">candy2m</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>   id_number  calories  fat  sugar chocolate_bar
+0      45623       798   30   72.0  Butterfinger
+1      34534       262    8   40.0  3 Musketeers
+2      32686       220   12   25.0          Aero
+3      12482       260   13   25.0  Coffee Crisp
+4      85254       244   16   41.2  Kinder Bueno
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Our <code class="docutils literal notranslate"><span class="pre">candy</span></code> dataframe which we said was our left dataframe, would use
+the argument <code class="docutils literal notranslate"><span class="pre">left_on='name'</span></code>.</p>
+<p>our <code class="docutils literal notranslate"><span class="pre">candy2m</span></code> dataframe is our right dataframe, would use the argument
+<code class="docutils literal notranslate"><span class="pre">right_on='chocolate_bar'</span></code>.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">candy</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">candy2m</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;chocolate_bar&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>           name  weight  chocolate  peanuts  id_number  calories  fat  sugar chocolate_bar
+0  Coffee Crisp      50          1        0      12482       260   13   25.0  Coffee Crisp
+1  Butterfinger     184          1        1      45623       798   30   72.0  Butterfinger
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>We combine that with the earlier code to get the following dataframe.</p>
+<p>Great, we’ve combined the 2 dataframes horizontally. In the future, we
+may want to drop the columns named <code class="docutils literal notranslate"><span class="pre">chocolate_bar</span></code> or rename it before
+we merge.</p>
+<p>If our identifying columns are named the same in both dataframes,
+<code class="docutils literal notranslate"><span class="pre">.merge()</span></code> only keeps one of them.</p>
+<p>Ok, so what happened? We now only have 2 rows! We seemed to have lost
+all the rows that are not in both columns.</p>
+<p>This is because <code class="docutils literal notranslate"><span class="pre">.merge()</span></code> uses a default joining method called <code class="docutils literal notranslate"><span class="pre">inner</span></code>
+join, which returns only the rows present in both dataframes. We can
+change that with the argument <code class="docutils literal notranslate"><span class="pre">how</span></code>.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="how">
+<h2>how<a class="headerlink" href="#how" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">candy</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">candy2m</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;chocolate_bar&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>           name  weight  chocolate  peanuts  id_number  calories  fat  sugar chocolate_bar
+0  Coffee Crisp      50          1        0      12482       260   13   25.0  Coffee Crisp
+1  Butterfinger     184          1        1      45623       798   30   72.0  Butterfinger
+</pre></div>
+</div>
+<br>
+<a class="reference internal image-reference" href="module3/inner.png"><img alt="module3/inner.png" src="module3/inner.png" style="width: 900px;" /></a>
+<p>Notes:</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">how</span></code> argument specifies <em><strong>“how”</strong></em> our dataframes are joined.</p>
+<p>We mentioned that the default argument value <code class="docutils literal notranslate"><span class="pre">inner</span></code> will only keep the
+rows with identifying column values that are present in both dataframes.</p>
+<hr class="docutils" />
+<p>But there are 4 types of joins we could choose from for the <code class="docutils literal notranslate"><span class="pre">how</span></code>
+argument:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">inner</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">outer</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">left</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">right</span></code></p></li>
+</ul>
+<p>Notes:</p>
+<p>But there are 4 types of joins we could choose from for the <code class="docutils literal notranslate"><span class="pre">how</span></code>
+argument.</p>
+<hr class="docutils" />
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">outer</span></code></p></li>
+</ul>
+<!-- end list -->
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">candy</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">candy2m</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;chocolate_bar&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;outer&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>           name  weight  chocolate  peanuts  id_number  calories   fat  sugar chocolate_bar
+0  Coffee Crisp    50.0        1.0      0.0    12482.0     260.0  13.0   25.0  Coffee Crisp
+1  Butterfinger   184.0        1.0      1.0    45623.0     798.0  30.0   72.0  Butterfinger
+2          Skor    39.0        1.0      0.0        NaN       NaN   NaN    NaN           NaN
+3      Smarties    45.0        1.0      0.0        NaN       NaN   NaN    NaN           NaN
+4          Twix    58.0        1.0      0.0        NaN       NaN   NaN    NaN           NaN
+5           NaN     NaN        NaN      NaN    34534.0     262.0   8.0   40.0  3 Musketeers
+6           NaN     NaN        NaN      NaN    32686.0     220.0  12.0   25.0          Aero
+7           NaN     NaN        NaN      NaN    85254.0     244.0  16.0   41.2  Kinder Bueno
+</pre></div>
+</div>
+<p>Notes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">outer</span></code> will return not only the rows with identifying column values
+that are present in both tables but all the rows in both tables. If
+there are any rows where any of the column values are missing, it
+will be filled with a <code class="docutils literal notranslate"><span class="pre">NaN</span></code> value.</p></li>
+</ul>
+<p>Let’s colour coordinate this table and explore it on the next slide.</p>
+<hr class="docutils" />
+<p><br> <br> <br></p>
+<a class="reference internal image-reference" href="module3/outer.png"><img alt="module3/outer.png" src="module3/outer.png" style="width: 900px;" /></a>
+<p>Notes:</p>
+<p>Here we see that <code class="docutils literal notranslate"><span class="pre">Coffee</span> <span class="pre">Crisp</span></code> and <code class="docutils literal notranslate"><span class="pre">Butterfinger</span></code> have complete rows.</p>
+<p>Rows from the left dataframe that were not present in the right
+dataframe are <code class="docutils literal notranslate"><span class="pre">Skor</span></code>, <code class="docutils literal notranslate"><span class="pre">Smarties</span></code>, and <code class="docutils literal notranslate"><span class="pre">Twix</span></code> and therefore have <code class="docutils literal notranslate"><span class="pre">NaN</span></code>
+values for columns from the right table.</p>
+<p>The opposite occurs for the values <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">Musketeers</span></code>, <code class="docutils literal notranslate"><span class="pre">Aero</span></code>, and <code class="docutils literal notranslate"><span class="pre">Kinder</span> <span class="pre">Bueno</span></code>, which are present in the right dataframe and not the left one.</p>
+<p>This results in <code class="docutils literal notranslate"><span class="pre">NaN</span></code> for values in the left dataframe columns.</p>
+<hr class="docutils" />
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">left</span></code></p></li>
+</ul>
+<!-- end list -->
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">candy</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">candy2m</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;chocolate_bar&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>           name  weight  chocolate  peanuts  id_number  calories   fat  sugar chocolate_bar
+0  Coffee Crisp      50          1        0    12482.0     260.0  13.0   25.0  Coffee Crisp
+1  Butterfinger     184          1        1    45623.0     798.0  30.0   72.0  Butterfinger
+2          Skor      39          1        0        NaN       NaN   NaN    NaN           NaN
+3      Smarties      45          1        0        NaN       NaN   NaN    NaN           NaN
+4          Twix      58          1        0        NaN       NaN   NaN    NaN           NaN
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="module3/left.png"><img alt="module3/left.png" src="module3/left.png" style="width: 750px;" /></a>
+<p>Notes:</p>
+<p>The value <code class="docutils literal notranslate"><span class="pre">left</span></code> will only output the rows that are in the left
+dataframe, and if they are missing from the right dataframe, <code class="docutils literal notranslate"><span class="pre">NaN</span></code>
+values will occur. No candy bars that are only present in the right
+dataframe will be present.</p>
+<p>Here we can see the values <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">Musketeers</span></code>, <code class="docutils literal notranslate"><span class="pre">Aero</span></code>, and <code class="docutils literal notranslate"><span class="pre">Kinder</span> <span class="pre">Bueno</span></code>
+are not present in the resulting dataframe as they are only present in
+the right one.</p>
+<hr class="docutils" />
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">right</span></code></p></li>
+</ul>
+<!-- end list -->
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">candy</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">candy2m</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;chocolate_bar&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>           name  weight  chocolate  peanuts  id_number  calories  fat  sugar chocolate_bar
+0  Coffee Crisp    50.0        1.0      0.0      12482       260   13   25.0  Coffee Crisp
+1  Butterfinger   184.0        1.0      1.0      45623       798   30   72.0  Butterfinger
+2           NaN     NaN        NaN      NaN      34534       262    8   40.0  3 Musketeers
+3           NaN     NaN        NaN      NaN      32686       220   12   25.0          Aero
+4           NaN     NaN        NaN      NaN      85254       244   16   41.2  Kinder Bueno
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="module3/right.png"><img alt="module3/right.png" src="module3/right.png" style="width: 750px;" /></a>
+<p>Notes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">right</span></code> will only output the rows that are in the right dataframe,
+and if they are missing from the left dataframe, <code class="docutils literal notranslate"><span class="pre">NaN</span></code> values will
+occur. No candy bars that are only present in the left dataframe
+will be present.</p></li>
+</ul>
+<p>We can see that the rows <code class="docutils literal notranslate"><span class="pre">Skor</span></code>, <code class="docutils literal notranslate"><span class="pre">Smarties</span></code> and <code class="docutils literal notranslate"><span class="pre">Twix</span></code> that were only
+present in the left dataframe, have been dropped.</p>
+<p>One thing that all 4 joins have in common is they all will have the same
+columns labels that came from both dataframes.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="indicator">
+<h2>indicator<a class="headerlink" href="#indicator" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">candy</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">candy2m</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;chocolate_bar&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;outer&#39;</span><span class="p">,</span> <span class="n">indicator</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>           name  weight  chocolate  peanuts  id_number  calories   fat  sugar chocolate_bar      _merge
+0  Coffee Crisp    50.0        1.0      0.0    12482.0     260.0  13.0   25.0  Coffee Crisp        both
+1  Butterfinger   184.0        1.0      1.0    45623.0     798.0  30.0   72.0  Butterfinger        both
+2          Skor    39.0        1.0      0.0        NaN       NaN   NaN    NaN           NaN   left_only
+3      Smarties    45.0        1.0      0.0        NaN       NaN   NaN    NaN           NaN   left_only
+4          Twix    58.0        1.0      0.0        NaN       NaN   NaN    NaN           NaN   left_only
+5           NaN     NaN        NaN      NaN    34534.0     262.0   8.0   40.0  3 Musketeers  right_only
+6           NaN     NaN        NaN      NaN    32686.0     220.0  12.0   25.0          Aero  right_only
+7           NaN     NaN        NaN      NaN    85254.0     244.0  16.0   41.2  Kinder Bueno  right_only
+</pre></div>
+</div>
+<p>Notes:</p>
+<p><code class="docutils literal notranslate"><span class="pre">indicator</span></code> makes a new column name <code class="docutils literal notranslate"><span class="pre">_merge</span></code> and informs us from which
+dataframe the row originated from.</p>
+<p>If we want to do an outer join and show all the possible rows from both
+dataframes, there is a useful argument called <code class="docutils literal notranslate"><span class="pre">indicator</span></code>.</p>
+<p>Here we can see three possible values <code class="docutils literal notranslate"><span class="pre">left_only</span></code>, <code class="docutils literal notranslate"><span class="pre">right_only</span></code>, or
+<code class="docutils literal notranslate"><span class="pre">both</span></code> which informs us if the row came from the left dataframe, the
+right dataframe or if the row index label is shared between both
+dataframes.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="lets-apply-what-we-learned">
+<h1>Let’s apply what we learned!<a class="headerlink" href="#lets-apply-what-we-learned" title="Permalink to this headline">¶</a></h1>
+<p>Notes: <br></p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "UBC-MDS/PPDS_book",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./modules /module3"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Hayley Boyce, Mike Gelbart, Tiffany Timbers<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

@@ -1,0 +1,52 @@
+title: Programming in Python for Data Science
+author: Hayley Boyce, Mike Gelbart, Tiffany Timbers
+logo: imgs/logo.svg
+copyright: "2021"
+description: >- # this means to ignore newlines until "baseurl:"
+  Welcome to the book version of Programming in Python for Data Science.
+
+# Force re-execution of notebooks on each build.
+# See https://jupyterbook.org/content/execute.html
+
+execute:
+  execute_notebooks: force
+  timeout: -1
+  allow_errors: true
+
+# Define the name of the latex output file for PDF builds
+latex:
+  latex_documents:
+    targetname: book.tex
+
+launch_buttons:
+  notebook_interface : "classic" # The interface interactive links will activate ["classic", "jupyterlab"]
+  binderhub_url      : "https://mybinder.org"
+  thebe              : true
+
+# Information about where the book exists on the web
+repository:
+  url: https://github.com/UBC-MDS/PPDS_book # Online location of your book
+  path_to_book : ""  # A path to your book's folder, relative to the repository root.
+  branch: main  # Which branch of the repository should be used when creating links (optional)
+
+# Add GitHub buttons to your book
+# See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
+html:
+  favicon: imgs/icon.png
+  navbar_number_sections: false
+  home_page_in_navbar: false
+  use_edit_page_button: true
+  use_repository_button: true
+  use_issues_button: true
+  baseurl: https://hfboyce.github.io/ppds/intro.html
+parse:
+  myst_enable_extensions:
+    # don't forget to list any other extensions you want enabled,
+    # including those that are enabled by default!
+    - html_image
+    - dollarmath
+
+sphinx:
+    extra_extensions:
+        - jupyterbook_latex
+        - sphinx_thebe

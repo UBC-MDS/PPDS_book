@@ -1,0 +1,1146 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>&lt;no title&gt; &#8212; Programming in Python for Data Science</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/video.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="canonical" href="https://hfboyce.github.io/ppds/intro.html/modules/home/module6.html" />
+    <link rel="shortcut icon" href="../../_static/icon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Programming in Python for Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  Modules
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module1.html">
+   Module 1:  Python &amp; Pandas - An Unexpected Friendship
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_01.html">
+     What is a dataframe?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_03.html">
+     What is Pandas?
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Coding Exercises
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module1.html">
+   Module 1: Python &amp; Pandas - An Unexpected Friendship
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_01.html">
+     What is a dataframe?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_03.html">
+     What is Pandas?
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/modules/home/module6.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/UBC-MDS/PPDS_book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/UBC-MDS/PPDS_book/issues/new?title=Issue%20on%20page%20%2Fmodules/home/module6.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/UBC-MDS/PPDS_book/edit/main/modules/home/module6.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <exercise id="0" title="Module Learning Outcomes" type="slides, video">
+<slides source="module6/module6_00" shot = "10" start="0:002" end="0:36">
+</slides>
+</exercise> 
+<exercise id="1" title="DRY Revisited and Function Fundamentals" type="slides, video">
+<slides source="module6/module6_01" shot = "2" start="33:27" end="52:02">
+</slides>
+</exercise>
+<exercise id="2" title="Questions on Scoping">
+<p><strong>Question 1</strong></p>
+<p>Given the code below, what is the output?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="n">toy</span> <span class="o">=</span> <span class="s2">&quot;ball&quot;</span>
+
+<span class="k">def</span> <span class="nf">playtime</span><span class="p">():</span>
+    <span class="n">toy</span> <span class="o">=</span> <span class="s2">&quot;truck&quot;</span>
+    <span class="k">return</span> <span class="n">toy</span> 
+
+<span class="n">toy</span>
+</pre></div>
+</div>
+<choice id="1" >
+<opt text="<code>ball</code>" correct="true">
+<p>Well done!</p>
+</opt>
+<opt text="<code>truck</code>">
+<p>Since <code class="docutils literal notranslate"><span class="pre">toy</span></code> is being called in the global environment, the output of <code class="docutils literal notranslate"><span class="pre">toy</span></code> is the value of the global variable value of  <code class="docutils literal notranslate"><span class="pre">toy</span></code>.</p>
+</opt>
+<opt text="<code>Error</code>">
+<p>This will still run without an error!</p>
+</opt>
+</choice> 
+<p><strong>Question 2</strong></p>
+<p>Given the code below, what is the output?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="n">toy</span> <span class="o">=</span> <span class="s2">&quot;ball&quot;</span>
+
+<span class="k">def</span> <span class="nf">playtime</span><span class="p">():</span>
+    <span class="n">toy</span> <span class="o">=</span> <span class="s2">&quot;truck&quot;</span>
+    <span class="k">return</span> <span class="n">toy</span> 
+
+<span class="n">playtime</span><span class="p">()</span>
+</pre></div>
+</div>
+<choice id="2" >
+<opt text="<code>ball</code>" >
+<p><code class="docutils literal notranslate"><span class="pre">toy</span></code> is equal to <code class="docutils literal notranslate"><span class="pre">&quot;truck&quot;</span></code> in the local environment so it will return the local variable value of <code class="docutils literal notranslate"><span class="pre">toy</span></code>.</p>
+</opt>
+<opt text="<code>truck</code>"  correct="true">
+<p>Nice job!</p>
+</opt>
+<opt text="<code>Error</code>">
+<p>This will still run without an error!</p>
+</opt>
+</choice>  
+<p><strong>Question 3</strong></p>
+<p>Given the code below what is the output?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">playtime</span><span class="p">():</span>
+    <span class="n">toy</span> <span class="o">=</span> <span class="s2">&quot;truck&quot;</span>
+    <span class="k">return</span> <span class="n">toy</span> 
+
+<span class="n">toy</span>
+</pre></div>
+</div>
+<choice id="3" >
+<opt text="<code>None</code>" >
+<p><code class="docutils literal notranslate"><span class="pre">toy</span></code> is a local variable, will it be recognized in a global environment?</p>
+</opt>
+<opt text="<code>truck</code>">
+<p><code class="docutils literal notranslate"><span class="pre">toy</span></code> is a local variable, will it be recognized in a global environment?</p>
+</opt>
+<opt text="<code>Error</code>" correct="true">
+<p>Great! <code class="docutils literal notranslate"><span class="pre">toy</span></code> is a local variable, and will not be recognized in the global environment.</p>
+</choice> 
+</exercise>
+<exercise id="3" title="Side Effects">
+<p><strong>Question 1</strong></p>
+<p><em><strong>True or False</strong></em><br />
+Side effects make your code easier to debug.</p>
+<choice id="1" >
+<opt text="True" >
+<p>Ahh! Please go back and read over the slides. Side effects are generally avoided.</p>
+</opt>
+<opt text="False" correct="true">
+<p>Well done. This is an important one to get right!</p>
+</opt>
+</choice> 
+<p><strong>Question 2</strong></p>
+<p>Which of the following functions produce a side effect?</p>
+<p>A)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="n">toy</span> <span class="o">=</span> <span class="s2">&quot;ball&quot;</span>
+
+<span class="k">def</span> <span class="nf">playtime</span><span class="p">():</span>
+    <span class="n">toy</span> <span class="o">=</span> <span class="s2">&quot;truck&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">toy</span><span class="p">)</span> 
+
+<span class="n">playtime</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>B)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="n">toy</span> <span class="o">=</span> <span class="s2">&quot;ball&quot;</span>
+
+<span class="k">def</span> <span class="nf">playtime</span><span class="p">():</span>
+    <span class="n">toy</span> <span class="o">=</span> <span class="s2">&quot;truck&quot;</span>
+    <span class="k">return</span> <span class="n">toy</span> 
+
+<span class="n">playtime</span><span class="p">()</span>
+</pre></div>
+</div>
+<choice id="2" >
+<opt text="A"  correct="true">
+<p>Nice job!</p>
+</opt>
+<opt text="B" >
+<p>Printing <code class="docutils literal notranslate"><span class="pre">toy</span></code> is considered a function side effect!</p>
+</opt>
+<opt text="A and B"  >
+<p>Having a function <code class="docutils literal notranslate"><span class="pre">return</span></code> something is not considered necessarily a side effect.</p>
+</opt>
+<opt text="Neither A or B"  >
+<p>Printing <code class="docutils literal notranslate"><span class="pre">toy</span></code> is considered a function side effect!</p>
+</opt>
+</choice>  
+<p><strong>Question 3</strong></p>
+<p><em><strong>True of False</strong></em><br />
+If a function modifies a variable in the function’s local environment, that is considered a side effect.</p>
+<choice id="3" >
+<opt text="True">
+<p>This is not considered a side effect if a variable created within a function is modified within the same function.</p>
+</opt>
+<opt text="False"  correct="true">
+<p>Perfect!</p>
+</opt>
+</choice> 
+</exercise>
+<exercise id="4" title= "Writing Functions Without Side Effects">
+<p><strong>Instructions:</strong><br />
+Running a coding exercise for the first time could take a bit of time for everything to load. Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.</strong></p>
+<p><em><strong>Make sure you remove the hash (<code class="docutils literal notranslate"><span class="pre">#</span></code>) symbol in the coding portions of this question.  We have commented them so that the line won’t execute and you can test your code after each step.</strong></em></p>
+<p>The function <code class="docutils literal notranslate"><span class="pre">kg_to_lb()</span></code> is used to convert a list of elements with kg units into a list of elements with lbs units. Unfortunate this function includes a side effect that edits one of the global variables.</p>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Write a new function named <code class="docutils literal notranslate"><span class="pre">better_kg_to_lb</span></code> that no longer contains a side effect.</p></li>
+<li><p>Test your new function on the <code class="docutils literal notranslate"><span class="pre">weight_kg</span></code> list and save the results in an object named <code class="docutils literal notranslate"><span class="pre">weight_lb_again</span></code>.</p></li>
+</ul>
+<codeblock id="06_04">
+<ul class="simple">
+<li><p>Are you putting <code class="docutils literal notranslate"><span class="pre">weight_lb</span></code> inside the function now?</p></li>
+<li><p>Are you returning <code class="docutils literal notranslate"><span class="pre">weight_lb</span></code>?</p></li>
+</ul>
+</codeblock>
+</exercise>
+<exercise id="5" title="Default Arguments" type="slides, video">
+<slides source="module6/module6_05" shot = "2" start="52:0816" end="58:01">
+</slides>
+</exercise>
+<exercise id="6" title="Will it Output?">
+<p>Given the following function, which of the function calls will result in an error?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">name_initials</span><span class="p">(</span><span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">,</span> <span class="n">year_of_birth</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">year_of_birth</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span> 
+        <span class="n">initials</span> <span class="o">=</span> <span class="n">first_name</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">+</span> <span class="n">middle_name</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">year_of_birth</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">initials</span> <span class="o">=</span> <span class="n">first_name</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">+</span> <span class="n">last_name</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">initials</span>
+</pre></div>
+</div>
+<choice id="1" >
+<opt text="<code>name_initials('Cameron', 'Grant')</code>" >
+<p>This one will run since <code class="docutils literal notranslate"><span class="pre">year_of_birth</span></code> is optional and will default to <code class="docutils literal notranslate"><span class="pre">None</span></code>. The output is <code class="docutils literal notranslate"><span class="pre">CG</span></code>.</p>
+</opt>
+<opt text="<code>name_initials(last_name = 'Grant', year_of_birth = 1987, first_name = 'Cameron')</code>">
+<p>Since we are defining our arguments with their names and values, this one will result in an output of <code class="docutils literal notranslate"><span class="pre">CG1987</span></code>.</p>
+</opt>
+<opt text="<code>name_initials('Cameron', 1987, 'Grant')</code>"  correct="true">
+<p>This will result in an error since the argument values are not in the defined order and they are not defined with the argument names.</p>
+</opt>
+<opt text="<code>name_initials('Cameron', 'Grant', 1987)</code>">
+<p>This function calls the arguments in the same order they were defined in. The output is <code class="docutils literal notranslate"><span class="pre">CG1987</span></code>.</p>
+</opt>
+</choice> 
+</exercise>
+<exercise id="7" title="Default Arguments">
+<p><strong>Question 1</strong></p>
+<p>Given the function below:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">employee_wage</span><span class="p">(</span><span class="n">employee_id</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">experience</span> <span class="o">=</span> <span class="mi">3</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">position</span> <span class="o">==</span> <span class="s2">&quot;doctor&quot;</span><span class="p">:</span> 
+        <span class="n">wage</span> <span class="o">=</span> <span class="mi">150000</span>
+    <span class="k">elif</span> <span class="n">position</span> <span class="o">==</span> <span class="s2">&quot;teacher&quot;</span><span class="p">:</span>
+        <span class="n">wage</span> <span class="o">=</span> <span class="mi">60000</span>
+    <span class="k">elif</span> <span class="n">position</span> <span class="o">==</span> <span class="s2">&quot;lawyer&quot;</span><span class="p">:</span>
+        <span class="n">wage</span> <span class="o">=</span> <span class="mi">100000</span>
+    <span class="k">elif</span> <span class="n">position</span> <span class="o">==</span> <span class="s2">&quot;server&quot;</span><span class="p">:</span>
+        <span class="n">wage</span> <span class="o">=</span> <span class="mi">50000</span>
+    <span class="k">else</span><span class="p">:</span> 
+        <span class="n">wage</span> <span class="o">=</span> <span class="mi">70000</span>
+    <span class="k">return</span> <span class="n">wage</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.1</span> <span class="o">*</span> <span class="n">experience</span><span class="p">))</span> 
+</pre></div>
+</div>
+<p>What is the approximate wage of employee <code class="docutils literal notranslate"><span class="pre">765</span></code> who is a lawyer?</p>
+<choice id="1" >
+<opt text="<code>100000</code>" >
+<p>Are you taking a close look at the argument <code class="docutils literal notranslate"><span class="pre">experience</span></code> which has a default value?</p>
+</opt>
+<opt text="<code>110000</code>">
+<p>Take a closer look at the default value of the <code class="docutils literal notranslate"><span class="pre">experience</span></code> argument.</p>
+</opt>
+<opt text="<code>130000</code>"  correct="true">
+<p>Nice Job!</p>
+</opt>
+<opt text="<code>150000</code>" >
+<p>Are you looking at the right position?</p>
+</opt>
+</choice>  
+<p><strong>Question 2</strong></p>
+<p>If I make a function call using the following code, and I know that that parameter <code class="docutils literal notranslate"><span class="pre">spice_level</span></code> is an argument that has a default value, which other arguments <strong>MUST</strong> also have set default values?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">menu_item_id</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="n">menu_item_name</span> <span class="o">=</span> <span class="s2">&quot;Green Curry&quot;</span>
+<span class="n">spice_level</span> <span class="o">=</span> <span class="s2">&quot;Medium&quot;</span>
+<span class="n">meat</span> <span class="o">=</span> <span class="s2">&quot;Tofu&quot;</span>
+<span class="n">rice</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="n">thai_food</span><span class="p">(</span><span class="n">menu_item_id</span><span class="p">,</span> <span class="n">menu_item_name</span><span class="p">,</span> <span class="n">spice_level</span><span class="p">,</span> <span class="n">meat</span><span class="p">,</span> <span class="n">rice</span><span class="p">)</span>
+</pre></div>
+</div>
+<choice id="2" >
+<opt text="<code>menu_item_id</code> and <code>menu_item_name</code>" >
+<p>These two arguments can be either required or default arguments.</p>
+</opt>
+<opt text="<code>meat</code>">
+<p>This is partially right but not entirely.</p>
+</opt>
+<opt text="<code>rice</code>">
+<p>This is partially right but not entirely.</p>
+</opt>
+<opt text="<code>meat</code> and <code>rice</code>"  correct="true">
+<p>Nice job! arguments that are required for the function must come <em>before</em> defining default arguments.</p>
+</opt>
+</choice>  
+</exercise>
+<exercise id="8" title= "Default Argument Practice">
+<p><strong>Instructions:</strong><br />
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.</strong></p>
+<p><em><strong>Make sure you remove the hash (<code class="docutils literal notranslate"><span class="pre">#</span></code>) symbol in the coding portions of this question.  We have commented them so that the line won’t execute and you can test your code after each step.</strong></em></p>
+<p><strong>Weight</strong> and <strong>mass</strong> are 2 very different measurements, although they are used interchangeably in everyday conversations.
+<strong>Mass</strong> is defined by  <a href="https://www.nasa.gov/pdf/591747main_MVW_Intro.pdf" target="_blank">NASA</a> as the amount of matter in an object, whereas, <strong>weight</strong> is defined as the vertical force exerted by a mass as a result of gravity (with units of Newtons).
+The function <code class="docutils literal notranslate"><span class="pre">earth_weight()</span></code> converts an object’s mass to Weight by multiplying it by the gravitational force acting on it. On Earth, the gravitational force is measured as 9.8 <span class="math notranslate nohighlight">\(m/s^2\)</span>.</p>
+<p>We want to make a more versatile function by having the ability to calculate the Weight of any object on any particular planet and not just Earth. Redefine the function <code class="docutils literal notranslate"><span class="pre">earth_weight()</span></code> to take an argument with a default gravitational force of 9.8.</p>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Create a new function named <code class="docutils literal notranslate"><span class="pre">mass_to_weight</span></code> and give it an additional argument named  <code class="docutils literal notranslate"><span class="pre">g,</span></code> which has a default value of 9.8.</p></li>
+<li><p>Test your new function by converting the mass of 76 kg to weight on Earth and save the results in an object named <code class="docutils literal notranslate"><span class="pre">earth_weight</span></code>.</p></li>
+<li><p>Test your function again but this time, calculate the weight of the 76 kg object on the moon using a gravitational force of 1.62 m/s^2 and save your function call to an object named <code class="docutils literal notranslate"><span class="pre">moon_weight</span></code>.</p></li>
+</ul>
+<codeblock id="06_08">
+<ul class="simple">
+<li><p>Are you putting <code class="docutils literal notranslate"><span class="pre">g=9.8</span></code> inside the function named <code class="docutils literal notranslate"><span class="pre">mass_to_weight</span></code>?</p></li>
+<li><p>Are you calling <code class="docutils literal notranslate"><span class="pre">mass_to_weight(76)</span></code> and saving it in an object named <code class="docutils literal notranslate"><span class="pre">earth_weight</span></code>?</p></li>
+<li><p>Are you calling <code class="docutils literal notranslate"><span class="pre">mass_to_weight(76,</span> <span class="pre">1.62)</span></code> and saving it in an object named <code class="docutils literal notranslate"><span class="pre">moon_weight</span></code>?</p></li>
+</ul>
+</codeblock>
+</exercise>
+<exercise id="9" title="Function Docstrings" type="slides, video">
+<slides source="module6/module6_09" shot = "2" start="58:07" end="64:38">
+</slides>
+</exercise>
+<exercise id="10" title="Docstring Questions">
+<p><strong>Question 1</strong></p>
+<p>What data type is returned from the following function?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">factor_of_10</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Takes a number and determines if it is a factor of 10 </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    number : int</span>
+<span class="sd">        the value to check</span>
+<span class="sd">      </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    bool</span>
+<span class="sd">        Returns True if numbers are a multiple of 10 and False otherwise</span>
+<span class="sd">      </span>
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; factor_of_10(72)</span>
+<span class="sd">    False</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> 
+        <span class="n">factor</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">factor</span> <span class="o">=</span> <span class="kc">False</span>
+        
+    <span class="k">return</span> <span class="n">factor</span>
+    
+
+</pre></div>
+</div>
+<choice id="1" >
+<opt text="<code>str</code>">
+<p>Maybe look at the <code class="docutils literal notranslate"><span class="pre">Returns</span></code> heading in the docstring.</p>
+</opt>
+<opt text="<code>bool</code>" correct="true">
+<p>Nice work!</p>
+</opt>
+<opt text="<code>float</code>" >
+<p>Maybe look at the <code class="docutils literal notranslate"><span class="pre">Returns</span></code> heading in the docstring.</p>
+</opt>
+<opt text="<code>list</code>" >
+<p>Maybe look at the <code class="docutils literal notranslate"><span class="pre">Returns</span></code> heading in the docstring.</p>
+</opt>
+</choice> 
+<p><strong>Question 2</strong></p>
+<p>How do you obtain the documentation for the function below?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_stars</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">  This will return your input string between a pair of stars. </span>
+<span class="sd">  Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    name: str</span>
+<span class="sd">        a sentence or word</span>
+<span class="sd">        </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    str</span>
+<span class="sd">        The initial string beginning and ending with a pair of stars </span>
+<span class="sd">        </span>
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; add_stars(&#39;Good Job&#39;)</span>
+<span class="sd">    &#39;Good Job&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;**&#39;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">&#39;**&#39;</span>
+    <span class="k">return</span>
+</pre></div>
+</div>
+<choice id="2" >
+<opt text="<code>documentation?</code>">
+<p>The <code class="docutils literal notranslate"><span class="pre">documentation</span></code> for which function though?</p>
+</opt>
+<opt text="<code>?docstring(add_stars)</code>">
+<p>Maybe look back at the material again.</p>
+</opt>
+<opt text="<code>add_stars()?</code>"  >
+<p>You are so close!</p>
+</opt>
+<opt text="<code>?add_stars</code>" correct="true">
+<p>Great!</p>
+</opt>
+</choice> 
+</exercise>
+<exercise id="11" title="Which Docstring is Most Appropriate?">
+<p>Given the function below, which docstring follows the NumPy format?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="k">def</span> <span class="nf">acronym_it</span><span class="p">(</span><span class="n">sentence</span><span class="p">):</span>
+    <span class="n">words</span> <span class="o">=</span> <span class="n">sentence</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="n">first_letters</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">]</span>
+    <span class="n">acronym</span> <span class="o">=</span>  <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">first_letters</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">acronym</span>
+</pre></div>
+</div>
+<p>A)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">A function that converts a string into an acronym of capital</span>
+<span class="sd">letters</span>
+
+<span class="sd">Input</span>
+<span class="sd">------</span>
+<span class="sd">str : sentence</span>
+<span class="sd">   The string to obtain the first letters from</span>
+<span class="sd">    </span>
+<span class="sd">Output</span>
+<span class="sd">-------</span>
+<span class="sd">str</span>
+<span class="sd">    A string of the first letters of each word in an uppercase format</span>
+<span class="sd">    </span>
+<span class="sd">Sample</span>
+<span class="sd">-------</span>
+<span class="sd">&gt;&gt;&gt; acronym_it(&quot;Let&#39;s make this an acronym&quot;)</span>
+<span class="sd">&quot;LMTAA&quot;</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+</pre></div>
+</div>
+<p>B)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">A function that converts a string into an acronym of capital</span>
+<span class="sd">letters</span>
+
+<span class="sd">Input </span>
+<span class="sd">------</span>
+<span class="sd">some_words : str</span>
+<span class="sd">   The string to obtain the first letters from</span>
+<span class="sd">    </span>
+<span class="sd">Output </span>
+<span class="sd">-------</span>
+<span class="sd">list </span>
+<span class="sd">    A list of the first letters of each word from the input string</span>
+
+<span class="sd">Example</span>
+<span class="sd">-------</span>
+<span class="sd">&gt;&gt;&gt; acronym_it(&quot;Let&#39;s make this an acronym&quot;)</span>
+<span class="sd">&quot;LMTAA&quot;</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+</pre></div>
+</div>
+<p>C)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">A function that converts a string into an acronym of capital</span>
+<span class="sd">letters</span>
+
+<span class="sd">Parameters</span>
+<span class="sd">----------</span>
+<span class="sd">sentence : str</span>
+<span class="sd">   The string to obtain the first letters from</span>
+<span class="sd">    </span>
+<span class="sd">Returns</span>
+<span class="sd">-------</span>
+<span class="sd">str</span>
+<span class="sd">    a string of just first letters in an uppercase format</span>
+
+<span class="sd">Example</span>
+<span class="sd">-------</span>
+<span class="sd">&gt;&gt;&gt; acronym_it(&quot;Let&#39;s make this an acronym&quot;)</span>
+<span class="sd">&quot;LMTAA&quot;</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+</pre></div>
+</div>
+<p>D)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">A function that converts a string into an acronym of capital</span>
+<span class="sd">letters</span>
+
+
+<span class="sd">Returns</span>
+<span class="sd">-------</span>
+<span class="sd">list :</span>
+<span class="sd">    A list of the first letters of each word from the input string</span>
+<span class="sd">    </span>
+<span class="sd">Parameters</span>
+<span class="sd">----------</span>
+<span class="sd">str : sentence</span>
+<span class="sd">   The string to obtain the first letters from</span>
+<span class="sd">    </span>
+<span class="sd">Example</span>
+<span class="sd">-------</span>
+<span class="sd">&gt;&gt;&gt; acronym_it(&quot;Let&#39;s make this an acronym&quot;)</span>
+<span class="sd">&quot;LMTAA&quot;</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+</pre></div>
+</div>
+<choice id="1" >
+<opt text="A"  >
+<p>Are these the correct headings?.</p>
+</opt>
+<opt text="B" >
+<p>Are the headings correct? Also pay attention to the name of the input arguments and what the function is returning.</p>
+</opt>
+<opt text="C"  correct="true">
+<p>Nice job!</p>
+</opt>
+<opt text="D">
+<p>Is the order of the description headings correct?</p>
+</opt>
+</choice> 
+</exercise>
+<exercise id="12" title= "Practice Writing a Docstring">
+<p><strong>Instructions:</strong><br />
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.</strong></p>
+<p><em><strong>Make sure you remove the hash (<code class="docutils literal notranslate"><span class="pre">#</span></code>) symbol in the coding portions of this question.  We have commented them so that the line won’t execute and you can test your code after each step.</strong></em></p>
+<p>In module 5, we wrote a function that returns the BMI given a person’s weight and height. Let’s write a docstring for it now!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">bmi_calculator</span><span class="p">(</span><span class="n">height</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">weight</span> <span class="o">/</span> <span class="p">(</span><span class="n">height</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span> <span class="o">*</span> <span class="mi">702</span>
+
+</pre></div>
+</div>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Write a NumPy style docstring for the function provided.</p></li>
+<li><p>For this question, we want you to write your docstring between 3 single quotations <code class="docutils literal notranslate"><span class="pre">'''</span></code> instead of the normal double quotations <code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;</span></code>. This will allow us to test the solution provided.</p></li>
+<li><p>Make sure to include a brief description, parameters, return, and example sections.</p></li>
+<li><p>View the documentation of the function.</p></li>
+</ul>
+<codeblock id="06_12">
+<ul class="simple">
+<li><p>Are you using <code class="docutils literal notranslate"><span class="pre">'''</span></code> to contain your docstring?</p></li>
+<li><p>Are you including all the sections?</p></li>
+<li><p>Are you getting the documentation of the docstring using <code class="docutils literal notranslate"><span class="pre">?bmi_calculator</span></code></p></li>
+</ul>
+</codeblock>
+</exercise>
+<exercise id="13" title="Defensive Programming using Exceptions" type="slides, video">
+<slides source="module6/module6_13" shot = "2" start="64:4503" end="72:08">
+</slides>
+</exercise>
+<exercise id="14" title="Exceptions">
+<p><strong>Question 1</strong></p>
+<p>Which of the following exceptions is most appropriate for when an operation or function receives an argument that has the right type but an inappropriate value?</p>
+<p><em>Hint: Did you look over the resource we provided you in the slides?</em></p>
+<choice id="1" >
+<opt text="<code>TypeError</code>">
+<p>This is raised when an operation or function is applied to an object of inappropriate type.</p>
+</opt>
+<opt text="<code>NameError</code>">
+<p>This is raised when a local or global name is not found.</p>
+</opt>
+<opt text="<code>AttributeError</code>"  >
+<p>This is raised when an attribute reference or assignment fails.</p>
+</opt>
+<opt text="<code>ValueError</code>" correct="true">
+<p>Great!</p>
+</opt>
+</choice> 
+<p><strong>Question 2</strong></p>
+<p>Why would we want to write code that raises an exception?</p>
+<choice id="2" >
+<opt text="To make the cause of the error much clearer to the caller of the function">
+<p>This is correct, but did you read the other options?</p>
+</opt>
+<opt text="To force code to fail sooner rather than later">
+<p>This is correct, but did you read the other options?</p>
+</opt>
+<opt text="To make your functions more usable"  >
+<p>This is correct, but did you read the other options?</p>
+</opt>
+<opt text="All of the above" correct="true">
+<p>Great!</p>
+</opt>
+</choice> 
+</exercise>
+<exercise id="15" title="Documenting Exceptions">
+<p>Which docstring correctly includes the documentation for exceptions?</p>
+<p>A)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">factor_of_10</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Takes a number and determines if it is a factor of 10 </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    number : int</span>
+<span class="sd">        the value to check</span>
+<span class="sd">      </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    bool</span>
+<span class="sd">        Returns True if number is a multiple of 10 and False otherwise</span>
+<span class="sd">        </span>
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    TypeError</span>
+<span class="sd">        If the input argument number is not of type int </span>
+<span class="sd">      </span>
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; factor_of_10(72)</span>
+<span class="sd">    False</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span> 
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;the input value of number is not of type int&quot;</span><span class="p">)</span>
+        
+    <span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> 
+        <span class="n">factor</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">factor</span> <span class="o">=</span> <span class="kc">False</span>
+        
+    <span class="k">return</span> <span class="n">factor</span>
+</pre></div>
+</div>
+<p>B)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">factor_of_10</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Takes a number and determines if it is a factor of 10 </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    number : int</span>
+<span class="sd">        the value to check</span>
+<span class="sd">      </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    bool</span>
+<span class="sd">        Returns True if number is a multiple of 10 and False otherwise</span>
+<span class="sd">        </span>
+<span class="sd">    Exceptions</span>
+<span class="sd">    ------</span>
+<span class="sd">    TypeError</span>
+<span class="sd">        If the input argument number is not of type int </span>
+<span class="sd">      </span>
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; factor_of_10(72)</span>
+<span class="sd">    False</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span> 
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;the input value of number is not of type int&quot;</span><span class="p">)</span>
+        
+    <span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> 
+        <span class="n">factor</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">factor</span> <span class="o">=</span> <span class="kc">False</span>
+        
+    <span class="k">return</span> <span class="n">factor</span>
+</pre></div>
+</div>
+<choice id="1" >
+<opt text="A" correct="true" >
+<p>That’s right, <code class="docutils literal notranslate"><span class="pre">Raises</span></code> goes between the <code class="docutils literal notranslate"><span class="pre">Returns</span></code> and <code class="docutils literal notranslate"><span class="pre">Examples</span></code>.</p>
+</opt>
+<opt text="B"  >
+<p>To document what happens when an exception is raised, we use the title <code class="docutils literal notranslate"><span class="pre">Raises</span></code>.</p>
+</opt>
+</choice> 
+</exercise>
+<exercise id="16" title= "Raising Exceptions">
+<p><strong>Instructions:</strong><br />
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.</strong></p>
+<p><em><strong>Make sure you remove the hash (<code class="docutils literal notranslate"><span class="pre">#</span></code>) symbol in the coding portions of this question.  We have commented them so that the line won’t execute and you can test your code after each step.</strong></em></p>
+<p>Let’s build on the BMI function we made in module 5. This time we want to raise 2 exceptions.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">bmi_calculator</span><span class="p">(</span><span class="n">height</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">weight</span> <span class="o">/</span> <span class="p">(</span><span class="n">height</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span> <span class="o">*</span> <span class="mi">702</span>
+
+</pre></div>
+</div>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Write an exception that checks if <code class="docutils literal notranslate"><span class="pre">height</span></code> is of type <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p></li>
+<li><p>Write a second exception that raises an error if weight is 0 or less.</p></li>
+<li><p>Test your function with the values given in variable <code class="docutils literal notranslate"><span class="pre">tall</span></code> and <code class="docutils literal notranslate"><span class="pre">mass</span></code>.</p></li>
+</ul>
+<codeblock id="06_16">
+<ul class="simple">
+<li><p>Are you using <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> and <code class="docutils literal notranslate"><span class="pre">Exception</span></code> respectively for the exception messages?</p></li>
+<li><p>Are you checking the <code class="docutils literal notranslate"><span class="pre">height</span></code> type with <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">not</span> <span class="pre">isinstance(height,</span> <span class="pre">float):</span></code>?</p></li>
+<li><p>Are you checking if weight is greater than 0 with <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">weight</span> <span class="pre">&lt;=</span> <span class="pre">0:</span></code>?</p></li>
+</ul>
+</codeblock>
+</exercise>
+<exercise id="17" title="Unit tests" type="slides, video">
+<slides source="module6/module6_17" shot = "2" start="72:15" end="84:5508">
+</slides>
+</exercise>
+<exercise id="18" title="Assert Questions">
+<p><strong>Question 1</strong></p>
+<p>Which of the statements is correct?</p>
+<choice id="1" >
+<opt text="<code>assert</code> statements cause our program to fail if the condition is <code>True</code>.">
+<p><code class="docutils literal notranslate"><span class="pre">Exceptions</span></code> are what causes an error if the conditional statement is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+</opt>
+<opt text="<code>assert</code> statements cause our program to fail if the condition is <code>False</code>." correct="true">
+<p>Nice work!</p>
+</opt>
+</choice> 
+</exercise>
+<exercise id="19" title="Unit Tests Questions">
+<p><strong>Question 1</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">acronym_it</span><span class="p">(</span><span class="n">sentence</span><span class="p">):</span>
+    <span class="n">words</span> <span class="o">=</span> <span class="n">sentence</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="n">first_letters</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">]</span>
+    <span class="n">acronym</span> <span class="o">=</span>  <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">first_letters</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">acronym</span>
+</pre></div>
+</div>
+<p>Given the function above, which would <strong>not</strong> result in an error?</p>
+<choice id="1" >
+<opt text="<code>assert acronym_it('Hard work pays off') == 'HWPO'</code>" correct="true">
+<p>Great!</p>
+</opt>
+<opt text="<code>assert acronym_it('Hard work pays off') == 'Hwpo'</code>" >
+<p>It might be helpful to read the function code line by line.</p>
+</opt>
+<opt text="<code>assert acronym_it('Hard work pays off') == 'H'</code>"  >
+<p>It might be helpful to read the function code line by line.</p>
+</opt>
+<opt text="<code>assert acronym_it('Hard work pays off') == str<code>" >
+<p>It might be helpful to read the function code line by line.</p>
+</opt>
+</choice> 
+<p><strong>Question 2</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">acronym_it</span><span class="p">(</span><span class="n">sentence</span><span class="p">):</span>
+    <span class="n">words</span> <span class="o">=</span> <span class="n">sentence</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="n">first_letters</span> <span class="o">=</span> <span class="p">[</span><span class="n">word</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">]</span>
+    <span class="n">acronym</span> <span class="o">=</span>  <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">first_letters</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">acronym</span>
+</pre></div>
+</div>
+<p>Given the function above, which test <strong>would</strong> fail?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>assert acronym_it(&quot;Hard work pays off&quot;) == ???
+</pre></div>
+</div>
+<choice id="2" >
+<opt text="<code>assert acronym_it('If at first you do not succeed, try try again') == 'IAFYDNSTTA'</code>" >
+<p>Great!</p>
+</opt>
+<opt text="<code>assert acronym_it('There are 30 bottles of beer on the wall!') == 'TA3BOBOTW'</code>" >
+<p>It might be helpful to read the function code line by line.</p>
+</opt>
+<opt text="<code>assert acronym_it('Build me up, buttercup') == 'BMUB'</code>"  >
+<p>It might be helpful to read the function code line by line.</p>
+</opt>
+<opt text="<code>assert acronym_it('10 times 5 is 50') == '10T5I50'<code>" correct="true">
+<p>Good work!</p>
+</opt>
+</choice> 
+</exercise>
+<exercise id="20" title="Unit Tests and Test-Driven Development Questions">
+<p><strong>Question 1</strong></p>
+<p>When do we ideally like to write our unit tests for our functions?</p>
+<choice id="1" >
+<opt text="Before writing our function code" correct="true" >
+<p>You got it!</p>
+</opt>
+<opt text="After writing our function's code" >
+<p>This is not ideal.</p>
+</opt>
+<opt text="While writing our function's code"  >
+<p>Although this happens sometimes, it’s better to write your tests before your function’s code.</p>
+</opt>
+</choice> 
+<p><strong>Question 2</strong></p>
+<p>When can we be confident in our code?</p>
+<choice id="2" >
+<opt text="When all our tests pass."  >
+<p>You got it!</p>
+</opt>
+<opt text="After writing edge cases and they also pass." >
+<p>This is not ideal.</p>
+</opt>
+<opt text="When our function does what we want without even writing test."  >
+<p>Although this happens sometimes, it’s better to write your tests before your function’s code.</p>
+</opt>
+<opt text="It's good to err on the side of caution when it comes to being confident in our code (bad things can happen to good coders)."  correct="true">
+</choice> 
+<p><strong>Question 3</strong></p>
+<p>The first step in a systematic approach to program design is:</p>
+<choice id="3" >
+<opt text="Write unit tests."  >
+<p>But we don’t know our input arguments or the output type that we are expecting yet?</p>
+</opt>
+<opt text="Write a docstring." >
+<p>This is the last step!</p>
+</opt>
+<opt text="Write a function stub." correct="true" >
+<p>Nailed it!</p>
+</opt>
+<opt text="Write your pseudo-code."  >
+<p>This should come after writing tests and defining your function!</p>
+</choice> 
+</exercise>
+<exercise id="21" title= "Writing Tests">
+<p><strong>Instructions:</strong><br />
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.</strong></p>
+<p><em><strong>Make sure you remove the hash (<code class="docutils literal notranslate"><span class="pre">#</span></code>) symbol in the coding portions of this question.  We have commented them so that the line won’t execute and you can test your code after each step.</strong></em></p>
+<p>Given our BMI function from the previous few questions, let’s write some unit tests.</p>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Write at least 4 unit tests and check that at least 2 of them are testing edge cases.</p></li>
+<li><p>For this exercsie, use single quotes <code class="docutils literal notranslate"><span class="pre">''</span></code> instead of double quotes <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code> for the <code class="docutils literal notranslate"><span class="pre">assert</span></code> messages.</p></li>
+</ul>
+<codeblock id="06_21">
+<ul class="simple">
+<li><p>Are you using <code class="docutils literal notranslate"><span class="pre">Assert</span></code> statements?</p></li>
+<li><p>Are you checking that they equal a correct value?</p></li>
+</ul>
+</codeblock>
+</exercise>
+<exercise id="22" title="Good Function Design Choices" type="slides, video">
+<slides source="module6/module6_22" shot = "2" start="85:02" end="92:25">
+</slides>
+</exercise>
+<exercise id="23" title="Function Design Questions">
+<p>What’s wrong with the function below?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">give_me_facts</span><span class="p">(</span><span class="n">myinfo</span><span class="p">):</span>
+    <span class="n">max_val</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">myinfo</span><span class="p">)</span>
+    <span class="n">min_val</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">myinfo</span><span class="p">)</span>
+    <span class="n">range_val</span> <span class="o">=</span> <span class="n">max_val</span> <span class="o">-</span> <span class="n">min_val</span>
+    <span class="k">return</span> <span class="n">max_val</span><span class="p">,</span> <span class="n">min_val</span><span class="p">,</span> <span class="n">range_val</span>
+</pre></div>
+</div>
+<choice id="1" >
+<opt text="It is doing too many calculations" >
+<p>Calculations are fine if we need them and here it looks like we need them to calculate the range.</p>
+</opt>
+<opt text="It is using a global variable inside the function" >
+<p>There are no global variables in the function.</p>
+</opt>
+<opt text="It's returning too many objects" correct="true">
+<p>Perfect! This is too many!</p>
+</opt>
+<opt text="It's hard coding values in the function"  >
+<p>We are lucky that there are no hardcoded values in this function!</p>
+</opt>
+</choice> 
+</exercise>
+<exercise id="24" title="Improve it!">
+<p>How can we improve this function?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="k">def</span> <span class="nf">count_the_sevens</span><span class="p">(</span><span class="n">mylist</span><span class="p">):</span> 
+    <span class="n">number_of_occurances</span>  <span class="o">=</span> <span class="n">mylist</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">number_of_occurances</span>
+</pre></div>
+</div>
+<choice id="1" >
+<opt text="Avoid using a list as an input arguments" >
+<p>Lists are completely fine to use as input arguments.</p>
+</opt>
+<opt text="Simplify the operations" >
+<p>This function is only 3 lines! Do we need it simpler?</p>
+</opt>
+<opt text="Use fewer global variables" >
+<p>Luckily no global variables are being used in this function.</p>
+</opt>
+<opt text="Remove the hard-coded value"  correct="true">
+<p>Perfect! Let’s make the count variable (in this case the <code class="docutils literal notranslate"><span class="pre">7</span></code>) an input argument.</p>
+</opt>
+</choice> 
+</exercise>
+<exercise id="25" title= "Function Design">
+<p><strong>Instructions:</strong><br />
+Running a coding exercise for the first time could take a bit of time for everything to load.  Be patient, it could take a few minutes.</p>
+<p><strong>When you see <code class="docutils literal notranslate"><span class="pre">____</span></code> in a coding exercise, replace it with what you assume to be the correct code.  Run it and see if you obtain the desired output.  Submit your code to validate if you were correct.</strong></p>
+<p><em><strong>Make sure you remove the hash (<code class="docutils literal notranslate"><span class="pre">#</span></code>) symbol in the coding portions of this question.  We have commented them so that the line won’t execute and you can test your code after each step.</strong></em></p>
+<p>Given the function below, improve it so that it follows good function design principles.</p>
+<p>Tasks:</p>
+<ul class="simple">
+<li><p>Given the function above, improve it using to the new function <code class="docutils literal notranslate"><span class="pre">new_wage()</span></code>. We have provided you with the function stub and the docstring to guide you.</p></li>
+<li><p>Make sure it follows good function design practices by not looping over a function, avoiding hard-coding and not returning multiple values.</p></li>
+<li><p>Test your new function on a person with a salary of $84000 and an expected raise of 12%.</p></li>
+<li><p>Save this in an object named <code class="docutils literal notranslate"><span class="pre">person1_new_wage</span></code>.</p></li>
+</ul>
+<codeblock id="06_25">
+<ul class="simple">
+<li><p>Are you removing the hardcoded values in the function?</p></li>
+<li><p>Are removing the return of 2 variables?</p></li>
+<li><p>Are you removing the loop from inside the function?</p></li>
+<li><p>Are you multiplying the <code class="docutils literal notranslate"><span class="pre">salary</span></code> by <code class="docutils literal notranslate"><span class="pre">(1</span> <span class="pre">+</span> <span class="pre">(0.01</span> <span class="pre">*</span> <span class="pre">percent_raise)</span></code> ?</p></li>
+</ul>
+</codeblock>
+</exercise>
+<exercise id="26" title="What Did We Just Learn?" type="slides, video">
+<slides source="module6/module6_end" shot = "10" start="0:37" end="1:25">>
+</slides>
+</exercise>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "UBC-MDS/PPDS_book",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./modules/home"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Hayley Boyce, Mike Gelbart, Tiffany Timbers<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

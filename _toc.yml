@@ -7,6 +7,17 @@
     sections:
       - file: modules/module1/module1_01
       - file: modules/module1/module1_03
+      - file: modules/module1/module1_07
+      - file: modules/module1/module1_11
+      - file: modules/module1/module1_13
+      - file: modules/module1/module1_16
+      - file: modules/module1/module1_18
+      - file: modules/module1/module1_20
+      - file: modules/module1/module1_24
+      - file: modules/module1/module1_26
+      - file: modules/module1/module1_29
+      - file: modules/module1/module1_31
+
 
 - part:  Coding Exercises
   chapters:

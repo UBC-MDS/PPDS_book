@@ -54,6 +54,8 @@
     <link rel="shortcut icon" href="../../_static/icon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Summary Statistics" href="module1_26.html" />
+    <link rel="prev" title="Slicing and selecting using .iloc[]" href="module1_20.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -88,17 +90,17 @@
   Modules
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../module1.html">
    Module 1:  Python &amp; Pandas - An Unexpected Friendship
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="module1_01.html">
      What is a dataframe?
@@ -109,33 +111,54 @@
      What is Pandas?
     </a>
    </li>
-  </ul>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Coding Exercises
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../module1.html">
-   Module 1: Python &amp; Pandas - An Unexpected Friendship
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="module1_01.html">
-     What is a dataframe?
+    <a class="reference internal" href="module1_07.html">
+     Slicing Rows using .loc[]
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="module1_03.html">
-     What is Pandas?
+    <a class="reference internal" href="module1_11.html">
+     Slicing only columns using .loc[]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_13.html">
+     Selecting using .loc[]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_16.html">
+     Obtaining dataframe values
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_18.html">
+     Selecting a Single Column
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_20.html">
+     Slicing and selecting using .iloc[]
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Sorting dataframes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_26.html">
+     Summary Statistics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_29.html">
+     Frequency Tables and Writing CSVs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_31.html">
+     Quick viz with Altair!
     </a>
    </li>
   </ul>
@@ -224,31 +247,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Sorting dataframes
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sorting">
-     Sorting
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lets-apply-what-we-learned">
-   Let’s apply what we learned!
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -259,11 +257,15 @@
                 
   <div class="section" id="sorting-dataframes">
 <h1>Sorting dataframes<a class="headerlink" href="#sorting-dataframes" title="Permalink to this headline">¶</a></h1>
-<p>Notes:</p>
-<br>
-<hr class="docutils" />
-<div class="section" id="sorting">
-<h2>Sorting<a class="headerlink" href="#sorting" title="Permalink to this headline">¶</a></h2>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See the accompanied youtube video at <a href="https://www.youtube.com/embed/W88f5DAl9hk?rel=0?start=1461&end=1513" target="_blank">the link here.</a></p>
+</div>
+<p>When we read in our data, it is generally ordered in the same way it is
+stored.</p>
+<p>We can easily sort the rows of a dataframe based on the values within a
+column.</p>
+<p>The verb that we use for that is <code class="docutils literal notranslate"><span class="pre">.sort_values()</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;rating&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -283,16 +285,12 @@
 [77 rows x 7 columns]
 </pre></div>
 </div>
-<p>Notes:</p>
-<p>When we read in our data, it is generally ordered in the same way it is
-stored.</p>
-<p>We can easily sort the rows of a dataframe based on the values within a
-column.</p>
-<p>The verb that we use for that is <code class="docutils literal notranslate"><span class="pre">.sort_values()</span></code>.</p>
 <p>For example, if we wanted to order the cereals based on rating, we could
 do so by using the argument <code class="docutils literal notranslate"><span class="pre">by</span></code> within the <code class="docutils literal notranslate"><span class="pre">.sort_values()</span></code> verb.</p>
 <p>This allows us to see the cereals with lower ratings on the top.</p>
-<hr class="docutils" />
+<p>What if we wanted the cereals with higher ratings at the top?</p>
+<p>Then we would order them in <code class="docutils literal notranslate"><span class="pre">descending</span></code> order by setting the argument
+<code class="docutils literal notranslate"><span class="pre">ascending=False</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sorted_ratings</span> <span class="o">=</span> <span class="n">cereal</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;rating&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">sorted_ratings</span>
 </pre></div>
@@ -313,19 +311,8 @@ do so by using the argument <code class="docutils literal notranslate"><span cla
 [77 rows x 7 columns]
 </pre></div>
 </div>
-<p>Notes:</p>
-<p>What if we wanted the cereals with higher ratings at the top?</p>
-<p>Then we would order them in <code class="docutils literal notranslate"><span class="pre">descending</span></code> order by setting the argument
-<code class="docutils literal notranslate"><span class="pre">ascending=False</span></code>.</p>
 <p>Perfect, now we have the highest rated cereals at the top of the
 dataframe.</p>
-</div>
-</div>
-<hr class="docutils" />
-<div class="section" id="lets-apply-what-we-learned">
-<h1>Let’s apply what we learned!<a class="headerlink" href="#lets-apply-what-we-learned" title="Permalink to this headline">¶</a></h1>
-<p>Notes:</p>
-<br>
 </div>
 
     <script type="text/x-thebe-config">
@@ -353,6 +340,8 @@ dataframe.</p>
         
         <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="module1_20.html" title="previous page">Slicing and selecting using .iloc[]</a>
+    <a class='right-next' id="next-link" href="module1_26.html" title="next page">Summary Statistics</a>
 
         </div>
         

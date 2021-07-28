@@ -1,16 +1,18 @@
----
-type: slides
----
-
 # Sorting dataframes
 
-Notes:
+```{seealso}
 
-<br>
+See the accompanied youtube video at <a href="https://www.youtube.com/embed/W88f5DAl9hk?rel=0?start=1461&end=1513" target="_blank">the link here.</a>
 
----
+```
 
-## Sorting
+When we read in our data, it is generally ordered in the same way it is
+stored.
+
+We can easily sort the rows of a dataframe based on the values within a
+column.
+
+The verb that we use for that is `.sort_values()`.
 
 ``` python
 cereal.sort_values(by='rating')
@@ -33,22 +35,15 @@ cereal.sort_values(by='rating')
 [77 rows x 7 columns]
 ```
 
-Notes:
-
-When we read in our data, it is generally ordered in the same way it is
-stored.
-
-We can easily sort the rows of a dataframe based on the values within a
-column.
-
-The verb that we use for that is `.sort_values()`.
-
 For example, if we wanted to order the cereals based on rating, we could
 do so by using the argument `by` within the `.sort_values()` verb.
 
 This allows us to see the cereals with lower ratings on the top.
 
----
+What if we wanted the cereals with higher ratings at the top?
+
+Then we would order them in `descending` order by setting the argument
+`ascending=False`.
 
 ``` python
 sorted_ratings = cereal.sort_values(by='rating', ascending=False)
@@ -72,20 +67,5 @@ sorted_ratings
 [77 rows x 7 columns]
 ```
 
-Notes:
-
-What if we wanted the cereals with higher ratings at the top?
-
-Then we would order them in `descending` order by setting the argument
-`ascending=False`.
-
 Perfect, now we have the highest rated cereals at the top of the
 dataframe.
-
----
-
-# Let’s apply what we learned\!
-
-Notes:
-
-<br>

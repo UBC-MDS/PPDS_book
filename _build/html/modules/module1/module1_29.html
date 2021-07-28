@@ -54,6 +54,8 @@
     <link rel="shortcut icon" href="../../_static/icon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Quick viz with Altair!" href="module1_31.html" />
+    <link rel="prev" title="Summary Statistics" href="module1_26.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -88,17 +90,17 @@
   Modules
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../module1.html">
    Module 1:  Python &amp; Pandas - An Unexpected Friendship
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="module1_01.html">
      What is a dataframe?
@@ -109,33 +111,54 @@
      What is Pandas?
     </a>
    </li>
-  </ul>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Coding Exercises
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../module1.html">
-   Module 1: Python &amp; Pandas - An Unexpected Friendship
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="module1_01.html">
-     What is a dataframe?
+    <a class="reference internal" href="module1_07.html">
+     Slicing Rows using .loc[]
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="module1_03.html">
-     What is Pandas?
+    <a class="reference internal" href="module1_11.html">
+     Slicing only columns using .loc[]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_13.html">
+     Selecting using .loc[]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_16.html">
+     Obtaining dataframe values
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_18.html">
+     Selecting a Single Column
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_20.html">
+     Slicing and selecting using .iloc[]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_24.html">
+     Sorting dataframes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_26.html">
+     Summary Statistics
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Frequency Tables and Writing CSVs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_31.html">
+     Quick viz with Altair!
     </a>
    </li>
   </ul>
@@ -229,31 +252,19 @@
             </div>
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Frequency Tables and Writing CSVs
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-frequency">
+   What is Frequency?
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-is-frequency">
-     What is Frequency?
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-is-a-frequency-table">
-     What is a Frequency Table?
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#saving-a-dataframe">
-     Saving a dataframe
-    </a>
-   </li>
-  </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lets-apply-what-we-learned">
-   Let’s apply what we learned!
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-a-frequency-table">
+   What is a Frequency Table?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#saving-a-dataframe">
+   Saving a dataframe
   </a>
  </li>
 </ul>
@@ -269,11 +280,16 @@
                 
   <div class="section" id="frequency-tables-and-writing-csvs">
 <h1>Frequency Tables and Writing CSVs<a class="headerlink" href="#frequency-tables-and-writing-csvs" title="Permalink to this headline">¶</a></h1>
-<p>Notes: <br></p>
-<hr class="docutils" />
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See the accompanied youtube video at <a href="https://www.youtube.com/embed/W88f5DAl9hk?rel=0?start=1775&end=1940" target="_blank">the link here.</a></p>
+</div>
 <div class="section" id="what-is-frequency">
 <h2>What is Frequency?<a class="headerlink" href="#what-is-frequency" title="Permalink to this headline">¶</a></h2>
-<p><em><em>Frequency</em></em>: The number of times a value occurs within the data.</p>
+<p>Before we explain what a frequency table is, you must know what
+frequency means first.</p>
+<p><em><em>Frequency</em></em> is simply put, the number of times a value occurs within
+the data. Let’s look at an example using our candybars dataset.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal_mini</span>
 </pre></div>
 </div>
@@ -287,29 +303,29 @@
 6               3 Musketeers      54                  America
 </pre></div>
 </div>
+<p>If we count the number of times the value <code class="docutils literal notranslate"><span class="pre">Both</span></code> appears in the
+<code class="docutils literal notranslate"><span class="pre">available_canada_america</span></code> column, we get 3 times. This is the frequency
+of the value <code class="docutils literal notranslate"><span class="pre">both</span></code>.</p>
 </div>
 <div class="section" id="what-is-a-frequency-table">
 <h2>What is a Frequency Table?<a class="headerlink" href="#what-is-a-frequency-table" title="Permalink to this headline">¶</a></h2>
+<p>A frequency table is a manner of displaying all the possible values of a
+column in our dataframe and the number of occurrences (frequencies) of
+each value.</p>
+<p>For our sample data, a frequency table for the
+<code class="docutils literal notranslate"><span class="pre">available_canada_america</span></code> column would look like this:</p>
 <div class="highlight-out notranslate"><div class="highlight"><pre><span></span>Both       3
 Canada     2
 America    2
 Name: available_canada_america, dtype: int64
 </pre></div>
 </div>
-<p>Notes:</p>
-<p>Before we explain what a frequency table is, you must know what
-frequency means first.</p>
-<p><em><em>Frequency</em></em> is simply put, the number of times a value occurs within
-the data. Let’s look at an example using our candybars dataset.</p>
-<p>If we count the number of times the value <code class="docutils literal notranslate"><span class="pre">Both</span></code> appears in the
-<code class="docutils literal notranslate"><span class="pre">available_canada_america</span></code> column, we get 3 times. This is the frequency
-of the value <code class="docutils literal notranslate"><span class="pre">both</span></code>.</p>
-<p>A frequency table is a manner of displaying all the possible values of a
-column in our dataframe and the number of occurrences (frequencies) of
-each value.</p>
-<p>For our sample data, a frequency table for the
-<code class="docutils literal notranslate"><span class="pre">available_canada_america</span></code> column would look like this:</p>
-<hr class="docutils" />
+<p>If we want to get a frequency table of a categorical column, there are a
+few steps that need to be followed.</p>
+<p>Up until now, we discussed getting a single column from a dataframe
+using double square brackets - <code class="docutils literal notranslate"><span class="pre">df[['column</span> <span class="pre">name']]</span></code>.</p>
+<p>For frequency tables, however, we only use single brackets to obtain the
+column values.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mfr_column</span> <span class="o">=</span> <span class="n">cereal</span><span class="p">[</span><span class="s1">&#39;mfr&#39;</span><span class="p">]</span>
 <span class="n">mfr_column</span>
 </pre></div>
@@ -326,6 +342,11 @@ each value.</p>
 Name: mfr, Length: 77, dtype: object
 </pre></div>
 </div>
+<p>We saved the object in this example here to an object named <code class="docutils literal notranslate"><span class="pre">mfr_column</span></code>
+in the same way that we have done this before.</p>
+<p>Now we can use <code class="docutils literal notranslate"><span class="pre">.value_counts()</span></code> on this <code class="docutils literal notranslate"><span class="pre">mfr_column</span></code> variable to
+reference it, and we can obtain the frequency value for the different
+categories in that variable.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mfr_freq</span> <span class="o">=</span> <span class="n">mfr_column</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 <span class="n">mfr_freq</span>
 </pre></div>
@@ -340,19 +361,9 @@ A     1
 Name: mfr, dtype: int64
 </pre></div>
 </div>
-<p>Notes:</p>
-<p>If we want to get a frequency table of a categorical column, there are a
-few steps that need to be followed.</p>
-<p>Up until now, we discussed getting a single column from a dataframe
-using double square brackets - <code class="docutils literal notranslate"><span class="pre">df[['column</span> <span class="pre">name']]</span></code>.</p>
-<p>For frequency tables, however, we only use single brackets to obtain the
-column values.</p>
-<p>We saved the object in this example here to an object named <code class="docutils literal notranslate"><span class="pre">mfr_column</span></code>
-in the same way that we have done this before.</p>
-<p>Now we can use <code class="docutils literal notranslate"><span class="pre">.value_counts()</span></code> on this <code class="docutils literal notranslate"><span class="pre">mfr_column</span></code> variable to
-reference it, and we can obtain the frequency value for the different
-categories in that variable.</p>
-<hr class="docutils" />
+<p>If we did instead use double square brackets with <code class="docutils literal notranslate"><span class="pre">pd.value_counts()</span></code>,
+we would get an error. So it is important to take care and remember when
+you are using <code class="docutils literal notranslate"><span class="pre">value_counts()</span></code>, you only use one set of square brackets.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mfr_col_wrong</span> <span class="o">=</span> <span class="n">cereal</span><span class="p">[[</span><span class="s1">&#39;mfr&#39;</span><span class="p">]]</span>
 <span class="n">mfr_col_wrong</span>
 </pre></div>
@@ -382,31 +393,19 @@ Detailed traceback:
     return object.__getattribute__(self, name)
 </pre></div>
 </div>
-<p>Notes:</p>
-<p>If we did instead use double square brackets with <code class="docutils literal notranslate"><span class="pre">pd.value_counts()</span></code>,
-we would get an error. So it is important to take care and remember when
-you are using <code class="docutils literal notranslate"><span class="pre">value_counts()</span></code>, you only use one set of square brackets.</p>
 </div>
-<hr class="docutils" />
 <div class="section" id="saving-a-dataframe">
 <h2>Saving a dataframe<a class="headerlink" href="#saving-a-dataframe" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mfr_freq</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;mfr_frequency.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Notes:</p>
 <p>Sometimes it is useful to save a new dataframe to a file like a csv file
 for future use by you or somebody else.</p>
 <p>We can do this using a method called <code class="docutils literal notranslate"><span class="pre">.to_csv()</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mfr_freq</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;mfr_frequency.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
 <p>We put our desired <code class="docutils literal notranslate"><span class="pre">csv</span></code> file name in quotations within the parentheses
 and follow it with the argument <code class="docutils literal notranslate"><span class="pre">index=False</span></code> so we don’t export our
 index column which is just a column of numbers.</p>
 </div>
-</div>
-<hr class="docutils" />
-<div class="section" id="lets-apply-what-we-learned">
-<h1>Let’s apply what we learned!<a class="headerlink" href="#lets-apply-what-we-learned" title="Permalink to this headline">¶</a></h1>
-<p>Notes:</p>
-<br>
 </div>
 
     <script type="text/x-thebe-config">
@@ -434,6 +433,8 @@ index column which is just a column of numbers.</p>
         
         <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="module1_26.html" title="previous page">Summary Statistics</a>
+    <a class='right-next' id="next-link" href="module1_31.html" title="next page">Quick viz with Altair!</a>
 
         </div>
         

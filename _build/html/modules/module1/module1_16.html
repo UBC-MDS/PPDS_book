@@ -54,6 +54,8 @@
     <link rel="shortcut icon" href="../../_static/icon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Selecting a Single Column" href="module1_18.html" />
+    <link rel="prev" title="Selecting using .loc[]" href="module1_13.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -88,17 +90,17 @@
   Modules
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../module1.html">
    Module 1:  Python &amp; Pandas - An Unexpected Friendship
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="module1_01.html">
      What is a dataframe?
@@ -109,33 +111,54 @@
      What is Pandas?
     </a>
    </li>
-  </ul>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Coding Exercises
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../module1.html">
-   Module 1: Python &amp; Pandas - An Unexpected Friendship
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="module1_01.html">
-     What is a dataframe?
+    <a class="reference internal" href="module1_07.html">
+     Slicing Rows using .loc[]
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="module1_03.html">
-     What is Pandas?
+    <a class="reference internal" href="module1_11.html">
+     Slicing only columns using .loc[]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_13.html">
+     Selecting using .loc[]
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Obtaining dataframe values
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_18.html">
+     Selecting a Single Column
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_20.html">
+     Slicing and selecting using .iloc[]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_24.html">
+     Sorting dataframes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_26.html">
+     Summary Statistics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_29.html">
+     Frequency Tables and Writing CSVs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_31.html">
+     Quick viz with Altair!
     </a>
    </li>
   </ul>
@@ -224,24 +247,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Obtaining dataframe values
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lets-apply-what-we-learned">
-   Let’s apply what we learned!
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -252,8 +257,13 @@
                 
   <div class="section" id="obtaining-dataframe-values">
 <h1>Obtaining dataframe values<a class="headerlink" href="#obtaining-dataframe-values" title="Permalink to this headline">¶</a></h1>
-<p>Notes: <br></p>
-<hr class="docutils" />
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See the accompanied youtube video at <a href="https://www.youtube.com/embed/W88f5DAl9hk?rel=0?start=830&end=907" target="_blank">the link here.</a></p>
+</div>
+<p>At this point of the module, we now know how to get a subset of an
+existing dataframe, but what if we just want to get a single value from
+it?</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="mi">63</span><span class="p">]]</span>
 </pre></div>
 </div>
@@ -261,24 +271,24 @@
 63  Shredded Wheat   N  Cold        80        2    0       0    3.0   16.0       0      95         0      1    0.83   1.0  68.235885
 </pre></div>
 </div>
+<p>For example, what if we wanted to save the calorie content of <code class="docutils literal notranslate"><span class="pre">Shredded</span> <span class="pre">Wheat</span></code> by extracting it from the dataframe manually instead of typing
+the number in Python?</p>
+<p>To do this we use again our <code class="docutils literal notranslate"><span class="pre">.loc</span></code> notation and we specify the row we
+are targeting which is 63, followed by the column, here <code class="docutils literal notranslate"><span class="pre">calories</span></code>. This
+goes in the square brackets.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">63</span><span class="p">,</span> <span class="s1">&#39;calories&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 <div class="highlight-out notranslate"><div class="highlight"><pre><span></span>80
 </pre></div>
 </div>
-<p>Notes:</p>
-<p>At this point of the module, we now know how to get a subset of an
-existing dataframe, but what if we just want to get a single value from
-it?</p>
-<p>For example, what if we wanted to save the calorie content of <code class="docutils literal notranslate"><span class="pre">Shredded</span> <span class="pre">Wheat</span></code> by extracting it from the dataframe manually instead of typing
-the number in Python?</p>
-<p>To do this we use again our <code class="docutils literal notranslate"><span class="pre">.loc</span></code> notation and we specify the row we
-are targeting which is 63, followed by the column, here <code class="docutils literal notranslate"><span class="pre">calories</span></code>. This
-goes in the square brackets.</p>
 <p>When we do this, it displays the the value contained in the cell, which
 in this case, is 80.</p>
-<hr class="docutils" />
+<p>What about if we want the rating of <code class="docutils literal notranslate"><span class="pre">Smacks</span></code> which is located at index
+66?</p>
+<p>Again we use <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> notation, and we specify the row and the column
+location separated by a comma.</p>
+<p>So here we write <code class="docutils literal notranslate"><span class="pre">cereal.loc</span></code> and the inside the brackets we write <code class="docutils literal notranslate"><span class="pre">[66,</span> <span class="pre">'rating']</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="mi">66</span><span class="p">]]</span>
 </pre></div>
 </div>
@@ -292,17 +302,6 @@ in this case, is 80.</p>
 <div class="highlight-out notranslate"><div class="highlight"><pre><span></span>31.230054
 </pre></div>
 </div>
-<p>Notes:</p>
-<p>What about if we want the rating of <code class="docutils literal notranslate"><span class="pre">Smacks</span></code> which is located at index
-66?</p>
-<p>Again we use <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> notation, and we specify the row and the column
-location separated by a comma.</p>
-<p>So here we write <code class="docutils literal notranslate"><span class="pre">cereal.loc</span></code> and the inside the brackets we write <code class="docutils literal notranslate"><span class="pre">[66,</span> <span class="pre">'rating']</span></code>.</p>
-</div>
-<hr class="docutils" />
-<div class="section" id="lets-apply-what-we-learned">
-<h1>Let’s apply what we learned!<a class="headerlink" href="#lets-apply-what-we-learned" title="Permalink to this headline">¶</a></h1>
-<p>Notes: <br></p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -330,6 +329,8 @@ location separated by a comma.</p>
         
         <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="module1_13.html" title="previous page">Selecting using .loc[]</a>
+    <a class='right-next' id="next-link" href="module1_18.html" title="next page">Selecting a Single Column</a>
 
         </div>
         

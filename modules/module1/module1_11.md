@@ -1,14 +1,16 @@
----
-type: slides
----
-
 # Slicing only columns using .loc\[\]
 
-Notes:
+```{seealso}
 
-<br>
+See the accompanied youtube video at <a href="https://www.youtube.com/embed/W88f5DAl9hk?rel=0?start=651&end=758" target="_blank">the link here.</a>
 
----
+```
+
+What happens now if we wanted all the rows of the dataframe but only the
+columns `calories` to `fiber`?
+
+We can use `:` in the row postion of the `.loc[]` call to indicate we
+want all the rows. So here we write `cereal.loc[:, 'calories':'fiber']`.
 
 ``` python
 cereal.loc[:, 'calories':'fiber']
@@ -31,79 +33,70 @@ cereal.loc[:, 'calories':'fiber']
 [77 rows x 5 columns]
 ```
 
-Notes:
-
-What happens now if we wanted all the rows of the dataframe but only the
-columns `calories` to `fiber`?
-
-We can use `:` in the row postion of the `.loc[]` call to indicate we
-want all the rows. So here we write `cereal.loc[:, 'calories':'fiber']`.
-
----
-
 ## So Far
 
-  - `.loc[]` is used to slice columns and rows by **label** and within
+Let’s talk about what we have covered so far.
+
+- `.loc[]` is used to slice columns and rows by **label** and within
     an interval.
 
-  - We always specify **row** indexing first, then **columns**.
+- We always specify **row** indexing first, then **columns**.
 
-<!-- end list -->
 
 ``` python
 cereal.loc['row name start':'row name end', 'column name start':'column name end']
 ```
 
-  - If we aren’t slicing any columns, but we are slicing rows we can
-    shorten that to
-
-<!-- end list -->
+- If we aren’t slicing any columns, but we are slicing rows we can
+    shorten that to:
 
 ``` python
 df.loc[ 'row name start':'row name end']
 ```
 
-  - However, the reverse is not true. If we want all the rows with only
+- However, the reverse is not true. If we want all the rows with only
     specific columns, we specify we want all the row first with just a
     colon `:` followed by interval of the columns:
-
-<!-- end list -->
 
 ``` python
 df.loc[:, 'column name start':'column name end']
 ```
 
-  - We can read `:` as **“to”**.
+- We can read `:` as **“to”**.
 
-  - If the indices are labeled with numbers, we do not need “quotations”
+- If the indices are labeled with numbers, we do not need “quotations”
     when calling them. This is only when the labels are using letters.
 
-Notes:
+## Let’s apply what we learned!
 
-Let’s talk about what we have covered so far.
+Using my dataframe object named `fruit_salad`, let's answer some slicing questions.
 
-  - `.loc[]` is used to slice columns and rows by **label** and within
-    an interval.
+```out
+           name    colour    location    seed   shape  sweetness   water-content  weight
+0         apple       red     canada    True   round     True          84         100
+1        banana    yellow     mexico   False    long     True          75         120
+2    cantaloupe    orange      spain    True   round     True          90        1360
+3  dragon-fruit   magenta      china    True   round    False          96         600
+4    elderberry    purple    austria   False   round     True          80           5
+5           fig    purple     turkey   False    oval    False          78          40
+6         guava     green     mexico    True    oval     True          83         450
+7   huckleberry      blue     canada    True   round     True          73           5
+8          kiwi     brown      china    True   round     True          80          76
+9         lemon    yellow     mexico   False    oval    False          83          65
+```
 
-  - We always specify **row** indexing first, then **columns**.
+1\. If you wanted all the rows and only columns `seeds`, `shape`, `sweetness` and `water-content,` what would your code look like using index labels?                     
+a) `fruit_salad.loc[:, "seed":"weight"]`            
+b) `fruit_salad[:, "seed":"water-content"]`            
+c) `fruit_salad[0:9, "seed":"water-content"]`             
+d) `fruit_salad.loc[:, "seed":"water-content"]`                        
 
-  - If we are not slicing any columns, but we are slicing rows we only
-    need to specify the row labels.
 
-  - However, the reverse is not true. If we want all the rows with only
-    specific columns, we specify rows first and therefore we would need
-    to make it clear with a colon first that we are slicing all the rows
-    followed by the column labels.
+```{admonition} Solutions!
+:class: dropdown
 
-  - We can read `:` as **“to”**.
+1. d) `fruit_salad.loc[:, "seed":"water-content"]`           
 
-  - And finally, if the row index is labeled with numbers, we do not
-    need “quotations” when slicing.
+That's correct! Good job! This has both .loc[] and includes the columns we wish to slice here.
 
----
-
-# Let’s apply what we learned\!
-
-Notes:
-
-<br>
+```

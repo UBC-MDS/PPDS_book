@@ -56,8 +56,7 @@ These files have names ending in .csv, and can be opened open and saved
 from common spreadsheetlike programs like Microsoft Excel and Google
 Sheets.
 
-For example, we will be importing the .csv file you saw in the first
-slide named “candybars.csv”.
+For example, we will be importing the .csv file you saw above named “candybars.csv”.
 
 If we were to open this data in a plain text editor, we would be able to
 see each row on its own line, and each entry in the table separated by a
@@ -80,7 +79,7 @@ c) `,`
 ```{admonition} Solutions!
 :class: dropdown
 
-1.  Excel Sheets
-2. `,`
+1.  a) Excel Sheets
+2. c) `,`
 
 ```

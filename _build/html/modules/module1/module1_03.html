@@ -54,6 +54,7 @@
     <link rel="shortcut icon" href="../../_static/icon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Slicing Rows using .loc[]" href="module1_07.html" />
     <link rel="prev" title="What is a dataframe?" href="module1_01.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -110,33 +111,54 @@
      What is Pandas?
     </a>
    </li>
-  </ul>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Coding Exercises
- </span>
-</p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="../module1.html">
-   Module 1: Python &amp; Pandas - An Unexpected Friendship
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="module1_01.html">
-     What is a dataframe?
+    <a class="reference internal" href="module1_07.html">
+     Slicing Rows using .loc[]
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     What is Pandas?
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_11.html">
+     Slicing only columns using .loc[]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_13.html">
+     Selecting using .loc[]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_16.html">
+     Obtaining dataframe values
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_18.html">
+     Selecting a Single Column
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_20.html">
+     Slicing and selecting using .iloc[]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_24.html">
+     Sorting dataframes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_26.html">
+     Summary Statistics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_29.html">
+     Frequency Tables and Writing CSVs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_31.html">
+     Quick viz with Altair!
     </a>
    </li>
   </ul>
@@ -262,6 +284,11 @@
    Comments
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lets-apply-what-we-learned">
+   Let’s apply what we learned!
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -351,7 +378,7 @@ we wanted to see the dimensions of the whole dataframe we could use
 </div>
 <p>Breaking up the code, we interpret this as:</p>
 <p><em>“From our dataframe that we saved as <code class="docutils literal notranslate"><span class="pre">candy</span></code>, tell me the <code class="docutils literal notranslate"><span class="pre">columns</span></code>
-and<code class="docutils literal notranslate"><span class="pre">shape</span></code>”</em></p>
+and <code class="docutils literal notranslate"><span class="pre">shape</span></code>”</em></p>
 <p>What if we don’t want to output the whole table when displaying it as
 dataframe?</p>
 <p>We can specify how many rows of the dataset to show with <code class="docutils literal notranslate"><span class="pre">.head()</span></code>
@@ -428,19 +455,22 @@ executed by Python.</p>
 to do and what our intentions are.</p>
 <p>It’s good practice to use them to explain our code so if we or someone
 else wants to read it at a later date, it’s easier to understand.</p>
-<p>1. What are dataframes comparable to?<br />
-a) Text Documents<br />
-b) Excel Sheets<br />
-c) Picture Frames</p>
-<p>2. If a csv file was opened in a plain text editor, what character would be separating the values of each column?<br />
-a) <code class="docutils literal notranslate"><span class="pre">:</span></code><br />
-b) <code class="docutils literal notranslate"><span class="pre">;</span></code><br />
-c) <code class="docutils literal notranslate"><span class="pre">,</span></code></p>
+</div>
+<div class="section" id="lets-apply-what-we-learned">
+<h2>Let’s apply what we learned!<a class="headerlink" href="#lets-apply-what-we-learned" title="Permalink to this headline">¶</a></h2>
+<p>1. What is Pandas?<br />
+a) A useful tool for data manipulation in Python<br />
+b) A programming language<br />
+c) A datatype</p>
+<p>2. Which of the following statements is true?<br />
+a) Attribute and methods can be thought of as nouns and functions as verbs<br />
+b) Attribute can be thought of as nouns and functions and methods as verbs<br />
+c)Functions and methods can be thought of as nouns and attributes as verbs</p>
 <div class="dropdown admonition">
 <p class="admonition-title">Solutions!</p>
 <ol class="simple">
-<li><p>Excel Sheets</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">,</span></code></p></li>
+<li><p>a) A useful tool for data manipulation in Python</p></li>
+<li><p>b) Attribute can be thought of as nouns and functions and methods as verbs</p></li>
 </ol>
 </div>
 </div>
@@ -472,6 +502,7 @@ c) <code class="docutils literal notranslate"><span class="pre">,</span></code><
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="module1_01.html" title="previous page">What is a dataframe?</a>
+    <a class='right-next' id="next-link" href="module1_07.html" title="next page">Slicing Rows using .loc[]</a>
 
         </div>
         

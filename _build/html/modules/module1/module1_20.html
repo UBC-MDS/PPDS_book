@@ -54,6 +54,8 @@
     <link rel="shortcut icon" href="../../_static/icon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Sorting dataframes" href="module1_24.html" />
+    <link rel="prev" title="Selecting a Single Column" href="module1_18.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -88,17 +90,17 @@
   Modules
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../module1.html">
    Module 1:  Python &amp; Pandas - An Unexpected Friendship
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="module1_01.html">
      What is a dataframe?
@@ -109,33 +111,54 @@
      What is Pandas?
     </a>
    </li>
-  </ul>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Coding Exercises
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../module1.html">
-   Module 1: Python &amp; Pandas - An Unexpected Friendship
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="module1_01.html">
-     What is a dataframe?
+    <a class="reference internal" href="module1_07.html">
+     Slicing Rows using .loc[]
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="module1_03.html">
-     What is Pandas?
+    <a class="reference internal" href="module1_11.html">
+     Slicing only columns using .loc[]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_13.html">
+     Selecting using .loc[]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_16.html">
+     Obtaining dataframe values
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_18.html">
+     Selecting a Single Column
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Slicing and selecting using .iloc[]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_24.html">
+     Sorting dataframes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_26.html">
+     Summary Statistics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_29.html">
+     Frequency Tables and Writing CSVs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_31.html">
+     Quick viz with Altair!
     </a>
    </li>
   </ul>
@@ -229,38 +252,19 @@
             </div>
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Slicing and selecting using .iloc[]
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#slicing-dataframe">
+   Slicing Dataframe
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#slicing-dataframe">
-     Slicing Dataframe
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#rows">
-       Rows
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#columns">
-       Columns
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#selecting-with-iloc">
-     Selecting with .iloc[]
-    </a>
-   </li>
-  </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#nice-work-lets-apply-what-we-learned">
-   Nice work! Let’s apply what we learned!
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#selecting-with-iloc">
+   Selecting with .iloc[]
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lets-apply-what-we-learned">
+   Let’s apply what we learned!
   </a>
  </li>
 </ul>
@@ -276,10 +280,20 @@
                 
   <div class="section" id="slicing-and-selecting-using-iloc">
 <h1>Slicing and selecting using .iloc[]<a class="headerlink" href="#slicing-and-selecting-using-iloc" title="Permalink to this headline">¶</a></h1>
-<p>Notes: <br></p>
-<hr class="docutils" />
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See the accompanied youtube video at <a href="https://www.youtube.com/embed/W88f5DAl9hk?rel=0?start=1011&end=1456" target="_blank">the link here.</a></p>
+</div>
+<p>Up until point, we have been manipulating our dataframe with column and
+row <em><strong>labels</strong></em> using <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code>.</p>
+<p>Slicing can also be done by the location position of each row with
+<code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code> is very similar to <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code>, however, the “i” in <code class="docutils literal notranslate"><span class="pre">iloc</span></code> refers
+to the index <em><strong>integer</strong></em> position.</p>
 <div class="section" id="slicing-dataframe">
 <h2>Slicing Dataframe<a class="headerlink" href="#slicing-dataframe" title="Permalink to this headline">¶</a></h2>
+<p>We are going to return to our cereal dataset and take a look at the
+first 10 rows.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;cereal.csv&#39;</span><span class="p">)</span>
 <span class="n">cereal</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
@@ -299,15 +313,6 @@
 [10 rows x 16 columns]
 </pre></div>
 </div>
-<p>Notes:</p>
-<p>Up until point, we have been manipulating our dataframe with column and
-row <em><strong>labels</strong></em> using <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code>.</p>
-<p>Slicing can also be done by the location position of each row with
-<code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code>.</p>
-<p><code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code> is very similar to <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code>, however, the “i” in <code class="docutils literal notranslate"><span class="pre">iloc</span></code> refers
-to the index <em><strong>integer</strong></em> position.</p>
-<p>We are going to return to our cereal dataset and take a look at the
-first 10 rows.</p>
 <p>Let’s say we want the rows from <code class="docutils literal notranslate"><span class="pre">All-Bran</span></code> to <code class="docutils literal notranslate"><span class="pre">Apple</span> <span class="pre">Cinnamon</span> <span class="pre">Cheerios</span></code>,
 but we want to slice based on their position instead of their label.</p>
 <p>Using Python’s counting method of starting at zero, we conclude that
@@ -315,7 +320,8 @@ but we want to slice based on their position instead of their label.</p>
 <p>We get <code class="docutils literal notranslate"><span class="pre">Apple</span> <span class="pre">Cinnamon</span> <span class="pre">Cheerios</span></code> position to be 5 in the same way.</p>
 <p>We are lucky with this dataframe because our index labels match the
 position of the rows, and this makes things a little bit simpler.</p>
-<hr class="docutils" />
+<p>We can use the same coding structure we learned with <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> but this
+time using row positions instead of labels with <code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -339,12 +345,13 @@ position of the rows, and this makes things a little bit simpler.</p>
 [3 rows x 16 columns]
 </pre></div>
 </div>
-<p>Notes:</p>
-<p>We can use the same coding structure we learned with <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> but this
-time using row positions instead of labels with <code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code>.</p>
 <p>But wait! Something is missing here!</p>
 <p>Why doesn’t <code class="docutils literal notranslate"><span class="pre">Apple</span> <span class="pre">Cinnamon</span> <span class="pre">Cheerios</span></code> appear in the dataframe?</p>
-<hr class="docutils" />
+<p>The reason for this is that when we use slicing with indices, it will
+take all the indices including the lower bound but <em>EXCLUDING</em> the upper
+bound.</p>
+<p>If we want to include <code class="docutils literal notranslate"><span class="pre">Apple</span> <span class="pre">Cinnamon</span> <span class="pre">Cheerios</span></code> we would have to go 1
+index position further.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -357,16 +364,9 @@ time using row positions instead of labels with <code class="docutils literal no
 [4 rows x 16 columns]
 </pre></div>
 </div>
-<p>Notes:</p>
-<p>The reason for this is that when we use slicing with indices, it will
-take all the indices including the lower bound but <em>EXCLUDING</em> the upper
-bound.</p>
-<p>If we want to include <code class="docutils literal notranslate"><span class="pre">Apple</span> <span class="pre">Cinnamon</span> <span class="pre">Cheerios</span></code> we would have to go 1
-index position further.</p>
 <p>If we think about this a bit it actually make some sense. Think about
 the calculation <code class="docutils literal notranslate"><span class="pre">6</span> <span class="pre">-</span> <span class="pre">2</span> <span class="pre">=</span> <span class="pre">4</span></code> . We get 4 items remaining which is the
 amount of cereals we want in our in new dataframe.</p>
-<hr class="docutils" />
 <div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                        name mfr  type  calories  protein  fat  sodium  ...  sugars  potass  vitamins  shelf  weight  cups     rating
 0                  100% Bran   N  Cold        70        4    1     130  ...       6     280        25      3     1.0  0.33  68.402973
 1          100% Natural Bran   Q  Cold       120        3    5      15  ...       8     135         0      3     1.0  1.00  33.983679
@@ -377,6 +377,17 @@ amount of cereals we want in our in new dataframe.</p>
 [5 rows x 16 columns]
 </pre></div>
 </div>
+<p>The same concept can be applied to the columns of the dataframe.</p>
+<p>Let’s say we want all the rows but we only want the columns starting at
+<code class="docutils literal notranslate"><span class="pre">name</span></code> and ending (and including) at column <code class="docutils literal notranslate"><span class="pre">fat</span></code>.<br />
+Using the logic we learned in the last section, we would use the
+following code.</p>
+<p>We would need to specify all rows using <code class="docutils literal notranslate"><span class="pre">:</span></code> as we did when we used
+<code class="docutils literal notranslate"><span class="pre">.loc[]</span></code>.</p>
+<p>The column <code class="docutils literal notranslate"><span class="pre">name</span></code> is at index position 0 (we do not include the index
+label as a column) and <code class="docutils literal notranslate"><span class="pre">fat</span></code> is at index position 5.</p>
+<p>Since we want to include the 5th column we need to use the 6th position
+to make sure we get all the columns <em>BEFORE</em> the upper bound.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -396,42 +407,6 @@ amount of cereals we want in our in new dataframe.</p>
 [77 rows x 6 columns]
 </pre></div>
 </div>
-<p>Notes:</p>
-<p>The same concept can be applied to the columns of the dataframe.</p>
-<p>Let’s say we want all the rows but we only want the columns starting at
-<code class="docutils literal notranslate"><span class="pre">name</span></code> and ending (and including) at column <code class="docutils literal notranslate"><span class="pre">fat</span></code>.<br />
-Using the logic we learned in the last set of slides, we would use the
-following code.</p>
-<p>We would need to specify all rows using <code class="docutils literal notranslate"><span class="pre">:</span></code> as we did when we used
-<code class="docutils literal notranslate"><span class="pre">.loc[]</span></code>.</p>
-<p>The column <code class="docutils literal notranslate"><span class="pre">name</span></code> is at index position 0 (we do not include the index
-label as a column) and <code class="docutils literal notranslate"><span class="pre">fat</span></code> is at index position 5.</p>
-<p>Since we want to include the 5th column we need to use the 6th position
-to make sure we get all the columns <em>BEFORE</em> the upper bound.</p>
-<hr class="docutils" />
-<p>Let’s say we want the rows <code class="docutils literal notranslate"><span class="pre">All-Bran</span></code> to <code class="docutils literal notranslate"><span class="pre">Apple</span> <span class="pre">Cinnamon</span> <span class="pre">Cheerios</span></code> and
-<code class="docutils literal notranslate"><span class="pre">name</span></code> to <code class="docutils literal notranslate"><span class="pre">fat</span></code>.</p>
-<div class="section" id="rows">
-<h3>Rows<a class="headerlink" href="#rows" title="Permalink to this headline">¶</a></h3>
-<p><strong>Lower Bound</strong>: <code class="docutils literal notranslate"><span class="pre">All-Bran</span></code> located at position 2.<br />
-<strong>Upper Bound</strong>:<code class="docutils literal notranslate"><span class="pre">Apple</span> <span class="pre">Cinnamon</span> <span class="pre">Cheerios</span></code> is located at position 5.</p>
-</div>
-<div class="section" id="columns">
-<h3>Columns<a class="headerlink" href="#columns" title="Permalink to this headline">¶</a></h3>
-<p><strong>Lower Bound</strong>: <code class="docutils literal notranslate"><span class="pre">name</span></code> is located at position 0.<br />
-<strong>Upper Bound</strong>:<code class="docutils literal notranslate"><span class="pre">fat</span></code> is located at position 5.</p>
-<p>So the code we have to use to do this is the following:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span>
-</pre></div>
-</div>
-<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                        name mfr  type  calories  protein  fat
-2                   All-Bran   K  Cold        70        4    1
-3  All-Bran with Extra Fiber   K  Cold        50        4    0
-4             Almond Delight   R  Cold       110        2    2
-5    Apple Cinnamon Cheerios   G  Cold       110        2    2
-</pre></div>
-</div>
-<p>Notes:</p>
 <p>Let’s say we want the rows <code class="docutils literal notranslate"><span class="pre">All-Bran</span></code> to <code class="docutils literal notranslate"><span class="pre">Apple</span> <span class="pre">Cinnamon</span> <span class="pre">Cheerios</span></code> and
 <code class="docutils literal notranslate"><span class="pre">name</span></code> to <code class="docutils literal notranslate"><span class="pre">fat</span></code>.</p>
 <p>For rows, the lower bound <code class="docutils literal notranslate"><span class="pre">All-Bran</span></code> is located at position 2 and the
@@ -443,8 +418,20 @@ columns.</p>
 <p>Both of our upper bound have been compensated with an added 1 to make
 sure they are included in the new dataframe.</p>
 <p>So the code we have to use to do this is the following:</p>
-<p><code class="docutils literal notranslate"><span class="pre">cereal.iloc[2:6,</span> <span class="pre">0:6]</span></code></p>
-<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                        name mfr  type  calories  protein  fat
+2                   All-Bran   K  Cold        70        4    1
+3  All-Bran with Extra Fiber   K  Cold        50        4    0
+4             Almond Delight   R  Cold       110        2    2
+5    Apple Cinnamon Cheerios   G  Cold       110        2    2
+</pre></div>
+</div>
+<p>There are multiple different way of writing code when you are selecting
+items from the beginning or end of your data.</p>
+<p>Perhaps you only want the first 3 rows of your data.</p>
+<p>We can use <code class="docutils literal notranslate"><span class="pre">.head(3)</span></code> or we can use <code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -467,6 +454,8 @@ sure they are included in the new dataframe.</p>
 [3 rows x 16 columns]
 </pre></div>
 </div>
+<p>Since we are indicating the beginning of the dataframe, we can omit the
+upper bound <code class="docutils literal notranslate"><span class="pre">0</span></code> just like we did when we learned slicing with <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -478,14 +467,10 @@ sure they are included in the new dataframe.</p>
 [3 rows x 16 columns]
 </pre></div>
 </div>
-<p>Notes:</p>
-<p>There are multiple different way of writing code when you are selecting
-items from the beginning or end of your data.</p>
-<p>Perhaps you only want the first 3 rows of your data.</p>
-<p>We can use <code class="docutils literal notranslate"><span class="pre">.head(3)</span></code> or we can use <code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code>.</p>
-<p>Since we are indicating the beginning of the dataframe, we can omit the
-upper bound <code class="docutils literal notranslate"><span class="pre">0</span></code> just like we did when we learned slicing with <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code>.</p>
-<hr class="docutils" />
+<p>The same logic can be applied for end of a dataframe. This time we want
+the last 3 rows.</p>
+<p>Since this dataframe has 76 rows we could use our lower bound as 74 and
+upper bound as 77 (76 +1).</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">74</span><span class="p">:</span><span class="mi">77</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -497,6 +482,13 @@ upper bound <code class="docutils literal notranslate"><span class="pre">0</span
 [3 rows x 16 columns]
 </pre></div>
 </div>
+<p>A better and easier way to write this, where you don’t even need to know
+the number of rows in the dataframe would be to specify you are counting
+your rows from the bottom with a negative in front of the number of rows
+you want.</p>
+<p>This example takes the last 3 rows of the <strong>bottom</strong> of the dataframe.</p>
+<p>Since we are collecting data to the end of the dataframe, we do not need
+to include the ending row index number.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:]</span>
 </pre></div>
 </div>
@@ -508,23 +500,12 @@ upper bound <code class="docutils literal notranslate"><span class="pre">0</span
 [3 rows x 16 columns]
 </pre></div>
 </div>
-<p>Notes:</p>
-<p>The same logic can be applied for end of a dataframe. This time we want
-the last 3 rows.</p>
-<p>Since this dataframe has 76 rows we could use our lower bound as 74 and
-upper bound as 77 (76 +1).</p>
-<p>A better and easier way to write this, where you don’t even need to know
-the number of rows in the dataframe would be to specify you are counting
-your rows from the bottom with a negative in front of the number of rows
-you want.</p>
-<p>This example takes the first 3 rows of the <strong>bottom</strong> of the dataframe.</p>
-<p>Since we are collecting data to the end of the dataframe, we do not need
-to include the ending row index number.</p>
 </div>
-</div>
-<hr class="docutils" />
 <div class="section" id="selecting-with-iloc">
 <h2>Selecting with .iloc[]<a class="headerlink" href="#selecting-with-iloc" title="Permalink to this headline">¶</a></h2>
+<p>Selecting using <code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code> is done identically to <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code>, however, the
+items within each set of square brackets <strong>MUST</strong> be integers, and not
+in quotation marks.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -543,67 +524,9 @@ to include the ending row index number.</p>
 [10 rows x 16 columns]
 </pre></div>
 </div>
-<div>
-<table id="**Rows**" style="width:50%; float:left">
-<tr>
-<td>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="head"><p><strong>Row</strong></p></th>
-<th class="head"><p><strong>Row Position</strong></p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Almond</span> <span class="pre">Delight</span></code></p></td>
-<td><p>Position 4</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Basic</span> <span class="pre">4</span></code></p></td>
-<td><p>Position 7</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Apple</span> <span class="pre">Jacks</span></code></p></td>
-<td><p>Position 6</p></td>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
-</table>
-<table id="**Columns**" style="width:50%; float:left">
-<tr>
-<td>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="head"><p><strong>Columns</strong></p></th>
-<th class="head"><p><strong>Column Position</strong></p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">name</span></code></p></td>
-<td><p>Position 0</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">calories</span></code></p></td>
-<td><p>Position 3</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">fat</span></code></p></td>
-<td><p>Position 5</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">type</span></code></p></td>
-<td><p>Position 2</p></td>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
-</table>
-</div>
-<p>Notes:</p>
-<p>Selecting using <code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code> is done identically to <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code>, however, the
-items within each set of square brackets <strong>MUST</strong> be integers, and not
-in quotation marks.</p>
 <p>Let’s say we want the rows <code class="docutils literal notranslate"><span class="pre">Almond</span> <span class="pre">Delight</span></code>, <code class="docutils literal notranslate"><span class="pre">Basic</span> <span class="pre">4</span></code> and <code class="docutils literal notranslate"><span class="pre">Apple</span> <span class="pre">Jacks</span></code>
 with the columns <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">calories</span></code>, <code class="docutils literal notranslate"><span class="pre">fat</span></code> and <code class="docutils literal notranslate"><span class="pre">type</span></code> and <em>in that
 specific order</em>.</p>
-<hr class="docutils" />
 <table id="**Rows**" style="width:50%; float:left">
 <tr>
 <td>
@@ -655,7 +578,11 @@ specific order</em>.</p>
 </td>
 </tr>
 </table>
-<p><br> <br> <br> <br> <br> <br> <br> <br> <br></p>
+<p><code class="docutils literal notranslate"><span class="pre">Almond</span> <span class="pre">Delight</span></code> takes row position 4, <code class="docutils literal notranslate"><span class="pre">Basic</span> <span class="pre">4</span></code> takes row position 7
+and <code class="docutils literal notranslate"><span class="pre">Apple</span> <span class="pre">Jacks</span></code> is located at position 6. The desired columns <code class="docutils literal notranslate"><span class="pre">name</span></code>,
+<code class="docutils literal notranslate"><span class="pre">calories</span></code>, <code class="docutils literal notranslate"><span class="pre">fat</span></code>, and <code class="docutils literal notranslate"><span class="pre">type</span></code> take column index positions 0, 5, 3, and 2
+respectively.</p>
+<p>Now let’s put those positions into square backing within <code class="docutils literal notranslate"><span class="pre">df.iloc[]</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
 </pre></div>
 </div>
@@ -665,19 +592,41 @@ specific order</em>.</p>
 6     Apple Jacks       110    0  Cold
 </pre></div>
 </div>
-<p>Notes:</p>
-<p><code class="docutils literal notranslate"><span class="pre">Almond</span> <span class="pre">Delight</span></code> takes row position 4, <code class="docutils literal notranslate"><span class="pre">Basic</span> <span class="pre">4</span></code> takes row position 7
-and <code class="docutils literal notranslate"><span class="pre">Apple</span> <span class="pre">Jacks</span></code> is located at position 6. The desired columns <code class="docutils literal notranslate"><span class="pre">name</span></code>,
-<code class="docutils literal notranslate"><span class="pre">calories</span></code>, <code class="docutils literal notranslate"><span class="pre">fat</span></code>, and <code class="docutils literal notranslate"><span class="pre">type</span></code> take column index positions 0,5,3, and 2
-respectively.</p>
-<p>Now let’s put those position into square backing within <code class="docutils literal notranslate"><span class="pre">df.iloc[]</span></code>.</p>
+</div>
+<div class="section" id="lets-apply-what-we-learned">
+<h2>Let’s apply what we learned!<a class="headerlink" href="#lets-apply-what-we-learned" title="Permalink to this headline">¶</a></h2>
+<p>Here is our <code class="docutils literal notranslate"><span class="pre">fruit_salad</span></code> data again:</p>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>           name    colour    location    seed   shape  sweetness   water-content  weight
+0         apple       red     canada    True   round     True          84         100
+1        banana    yellow     mexico   False    long     True          75         120
+2    cantaloupe    orange      spain    True   round     True          90        1360
+3  dragon-fruit   magenta      china    True   round    False          96         600
+4    elderberry    purple    austria   False   round     True          80           5
+5           fig    purple     turkey   False    oval    False          78          40
+6         guava     green     mexico    True    oval     True          83         450
+7   huckleberry      blue     canada    True   round     True          73           5
+8          kiwi     brown      china    True   round     True          80          76
+9         lemon    yellow     mexico   False    oval    False          83          65
+</pre></div>
+</div>
+<p>1. If I wanted the rows <code class="docutils literal notranslate"><span class="pre">elderberry</span></code>  to <code class="docutils literal notranslate"><span class="pre">kiwi</span></code> and only columns <code class="docutils literal notranslate"><span class="pre">seeds</span></code>, <code class="docutils literal notranslate"><span class="pre">shape</span></code>, <code class="docutils literal notranslate"><span class="pre">sweetness</span></code> and  <code class="docutils literal notranslate"><span class="pre">water-content</span></code>, what would my code look like if I was using index positions?<br />
+a) <code class="docutils literal notranslate"><span class="pre">fruit_salad.iloc[4:9,</span> <span class="pre">3:]</span></code><br />
+b) <code class="docutils literal notranslate"><span class="pre">fruit_salad.iloc[4:8,</span> <span class="pre">3:7]</span></code><br />
+c) <code class="docutils literal notranslate"><span class="pre">fruit_salad.iloc[4:9,</span> <span class="pre">3:7]</span></code><br />
+d) <code class="docutils literal notranslate"><span class="pre">fruit_salad.iloc[5:10,</span> <span class="pre">4:8]</span></code></p>
+<p>2. If I wanted the rows <code class="docutils literal notranslate"><span class="pre">lemon</span></code> and <code class="docutils literal notranslate"><span class="pre">cantaloupe</span></code>  but only the columns <code class="docutils literal notranslate"><span class="pre">colour</span></code>, <code class="docutils literal notranslate"><span class="pre">weight</span></code> and <code class="docutils literal notranslate"><span class="pre">seeds</span></code> in that order, what would my code look like if I was using index position?<br />
+a) <code class="docutils literal notranslate"><span class="pre">fruit_salad.iloc[[lemon,</span> <span class="pre">cantaloupe],</span> <span class="pre">[colour,</span> <span class="pre">weight,</span> <span class="pre">seeds]]</span></code><br />
+b) <code class="docutils literal notranslate"><span class="pre">fruit_salad.iloc[[10,</span> <span class="pre">3],</span> <span class="pre">[2,</span> <span class="pre">8,</span> <span class="pre">4]]</span></code><br />
+c) <code class="docutils literal notranslate"><span class="pre">fruit_salad.iloc[[9,</span> <span class="pre">2],</span> <span class="pre">[1,</span> <span class="pre">7,</span> <span class="pre">3]]</span></code><br />
+d) <code class="docutils literal notranslate"><span class="pre">fruit_salad[[9,</span> <span class="pre">2],</span> <span class="pre">[1,</span> <span class="pre">7,</span> <span class="pre">3]]</span></code></p>
+<div class="dropdown admonition">
+<p class="admonition-title">Solutions!</p>
+<ol class="simple">
+<li><p>c) <code class="docutils literal notranslate"><span class="pre">fruit_salad.iloc[4:9,</span> <span class="pre">3:7]</span></code></p></li>
+<li><p>c) <code class="docutils literal notranslate"><span class="pre">fruit_salad.iloc[[9,</span> <span class="pre">2],</span> <span class="pre">[1,</span> <span class="pre">7,</span> <span class="pre">3]]</span></code></p></li>
+</ol>
 </div>
 </div>
-<hr class="docutils" />
-<div class="section" id="nice-work-lets-apply-what-we-learned">
-<h1>Nice work! Let’s apply what we learned!<a class="headerlink" href="#nice-work-lets-apply-what-we-learned" title="Permalink to this headline">¶</a></h1>
-<p>Notes:</p>
-<br>
 </div>
 
     <script type="text/x-thebe-config">
@@ -705,6 +654,8 @@ respectively.</p>
         
         <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="module1_18.html" title="previous page">Selecting a Single Column</a>
+    <a class='right-next' id="next-link" href="module1_24.html" title="next page">Sorting dataframes</a>
 
         </div>
         

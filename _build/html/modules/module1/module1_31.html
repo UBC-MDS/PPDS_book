@@ -54,6 +54,7 @@
     <link rel="shortcut icon" href="../../_static/icon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Frequency Tables and Writing CSVs" href="module1_29.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -88,17 +89,17 @@
   Modules
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../module1.html">
    Module 1:  Python &amp; Pandas - An Unexpected Friendship
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="module1_01.html">
      What is a dataframe?
@@ -109,33 +110,54 @@
      What is Pandas?
     </a>
    </li>
-  </ul>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Coding Exercises
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../module1.html">
-   Module 1: Python &amp; Pandas - An Unexpected Friendship
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="module1_01.html">
-     What is a dataframe?
+    <a class="reference internal" href="module1_07.html">
+     Slicing Rows using .loc[]
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="module1_03.html">
-     What is Pandas?
+    <a class="reference internal" href="module1_11.html">
+     Slicing only columns using .loc[]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_13.html">
+     Selecting using .loc[]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_16.html">
+     Obtaining dataframe values
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_18.html">
+     Selecting a Single Column
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_20.html">
+     Slicing and selecting using .iloc[]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_24.html">
+     Sorting dataframes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_26.html">
+     Summary Statistics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_29.html">
+     Frequency Tables and Writing CSVs
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Quick viz with Altair!
     </a>
    </li>
   </ul>
@@ -224,24 +246,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Quick viz with Altair!
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lets-apply-what-we-learned">
-   Let’s apply what we learned!
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -252,9 +256,13 @@
                 
   <div class="section" id="quick-viz-with-altair">
 <h1>Quick viz with Altair!<a class="headerlink" href="#quick-viz-with-altair" title="Permalink to this headline">¶</a></h1>
-<p>Notes:</p>
-<br>
-<hr class="docutils" />
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See the accompanied youtube video at <a href="https://www.youtube.com/embed/W88f5DAl9hk?rel=0?start=1945&end=2265" target="_blank">the link here.</a></p>
+</div>
+<p>If we want to visualize things using different plots, we can do that
+pretty quickly and with little code!</p>
+<p>Take the <code class="docutils literal notranslate"><span class="pre">cereal</span></code> object we analyzed in the last section.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span>
 </pre></div>
 </div>
@@ -274,25 +282,20 @@
 [77 rows x 16 columns]
 </pre></div>
 </div>
-<p>Notes:</p>
-<p>If we want to visualize things using different plots, we can do that
-pretty quickly and with little code!</p>
-<p>Take the <code class="docutils literal notranslate"><span class="pre">cereal</span></code> object we analyzed in the last slide deck.</p>
 <p>Let say we are interested in the <code class="docutils literal notranslate"><span class="pre">manufacturer</span></code> column. It would be
 great to express the frequency of the item in that column as a bar
 chart.</p>
 <p>But how do we do that?</p>
-<hr class="docutils" />
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
-</pre></div>
-</div>
-<p>Notes:</p>
 <p>To do this, we are going to use a very nifty package called Altair.</p>
 <p>Altair is a data visualization tool that produces plots relatively
 easily.</p>
 <p>Like any other package we have seen so far, Altair needs to be imported
 before we can use it.</p>
-<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span> <span class="k">as</span> <span class="nn">alt</span>
+</pre></div>
+</div>
+<p>We can plot the <code class="docutils literal notranslate"><span class="pre">mfr</span></code> column frequencies using Altair using the
+following code.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">chart0</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">cereal</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
     <span class="n">x</span><span class="o">=</span><span class="s1">&#39;mfr&#39;</span><span class="p">,</span>
     <span class="n">y</span><span class="o">=</span><span class="s1">&#39;count()&#39;</span>
@@ -300,66 +303,29 @@ before we can use it.</p>
 <span class="n">chart0</span>
 </pre></div>
 </div>
-<a class="reference internal image-reference" href="module1/chart0.png"><img alt="A caption" src="module1/chart0.png" style="width: 20%;" /></a>
-<p>Notes:</p>
-<p>We can plot the <code class="docutils literal notranslate"><span class="pre">mfr</span></code> column frequencies using Altair using the
-following code.</p>
+<a class="reference internal image-reference" href="../../_images/chart0.png"><img alt="A caption" src="../../_images/chart0.png" style="width: 20%;" /></a>
 <p>See how quick that was? Just five lines!</p>
 <p>Now let’s take a moment and go through the steps of what each line
 means.</p>
-<hr class="docutils" />
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">chart0</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">cereal</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;mfr&#39;</span><span class="p">,</span>
-    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;count()&#39;</span>
-<span class="p">)</span>
-<span class="n">chart0</span>
-</pre></div>
-</div>
-<ol class="simple">
-<li></li>
-</ol>
-<!-- end list -->
+<p>To make a <code class="docutils literal notranslate"><span class="pre">bar</span></code> plot using <code class="docutils literal notranslate"><span class="pre">altair</span></code>, we follow the steps below:</p>
+<p>1. First, we create an <code class="docutils literal notranslate"><span class="pre">altair</span></code> plot object using <code class="docutils literal notranslate"><span class="pre">alt.chart()</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">chart</span><span class="p">(</span><span class="o">...</span><span class="p">)</span><span class="o">...</span>
 </pre></div>
 </div>
-<ol class="simple">
-<li></li>
-</ol>
-<!-- end list -->
+<p>2. Next, we pass the dataframe we’d like to plot in to <code class="docutils literal notranslate"><span class="pre">altair.chart()</span></code>. So here, that is the <code class="docutils literal notranslate"><span class="pre">cereeal</span></code> dataframe.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">chart</span><span class="p">(</span><span class="n">cereal</span><span class="p">)</span>
 </pre></div>
 </div>
-<ol class="simple">
-<li></li>
-</ol>
-<!-- end list -->
+<p>3. But what kind of plot do we want?! As we said before, a bar chart would be suitable for this type of data. So let’s add <code class="docutils literal notranslate"><span class="pre">.mark_bar()</span></code> to specify that.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">chart</span><span class="p">(</span><span class="n">cereal</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">...</span>
 </pre></div>
 </div>
-<ol class="simple">
-<li></li>
-</ol>
-<!-- end list -->
+<p>4. Next, we need to say what goes on the <code class="docutils literal notranslate"><span class="pre">y-axis</span></code> and the <code class="docutils literal notranslate"><span class="pre">x-axis</span></code>. We do this inside of the <code class="docutils literal notranslate"><span class="pre">encode()</span></code> call. So inside of encode, we say what should be represented on the <code class="docutils literal notranslate"><span class="pre">y-axis</span></code> and what should be represented on the <code class="docutils literal notranslate"><span class="pre">x-axis</span></code>. Here on the <code class="docutils literal notranslate"><span class="pre">x-axis</span></code>, we put the manufacturer, and on the <code class="docutils literal notranslate"><span class="pre">y-axis</span></code>, we us count: <code class="docutils literal notranslate"><span class="pre">.encode(x='mfr',</span> <span class="pre">y='count()')</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">chart</span><span class="p">(</span><span class="n">cereal</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
   <span class="n">x</span><span class="o">=</span><span class="s1">&#39;mfr&#39;</span><span class="p">,</span> 
   <span class="n">y</span><span class="o">=</span><span class="s1">&#39;count()&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Notes:</p>
-<p>To make a <code class="docutils literal notranslate"><span class="pre">bar</span></code> plot using <code class="docutils literal notranslate"><span class="pre">altair</span></code>, we follow the steps below:</p>
-<ol class="simple">
-<li><p>First, we create an <code class="docutils literal notranslate"><span class="pre">altair</span></code> plot object using <code class="docutils literal notranslate"><span class="pre">alt.chart()</span></code></p></li>
-<li><p>Next, we pass the dataframe we’d like to plot in to
-<code class="docutils literal notranslate"><span class="pre">altair.chart()</span></code>. So here, that is the <code class="docutils literal notranslate"><span class="pre">cereeal</span></code> dataframe.</p></li>
-<li><p>But what kind of plot do we want?! As we said before, a bar chart
-would be suitable for this type of data. So let’s add <code class="docutils literal notranslate"><span class="pre">.mark_bar()</span></code>
-to specify that.</p></li>
-<li><p>Next, we need to say what goes on the <code class="docutils literal notranslate"><span class="pre">y-axis</span></code> and the <code class="docutils literal notranslate"><span class="pre">x-axis</span></code>. We
-do this inside of the <code class="docutils literal notranslate"><span class="pre">encode()</span></code> call. So inside of encode, we say
-what should be represented on the <code class="docutils literal notranslate"><span class="pre">y-axis</span></code> and what should be
-represented on the <code class="docutils literal notranslate"><span class="pre">x-axis</span></code>. Here on the <code class="docutils literal notranslate"><span class="pre">x-axis</span></code>, we put the
-manufacturer, and on the <code class="docutils literal notranslate"><span class="pre">y-axis</span></code>, we us count: <code class="docutils literal notranslate"><span class="pre">.encode(x='mfr',</span> <span class="pre">y='count()')</span></code>.</p></li>
-</ol>
 <p><code class="docutils literal notranslate"><span class="pre">count()</span></code> is used here to count the occurrences or the number of rows in
 the cereal dataframe that contains a specific manufacturer.</p>
 <p>In general, we use <code class="docutils literal notranslate"><span class="pre">count()</span></code> if we are interested in counting the
@@ -369,7 +335,7 @@ frequency of each of elements in the <code class="docutils literal notranslate">
 <p>The important things to notice here is that we want create a
 <code class="docutils literal notranslate"><span class="pre">alt.chart()</span></code> object and then specify that we want a <code class="docutils literal notranslate"><span class="pre">.mark_bar()</span></code> graph
 and then specifying which column using <code class="docutils literal notranslate"><span class="pre">.encode()</span></code>.</p>
-<hr class="docutils" />
+<p>Here is our plot again.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">chart1</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">cereal</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
     <span class="n">x</span><span class="o">=</span><span class="s1">&#39;mfr&#39;</span><span class="p">,</span>
     <span class="n">y</span><span class="o">=</span><span class="s1">&#39;count()&#39;</span>
@@ -377,13 +343,17 @@ and then specifying which column using <code class="docutils literal notranslate
 <span class="n">chart1</span>
 </pre></div>
 </div>
-<a class="reference internal image-reference" href="module1/chart1.png"><img alt="A caption" src="module1/chart1.png" style="width: 50%;" /></a>
-<p>Notes:</p>
-<p>Here is our plot again. It looks a little different this time. The first
+<a class="reference internal image-reference" href="../../_images/chart1.png"><img alt="A caption" src="../../_images/chart1.png" style="width: 50%;" /></a>
+<p>It looks a little different this time. The first
 time we plotted it, it was a little too small. So inside the <code class="docutils literal notranslate"><span class="pre">alt.Chart</span></code>
 call, we added a <code class="docutils literal notranslate"><span class="pre">width</span></code> and <code class="docutils literal notranslate"><span class="pre">height</span></code> argument so that we can make the
 plot bigger.</p>
-<hr class="docutils" />
+<p>What else can we plot from our original cereal dataframe named <code class="docutils literal notranslate"><span class="pre">cereal</span></code>?</p>
+<p>Maybe we want to see the relationship between <code class="docutils literal notranslate"><span class="pre">sugars</span></code> and <code class="docutils literal notranslate"><span class="pre">calories</span></code> in
+the cereals?</p>
+<p>This would require a <code class="docutils literal notranslate"><span class="pre">scatter</span></code> plot which can be done by specifying
+<code class="docutils literal notranslate"><span class="pre">mark_circle</span></code> instead of <code class="docutils literal notranslate"><span class="pre">mark_bar</span></code> and in the <code class="docutils literal notranslate"><span class="pre">encode</span></code> function, we
+need to say what is going to be on the <code class="docutils literal notranslate"><span class="pre">x</span></code> and the <code class="docutils literal notranslate"><span class="pre">y</span></code> axis.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">chart2</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">cereal</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
     <span class="n">x</span><span class="o">=</span><span class="s1">&#39;sugars&#39;</span><span class="p">,</span>
     <span class="n">y</span><span class="o">=</span><span class="s1">&#39;calories&#39;</span>
@@ -391,26 +361,9 @@ plot bigger.</p>
 <span class="n">chart2</span>
 </pre></div>
 </div>
-<a class="reference internal image-reference" href="module1/chart2.png"><img alt="A caption" src="module1/chart2.png" style="width: 50%;" /></a>
-<p>Notes:</p>
-<p>What else can we plot from our original cereal dataframe named <code class="docutils literal notranslate"><span class="pre">cereal</span></code>?</p>
-<p>Maybe we want to see the relationship between <code class="docutils literal notranslate"><span class="pre">sugars</span></code> and <code class="docutils literal notranslate"><span class="pre">calories</span></code> in
-the cereals?</p>
-<p>This would require a <code class="docutils literal notranslate"><span class="pre">scatter</span></code> plot which can be done by specifying
-<code class="docutils literal notranslate"><span class="pre">mark_circle</span></code> instead of <code class="docutils literal notranslate"><span class="pre">mark_bar</span></code> and in the <code class="docutils literal notranslate"><span class="pre">encode</span></code> function, we
-need to say what is going to be on the <code class="docutils literal notranslate"><span class="pre">x</span></code> and the <code class="docutils literal notranslate"><span class="pre">y</span></code> axis.</p>
+<a class="reference internal image-reference" href="../../_images/chart2.png"><img alt="A caption" src="../../_images/chart2.png" style="width: 50%;" /></a>
 <p>In this case, we are putting <code class="docutils literal notranslate"><span class="pre">sugars</span></code> on the <code class="docutils literal notranslate"><span class="pre">x-axis</span></code> and <code class="docutils literal notranslate"><span class="pre">calories</span></code> on
 the <code class="docutils literal notranslate"><span class="pre">y-axis</span></code>.</p>
-<hr class="docutils" />
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">chart3</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">cereal</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">(</span><span class="n">opacity</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;sugars&#39;</span><span class="p">,</span>
-    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;calories&#39;</span>
-<span class="p">)</span>
-<span class="n">chart3</span>
-</pre></div>
-</div>
-<a class="reference internal image-reference" href="module1/chart3.png"><img alt="module1/chart3.png" src="module1/chart3.png" style="width: 50%;" /></a>
-<p>Notes:</p>
 <p>Something you may have noticed is that there are 77 cereals but there
 doesn’t seem to be 77 data points!</p>
 <p>That’s because some of them are lying on top of each other with the same
@@ -422,9 +375,19 @@ represent that there is only one data point there.</p>
 <p>We set opacity with <code class="docutils literal notranslate"><span class="pre">opacity</span></code> in the <code class="docutils literal notranslate"><span class="pre">mark_circle()</span></code> function and it
 accepts values between 0 and 1, with 1 being full opacity. Here we set
 it at 0.3.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">chart3</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">cereal</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">(</span><span class="n">opacity</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;sugars&#39;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;calories&#39;</span>
+<span class="p">)</span>
+<span class="n">chart3</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../_images/chart3.png"><img alt="../../_images/chart3.png" src="../../_images/chart3.png" style="width: 50%;" /></a>
 <p>Look at that! Now we can see there are multiple cereals that have 3.5g
 of sugar with 110 calories.</p>
-<hr class="docutils" />
+<p>What if you don’t fancy the default plot colour <code class="docutils literal notranslate"><span class="pre">blue</span></code>?</p>
+<p>Well that’s okay, we can change the colour easily using the <code class="docutils literal notranslate"><span class="pre">color</span></code>
+argument in <code class="docutils literal notranslate"><span class="pre">.mark_circle()</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">chart4</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">cereal</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
     <span class="n">x</span><span class="o">=</span><span class="s1">&#39;sugars&#39;</span><span class="p">,</span>
     <span class="n">y</span><span class="o">=</span><span class="s1">&#39;calories&#39;</span>
@@ -432,13 +395,13 @@ of sugar with 110 calories.</p>
 <span class="n">chart4</span>
 </pre></div>
 </div>
-<a class="reference internal image-reference" href="module1/chart4.png"><img alt="module1/chart4.png" src="module1/chart4.png" style="width: 50%;" /></a>
-<p>Notes:</p>
-<p>What if you don’t fancy the default plot colour <code class="docutils literal notranslate"><span class="pre">blue</span></code>?</p>
-<p>Well that’s okay, we can change the colour easily using the <code class="docutils literal notranslate"><span class="pre">color</span></code>
-argument in <code class="docutils literal notranslate"><span class="pre">.mark_circle()</span></code>.</p>
+<a class="reference internal image-reference" href="../../_images/chart4.png"><img alt="../../_images/chart4.png" src="../../_images/chart4.png" style="width: 50%;" /></a>
 <p>Here we have changed the colour to <code class="docutils literal notranslate"><span class="pre">red</span></code>.</p>
-<hr class="docutils" />
+<p>What if the data points seem a little too small? That is no problem, we
+can also increase these. Again in the <code class="docutils literal notranslate"><span class="pre">mark_circle()</span></code> call. Here we add
+an argument where we say the <code class="docutils literal notranslate"><span class="pre">size</span></code>. So we have changed the size from
+the default to a size of 80, and we can see that the points are now
+larger.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">chart5</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">cereal</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
     <span class="n">x</span><span class="o">=</span><span class="s1">&#39;sugars&#39;</span><span class="p">,</span>
     <span class="n">y</span><span class="o">=</span><span class="s1">&#39;calories&#39;</span>
@@ -446,14 +409,11 @@ argument in <code class="docutils literal notranslate"><span class="pre">.mark_c
 <span class="n">chart5</span>
 </pre></div>
 </div>
-<a class="reference internal image-reference" href="module1/chart5.png"><img alt="module1/chart5.png" src="module1/chart5.png" style="width: 50%;" /></a>
-<p>Notes:</p>
-<p>What if the data points seem a little too small? That is no problem, we
-can also increase these. Again in the <code class="docutils literal notranslate"><span class="pre">mark_circle()</span></code> call. Here we add
-an argument where we say the <code class="docutils literal notranslate"><span class="pre">size</span></code>. So we have changed the size from
-the default to a size of 80, and we can see that the points are now
-larger.</p>
-<hr class="docutils" />
+<a class="reference internal image-reference" href="../../_images/chart5.png"><img alt="../../_images/chart5.png" src="../../_images/chart5.png" style="width: 50%;" /></a>
+<p>Every good graph should have a title!</p>
+<p>A title provides useful information about what the plot is about.</p>
+<p>Let’s take this opportunity to finish off our scatter plot and set the
+argument <code class="docutils literal notranslate"><span class="pre">title</span></code> to something as well.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">chart6</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">cereal</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
     <span class="n">x</span><span class="o">=</span><span class="s1">&#39;sugars&#39;</span><span class="p">,</span>
     <span class="n">y</span><span class="o">=</span><span class="s1">&#39;calories&#39;</span>
@@ -461,21 +421,10 @@ larger.</p>
 <span class="n">chart6</span>
 </pre></div>
 </div>
-<a class="reference internal image-reference" href="module1/chart6.png"><img alt="module1/chart6.png" src="module1/chart6.png" style="width: 50%;" /></a>
-<p>Notes:</p>
-<p>Every good graph should have a title!</p>
-<p>A title provides useful information about what the plot is about.</p>
-<p>Let’s take this opportunity to finish off our scatter plot and set the
-argument <code class="docutils literal notranslate"><span class="pre">title</span></code> to something as well.</p>
+<a class="reference internal image-reference" href="../../_images/chart6.png"><img alt="../../_images/chart6.png" src="../../_images/chart6.png" style="width: 50%;" /></a>
 <p>So here we have called it <em>“Scatter plot sugars vs calories for
 different cereals”</em>.</p>
 <p>We use the <code class="docutils literal notranslate"><span class="pre">.properties()</span></code> function to do this.</p>
-</div>
-<hr class="docutils" />
-<div class="section" id="lets-apply-what-we-learned">
-<h1>Let’s apply what we learned!<a class="headerlink" href="#lets-apply-what-we-learned" title="Permalink to this headline">¶</a></h1>
-<p>Notes:</p>
-<br>
 </div>
 
     <script type="text/x-thebe-config">
@@ -503,6 +452,7 @@ different cereals”</em>.</p>
         
         <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="module1_29.html" title="previous page">Frequency Tables and Writing CSVs</a>
 
         </div>
         

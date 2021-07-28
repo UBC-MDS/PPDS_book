@@ -54,6 +54,8 @@
     <link rel="shortcut icon" href="../../_static/icon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Frequency Tables and Writing CSVs" href="module1_29.html" />
+    <link rel="prev" title="Sorting dataframes" href="module1_24.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -88,17 +90,17 @@
   Modules
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../module1.html">
    Module 1:  Python &amp; Pandas - An Unexpected Friendship
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="module1_01.html">
      What is a dataframe?
@@ -109,33 +111,54 @@
      What is Pandas?
     </a>
    </li>
-  </ul>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Coding Exercises
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../module1.html">
-   Module 1: Python &amp; Pandas - An Unexpected Friendship
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="module1_01.html">
-     What is a dataframe?
+    <a class="reference internal" href="module1_07.html">
+     Slicing Rows using .loc[]
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="module1_03.html">
-     What is Pandas?
+    <a class="reference internal" href="module1_11.html">
+     Slicing only columns using .loc[]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_13.html">
+     Selecting using .loc[]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_16.html">
+     Obtaining dataframe values
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_18.html">
+     Selecting a Single Column
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_20.html">
+     Slicing and selecting using .iloc[]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_24.html">
+     Sorting dataframes
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Summary Statistics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_29.html">
+     Frequency Tables and Writing CSVs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_31.html">
+     Quick viz with Altair!
     </a>
    </li>
   </ul>
@@ -229,36 +252,29 @@
             </div>
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Summary Statistics
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numerical-and-categorical-columns">
+   Numerical and Categorical Columns
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#numerical-and-categorical-columns">
-     Numerical and Categorical Columns
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#categorical-data">
+     Categorical data
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#categorical-data">
-       Categorical data
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#numerical-data">
-       Numerical data
-      </a>
-     </li>
-    </ul>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pandas-describe">
-     Pandas describe()
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#numerical-data">
+     Numerical data
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pandas-describe">
+   Pandas describe()
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#lets-apply-what-we-learned">
    Let’s apply what we learned!
   </a>
@@ -276,9 +292,16 @@
                 
   <div class="section" id="summary-statistics">
 <h1>Summary Statistics<a class="headerlink" href="#summary-statistics" title="Permalink to this headline">¶</a></h1>
-<p>Notes:</p>
-<br>
-<hr class="docutils" />
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See the accompanied youtube video at <a href="https://www.youtube.com/embed/W88f5DAl9hk?rel=0?start=1518&end=1770" target="_blank">the link here.</a></p>
+</div>
+<p>Now we’ve learned about how to get the data in to the shape and size
+that we desire, now we ca have some fun with it!</p>
+<p>We usually like to learn from it. One place we can start is summary
+statistics, so we can calculate interesting values for each of the
+variables or columns in our dataframe.</p>
+<p>Let’s start by doing this for the cereal dataset again.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;cereal.csv&#39;</span><span class="p">)</span>
 <span class="n">cereal</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
 </pre></div>
@@ -303,21 +326,14 @@
 [15 rows x 16 columns]
 </pre></div>
 </div>
-<p>Notes:</p>
-<p>Now we’ve learned about how to get the data in to the shape and size
-that we desire, now we ca have some fun with it!</p>
-<p>We usually like to learn from it. One place we can start is summary
-statistics, so we can calculate interesting values for each of the
-variables or columns in our dataframe.</p>
-<p>Let’s start by doing this for the cereal dataset again.</p>
-<p>First let’s load in our cereal dataset again.</p>
-<hr class="docutils" />
 <div class="section" id="numerical-and-categorical-columns">
 <h2>Numerical and Categorical Columns<a class="headerlink" href="#numerical-and-categorical-columns" title="Permalink to this headline">¶</a></h2>
+<p>Before we go further, let’s quickly discuss the 2 different types of
+data.</p>
 <div class="section" id="categorical-data">
 <h3>Categorical data<a class="headerlink" href="#categorical-data" title="Permalink to this headline">¶</a></h3>
-<p>Consists of qualitative observations such as characteristics - things
-generally containing words.</p>
+<p>Categorical data consists of qualitative observations such as
+characteristics - things generally containing names or words.</p>
 <p><strong>Examples</strong></p>
 <ul class="simple">
 <li><p>Colours</p></li>
@@ -333,40 +349,15 @@ generally containing words.</p>
 <li><p>Measurements</p></li>
 <li><p>Quantities</p></li>
 </ul>
-<p>Notes:</p>
-<p>Before we go further, let’s quickly discuss the 2 different types of
-data.</p>
-<p>Categorical data consists of qualitative observations such as
-characteristics - things generally containing names or words. Examples
-would be colours or names of things.</p>
-<p>Numerical data are usually expressed with numbers such as measurements
-or quantities.</p>
 <p>Our columns in our dataframe are considered one of the two of these.</p>
 </div>
 </div>
-<hr class="docutils" />
 <div class="section" id="pandas-describe">
 <h2>Pandas describe()<a class="headerlink" href="#pandas-describe" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
-</pre></div>
-</div>
-<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>         calories    protein        fat      sodium      fiber      carbo     sugars      potass    vitamins      shelf     weight       cups     rating
-count   77.000000  77.000000  77.000000   77.000000  77.000000  77.000000  77.000000   77.000000   77.000000  77.000000  77.000000  77.000000  77.000000
-mean   106.883117   2.545455   1.012987  159.675325   2.151948  14.623377   6.948052   96.129870   28.246753   2.207792   1.029610   0.821039  42.665705
-std     19.484119   1.094790   1.006473   83.832295   2.383364   4.188138   4.403635   71.215823   22.342523   0.832524   0.150477   0.232716  14.047289
-min     50.000000   1.000000   0.000000    0.000000   0.000000   1.000000   0.000000    1.000000    0.000000   1.000000   0.500000   0.250000  18.042851
-25%    100.000000   2.000000   0.000000  130.000000   1.000000  12.000000   3.000000   40.000000   25.000000   1.000000   1.000000   0.670000  33.174094
-50%    110.000000   3.000000   1.000000  180.000000   2.000000  14.000000   7.000000   90.000000   25.000000   2.000000   1.000000   0.750000  40.400208
-75%    110.000000   3.000000   2.000000  210.000000   3.000000  17.000000  11.000000  120.000000   25.000000   3.000000   1.000000   1.000000  50.828392
-max    160.000000   6.000000   5.000000  320.000000  14.000000  23.000000  15.000000  330.000000  100.000000   3.000000   1.500000   1.500000  93.704912
-</pre></div>
-</div>
-<p>Notes:</p>
 <p>Pandas has a lot up its sleeve but one of the most useful methods is
 called <code class="docutils literal notranslate"><span class="pre">.describe()</span></code> and it does exactly that. it <em>describes</em> our data.</p>
 <p>Let’s try it out on our cereal dataset.</p>
 <p>By default <code class="docutils literal notranslate"><span class="pre">df.describe()</span></code> only shows numerical columns.</p>
-<hr class="docutils" />
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -381,6 +372,10 @@ min     50.000000   1.000000   0.000000    0.000000   0.000000   1.000000   0.00
 max    160.000000   6.000000   5.000000  320.000000  14.000000  23.000000  15.000000  330.000000  100.000000   3.000000   1.500000   1.500000  93.704912
 </pre></div>
 </div>
+<p>Let’s talk a little bit about the output of <code class="docutils literal notranslate"><span class="pre">.describe()</span></code>.</p>
+<p>On the left-hand side we see a new column. This column contains the
+names of the different summary statistics that <code class="docutils literal notranslate"><span class="pre">.describes()</span></code> gives us
+back for our dataset. Let’s talk about them each individually:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">count</span></code>: The number of non-NA/null observations.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">mean</span></code>: The mean of column</p></li>
@@ -389,21 +384,9 @@ max    160.000000   6.000000   5.000000  320.000000  14.000000  23.000000  15.00
 <li><p><code class="docutils literal notranslate"><span class="pre">max</span></code>: The max value for a column</p></li>
 <li><p>By default the 25, 50 and 75 percentile of the observations</p></li>
 </ul>
-<p>Notes:</p>
-<p>Let’s talk a little bit about the output of <code class="docutils literal notranslate"><span class="pre">.describe()</span></code>.</p>
-<p>On the left-hand side we see a new column. This column contains the
-names of the different summary statistics that <code class="docutils literal notranslate"><span class="pre">.describes()</span></code> gives us
-back for our dataset. Let’s talk about them each individually:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">count</span></code>: The number of non-NA/null observations.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">mean</span></code>: The mean of the column</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">std</span></code> : The standard deviation of a column</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">min</span></code>: The min value for a column</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">max</span></code>: The max value for a column</p></li>
-<li><p>By default the 25, 50 and 75 percentile of the observations are also
-included.</p></li>
-</ul>
-<hr class="docutils" />
+<p>We can make changes to either limit how much is shown or include more
+using describe. One useful argument is <code class="docutils literal notranslate"><span class="pre">include</span></code> and a value we can give
+to that is <code class="docutils literal notranslate"><span class="pre">all</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -423,15 +406,6 @@ max             NaN  NaN   NaN  160.000000   6.000000   5.000000  320.000000  ..
 [11 rows x 16 columns]
 </pre></div>
 </div>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">unique</span></code>: how many observations are unique</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">top</span></code>: which observation value is most occurring</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">freq</span></code>: what is the frequency of the most occurring observation</p></li>
-</ul>
-<p>Notes:</p>
-<p>We can make changes to either limit how much is shown or include more
-using describe. One useful argument is <code class="docutils literal notranslate"><span class="pre">include</span></code> and a value we can give
-to that is <code class="docutils literal notranslate"><span class="pre">all</span></code>.</p>
 <p>This expands the output so we get summary statistics for both
 categorical and numerical columns now.</p>
 <p>Adding <code class="docutils literal notranslate"><span class="pre">include='all'</span></code> within the brackets adds some additional
@@ -442,7 +416,13 @@ statistics about categorical columns including:</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">freq</span></code>: which informs us of the frequency of the most occurring
 observation</p></li>
 </ul>
-<hr class="docutils" />
+<p>We can also get single statistics of each column using functions like:
+<code class="docutils literal notranslate"><span class="pre">.mean()</span></code>,<code class="docutils literal notranslate"><span class="pre">.std()</span></code>, <code class="docutils literal notranslate"><span class="pre">.count()</span></code>, <code class="docutils literal notranslate"><span class="pre">.median()</span></code>, <code class="docutils literal notranslate"><span class="pre">.sum()</span></code>.</p>
+<p>To do this, we first have to grab the column that we are interested in
+exploring, and then we add the verb.</p>
+<p>Here are some examples of things that we can calculate. First we
+calculate the mean of the ratings, then we calculate sum of the ratings,
+and finally the median of the ratings.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ratings</span> <span class="o">=</span> <span class="n">cereal</span><span class="p">[[</span><span class="s1">&#39;rating&#39;</span><span class="p">]]</span>
 <span class="n">ratings</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </pre></div>
@@ -465,15 +445,11 @@ dtype: float64
 dtype: float64
 </pre></div>
 </div>
-<p>Notes:</p>
-<p>We can also get single statistics of each column using functions like:
-<code class="docutils literal notranslate"><span class="pre">.mean()</span></code>,<code class="docutils literal notranslate"><span class="pre">.std()</span></code>, <code class="docutils literal notranslate"><span class="pre">.count()</span></code>, <code class="docutils literal notranslate"><span class="pre">.median()</span></code>, <code class="docutils literal notranslate"><span class="pre">.sum()</span></code>.</p>
-<p>To do this, we first have to grab the column that we are interested in
-exploring, and then we add the verb.</p>
-<p>Here are some examples of things that we can calculate. First we
-calculate the mean of the ratings, then we calculate sum of the ratings,
-and finally the median of the ratings.</p>
-<hr class="docutils" />
+<p>We can also use these summary statistic verbs on the entire dataframe.
+This now shows the mean value of each column in the dataframe.</p>
+<p>You’ll notice that only the numerical variables are calculated which
+makes sense since we would not be able to calculate the mean of
+categorical data.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -493,19 +469,41 @@ rating       42.665705
 dtype: float64
 </pre></div>
 </div>
-<p>Notes:</p>
-<p>We can also use these summary statistic verbs on the entire dataframe.
-This now shows the mean value of each column in the dataframe.</p>
-<p>You’ll notice that only the numerical variables are calculated which
-makes sense since we would not be able to calculate the mean of
-categorical data.</p>
 </div>
-</div>
-<hr class="docutils" />
 <div class="section" id="lets-apply-what-we-learned">
-<h1>Let’s apply what we learned!<a class="headerlink" href="#lets-apply-what-we-learned" title="Permalink to this headline">¶</a></h1>
-<p>Notes:</p>
-<br>
+<h2>Let’s apply what we learned!<a class="headerlink" href="#lets-apply-what-we-learned" title="Permalink to this headline">¶</a></h2>
+<p>Bringing back our Fruit Salad dataframe:</p>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>           name    colour    location    seed   shape  sweetness   water-content  weight
+0         apple       red     canada    True   round     True          84         100
+1        banana    yellow     mexico   False    long     True          75         120
+2    cantaloupe    orange      spain    True   round     True          90        1360
+3  dragon-fruit   magenta      china    True   round    False          96         600
+4    elderberry    purple    austria   False   round     True          80           5
+5           fig    purple     turkey   False    oval    False          78          40
+6         guava     green     mexico    True    oval     True          83         450
+7   huckleberry      blue     canada    True   round     True          73           5
+8          kiwi     brown      china    True   round     True          80          76
+9         lemon    yellow     mexico   False    oval    False          83          65
+</pre></div>
+</div>
+<p>1. Which of the following columns contain numerical data?<br />
+a) <code class="docutils literal notranslate"><span class="pre">colour</span></code>, <code class="docutils literal notranslate"><span class="pre">shape</span></code>, <code class="docutils literal notranslate"><span class="pre">water-content</span></code>
+b) <code class="docutils literal notranslate"><span class="pre">water-content</span></code>, <code class="docutils literal notranslate"><span class="pre">weight</span></code><br />
+c) <code class="docutils literal notranslate"><span class="pre">colour</span></code>, <code class="docutils literal notranslate"><span class="pre">seed</span></code>, <code class="docutils literal notranslate"><span class="pre">water-content</span></code>, <code class="docutils literal notranslate"><span class="pre">weight</span></code><br />
+d) All of the columns are categorical</p>
+<p>2. We need summary statistics of both numerical and categorical columns of the dataframe <code class="docutils literal notranslate"><span class="pre">fruit_salad</span></code>. What code would be suitable for this?<br />
+a) <code class="docutils literal notranslate"><span class="pre">df.describe()</span></code><br />
+b) <code class="docutils literal notranslate"><span class="pre">fruit_salad.describe()</span></code><br />
+c) <code class="docutils literal notranslate"><span class="pre">fruit_salad.describe(include=&quot;all&quot;)</span></code><br />
+d) <code class="docutils literal notranslate"><span class="pre">fruit_salad.summary(include=&quot;all&quot;)</span></code></p>
+<div class="dropdown admonition">
+<p class="admonition-title">Solutions!</p>
+<ol class="simple">
+<li><p>b) <code class="docutils literal notranslate"><span class="pre">water-content</span></code>, <code class="docutils literal notranslate"><span class="pre">weight</span></code></p></li>
+<li><p>c) <code class="docutils literal notranslate"><span class="pre">fruit_salad.describe(include=&quot;all&quot;)</span></code></p></li>
+</ol>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -533,6 +531,8 @@ categorical data.</p>
         
         <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="module1_24.html" title="previous page">Sorting dataframes</a>
+    <a class='right-next' id="next-link" href="module1_29.html" title="next page">Frequency Tables and Writing CSVs</a>
 
         </div>
         

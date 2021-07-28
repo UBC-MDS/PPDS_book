@@ -203,7 +203,6 @@ executed by Python.
 candy.shape  # This will output the shape of the dataframe
 ```
 
-## Let’s apply what we learned!
 
 We use comments frequently in the exercises to help you understand what
 to do and what our intentions are.
@@ -211,21 +210,24 @@ to do and what our intentions are.
 It’s good practice to use them to explain our code so if we or someone
 else wants to read it at a later date, it’s easier to understand.
 
-1\. What are dataframes comparable to?     
-a) Text Documents      
-b) Excel Sheets     
-c) Picture Frames     
+## Let’s apply what we learned!
 
-2\. If a csv file was opened in a plain text editor, what character would be separating the values of each column?            
-a) `:`    
-b) `;`       
-c) `,`     
+1\. What is Pandas?      
+a) A useful tool for data manipulation in Python    
+b) A programming language    
+c) A datatype    
+ 
+
+2\. Which of the following statements is true?     
+a) Attribute and methods can be thought of as nouns and functions as verbs           
+b) Attribute can be thought of as nouns and functions and methods as verbs              
+c)Functions and methods can be thought of as nouns and attributes as verbs           
 
 
 ```{admonition} Solutions!
 :class: dropdown
 
-1.  Excel Sheets
-2. `,`
+1. a) A useful tool for data manipulation in Python    
+2. b) Attribute can be thought of as nouns and functions and methods as verbs           
 
 ```

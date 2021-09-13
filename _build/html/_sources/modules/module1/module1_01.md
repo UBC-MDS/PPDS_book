@@ -1,11 +1,8 @@
 # What is a dataframe?
 
-```{seealso}
-
+:::{admonition} Watch it
 See the accompanied youtube video at <a href="https://www.youtube.com/embed/W88f5DAl9hk?rel=0?start=3&end=114" target="_blank">the link here.</a>
-
-```
-
+:::
 
 Often, the first thing we need to do in data analysis is to load in data.
 
@@ -63,7 +60,7 @@ see each row on its own line, and each entry in the table separated by a
 comma.
 
 
-## Let’s apply what we learned!
+:::{admonition} Let’s apply what we learned!
 
 1\. What are dataframes comparable to?     
 a) Text Documents      
@@ -75,9 +72,10 @@ a) `:`
 b) `;`       
 c) `,`     
 
+:::
 
 ```{admonition} Solutions!
-:class: dropdown
+:class: tip, dropdown
 
 1.  a) Excel Sheets
 2. c) `,`

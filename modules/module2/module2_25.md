@@ -1,10 +1,10 @@
----
-type: slides
----
-
 # Grouping and aggregating
 
-Notes:
+```{seealso}
+
+See the accompanied youtube video at <a href="https://www.youtube.com/embed/WCWi1R2CQsY?rel=0?start=10&end=430" target="_blank">the link here.</a>
+
+```
 
 <br>
 

@@ -1,10 +1,22 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: '0.8'
+    jupytext_version: 1.10.3
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Sorting dataframes
 
-```{seealso}
-
+:::{admonition} Watch it
 See the accompanied youtube video at <a href="https://www.youtube.com/embed/W88f5DAl9hk?rel=0?start=1461&end=1513" target="_blank">the link here.</a>
-
-```
+:::
 
 When we read in our data, it is generally ordered in the same way it is
 stored.

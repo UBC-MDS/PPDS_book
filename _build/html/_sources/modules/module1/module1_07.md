@@ -1,10 +1,23 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: '0.8'
+    jupytext_version: 1.10.3
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Slicing Rows using .loc\[\]
 
-```{seealso}
-
+:::{admonition} Watch it
 See the accompanied youtube video at <a href="https://www.youtube.com/embed/W88f5DAl9hk?rel=0?start=378&end=647" target="_blank">the link here.</a>
+:::
 
-```
 Congratulations on writing your first code\!
 
 We have read in our data, and we know the dimensions. Well, now what?
@@ -188,7 +201,7 @@ cereal.loc[:6, 'sugars':]
 6      14      30        25      2     1.0  1.00  33.174094
 ```
 
-## Let’s apply what we learned!
+:::{admonition} Let’s apply what we learned!
 
 My dataframe object name is `fruit_salad`.
 
@@ -219,9 +232,10 @@ b) `fruit_salad.loc[2:5, "name":"seed"]`
 c) `fruit_salad.loc["name":"seed", 2:5]`                   
 d) `fruit_salad[2:8, "name":"seed"]`                    
 
+:::
 
 ```{admonition} Solutions!
-:class: dropdown
+:class: tip, dropdown
 
 1. d) `fruit_salad.loc[2:8]`          
 2. b) `fruit_salad.loc[2:5, "name":"seed"]`           

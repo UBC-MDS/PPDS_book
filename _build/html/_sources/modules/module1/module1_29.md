@@ -1,10 +1,23 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: '0.8'
+    jupytext_version: 1.10.3
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Frequency Tables and Writing CSVs
 
-```{seealso}
-
+:::{admonition} Watch it
 See the accompanied youtube video at <a href="https://www.youtube.com/embed/W88f5DAl9hk?rel=0?start=1775&end=1940" target="_blank">the link here.</a>
+:::
 
-```
 ## What is Frequency?
 
 Before we explain what a frequency table is, you must know what

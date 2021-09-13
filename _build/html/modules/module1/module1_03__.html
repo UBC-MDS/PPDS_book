@@ -1,0 +1,1108 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>What is Pandas? &#8212; Programming in Python for Data Science</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/extras.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="gifted-perlman-a442ef.netlify.app/modules/module1/module1_03__.html" />
+    <link rel="shortcut icon" href="../../_static/icon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Programming in Python for Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  Modules
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module1.html">
+   Module 1:  Python &amp; Pandas - An Unexpected Friendship
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_01.html">
+     What is a dataframe?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_03.html">
+     What is Pandas?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_07.html">
+     Slicing Rows using .loc[]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_11.html">
+     Slicing only columns using .loc[]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_13.html">
+     Selecting using .loc[]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_16.html">
+     Obtaining dataframe values
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_18.html">
+     Selecting a Single Column
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_20.html">
+     Slicing and selecting using .iloc[]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_24.html">
+     Sorting dataframes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_26.html">
+     Summary Statistics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_29.html">
+     Frequency Tables and Writing CSVs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module1_31.html">
+     Quick viz with Altair!
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module2.html">
+   Module 2: Not So Scary Wrangling (Table Manipulation and Chaining)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module2/module2_01.html">
+     Reading in Different File Types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module2/module2_06.html">
+     Reading arguments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module2/module2_09.html">
+     Column renaming and column dropping
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module2/module2_13.html">
+     Column arithmetic and creation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module2/module2_16.html">
+     Data Filtering
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module2/module2_20.html">
+     Conditional value replacement and assignment
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module2/module2_22.html">
+     Chaining notation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module2/module2_25.html">
+     Grouping and aggregating
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module2/module2_29.html">
+     More plotting tricks using Altair
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module3.html">
+   Module 3: Tidy Data and Joining Dataframes
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module3/module3_01.html">
+     Tidy data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module4.html">
+   Module 4: Python Without the "Eek" (Basic Python)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module4/module4_01.html">
+     Python data types
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module5.html">
+   Module 5: Making Choices and Repeating Iterations
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module5/module5_01.html">
+     Making choices with conditional statements
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module6.html">
+   Module 6: Functions Fundamentals and Best Practices
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module6/module6_01.html">
+     DRY revisited and function fundamentals
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module7.html">
+   Module 7: Importing Files and the Coding Style Guide
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module7/module7_01.html">
+     Importing Python Libraries
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module8.html">
+   Module 8: A Slice of NumPy and Advanced Data Wrangling
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module8/module8_01.html">
+     NumPy and 1D Arrays
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../../_sources/modules/module1/module1_03__.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/modules/module1/module1_03__.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/UBC-MDS/PPDS_book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/UBC-MDS/PPDS_book/issues/new?title=Issue%20on%20page%20%2Fmodules/module1/module1_03__.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/UBC-MDS/PPDS_book/edit/main/modules/module1/module1_03__.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/UBC-MDS/PPDS_book/main?urlpath=tree/modules/module1/module1_03__.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#importing-pandas">
+   Importing pandas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reading-in-data">
+   Reading in Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions-methods-and-attributes">
+   Functions/Methods and Attributes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#attributes">
+     Attributes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#functions">
+     Functions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comments">
+   Comments
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="what-is-pandas">
+<h1>What is Pandas?<a class="headerlink" href="#what-is-pandas" title="Permalink to this headline">¶</a></h1>
+<div class="admonition-watch-it admonition">
+<p class="admonition-title">Watch it</p>
+<p>See the accompanied youtube video at <a href="https://www.youtube.com/embed/W88f5DAl9hk?rel=0?start=120&end=371" target="_blank">the link here.</a></p>
+</div>
+<p>Pandas is an add-on library to Python.</p>
+<center>
+</center>
+<p>It let’s us do more things with our code, specifically with dataframes.</p>
+<div class="section" id="importing-pandas">
+<h2>Importing pandas<a class="headerlink" href="#importing-pandas" title="Permalink to this headline">¶</a></h2>
+<p>To analyze dataframes and load these <code class="docutils literal notranslate"><span class="pre">csv</span></code> files, we need to make sure
+that we bring in the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> library into Python.</p>
+<p>Before we start writing any valuable code for loading data and doing
+data analysis we need to import it with the following code.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="reading-in-data">
+<h2>Reading in Data<a class="headerlink" href="#reading-in-data" title="Permalink to this headline">¶</a></h2>
+<p>Next we can bring in our data named <code class="docutils literal notranslate"><span class="pre">candybars</span></code> which is stored as a
+<code class="docutils literal notranslate"><span class="pre">.csv</span></code> file.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">candy</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;candybars.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">candy</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>weight</th>
+      <th>chocolate</th>
+      <th>peanuts</th>
+      <th>caramel</th>
+      <th>available_canada_america</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Coffee Crisp</td>
+      <td>50</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Butterfinger</td>
+      <td>184</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Skor</td>
+      <td>39</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Both</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Smarties</td>
+      <td>45</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Twix</td>
+      <td>58</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Both</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Reeses Peanutbutter Cups</td>
+      <td>43</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>Both</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>3 Musketeers</td>
+      <td>54</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Kinder Surprise</td>
+      <td>20</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>M &amp; M</td>
+      <td>48</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>Both</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Glosettes</td>
+      <td>50</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>KitKat</td>
+      <td>45</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Both</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Babe Ruth</td>
+      <td>60</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Caramilk</td>
+      <td>52</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Aero</td>
+      <td>42</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Mars</td>
+      <td>51</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Both</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Payday</td>
+      <td>52</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Snickers</td>
+      <td>48</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Both</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Crunchie</td>
+      <td>26</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Wonderbar</td>
+      <td>58</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>100 Grand</td>
+      <td>43</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Take 5</td>
+      <td>43</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Whatchamacallits</td>
+      <td>45</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Almond Joy</td>
+      <td>46</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Oh Henry</td>
+      <td>51</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Both</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>Cookies and Cream</td>
+      <td>43</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Both</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>let’s break this up:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pd</span></code> is the short form for pandas, which we are using to manipulate
+our dataframe.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">read_csv()</span></code> is the tool that does the job and, in this case, it is
+reading in the <code class="docutils literal notranslate"><span class="pre">csv</span></code> file named <code class="docutils literal notranslate"><span class="pre">candybars.csv</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">candy</span></code> is The dataframe is now saved as an object called <code class="docutils literal notranslate"><span class="pre">candy</span></code>.</p></li>
+</ul>
+<p>The dataframe is stored in an object named <code class="docutils literal notranslate"><span class="pre">candy</span></code> and we can inspect in
+by “calling” the object name.</p>
+<p>In these section we can differentiate between the code that we typed in
+with a light grey background and it’s output which has a dark grey
+background.</p>
+<p>From this dataframe, we can see that there are 25 different candy bars
+and 6 columns.</p>
+<p>We can obtain the names of the columns using <code class="docutils literal notranslate"><span class="pre">.columns</span></code> syntax, and if
+we wanted to see the dimensions of the whole dataframe we could use
+<code class="docutils literal notranslate"><span class="pre">.shape</span></code> after the dataframe name.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">candy</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;name&#39;, &#39;weight&#39;, &#39;chocolate&#39;, &#39;peanuts&#39;, &#39;caramel&#39;,
+       &#39;available_canada_america&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">candy</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(25, 6)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Breaking up the code, we interpret this as:</p>
+<p><em>“From our dataframe that we saved as <code class="docutils literal notranslate"><span class="pre">candy</span></code>, tell me the <code class="docutils literal notranslate"><span class="pre">columns</span></code>
+and <code class="docutils literal notranslate"><span class="pre">shape</span></code>”</em></p>
+<p>What if we don’t want to output the whole table when displaying it as
+dataframe?</p>
+<p>We can specify how many rows of the dataset to show with <code class="docutils literal notranslate"><span class="pre">.head()</span></code>
+syntax.</p>
+<p><code class="docutils literal notranslate"><span class="pre">.head(2)</span></code> will output the first 2 rows of the dataframe.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">candy</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>weight</th>
+      <th>chocolate</th>
+      <th>peanuts</th>
+      <th>caramel</th>
+      <th>available_canada_america</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Coffee Crisp</td>
+      <td>50</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Butterfinger</td>
+      <td>184</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>America</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We can specify any number of rows within the parentheses or we can leave
+it empty which will default to the first 5 rows.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">candy</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>weight</th>
+      <th>chocolate</th>
+      <th>peanuts</th>
+      <th>caramel</th>
+      <th>available_canada_america</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Coffee Crisp</td>
+      <td>50</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Butterfinger</td>
+      <td>184</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Skor</td>
+      <td>39</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Both</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Smarties</td>
+      <td>45</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Twix</td>
+      <td>58</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Both</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>This can be really useful when we have dataframes that have hundreds or
+thousands of rows long.</p>
+</div>
+<div class="section" id="functions-methods-and-attributes">
+<h2>Functions/Methods and Attributes<a class="headerlink" href="#functions-methods-and-attributes" title="Permalink to this headline">¶</a></h2>
+<center>
+<a class="reference internal image-reference" href="../../_images/argument.png"><img alt="404 image" src="../../_images/argument.png" style="width: 60%;" /></a>
+</center>
+<p>Something you may have noticed is that when we use <code class="docutils literal notranslate"><span class="pre">pd.read_csv()</span></code> we
+put our instructions within the parentheses, whereas, when we use
+<code class="docutils literal notranslate"><span class="pre">.shape</span></code> or <code class="docutils literal notranslate"><span class="pre">.head()</span></code> the object that we are operating on comes before
+our desired command.</p>
+<p>In Python, we use <strong>functions</strong>, <strong>methods</strong> and <strong>attributes</strong>. These
+are special words in Python that take instructions (we call these
+arguments) and do something.</p>
+<div class="section" id="attributes">
+<h3>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h3>
+<p>Attributes can be distinguished from methods and functions as they do
+not have parentheses.</p>
+<p>They can be thought of as nouns or adjectives that describe an object.</p>
+<p>Take <code class="docutils literal notranslate"><span class="pre">candy.shape</span></code> as an example.</p>
+<p>In this case, our dataframe <code class="docutils literal notranslate"><span class="pre">candy</span></code> is our object and <code class="docutils literal notranslate"><span class="pre">.shape</span></code> is the
+attribute describing it.</p>
+</div>
+<div class="section" id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
+<p>Functions and methods have parentheses.<br />
+They can be thought of as verbs that complete an action.</p>
+<p>In the example of <code class="docutils literal notranslate"><span class="pre">pd.read_csv()</span></code>, this function does the action of
+reading in our data.</p>
+<p>This is going to be discussed in more detail later in the course but
+now, simply be aware of the way we write the different instructions.</p>
+</div>
+</div>
+<div class="section" id="comments">
+<h2>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h2>
+<p>While we write code, it’s often useful to annotate it or include
+information for humans that we do not want to executed.</p>
+<p>The easiest way to do this is with a hash (<code class="docutils literal notranslate"><span class="pre">#</span></code>) symbol. This creates a
+single line comment and prevents anything written after it from being
+executed by Python.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This line does not execute anything. </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">candy</span><span class="o">.</span><span class="n">shape</span>  <span class="c1"># This will output the shape of the dataframe</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(25, 6)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We use comments frequently in the exercises to help you understand what
+to do and what our intentions are.</p>
+<p>It’s good practice to use them to explain our code so if we or someone
+else wants to read it at a later date, it’s easier to understand.</p>
+<div class="admonition-lets-apply-what-we-learned admonition">
+<p class="admonition-title">Let’s apply what we learned!</p>
+<p>1. What is Pandas?<br />
+a) A useful tool for data manipulation in Python<br />
+b) A programming language<br />
+c) A datatype</p>
+<p>2. Which of the following statements is true?<br />
+a) Attribute and methods can be thought of as nouns and functions as verbs<br />
+b) Attribute can be thought of as nouns and functions and methods as verbs<br />
+c)Functions and methods can be thought of as nouns and attributes as verbs</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solutions!</p>
+<ol class="simple">
+<li><p>a) A useful tool for data manipulation in Python</p></li>
+<li><p>b) Attribute can be thought of as nouns and functions and methods as verbs</p></li>
+</ol>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "UBC-MDS/PPDS_book",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./modules/module1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Hayley Boyce, Mike Gelbart, Tiffany Timbers<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

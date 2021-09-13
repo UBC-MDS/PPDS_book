@@ -1,10 +1,10 @@
----
-type: slides
----
-
 # Column arithmetic and creation
 
-Notes:
+```{seealso}
+
+See the accompanied youtube video at <a href="https://www.youtube.com/embed/WCWi1R2CQsY?rel=0?start=10&end=430" target="_blank">the link here.</a>
+
+```
 
 <br>
 
@@ -372,10 +372,22 @@ At the top you can see the operation by itself, just for teaching
 purposes. Then, below, we combine our calculation with `assign()`,
 naming the column `sugar_per_cup`.
 
----
+## Let’s apply what we learned!
 
-# Let’s apply what we learned\!
+1\. What is Pandas?      
+a) A useful tool for data manipulation in Python    
+b) A programming language    
+c) A datatype    
+ 
 
-Notes:
+2\. Which of the following statements is true?     
+a) Attribute and methods can be thought of as nouns and functions as verbs           
+b) Attribute can be thought of as nouns and functions and methods as verbs              
+c)Functions and methods can be thought of as nouns and attributes as verbs           
 
-<br>
+
+```{admonition} Solutions!
+:class: dropdown
+
+1. a) A useful tool for data manipulation in Python    
+2. b) Attribute can be thought of as nouns and functions and methods as verbs           

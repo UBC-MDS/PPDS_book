@@ -1,10 +1,22 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: '0.8'
+    jupytext_version: 1.10.3
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Slicing and selecting using .iloc\[\]
 
-```{seealso}
-
+:::{admonition} Watch it
 See the accompanied youtube video at <a href="https://www.youtube.com/embed/W88f5DAl9hk?rel=0?start=1011&end=1456" target="_blank">the link here.</a>
-
-```
+:::
 
 Up until point, we have been manipulating our dataframe with column and
 row ***labels*** using `.loc[]`.
@@ -376,7 +388,7 @@ cereal.iloc[[4, 7, 6], [0, 3, 5, 2]]
 ```
 
 
-## Let’s apply what we learned!
+:::{admonition} Let’s apply what we learned!
 
 Here is our `fruit_salad` data again:
 
@@ -405,10 +417,12 @@ d) `fruit_salad.iloc[5:10, 4:8]`
 a) `fruit_salad.iloc[[lemon, cantaloupe], [colour, weight, seeds]]`           
 b) `fruit_salad.iloc[[10, 3], [2, 8, 4]]`           
 c) `fruit_salad.iloc[[9, 2], [1, 7, 3]]`           
-d) `fruit_salad[[9, 2], [1, 7, 3]]`           
+d) `fruit_salad[[9, 2], [1, 7, 3]]`   
+
+:::
 
 ```{admonition} Solutions!
-:class: dropdown
+:class: tip, dropdown
 
 1. c) `fruit_salad.iloc[4:9, 3:7]`   
 2. c) `fruit_salad.iloc[[9, 2], [1, 7, 3]]`  

@@ -1,10 +1,22 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: '0.8'
+    jupytext_version: 1.10.3
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Obtaining dataframe values
 
-```{seealso}
-
+:::{admonition} Watch it
 See the accompanied youtube video at <a href="https://www.youtube.com/embed/W88f5DAl9hk?rel=0?start=830&end=907" target="_blank">the link here.</a>
-
-```
+:::
 
 At this point of the module, we now know how to get a subset of an
 existing dataframe, but what if we just want to get a single value from

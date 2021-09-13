@@ -1,10 +1,22 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: '0.8'
+    jupytext_version: 1.10.3
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Summary Statistics
 
-```{seealso}
-
+:::{admonition} Watch it
 See the accompanied youtube video at <a href="https://www.youtube.com/embed/W88f5DAl9hk?rel=0?start=1518&end=1770" target="_blank">the link here.</a>
-
-```
+:::
 
 Now we’ve learned about how to get the data in to the shape and size
 that we desire, now we ca have some fun with it\!
@@ -216,7 +228,7 @@ rating       42.665705
 dtype: float64
 ```
 
-## Let’s apply what we learned!
+:::{admonition} Let’s apply what we learned!
 
 Bringing back our Fruit Salad dataframe:
 
@@ -244,10 +256,12 @@ d) All of the columns are categorical
 a) `df.describe()`        
 b) `fruit_salad.describe()`        
 c) `fruit_salad.describe(include="all")`        
-d) `fruit_salad.summary(include="all")`        
+d) `fruit_salad.summary(include="all")`    
+
+:::
 
 ```{admonition} Solutions!
-:class: dropdown
+:class: tip, dropdown
 
 1. b) `water-content`, `weight`   
 2. c) `fruit_salad.describe(include="all")` 

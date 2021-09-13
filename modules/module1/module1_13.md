@@ -1,10 +1,22 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: '0.8'
+    jupytext_version: 1.10.3
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Selecting using .loc\[\]
 
-```{seealso}
-
+:::{admonition} Watch it
 See the accompanied youtube video at <a href="https://www.youtube.com/embed/W88f5DAl9hk?rel=0?start=763&end=825" target="_blank">the link here.</a>
-
-```
+:::
 
 ## Unordered Indexing
 
@@ -89,7 +101,7 @@ cereal.loc[[75, 73, 13], ['name', 'type', 'rating', 'sugars']]
 13  Clusters  Cold  40.400208       7
 ```
 
-## Let’s apply what we learned!
+:::{admonition} Let’s apply what we learned!
 
 Using my `fruit_salad` dataframe from earlier...
 
@@ -113,8 +125,10 @@ b) `fruit_salad.loc[[8, 2, 6]:["sweetness", "weight", "seed", "location"]]`
 c) `fruit_salad.loc[[8, 2, 6], ["sweetness", "weight", "seed", "location"]]`    
 d) `fruit_salad.loc[[2, 6, 8], ["location", "seed”, “sweetness", "weight"]]`    
 
+:::
+
 ```{admonition} Solutions!
-:class: dropdown
+:class: tip, dropdown
 
 1. c) `fruit_salad.loc[[8, 2, 6], ["sweetness", "weight", "seed", "location"]]`             
 

@@ -1,29 +1,62 @@
-- file: intro
-
-- part: Modules
+format: jb-book
+root: intro
+parts:
+- caption: Modules
   chapters:
   - file: modules/module1.md
-    title: "Module 1:  Python & Pandas - An Unexpected Friendship"
+    title: 'Module 1:  Python & Pandas - An Unexpected Friendship'
     sections:
-      - file: modules/module1/module1_01
-      - file: modules/module1/module1_03
-      - file: modules/module1/module1_07
-      - file: modules/module1/module1_11
-      - file: modules/module1/module1_13
-      - file: modules/module1/module1_16
-      - file: modules/module1/module1_18
-      - file: modules/module1/module1_20
-      - file: modules/module1/module1_24
-      - file: modules/module1/module1_26
-      - file: modules/module1/module1_29
-      - file: modules/module1/module1_31
-
-
-- part:  Coding Exercises
+    - file: modules/module1/module1_01
+    - file: modules/module1/module1_03
+    - file: modules/module1/module1_07
+    - file: modules/module1/module1_11
+    - file: modules/module1/module1_13
+    - file: modules/module1/module1_16
+    - file: modules/module1/module1_18
+    - file: modules/module1/module1_20
+    - file: modules/module1/module1_24
+    - file: modules/module1/module1_26
+    - file: modules/module1/module1_29
+    - file: modules/module1/module1_31
+  - file: modules/module2.md
+    title: 'Module 2: Not So Scary Wrangling (Table Manipulation and Chaining)'
+    sections:
+    - file: modules/module2/module2_01
+    - file: modules/module2/module2_06
+    - file: modules/module2/module2_09
+    - file: modules/module2/module2_13
+    - file: modules/module2/module2_16
+    - file: modules/module2/module2_20
+    - file: modules/module2/module2_22
+    - file: modules/module2/module2_25
+    - file: modules/module2/module2_29
+  - file: modules/module3.md
+    title: 'Module 3: Tidy Data and Joining Dataframes'
+    sections:
+    - file: modules/module3/module3_01
+  - file: modules/module4.md
+    title: 'Module 4: Python Without the "Eek" (Basic Python)'
+    sections:
+    - file: modules/module4/module4_01
+  - file: modules/module5.md
+    title: 'Module 5: Making Choices and Repeating Iterations'
+    sections:
+    - file: modules/module5/module5_01
+  - file: modules/module6.md
+    title: 'Module 6: Functions Fundamentals and Best Practices'
+    sections:
+    - file: modules/module6/module6_01
+  - file: modules/module7.md
+    title: 'Module 7: Importing Files and the Coding Style Guide'
+    sections:
+    - file: modules/module7/module7_01
+  - file: modules/module8.md
+    title: 'Module 8: A Slice of NumPy and Advanced Data Wrangling'
+    sections:
+    - file: modules/module8/module8_01
+- caption: Coding Exercises
   chapters:
   - file: exercises/module1.md
-
-
-- part: Final Remarks and Attributions
+- caption: Final Remarks and Attributions
   chapters:
-    - file: modules_attribution
+  - file: modules_attribution

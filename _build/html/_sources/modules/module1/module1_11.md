@@ -1,10 +1,22 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: '0.8'
+    jupytext_version: 1.10.3
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Slicing only columns using .loc\[\]
 
-```{seealso}
-
+:::{admonition} Watch it
 See the accompanied youtube video at <a href="https://www.youtube.com/embed/W88f5DAl9hk?rel=0?start=651&end=758" target="_blank">the link here.</a>
-
-```
+:::
 
 What happens now if we wanted all the rows of the dataframe but only the
 columns `calories` to `fiber`?
@@ -12,26 +24,10 @@ columns `calories` to `fiber`?
 We can use `:` in the row postion of the `.loc[]` call to indicate we
 want all the rows. So here we write `cereal.loc[:, 'calories':'fiber']`.
 
-``` python
+```{code-cell} ipython3
 cereal.loc[:, 'calories':'fiber']
 ```
 
-```out
-    calories  protein  fat  sodium  fiber
-0         70        4    1     130   10.0
-1        120        3    5      15    2.0
-2         70        4    1     260    9.0
-3         50        4    0     140   14.0
-4        110        2    2     200    1.0
-..       ...      ...  ...     ...    ...
-72       110        2    1     250    0.0
-73       110        1    1     140    0.0
-74       100        3    1     230    3.0
-75       100        3    1     200    3.0
-76       110        2    1     200    1.0
-
-[77 rows x 5 columns]
-```
 
 ## So Far
 
@@ -67,7 +63,7 @@ df.loc[:, 'column name start':'column name end']
 - If the indices are labeled with numbers, we do not need “quotations”
     when calling them. This is only when the labels are using letters.
 
-## Let’s apply what we learned!
+:::{admonition} Let’s apply what we learned!
 
 Using my dataframe object named `fruit_salad`, let's answer some slicing questions.
 
@@ -91,12 +87,11 @@ b) `fruit_salad[:, "seed":"water-content"]`
 c) `fruit_salad[0:9, "seed":"water-content"]`             
 d) `fruit_salad.loc[:, "seed":"water-content"]`                        
 
+:::
 
 ```{admonition} Solutions!
-:class: dropdown
+:class: tip, dropdown
 
 1. d) `fruit_salad.loc[:, "seed":"water-content"]`           
-
-That's correct! Good job! This has both .loc[] and includes the columns we wish to slice here.
 
 ```

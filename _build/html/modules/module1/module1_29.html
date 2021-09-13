@@ -361,14 +361,11 @@
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        <a class="dropdown-buttons"
-            href="../../_sources/modules/module1/module1_29.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
+        
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/modules/module1/module1_29.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/modules/module1/module1_29.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -389,7 +386,7 @@
             href="https://github.com/UBC-MDS/PPDS_book/issues/new?title=Issue%20on%20page%20%2Fmodules/module1/module1_29.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/UBC-MDS/PPDS_book/edit/main/modules/module1/module1_29.md"><button
+        <a class="edit-button" href="https://github.com/UBC-MDS/PPDS_book/edit/main/modules/module1/module1_29.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -409,7 +406,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/UBC-MDS/PPDS_book/main?urlpath=tree/modules/module1/module1_29.md"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/UBC-MDS/PPDS_book/main?urlpath=tree/modules/module1/module1_29.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
@@ -472,18 +469,82 @@
 frequency means first.</p>
 <p><em><em>Frequency</em></em> is simply put, the number of times a value occurs within
 the data. Let’s look at an example using our candybars dataset.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal_mini</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">candybars_mini</span>
 </pre></div>
 </div>
-<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                        name  weight available_canada_america
-0               Coffee Crisp      50                   Canada
-1               Butterfinger     184                  America
-2                       Skor      39                     Both
-3                   Smarties      45                   Canada
-4                       Twix      58                     Both
-5  Reeses Peanutbutter Cups       43                     Both
-6               3 Musketeers      54                  America
-</pre></div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>weight</th>
+      <th>available_canada_america</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Coffee Crisp</td>
+      <td>50</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Butterfinger</td>
+      <td>184</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Skor</td>
+      <td>39</td>
+      <td>Both</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Smarties</td>
+      <td>45</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Twix</td>
+      <td>58</td>
+      <td>Both</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Reeses Peanutbutter Cups</td>
+      <td>43</td>
+      <td>Both</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>3 Musketeers</td>
+      <td>54</td>
+      <td>America</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>If we count the number of times the value <code class="docutils literal notranslate"><span class="pre">Both</span></code> appears in the
 <code class="docutils literal notranslate"><span class="pre">available_canada_america</span></code> column, we get 3 times. This is the frequency
@@ -496,11 +557,15 @@ column in our dataframe and the number of occurrences (frequencies) of
 each value.</p>
 <p>For our sample data, a frequency table for the
 <code class="docutils literal notranslate"><span class="pre">available_canada_america</span></code> column would look like this:</p>
-<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>Both       3
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Both       3
 Canada     2
 America    2
 Name: available_canada_america, dtype: int64
 </pre></div>
+</div>
+</div>
 </div>
 <p>If we want to get a frequency table of a categorical column, there are a
 few steps that need to be followed.</p>
@@ -508,15 +573,21 @@ few steps that need to be followed.</p>
 using double square brackets - <code class="docutils literal notranslate"><span class="pre">df[['column</span> <span class="pre">name']]</span></code>.</p>
 <p>For frequency tables, however, we only use single brackets to obtain the
 column values.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mfr_column</span> <span class="o">=</span> <span class="n">cereal</span><span class="p">[</span><span class="s1">&#39;mfr&#39;</span><span class="p">]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mfr_column</span> <span class="o">=</span> <span class="n">cereal</span><span class="p">[</span><span class="s1">&#39;mfr&#39;</span><span class="p">]</span>
 <span class="n">mfr_column</span>
 </pre></div>
 </div>
-<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>0     N
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     N
 1     Q
 2     K
 3     K
+4     R
      ..
+72    G
 73    G
 74    R
 75    G
@@ -524,16 +595,22 @@ column values.</p>
 Name: mfr, Length: 77, dtype: object
 </pre></div>
 </div>
+</div>
+</div>
 <p>We saved the object in this example here to an object named <code class="docutils literal notranslate"><span class="pre">mfr_column</span></code>
 in the same way that we have done this before.</p>
 <p>Now we can use <code class="docutils literal notranslate"><span class="pre">.value_counts()</span></code> on this <code class="docutils literal notranslate"><span class="pre">mfr_column</span></code> variable to
 reference it, and we can obtain the frequency value for the different
 categories in that variable.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mfr_freq</span> <span class="o">=</span> <span class="n">mfr_column</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mfr_freq</span> <span class="o">=</span> <span class="n">mfr_column</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 <span class="n">mfr_freq</span>
 </pre></div>
 </div>
-<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>K    23
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>K    23
 G    22
 P     9
 Q     8
@@ -543,37 +620,109 @@ A     1
 Name: mfr, dtype: int64
 </pre></div>
 </div>
+</div>
+</div>
 <p>If we did instead use double square brackets with <code class="docutils literal notranslate"><span class="pre">pd.value_counts()</span></code>,
 we would get an error. So it is important to take care and remember when
 you are using <code class="docutils literal notranslate"><span class="pre">value_counts()</span></code>, you only use one set of square brackets.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mfr_col_wrong</span> <span class="o">=</span> <span class="n">cereal</span><span class="p">[[</span><span class="s1">&#39;mfr&#39;</span><span class="p">]]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mfr_col_wrong</span> <span class="o">=</span> <span class="n">cereal</span><span class="p">[[</span><span class="s1">&#39;mfr&#39;</span><span class="p">]]</span>
 <span class="n">mfr_col_wrong</span>
 </pre></div>
 </div>
-<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>   mfr
-0    N
-1    Q
-2    K
-3    K
-..  ..
-73   G
-74   R
-75   G
-76   G
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-[77 rows x 1 columns]
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mfr</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>N</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Q</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>K</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>K</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>R</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>72</th>
+      <td>G</td>
+    </tr>
+    <tr>
+      <th>73</th>
+      <td>G</td>
+    </tr>
+    <tr>
+      <th>74</th>
+      <td>R</td>
+    </tr>
+    <tr>
+      <th>75</th>
+      <td>G</td>
+    </tr>
+    <tr>
+      <th>76</th>
+      <td>G</td>
+    </tr>
+  </tbody>
+</table>
+<p>77 rows × 1 columns</p>
+</div></div></div>
+</div>
+<div class="cell tag_raises-exception docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mfr_col_wrong</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mfr_col_wrong</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mfr
+K      23
+G      22
+P       9
+Q       8
+R       8
+N       6
+A       1
+dtype: int64
 </pre></div>
 </div>
-<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>AttributeError: &#39;DataFrame&#39; object has no attribute &#39;value_counts&#39;
-
-Detailed traceback: 
-  File &quot;&lt;string&gt;&quot;, line 1, in &lt;module&gt;
-  File &quot;/usr/local/lib/python3.7/site-packages/pandas/core/generic.py&quot;, line 5274, in __getattr__
-    return object.__getattribute__(self, name)
-</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="saving-a-dataframe">
@@ -581,8 +730,12 @@ Detailed traceback:
 <p>Sometimes it is useful to save a new dataframe to a file like a csv file
 for future use by you or somebody else.</p>
 <p>We can do this using a method called <code class="docutils literal notranslate"><span class="pre">.to_csv()</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mfr_freq</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;mfr_frequency.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mfr_freq</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;mfr_frequency.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
 </div>
 <p>We put our desired <code class="docutils literal notranslate"><span class="pre">csv</span></code> file name in quotations within the parentheses
 and follow it with the argument <code class="docutils literal notranslate"><span class="pre">index=False</span></code> so we don’t export our

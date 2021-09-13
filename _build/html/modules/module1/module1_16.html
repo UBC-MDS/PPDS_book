@@ -361,14 +361,11 @@
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        <a class="dropdown-buttons"
-            href="../../_sources/modules/module1/module1_16.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
+        
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/modules/module1/module1_16.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/modules/module1/module1_16.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -389,7 +386,7 @@
             href="https://github.com/UBC-MDS/PPDS_book/issues/new?title=Issue%20on%20page%20%2Fmodules/module1/module1_16.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/UBC-MDS/PPDS_book/edit/main/modules/module1/module1_16.md"><button
+        <a class="edit-button" href="https://github.com/UBC-MDS/PPDS_book/edit/main/modules/module1/module1_16.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -409,7 +406,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/UBC-MDS/PPDS_book/main?urlpath=tree/modules/module1/module1_16.md"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/UBC-MDS/PPDS_book/main?urlpath=tree/modules/module1/module1_16.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
@@ -446,43 +443,173 @@
 <p>At this point of the module, we now know how to get a subset of an
 existing dataframe, but what if we just want to get a single value from
 it?</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="mi">63</span><span class="p">]]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="mi">63</span><span class="p">]]</span>
 </pre></div>
 </div>
-<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>              name mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
-63  Shredded Wheat   N  Cold        80        2    0       0    3.0   16.0       0      95         0      1    0.83   1.0  68.235885
-</pre></div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>mfr</th>
+      <th>type</th>
+      <th>calories</th>
+      <th>protein</th>
+      <th>fat</th>
+      <th>sodium</th>
+      <th>...</th>
+      <th>sugars</th>
+      <th>potass</th>
+      <th>vitamins</th>
+      <th>shelf</th>
+      <th>weight</th>
+      <th>cups</th>
+      <th>rating</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>63</th>
+      <td>Shredded Wheat</td>
+      <td>N</td>
+      <td>Cold</td>
+      <td>80</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>95</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0.83</td>
+      <td>1.0</td>
+      <td>68.235885</td>
+    </tr>
+  </tbody>
+</table>
+<p>1 rows × 16 columns</p>
+</div></div></div>
 </div>
 <p>For example, what if we wanted to save the calorie content of <code class="docutils literal notranslate"><span class="pre">Shredded</span> <span class="pre">Wheat</span></code> by extracting it from the dataframe manually instead of typing
 the number in Python?</p>
 <p>To do this we use again our <code class="docutils literal notranslate"><span class="pre">.loc</span></code> notation and we specify the row we
 are targeting which is 63, followed by the column, here <code class="docutils literal notranslate"><span class="pre">calories</span></code>. This
 goes in the square brackets.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">63</span><span class="p">,</span> <span class="s1">&#39;calories&#39;</span><span class="p">]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">63</span><span class="p">,</span> <span class="s1">&#39;calories&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
-<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>80
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>80
 </pre></div>
+</div>
+</div>
 </div>
 <p>When we do this, it displays the the value contained in the cell, which
 in this case, is 80.</p>
-<p>What about if we want the rating of <code class="docutils literal notranslate"><span class="pre">Smacks</span></code> which is located at index
+<p>What about if we want just the rating of <code class="docutils literal notranslate"><span class="pre">Smacks</span></code> which is located at index
 66?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="mi">66</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>mfr</th>
+      <th>type</th>
+      <th>calories</th>
+      <th>protein</th>
+      <th>fat</th>
+      <th>sodium</th>
+      <th>...</th>
+      <th>sugars</th>
+      <th>potass</th>
+      <th>vitamins</th>
+      <th>shelf</th>
+      <th>weight</th>
+      <th>cups</th>
+      <th>rating</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>66</th>
+      <td>Smacks</td>
+      <td>K</td>
+      <td>Cold</td>
+      <td>110</td>
+      <td>2</td>
+      <td>1</td>
+      <td>70</td>
+      <td>...</td>
+      <td>15</td>
+      <td>40</td>
+      <td>25</td>
+      <td>2</td>
+      <td>1.0</td>
+      <td>0.75</td>
+      <td>31.230054</td>
+    </tr>
+  </tbody>
+</table>
+<p>1 rows × 16 columns</p>
+</div></div></div>
+</div>
 <p>Again we use <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> notation, and we specify the row and the column
 location separated by a comma.</p>
 <p>So here we write <code class="docutils literal notranslate"><span class="pre">cereal.loc</span></code> and the inside the brackets we write <code class="docutils literal notranslate"><span class="pre">[66,</span> <span class="pre">'rating']</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="mi">66</span><span class="p">]]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">66</span><span class="p">,</span> <span class="s1">&#39;rating&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
-<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>      name mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
-66  Smacks   K  Cold       110        2    1      70    1.0    9.0      15      40        25      2     1.0  0.75  31.230054
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>31.230054
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">66</span><span class="p">,</span> <span class="s1">&#39;rating&#39;</span><span class="p">]</span>
-</pre></div>
 </div>
-<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>31.230054
-</pre></div>
 </div>
 </div>
 

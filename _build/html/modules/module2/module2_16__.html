@@ -1,0 +1,862 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Filtering &#8212; Programming in Python for Data Science</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/extras.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="gifted-perlman-a442ef.netlify.app/modules/module2/module2_16__.html" />
+    <link rel="shortcut icon" href="../../_static/icon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Programming in Python for Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  Modules
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module1.html">
+   Module 1:  Python &amp; Pandas - An Unexpected Friendship
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_01.html">
+     What is a dataframe?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_03.html">
+     What is Pandas?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_07.html">
+     Slicing Rows using .loc[]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_11.html">
+     Slicing only columns using .loc[]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_13.html">
+     Selecting using .loc[]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_16.html">
+     Obtaining dataframe values
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_18.html">
+     Selecting a Single Column
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_20.html">
+     Slicing and selecting using .iloc[]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_24.html">
+     Sorting dataframes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_26.html">
+     Summary Statistics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_29.html">
+     Frequency Tables and Writing CSVs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_31.html">
+     Quick viz with Altair!
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module2.html">
+   Module 2: Not So Scary Wrangling (Table Manipulation and Chaining)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module3.html">
+   Module 3: Tidy Data and Joining Dataframes
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module3/module3_01.html">
+     Tidy data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module4.html">
+   Module 4: Python Without the "Eek" (Basic Python)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module4/module4_01.html">
+     Python data types
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module5.html">
+   Module 5: Making Choices and Repeating Iterations
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module5/module5_01.html">
+     Making choices with conditional statements
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module6.html">
+   Module 6: Functions Fundamentals and Best Practices
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module6/module6_01.html">
+     DRY revisited and function fundamentals
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module7.html">
+   Module 7: Importing Files and the Coding Style Guide
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module7/module7_01.html">
+     Importing Python Libraries
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module8.html">
+   Module 8: A Slice of NumPy and Advanced Data Wrangling
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module8/module8_01.html">
+     NumPy and 1D Arrays
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../../_sources/modules/module2/module2_16__.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/modules/module2/module2_16__.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/UBC-MDS/PPDS_book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/UBC-MDS/PPDS_book/issues/new?title=Issue%20on%20page%20%2Fmodules/module2/module2_16__.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/UBC-MDS/PPDS_book/edit/main/modules/module2/module2_16__.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/UBC-MDS/PPDS_book/main?urlpath=tree/modules/module2/module2_16__.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conditions">
+   Conditions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multiple-condition-filtering-and">
+   Multiple Condition Filtering - “and”
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multiple-condition-filtering-or">
+   Multiple Condition Filtering - “or”
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tilde">
+   Tilde
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="data-filtering">
+<h1>Data Filtering<a class="headerlink" href="#data-filtering" title="Permalink to this headline">¶</a></h1>
+<div class="admonition-watch-it admonition">
+<p class="admonition-title">Watch it</p>
+<p>See the accompanied youtube video at <a href="https://www.youtube.com/embed/WCWi1R2CQsY?rel=0?start=847&end=1221" target="_blank">the link here.</a></p>
+</div>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;cereal.csv&#39;</span><span class="p">)</span>
+<span class="n">cereal</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                        name mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+0                  100% Bran   N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
+1          100% Natural Bran   Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
+2                   All-Bran   K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
+3  All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
+4             Almond Delight   R  Cold       110        2    2     200    1.0   14.0       8       1        25      3     1.0  0.75  34.384843
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Filtering is probably one of the most frequent data manipulations you
+will do in data analysis.</p>
+<p>Filtering is often used when we are either trying to rid the dataframe
+of unwanted rows or trying to analyze rows with a particular column
+value.</p>
+<p>Let’s try to filter the <code class="docutils literal notranslate"><span class="pre">cereal.csv</span></code> dataset.</p>
+<hr class="docutils" />
+<div class="section" id="conditions">
+<h2>Conditions<a class="headerlink" href="#conditions" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="p">[</span><span class="s1">&#39;protein&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">4</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>0     False
+1     False
+2     False
+3     False
+4     False
+      ...  
+72    False
+73    False
+74    False
+75    False
+76    False
+Name: protein, Length: 77, dtype: bool
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Suppose you are trying to find the information for cereals with a
+protein content greater than 4g per serving.</p>
+<p>Our first instinct would be to write code that looks somewhat like this.</p>
+<p>This can be translated as</p>
+<p><em>“From the <code class="docutils literal notranslate"><span class="pre">protein</span></code> column in the dataframe <code class="docutils literal notranslate"><span class="pre">cereal</span></code>, which have values
+greater than 4?”</em></p>
+<p>The output shows all the index labels and a column with <code class="docutils literal notranslate"><span class="pre">True</span></code> or
+<code class="docutils literal notranslate"><span class="pre">False</span></code> values depending on if the row meets the condition. Cereals with
+<code class="docutils literal notranslate"><span class="pre">True</span></code> have a protein content greater than 4 and <code class="docutils literal notranslate"><span class="pre">False</span></code> if they do not.</p>
+<p>But we want a dataframe with all the information that only contains the
+rows with protein above 4.</p>
+<p>How can this be achieved?</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="p">[</span><span class="n">cereal</span><span class="p">[</span><span class="s1">&#39;protein&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>              name mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+11        Cheerios   G  Cold       110        6    2     290    2.0   17.0       1     105        25      1     1.0  1.25  50.764999
+57  Quaker Oatmeal   Q   Hot       100        5    2       0    2.7    1.0       1     110         0      1     1.0  0.67  50.828392
+67       Special K   K  Cold       110        6    0     230    1.0   16.0       3      55        25      1     1.0  1.00  53.131324
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>To achieve this, we index into our <code class="docutils literal notranslate"><span class="pre">cereal</span></code> dataframe using this column
+of True/False values. The result is a smaller dataframe that only
+contains the rows corresponding to the <code class="docutils literal notranslate"><span class="pre">True</span></code> values.</p>
+<p>This code can be translated to:</p>
+<p><em>Select the rows from the <code class="docutils literal notranslate"><span class="pre">cereal</span></code> dataframe that, according to the
+<code class="docutils literal notranslate"><span class="pre">cereal</span></code> dataframe, have a <code class="docutils literal notranslate"><span class="pre">protein</span></code> values greater than 4.</em></p>
+<p>We can see from the output that only the rows meeting the condition are
+displayed.</p>
+<p>By the way, it is a common pattern that we’re using the same dataframe
+twice, namely <code class="docutils literal notranslate"><span class="pre">cereal</span></code>, but it’s not strictly required by pandas.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="p">[</span><span class="n">cereal</span><span class="p">[</span><span class="s1">&#39;protein&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                                 name mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+0                           100% Bran   N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
+2                            All-Bran   K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
+3           All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
+41                               Life   Q  Cold       100        4    2     150    2.0   12.0       6      95        25      2     1.0  0.67  45.328074
+43                              Maypo   A   Hot       100        4    1       0    0.0   16.0       3      95        25      2     1.0  1.00  54.850917
+44   Muesli Raisins; Dates; &amp; Almonds   R  Cold       150        4    3      95    3.0   16.0      11     170        25      3     1.0  1.00  37.136863
+45  Muesli Raisins; Peaches; &amp; Pecans   R  Cold       150        4    3     150    3.0   16.0      11     170        25      3     1.0  1.00  34.139765
+56                 Quaker Oat Squares   Q  Cold       100        4    1     135    2.0   14.0       6     110        25      3     1.0  0.50  49.511874
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>We can do this with equalities as well.</p>
+<p>Now we get all the cereals with a protein content of exactly 4g per
+serving.</p>
+<p>The key point to remember here is that we use <strong>two</strong> equal signs.</p>
+<p>In Python, a single <code class="docutils literal notranslate"><span class="pre">=</span></code> is used as an assignment operator. We are
+setting something to equal something else.</p>
+<p>The double equal sign operator is used for comparison. We check if
+certain values are equivalent to one another.</p>
+<p>By the way, these conventions were set a long time ago when people made
+the early programming languages. In hindsight, maybe something like <code class="docutils literal notranslate"><span class="pre">=?</span></code>
+would have been more clear, but the double equal sign for comparison is
+now a standard.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="p">[</span><span class="n">cereal</span><span class="p">[</span><span class="s1">&#39;mfr&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Q&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                  name mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+1    100% Natural Bran   Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
+10        Cap&#39;n&#39;Crunch   Q  Cold       120        1    2     220    0.0   12.0      12      35        25      2     1.0  0.75  18.042851
+35    Honey Graham Ohs   Q  Cold       120        1    2     220    1.0   12.0      11      45        25      2     1.0  1.00  21.871292
+41                Life   Q  Cold       100        4    2     150    2.0   12.0       6      95        25      2     1.0  0.67  45.328074
+54         Puffed Rice   Q  Cold        50        1    0       0    0.0   13.0       0      15         0      3     0.5  1.00  60.756112
+55        Puffed Wheat   Q  Cold        50        2    0       0    1.0   10.0       0      50         0      3     0.5  1.00  63.005645
+56  Quaker Oat Squares   Q  Cold       100        4    1     135    2.0   14.0       6     110        25      3     1.0  0.50  49.511874
+57      Quaker Oatmeal   Q   Hot       100        5    2       0    2.7    1.0       1     110         0      1     1.0  0.67  50.828392
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>We can filter categorical columns too. In this example, we only want
+cereals from the manufacturer “Q” (For Quaker):</p>
+<p>Here, we are using the double equal sign operator that we saw in the
+last slide.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="multiple-condition-filtering-and">
+<h2>Multiple Condition Filtering - “and”<a class="headerlink" href="#multiple-condition-filtering-and" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="p">[</span><span class="n">cereal</span><span class="p">[</span><span class="s1">&#39;protein&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                                 name mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+0                           100% Bran   N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
+2                            All-Bran   K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
+3           All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
+11                           Cheerios   G  Cold       110        6    2     290    2.0   17.0       1     105        25      1     1.0  1.25  50.764999
+41                               Life   Q  Cold       100        4    2     150    2.0   12.0       6      95        25      2     1.0  0.67  45.328074
+43                              Maypo   A   Hot       100        4    1       0    0.0   16.0       3      95        25      2     1.0  1.00  54.850917
+44   Muesli Raisins; Dates; &amp; Almonds   R  Cold       150        4    3      95    3.0   16.0      11     170        25      3     1.0  1.00  37.136863
+45  Muesli Raisins; Peaches; &amp; Pecans   R  Cold       150        4    3     150    3.0   16.0      11     170        25      3     1.0  1.00  34.139765
+56                 Quaker Oat Squares   Q  Cold       100        4    1     135    2.0   14.0       6     110        25      3     1.0  0.50  49.511874
+57                     Quaker Oatmeal   Q   Hot       100        5    2       0    2.7    1.0       1     110         0      1     1.0  0.67  50.828392
+67                          Special K   K  Cold       110        6    0     230    1.0   16.0       3      55        25      1     1.0  1.00  53.131324
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>We now know how to filter on one condition but how do we filter if we
+have many?</p>
+<p>Perhaps we only want cereals with protein content between 4 to 5 grams?</p>
+<p>To find the cereals that meet protein contents greater or equal to 4, we
+use the code shown here.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="p">[</span><span class="n">cereal</span><span class="p">[</span><span class="s1">&#39;protein&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                         name mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+0                   100% Bran   N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
+1           100% Natural Bran   Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
+2                    All-Bran   K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
+3   All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
+4              Almond Delight   R  Cold       110        2    2     200    1.0   14.0       8       1        25      3     1.0  0.75  34.384843
+..                        ...  ..   ...       ...      ...  ...     ...    ...    ...     ...     ...       ...    ...     ...   ...        ...
+72                    Triples   G  Cold       110        2    1     250    0.0   21.0       3      60        25      3     1.0  0.75  39.106174
+73                       Trix   G  Cold       110        1    1     140    0.0   13.0      12      25        25      2     1.0  1.00  27.753301
+74                 Wheat Chex   R  Cold       100        3    1     230    3.0   17.0       3     115        25      1     1.0  0.67  49.787445
+75                   Wheaties   G  Cold       100        3    1     200    3.0   17.0       3     110        25      1     1.0  1.00  51.592193
+76        Wheaties Honey Gold   G  Cold       110        2    1     200    1.0   16.0       8      60        25      1     1.0  0.75  36.187559
+
+[75 rows x 16 columns]
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>And the cereals that meet the condition of protein content below or
+equal to 5 would be obtained as shown here.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="p">[</span><span class="n">cereal</span><span class="p">[</span><span class="s1">&#39;protein&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="p">[</span><span class="n">cereal</span><span class="p">[</span><span class="s1">&#39;protein&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="p">[(</span><span class="n">cereal</span><span class="p">[</span><span class="s1">&#39;protein&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">4</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">cereal</span><span class="p">[</span><span class="s1">&#39;protein&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">)]</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                                 name mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+0                           100% Bran   N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
+2                            All-Bran   K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
+3           All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
+41                               Life   Q  Cold       100        4    2     150    2.0   12.0       6      95        25      2     1.0  0.67  45.328074
+43                              Maypo   A   Hot       100        4    1       0    0.0   16.0       3      95        25      2     1.0  1.00  54.850917
+44   Muesli Raisins; Dates; &amp; Almonds   R  Cold       150        4    3      95    3.0   16.0      11     170        25      3     1.0  1.00  37.136863
+45  Muesli Raisins; Peaches; &amp; Pecans   R  Cold       150        4    3     150    3.0   16.0      11     170        25      3     1.0  1.00  34.139765
+56                 Quaker Oat Squares   Q  Cold       100        4    1     135    2.0   14.0       6     110        25      3     1.0  0.50  49.511874
+57                     Quaker Oatmeal   Q   Hot       100        5    2       0    2.7    1.0       1     110         0      1     1.0  0.67  50.828392
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>We can combine the two conditions using the <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> operator. This allows us
+to obtain cereals that meet <strong>both</strong> conditions.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> indicates “and”. This means that both conditions must hold for a
+row to be included in the new dataframe.</p>
+<p>Each condition is wrapped with parentheses to keep them clearly
+separated.</p>
+<hr class="docutils" />
+<center>
+<a class="reference internal image-reference" href="module2/condition_and.png"><img alt="404 image" src="module2/condition_and.png" style="width: 80%;" /></a>
+</center>
+<p>Notes:</p>
+<p>Only rows present in <strong>both</strong> dataframes will be selected.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="p">[(</span><span class="n">cereal</span><span class="p">[</span><span class="s1">&#39;mfr&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Q&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">cereal</span><span class="p">[</span><span class="s1">&#39;protein&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">)]</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>              name mfr type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+57  Quaker Oatmeal   Q  Hot       100        5    2       0    2.7    1.0       1     110         0      1     1.0  0.67  50.828392
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Next, we will look at a case where we filter on two different columns.</p>
+<p>Let’s say we only want cereals from the Quaker manufacturer, with a
+protein content greater than 4.</p>
+<p>The same coding syntax can be applied to two different column
+conditions.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="multiple-condition-filtering-or">
+<h2>Multiple Condition Filtering - “or”<a class="headerlink" href="#multiple-condition-filtering-or" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="p">[(</span><span class="n">cereal</span><span class="p">[</span><span class="s1">&#39;mfr&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Q&#39;</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">cereal</span><span class="p">[</span><span class="s1">&#39;protein&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">)]</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                  name mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+1    100% Natural Bran   Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
+10        Cap&#39;n&#39;Crunch   Q  Cold       120        1    2     220    0.0   12.0      12      35        25      2     1.0  0.75  18.042851
+11            Cheerios   G  Cold       110        6    2     290    2.0   17.0       1     105        25      1     1.0  1.25  50.764999
+35    Honey Graham Ohs   Q  Cold       120        1    2     220    1.0   12.0      11      45        25      2     1.0  1.00  21.871292
+41                Life   Q  Cold       100        4    2     150    2.0   12.0       6      95        25      2     1.0  0.67  45.328074
+54         Puffed Rice   Q  Cold        50        1    0       0    0.0   13.0       0      15         0      3     0.5  1.00  60.756112
+55        Puffed Wheat   Q  Cold        50        2    0       0    1.0   10.0       0      50         0      3     0.5  1.00  63.005645
+56  Quaker Oat Squares   Q  Cold       100        4    1     135    2.0   14.0       6     110        25      3     1.0  0.50  49.511874
+57      Quaker Oatmeal   Q   Hot       100        5    2       0    2.7    1.0       1     110         0      1     1.0  0.67  50.828392
+67           Special K   K  Cold       110        6    0     230    1.0   16.0       3      55        25      1     1.0  1.00  53.131324
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>Suppose that we are interested in cereals that either are made from the
+Quaker manufacturer <strong>OR</strong> a protein content above 4.</p>
+<p>For a row to be included in the output, we only require one or the other
+condition to hold.</p>
+<p>Instead of using the <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> symbol, we use <code class="docutils literal notranslate"><span class="pre">|</span></code> which is called the “pipe
+operator”. This means “or” in the Python programming language (and many
+other languages).</p>
+<hr class="docutils" />
+<center>
+<a class="reference internal image-reference" href="module2/condition_or.png"><img alt="404 image" src="module2/condition_or.png" style="width: 80%;" /></a>
+<center>
+<p>Notes:</p>
+<p>When we filter using “or” this time, it resulted in 10 cereals that met
+either of the conditions.</p>
+<p>When we filtered using “and”, only 1 cereal met both conditions.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="tilde">
+<h2>Tilde<a class="headerlink" href="#tilde" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="p">[</span><span class="s1">&#39;protein&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">4</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>0     False
+1     False
+2     False
+3     False
+4     False
+      ...  
+72    False
+73    False
+74    False
+75    False
+76    False
+Name: protein, Length: 77, dtype: bool
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>We saw that when we filter the conditions are expressed with an
+underlying column with <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code> values indicating if the
+condition has been met in each row of the dataframe.</p>
+<p>But what if I wanted the rows that were the complement (or opposite) of
+this?</p>
+<p>The opposite of <code class="docutils literal notranslate"><span class="pre">cereal['protein']</span> <span class="pre">&gt;</span> <span class="pre">4</span></code> is <code class="docutils literal notranslate"><span class="pre">cereal['protein']</span> <span class="pre">&lt;=</span> <span class="pre">4</span></code>, so
+that one isn’t too tricky. But sometimes taking the opposite is not so
+straightforward. This is where the <code class="docutils literal notranslate"><span class="pre">~</span></code> (“tilde”) operator can be
+helpful.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">cereal</span><span class="p">[</span><span class="s1">&#39;protein&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>0    False
+1    False
+2    False
+3    False
+4    False
+Name: protein, dtype: bool
+</pre></div>
+</div>
+<p>Tilde converts all the <code class="docutils literal notranslate"><span class="pre">True</span></code> values to <code class="docutils literal notranslate"><span class="pre">False</span></code> and all the <code class="docutils literal notranslate"><span class="pre">False</span></code>
+values, to <code class="docutils literal notranslate"><span class="pre">True.</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">~</span><span class="p">(</span><span class="n">cereal</span><span class="p">[</span><span class="s1">&#39;protein&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">))</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>0    True
+1    True
+2    True
+3    True
+4    True
+Name: protein, dtype: bool
+</pre></div>
+</div>
+<p>Notes:</p>
+<p><em>Tilde</em> (<code class="docutils literal notranslate"><span class="pre">~</span></code>) gives us the ability to return the complement of the code
+following it.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="p">[</span><span class="o">~</span><span class="p">(</span><span class="n">cereal</span><span class="p">[</span><span class="s1">&#39;protein&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">)]</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                         name mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
+0                   100% Bran   N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
+1           100% Natural Bran   Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
+2                    All-Bran   K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
+3   All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
+4              Almond Delight   R  Cold       110        2    2     200    1.0   14.0       8       1        25      3     1.0  0.75  34.384843
+..                        ...  ..   ...       ...      ...  ...     ...    ...    ...     ...     ...       ...    ...     ...   ...        ...
+72                    Triples   G  Cold       110        2    1     250    0.0   21.0       3      60        25      3     1.0  0.75  39.106174
+73                       Trix   G  Cold       110        1    1     140    0.0   13.0      12      25        25      2     1.0  1.00  27.753301
+74                 Wheat Chex   R  Cold       100        3    1     230    3.0   17.0       3     115        25      1     1.0  0.67  49.787445
+75                   Wheaties   G  Cold       100        3    1     200    3.0   17.0       3     110        25      1     1.0  1.00  51.592193
+76        Wheaties Honey Gold   G  Cold       110        2    1     200    1.0   16.0       8      60        25      1     1.0  0.75  36.187559
+
+[74 rows x 16 columns]
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>We can obtain the complete dataframe by putting the entire condition
+within our square brackets like we did before.</p>
+<p>What we have here, is taking the rows where the protein content is not
+greater than four.</p>
+<p>This gives us more versatility when filtering, especially when we want
+the inverse of more complicated conditions and verbs (you’ll see this in
+Module 3).</p>
+<div class="admonition-lets-apply-what-we-learned admonition">
+<p class="admonition-title">Let’s apply what we learned!</p>
+<p>Bringing back our Fruit Salad dataframe:</p>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>           name    colour    location    seed   shape  sweetness   water-content  weight
+0         apple       red     canada    True   round     True          84         100
+1        banana    yellow     mexico   False    long     True          75         120
+2    cantaloupe    orange      spain    True   round     True          90        1360
+3  dragon-fruit   magenta      china    True   round    False          96         600
+4    elderberry    purple    austria   False   round     True          80           5
+5           fig    purple     turkey   False    oval    False          78          40
+6         guava     green     mexico    True    oval     True          83         450
+7   huckleberry      blue     canada    True   round     True          73           5
+8          kiwi     brown      china    True   round     True          80          76
+9         lemon    yellow     mexico   False    oval    False          83          65
+</pre></div>
+</div>
+<p>1. Which of the following columns contain numerical data?<br />
+a) <code class="docutils literal notranslate"><span class="pre">colour</span></code>, <code class="docutils literal notranslate"><span class="pre">shape</span></code>, <code class="docutils literal notranslate"><span class="pre">water-content</span></code>
+b) <code class="docutils literal notranslate"><span class="pre">water-content</span></code>, <code class="docutils literal notranslate"><span class="pre">weight</span></code><br />
+c) <code class="docutils literal notranslate"><span class="pre">colour</span></code>, <code class="docutils literal notranslate"><span class="pre">seed</span></code>, <code class="docutils literal notranslate"><span class="pre">water-content</span></code>, <code class="docutils literal notranslate"><span class="pre">weight</span></code><br />
+d) All of the columns are categorical</p>
+<p>2. We need summary statistics of both numerical and categorical columns of the dataframe <code class="docutils literal notranslate"><span class="pre">fruit_salad</span></code>. What code would be suitable for this?<br />
+a) <code class="docutils literal notranslate"><span class="pre">df.describe()</span></code><br />
+b) <code class="docutils literal notranslate"><span class="pre">fruit_salad.describe()</span></code><br />
+c) <code class="docutils literal notranslate"><span class="pre">fruit_salad.describe(include=&quot;all&quot;)</span></code><br />
+d) <code class="docutils literal notranslate"><span class="pre">fruit_salad.summary(include=&quot;all&quot;)</span></code></p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solutions!</p>
+<ol class="simple">
+<li><p>b) <code class="docutils literal notranslate"><span class="pre">water-content</span></code>, <code class="docutils literal notranslate"><span class="pre">weight</span></code></p></li>
+<li><p>c) <code class="docutils literal notranslate"><span class="pre">fruit_salad.describe(include=&quot;all&quot;)</span></code></p></li>
+</ol>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "UBC-MDS/PPDS_book",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./modules/module2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Hayley Boyce, Mike Gelbart, Tiffany Timbers<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

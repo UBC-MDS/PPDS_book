@@ -458,20 +458,6 @@
 columns <code class="docutils literal notranslate"><span class="pre">calories</span></code> to <code class="docutils literal notranslate"><span class="pre">fiber</span></code>?</p>
 <p>We can use <code class="docutils literal notranslate"><span class="pre">:</span></code> in the row postion of the <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> call to indicate we
 want all the rows. So here we write <code class="docutils literal notranslate"><span class="pre">cereal.loc[:,</span> <span class="pre">'calories':'fiber']</span></code>.</p>
-<div class="cell tag_hide-cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.width&#39;</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
-
-<span class="n">np</span><span class="o">.</span><span class="n">set_printoptions</span><span class="p">(</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
-
-<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_columns&#39;</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
-<span class="n">cereal</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;cereal.csv&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;calories&#39;</span><span class="p">:</span><span class="s1">&#39;fiber&#39;</span><span class="p">]</span>

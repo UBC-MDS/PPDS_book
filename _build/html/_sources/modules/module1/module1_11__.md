@@ -25,7 +25,7 @@ We can use `:` in the row postion of the `.loc[]` call to indicate we
 want all the rows. So here we write `cereal.loc[:, 'calories':'fiber']`.
 
 ```{code-cell} ipython3
-:tags: ["hide-cell"]
+:tags: ["remove-cell"]
 import pandas as pd
 import numpy as np
 pd.set_option('display.width', 400)

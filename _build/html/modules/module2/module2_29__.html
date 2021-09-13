@@ -1,0 +1,964 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>More plotting tricks using Altair &#8212; Programming in Python for Data Science</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/extras.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="gifted-perlman-a442ef.netlify.app/modules/module2/module2_29__.html" />
+    <link rel="shortcut icon" href="../../_static/icon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Programming in Python for Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  Modules
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module1.html">
+   Module 1:  Python &amp; Pandas - An Unexpected Friendship
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_01.html">
+     What is a dataframe?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_03.html">
+     What is Pandas?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_07.html">
+     Slicing Rows using .loc[]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_11.html">
+     Slicing only columns using .loc[]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_13.html">
+     Selecting using .loc[]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_16.html">
+     Obtaining dataframe values
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_18.html">
+     Selecting a Single Column
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_20.html">
+     Slicing and selecting using .iloc[]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_24.html">
+     Sorting dataframes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_26.html">
+     Summary Statistics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_29.html">
+     Frequency Tables and Writing CSVs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module1/module1_31.html">
+     Quick viz with Altair!
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module2.html">
+   Module 2: Not So Scary Wrangling (Table Manipulation and Chaining)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module3.html">
+   Module 3: Tidy Data and Joining Dataframes
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module3/module3_01.html">
+     Tidy data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module4.html">
+   Module 4: Python Without the "Eek" (Basic Python)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module4/module4_01.html">
+     Python data types
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module5.html">
+   Module 5: Making Choices and Repeating Iterations
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module5/module5_01.html">
+     Making choices with conditional statements
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module6.html">
+   Module 6: Functions Fundamentals and Best Practices
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module6/module6_01.html">
+     DRY revisited and function fundamentals
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module7.html">
+   Module 7: Importing Files and the Coding Style Guide
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module7/module7_01.html">
+     Importing Python Libraries
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../module8.html">
+   Module 8: A Slice of NumPy and Advanced Data Wrangling
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module8/module8_01.html">
+     NumPy and 1D Arrays
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="../../_sources/modules/module2/module2_29__.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/modules/module2/module2_29__.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/UBC-MDS/PPDS_book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/UBC-MDS/PPDS_book/issues/new?title=Issue%20on%20page%20%2Fmodules/module2/module2_29__.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/UBC-MDS/PPDS_book/edit/main/modules/module2/module2_29__.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/UBC-MDS/PPDS_book/main?urlpath=tree/modules/module2/module2_29__.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   More plotting tricks using Altair
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variable-types">
+   Variable types
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#histograms">
+     Histograms
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bins">
+     Bins
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sorting">
+     Sorting
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="more-plotting-tricks-using-altair">
+<h1>More plotting tricks using Altair<a class="headerlink" href="#more-plotting-tricks-using-altair" title="Permalink to this headline">¶</a></h1>
+<div class="admonition-watch-it admonition">
+<p class="admonition-title">Watch it</p>
+<p>See the accompanied youtube video at <a href="https://www.youtube.com/embed/WCWi1R2CQsY?rel=0?start=2106&end=2634" target="_blank">the link here.</a></p>
+</div>
+<br>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">chart0</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">cereal</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;mfr&#39;</span><span class="p">,</span> 
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;calories&#39;</span>
+<span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Scatter plot of manufacturer calorie content&quot;</span><span class="p">)</span>
+
+<span class="n">chart0</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="module2/chart0.png"><img alt="A caption" src="module2/chart0.png" style="width: 60%;" /></a>
+<p>Notes:</p>
+<p>Let’s build on the Altair skills we learned in the previous module.</p>
+<p>At this point, we are familiar with writing basic plotting code similar
+to what is shown here.</p>
+<p>However, it’s important that we start specifying what kind of variable
+type we use for our <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> values with the <code class="docutils literal notranslate"><span class="pre">encode(..)</span></code> verb.</p>
+<p>Before, Altair would guess what type of data it was plotting. Usually
+it’s pretty smart and guesses correctly like we saw in our previous
+plots, but unfortunately this is not always the case.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">chart1</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">cereal_modified</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+                   <span class="n">x</span><span class="o">=</span><span class="s1">&#39;mfr&#39;</span><span class="p">,</span> 
+                   <span class="n">y</span><span class="o">=</span><span class="s1">&#39;calories&#39;</span>
+         <span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Scatter plot of manufacturer calorie content&quot;</span><span class="p">)</span>
+
+<span class="n">chart1</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="module2/chart1.png"><img alt="A caption" src="module2/chart1.png" style="width: 60%;" /></a>
+<p>Notes:</p>
+<p>Let’s see an example where <code class="docutils literal notranslate"><span class="pre">Altair</span></code> fails to determine the correct data
+type.</p>
+<p>For this example, we have modified the <code class="docutils literal notranslate"><span class="pre">calories</span></code> column in the <code class="docutils literal notranslate"><span class="pre">cereal</span></code>
+dataframe.</p>
+<p>We will now generate a scatter plot of <code class="docutils literal notranslate"><span class="pre">mfr</span></code> and <code class="docutils literal notranslate"><span class="pre">calories</span></code> from this
+modified cereal dataset.</p>
+<p>Notice how 150 comes before 100 on the y-axis? It seems we have a
+problem here, which is due to Altair failing to recognize that
+<code class="docutils literal notranslate"><span class="pre">calories</span></code> is a numerical type.</p>
+<p>Even Altair can’t always get it right every time, which is why it’s so
+important we specify the data type when plotting.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">chart2</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">cereal_modified</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+                   <span class="n">x</span><span class="o">=</span><span class="s1">&#39;mfr:N&#39;</span><span class="p">,</span> 
+                   <span class="n">y</span><span class="o">=</span><span class="s1">&#39;calories:Q&#39;</span>
+                  <span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Scatter plot of manufacturer calorie content&quot;</span><span class="p">)</span>
+
+<span class="n">chart2</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="module2/chart2.png"><img alt="A caption" src="module2/chart2.png" style="width: 60%;" /></a>
+<p>Notes:</p>
+<p>We can help Altair by giving it clear instructions on what type of
+columns our x and y values are.</p>
+<p>In this case we are going to specify <code class="docutils literal notranslate"><span class="pre">N</span></code> for the <em>nominal</em> column <code class="docutils literal notranslate"><span class="pre">mfr</span></code>
+and <code class="docutils literal notranslate"><span class="pre">Q</span></code> for the <em>quantitative</em> column <code class="docutils literal notranslate"><span class="pre">calories</span></code>.</p>
+<p>That’s better!</p>
+<hr class="docutils" />
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Data Type</p></th>
+<th class="head"><p>Shorthand Code</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Examples</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Ordinal</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">O</span></code></p></td>
+<td><p>a discrete ordered quantity</p></td>
+<td><p>“dislike”, “neutral”, “like”</p></td>
+</tr>
+<tr class="row-odd"><td><p>Nominal</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">N</span></code></p></td>
+<td><p>a discrete un-ordered quantity</p></td>
+<td><p>eye color, postal code, university</p></td>
+</tr>
+<tr class="row-even"><td><p>Quantitative</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Q</span></code></p></td>
+<td><p>a continuous quantity</p></td>
+<td><p>5, 5.0, 5.011</p></td>
+</tr>
+<tr class="row-odd"><td><p>Temporal</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">T</span></code></p></td>
+<td><p>a time or date value</p></td>
+<td><p>date (August 13 2020), time (12:00 pm)</p></td>
+</tr>
+</tbody>
+</table>
+<p>Notes:</p>
+<p>Altair recognizes the following column types and it’s best practice that
+we specify this when we plot going forward.</p>
+<p>Ordinal values imply that there is some natural ordering to the values.</p>
+<p>For example, the ratings of a a movie could be on an ordinal scale since
+a five star rating is better than a single star rating.</p>
+<p>In contrast, there is no such natural ordering for nominal values. An
+example of this would be someone’s eye colour, their country location or
+the university they attended.</p>
+<p>Anything numeric is considered a <code class="docutils literal notranslate"><span class="pre">quantitative</span></code> variable and <code class="docutils literal notranslate"><span class="pre">time</span></code> or
+<code class="docutils literal notranslate"><span class="pre">date</span></code> values are considered as <code class="docutils literal notranslate"><span class="pre">temporal</span></code>.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">chart3</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">cereal</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+                   <span class="n">x</span><span class="o">=</span><span class="s1">&#39;sugars:Q&#39;</span><span class="p">,</span>  <span class="c1"># set the sugars column as quantitative</span>
+                   <span class="n">y</span><span class="o">=</span><span class="s1">&#39;rating:Q&#39;</span>   <span class="c1"># set the rating column as quantitative</span>
+         <span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Scatter plot of cereal rating vs sugar content&quot;</span><span class="p">)</span>
+
+<span class="n">chart3</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="module2/chart3.png"><img alt="A caption" src="module2/chart3.png" style="width: 60%;" /></a>
+<p>Notes:</p>
+<p>Let’s practice this.</p>
+<p>Maybe we are interested in plotting the rating of cereals vs the amount
+of sugar they contain from <code class="docutils literal notranslate"><span class="pre">cereal</span></code> dataframe.</p>
+<p>We do this using a scatter plot which uses <code class="docutils literal notranslate"><span class="pre">.mark_circle()</span></code>. We can
+assign <code class="docutils literal notranslate"><span class="pre">sugars</span></code> as the the <code class="docutils literal notranslate"><span class="pre">x</span></code> variable and <code class="docutils literal notranslate"><span class="pre">ratings</span></code> as the <code class="docutils literal notranslate"><span class="pre">y</span></code>
+variable from the <code class="docutils literal notranslate"><span class="pre">cereal</span></code> dataframe we have been using.</p>
+<p>Here, <code class="docutils literal notranslate"><span class="pre">sugars</span></code> and <code class="docutils literal notranslate"><span class="pre">rating</span></code> are both quantitative columns so we specify
+<code class="docutils literal notranslate"><span class="pre">Q</span></code> as variable types in our plot.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="variable-types">
+<h1>Variable types<a class="headerlink" href="#variable-types" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">chart4</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">cereal</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+                   <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">&#39;sugars:Q&#39;</span><span class="p">),</span> <span class="c1"># use alt.X() to map the x-axis</span>
+                   <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">&#39;rating:Q&#39;</span><span class="p">)</span>  <span class="c1"># use alt.Y() to map the y-axis</span>
+         <span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Scatter plot of cereal rating vs sugar content&quot;</span><span class="p">)</span>
+
+<span class="n">chart4</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="module2/chart4.png"><img alt="A caption" src="module2/chart4.png" style="width: 60%;" /></a>
+<p>Notes:</p>
+<p>So far when plotting with Altair, we have been mapping our <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>
+in the <code class="docutils literal notranslate"><span class="pre">encode(x=..,y=..)</span></code> verb.</p>
+<p>However, doing so gives us very little control over how exactly we would
+like to map our x and y values.</p>
+<p>In order to have more control, we can map our x and y values using
+<code class="docutils literal notranslate"><span class="pre">x=alt.X(...)</span></code> and <code class="docutils literal notranslate"><span class="pre">y=alt.Y(...)</span></code> respectively.</p>
+<p>This gives us a lot more control over the customization of our plot.</p>
+<p>You’ll see this coming up.</p>
+<hr class="docutils" />
+<div class="section" id="histograms">
+<h2>Histograms<a class="headerlink" href="#histograms" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">chart5</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">cereal</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+                   <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">&#39;calories:Q&#39;</span><span class="p">,</span> <span class="nb">bin</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span> <span class="c1"># set x-axis as calories </span>
+                   <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">&#39;count():Q&#39;</span><span class="p">)</span>             <span class="c1"># set the y-axis as the occurrence count for each calorie value</span>
+         <span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Histogram plot of cereal calorie content&quot;</span><span class="p">)</span>
+<span class="n">chart5</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="module2/chart5.png"><img alt="A caption" src="module2/chart5.png" style="width: 60%;" /></a>
+<p>Notes:</p>
+<p>Another type of plot we can make using Altair is called a <strong>histogram</strong>.</p>
+<p>A histogram would be an ideal plot if we were interested in seeing how
+many cereals in our dataframe have calories within a certain range. A
+histogram is a <code class="docutils literal notranslate"><span class="pre">bar</span></code> chart where the height of each bar shows the
+frequency of something occurring. When applied to quantitative data, it
+groups the values into <strong>ranges</strong>, and the height of each bar shows the
+frequency of each range.</p>
+<p>We can generate a histogram plot of the <code class="docutils literal notranslate"><span class="pre">calories</span></code> values in the cereal
+dataframe, which is quantitative. This will enable us to see the various
+values of calories and how many times they occur.</p>
+<p>To make a histogram, we use <code class="docutils literal notranslate"><span class="pre">mark_bar()</span></code>.</p>
+<p>In the <code class="docutils literal notranslate"><span class="pre">encode()</span></code> verb, we specify the x-axis as <code class="docutils literal notranslate"><span class="pre">calories</span></code> and use the
+argument <code class="docutils literal notranslate"><span class="pre">bin=True</span></code>. We assign the y-axis as <code class="docutils literal notranslate"><span class="pre">count():Q</span></code> to get the
+number of cereals that have values within each of the ranges.</p>
+<p>This is the same <code class="docutils literal notranslate"><span class="pre">count()</span></code> argument we use in Module 1 when we made bar
+charts.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="bins">
+<h2>Bins<a class="headerlink" href="#bins" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">chart6</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">cereal</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+                   <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">&#39;calories:Q&#39;</span><span class="p">,</span> <span class="nb">bin</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Bin</span><span class="p">(</span><span class="n">maxbins</span><span class="o">=</span><span class="mi">20</span><span class="p">)),</span> <span class="c1"># set max number of bins to 20</span>
+                   <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">&#39;count():Q&#39;</span><span class="p">)</span>
+         <span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Histogram of cereal calorie content with bins = 20&quot;</span><span class="p">)</span>
+<span class="n">chart6</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="module2/chart6.png"><img alt="A caption" src="module2/chart6.png" style="width: 60%;" /></a>
+<p>Notes:</p>
+<p>We have the ability to change the number of bars (bins) in our histogram
+by using the <code class="docutils literal notranslate"><span class="pre">bin</span></code> argument and the <code class="docutils literal notranslate"><span class="pre">alt.Bin()</span></code> verb.</p>
+<p>Within <code class="docutils literal notranslate"><span class="pre">alt.Bin()</span></code>, we can specify <code class="docutils literal notranslate"><span class="pre">maxbins</span></code> which is the maximum
+allowed number of bins in our plot.</p>
+<p>This may be useful when viewing a dataset with lots of different values.</p>
+<p>Having control over the number of bins in a histogram can help to make
+visualization easier to extract insights from.</p>
+<p>Here, we set the number of max bins in the plot to <code class="docutils literal notranslate"><span class="pre">20</span></code> by setting
+<code class="docutils literal notranslate"><span class="pre">bin=alt.Bin(maxbins=20)</span></code> inside <code class="docutils literal notranslate"><span class="pre">alt.X()</span></code>.</p>
+<hr class="docutils" />
+<a class="reference internal image-reference" href="module2/chart6.png"><img alt="A caption" src="module2/chart6.png" style="width: 70%;" /></a>
+<p>Notes:</p>
+<p>When plotting with Altair, the <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> axis are labelled with the
+default column names.</p>
+<p>This may not always be ideal since column names may not always be
+informative. In this plot, the x axis label <code class="docutils literal notranslate"><span class="pre">calories</span> <span class="pre">(binned)</span></code> is a
+little messy.</p>
+<p>Luckily Altair allows us to customize our axis labels.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">chart7</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">cereal</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+                   <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">&#39;calories:Q&#39;</span><span class="p">,</span> <span class="nb">bin</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Bin</span><span class="p">(</span><span class="n">maxbins</span><span class="o">=</span><span class="mi">20</span><span class="p">),</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Calorie Content&quot;</span><span class="p">),</span> <span class="c1"># use alt.X() to label the x-axis</span>
+                   <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">&#39;count():Q&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Number of Cereals&quot;</span><span class="p">)</span>                          <span class="c1"># use alt.Y() to label the y-axis</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Histogram plot of cereal calorie content&quot;</span><span class="p">)</span>
+<span class="n">chart7</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="module2/chart7.png"><img alt="A caption" src="module2/chart7.png" style="width: 60%;" /></a>
+<p>Notes:</p>
+<p>We can change these axis labels using the <code class="docutils literal notranslate"><span class="pre">title=&quot;&quot;</span></code> argument within the
+respective <code class="docutils literal notranslate"><span class="pre">alt.X()</span></code> and <code class="docutils literal notranslate"><span class="pre">alt.Y()</span></code> verbs that we talked about earlier.</p>
+<p>This is a big help for the clarity of our analysis.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mfr_mean</span> <span class="o">=</span> <span class="n">cereal</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;mfr&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">mfr_mean</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>      protein       fat      sodium     fiber      carbo    sugars      potass   vitamins     shelf    weight      cups     rating
+mfr                                                                                                                               
+A    4.000000  1.000000    0.000000  0.000000  16.000000  3.000000   95.000000  25.000000  2.000000  1.000000  1.000000  54.850917
+G    2.318182  1.363636  200.454545  1.272727  14.727273  7.954545   85.227273  35.227273  2.136364  1.049091  0.875000  34.485852
+K    2.652174  0.608696  174.782609  2.739130  15.130435  7.565217  103.043478  34.782609  2.347826  1.077826  0.796087  44.038462
+N    2.833333  0.166667   37.500000  4.000000  16.000000  1.833333  121.000000   8.333333  1.666667  0.971667  0.778333  67.968567
+P    2.444444  0.888889  146.111111  2.777778  13.222222  8.777778  113.888889  25.000000  2.444444  1.064444  0.714444  41.705744
+Q    2.625000  1.750000   92.500000  1.337500  10.250000  5.500000   74.375000  12.500000  2.375000  0.875000  0.823750  42.915990
+R    2.500000  1.250000  198.125000  1.875000  17.625000  6.125000   89.500000  25.000000  2.000000  1.000000  0.871250  41.542997
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>In the previous slide deck, we asked the following question regarding
+our cereal data:</p>
+<p><em><strong>Which manufacturer has the highest mean sugar content?</strong></em></p>
+<p>A nice way of answering this would be to plot the results using a bar
+chart!</p>
+<p>Before doing this, we need a few more tricks.</p>
+<p>We can start using the mean statistics we calculated from the
+<code class="docutils literal notranslate"><span class="pre">groupby(by='mfr')</span></code> object from the last section.</p>
+<p>Here, we seem to have lost our index column of numbers that we usually
+have. It also appears that <code class="docutils literal notranslate"><span class="pre">mfr</span></code> has now moved to the left of the
+dataframe with its label <code class="docutils literal notranslate"><span class="pre">mfr</span></code> lower than the other column labels.</p>
+<p>This is because when you apply <code class="docutils literal notranslate"><span class="pre">groupby()</span></code> to a column, the grouping
+column becomes the new dataframe index.</p>
+<p>Although this is a useful feature in many cases, Altair cannot access
+the index column.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mfr_mean</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>      protein       fat      sodium     fiber      carbo    sugars      potass   vitamins     shelf    weight      cups     rating
+mfr                                                                                                                               
+A    4.000000  1.000000    0.000000  0.000000  16.000000  3.000000   95.000000  25.000000  2.000000  1.000000  1.000000  54.850917
+G    2.318182  1.363636  200.454545  1.272727  14.727273  7.954545   85.227273  35.227273  2.136364  1.049091  0.875000  34.485852
+K    2.652174  0.608696  174.782609  2.739130  15.130435  7.565217  103.043478  34.782609  2.347826  1.077826  0.796087  44.038462
+N    2.833333  0.166667   37.500000  4.000000  16.000000  1.833333  121.000000   8.333333  1.666667  0.971667  0.778333  67.968567
+P    2.444444  0.888889  146.111111  2.777778  13.222222  8.777778  113.888889  25.000000  2.444444  1.064444  0.714444  41.705744
+Q    2.625000  1.750000   92.500000  1.337500  10.250000  5.500000   74.375000  12.500000  2.375000  0.875000  0.823750  42.915990
+R    2.500000  1.250000  198.125000  1.875000  17.625000  6.125000   89.500000  25.000000  2.000000  1.000000  0.871250  41.542997
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mfr_mean</span> <span class="o">=</span> <span class="n">mfr_mean</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">mfr_mean</span>
+</pre></div>
+</div>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>  mfr   protein       fat      sodium     fiber      carbo    sugars      potass   vitamins     shelf    weight      cups     rating
+0   A  4.000000  1.000000    0.000000  0.000000  16.000000  3.000000   95.000000  25.000000  2.000000  1.000000  1.000000  54.850917
+1   G  2.318182  1.363636  200.454545  1.272727  14.727273  7.954545   85.227273  35.227273  2.136364  1.049091  0.875000  34.485852
+2   K  2.652174  0.608696  174.782609  2.739130  15.130435  7.565217  103.043478  34.782609  2.347826  1.077826  0.796087  44.038462
+3   N  2.833333  0.166667   37.500000  4.000000  16.000000  1.833333  121.000000   8.333333  1.666667  0.971667  0.778333  67.968567
+4   P  2.444444  0.888889  146.111111  2.777778  13.222222  8.777778  113.888889  25.000000  2.444444  1.064444  0.714444  41.705744
+5   Q  2.625000  1.750000   92.500000  1.337500  10.250000  5.500000   74.375000  12.500000  2.375000  0.875000  0.823750  42.915990
+6   R  2.500000  1.250000  198.125000  1.875000  17.625000  6.125000   89.500000  25.000000  2.000000  1.000000  0.871250  41.542997
+</pre></div>
+</div>
+<p>Notes:</p>
+<p>To deal with this, we use <code class="docutils literal notranslate"><span class="pre">reset_index()</span></code> which will convert <code class="docutils literal notranslate"><span class="pre">mfr</span></code> to a
+regular column again.</p>
+<p>We can see that <code class="docutils literal notranslate"><span class="pre">mfr</span></code> column has now moved right and our index column of
+integers has returned on the left!</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">chart8</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">mfr_mean</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+                   <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">&#39;mfr:N&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Manufacturer&quot;</span><span class="p">),</span>
+                   <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">&#39;sugars:Q&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Mean sugar content&quot;</span><span class="p">)</span>
+         <span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Bar plot of manufacturers mean sugar content&quot;</span><span class="p">)</span>
+<span class="n">chart8</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="module2/chart8.png"><img alt="A caption" src="module2/chart8.png" style="width: 60%;" /></a>
+<p>Notes:</p>
+<p>Now that we have our <code class="docutils literal notranslate"><span class="pre">mfr_mean</span></code> in the correct format, we can proceed.</p>
+<p>Using Altair we can plot the <code class="docutils literal notranslate"><span class="pre">mfr</span></code> column on the x axis which we’ve
+identified to contain nominal values and <code class="docutils literal notranslate"><span class="pre">sugars</span></code> which we agreed was a
+quantitative value on the y axis. (Also, let’s not forget our title!)</p>
+<hr class="docutils" />
+<p><br> <br></p>
+<ol class="simple">
+<li><p>Groupby object and calculated the mean</p></li>
+<li><p>Reset index</p></li>
+<li><p>Plot using Altair</p></li>
+</ol>
+<p>Notes:</p>
+<p>Let’s go through the steps that were needed to make the plot in the
+previous slide.</p>
+<p>First, we created a groupby object and calculated the mean for each
+column in the resulting dataframe.<br />
+Second, since <code class="docutils literal notranslate"><span class="pre">.groupby()</span></code> made <code class="docutils literal notranslate"><span class="pre">mfr</span></code> the new index, we had to use
+<code class="docutils literal notranslate"><span class="pre">reset_index()</span></code> to make <code class="docutils literal notranslate"><span class="pre">mfr</span></code> a regular column again. And finally, we
+generated a bar plot using Altair.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="sorting">
+<h2>Sorting<a class="headerlink" href="#sorting" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">chart9</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">mfr_mean</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+                   <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">&#39;mfr:N&#39;</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Manufacturer&quot;</span><span class="p">),</span>  <span class="c1"># use sort=&quot;y&quot; to sort in ascending order</span>
+                   <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">&#39;sugars:Q&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Mean sugar content&quot;</span><span class="p">)</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Bar plot of manufacturers mean sugar content in ascending order&quot;</span><span class="p">)</span>
+<span class="n">chart9</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="module2/chart9.png"><img alt="A caption" src="module2/chart9.png" style="width: 60%;" /></a>
+<p>Notes:</p>
+<p>Sometimes sorting a dataframe by quantity helps us obtain insights more
+easily.</p>
+<p>For example, if we sorted the mean sugar content for the manufacturers
+before generating the previous plot, it would be easier to identify
+which manufacturer produces cereals with the highest mean sugar content.</p>
+<p>Altair allows us to sort a column while plotting.</p>
+<p>Sorting can be done on either the x or y axis using the <code class="docutils literal notranslate"><span class="pre">sort=</span></code> in the
+<code class="docutils literal notranslate"><span class="pre">alt.X</span></code> or <code class="docutils literal notranslate"><span class="pre">alt.Y</span></code> verb.</p>
+<p>The sort argument takes in either <code class="docutils literal notranslate"><span class="pre">x</span></code> or <code class="docutils literal notranslate"><span class="pre">y</span></code> to specify which axis to
+sort by.</p>
+<p>Here we are sorting in ascending order of which manufacturers have the
+largest mean sugar content.</p>
+<p>This plot shows us immediately that manufacturer <code class="docutils literal notranslate"><span class="pre">P</span></code> has the highest
+mean cereal sugar content.</p>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">chart10</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">mfr_mean</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">&#39;mfr:N&#39;</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="s2">&quot;-y&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Manufacturer&quot;</span><span class="p">),</span>  <span class="c1"># use sort=&quot;-y&quot; to sort in descending order</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">&#39;sugars:Q&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Mean sugar content&quot;</span><span class="p">)</span>
+<span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Bar plot of manufacturers mean sugar content sorted in descending order&quot;</span><span class="p">)</span>
+<span class="n">chart10</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="module2/chart10.png"><img alt="A caption" src="module2/chart10.png" style="width: 60%;" /></a>
+<p>Notes:</p>
+<p>To generate a bar plot of mean calorie content sorted in <code class="docutils literal notranslate"><span class="pre">descending</span></code>
+order, we recycle the code from the previous slide.</p>
+<p>This time, we add <code class="docutils literal notranslate"><span class="pre">-y</span></code> in the <code class="docutils literal notranslate"><span class="pre">sort</span></code> argument to specify that we would
+like to sort the y variable in descending order.</p>
+<hr class="docutils" />
+<p><br> <br> <br></p>
+<center>
+<font size="+3"> If you enjoyed this part of the module and you wish to
+learn more advanced visualizations using Altair, take a look at our <br>
+<a href="https://viz-learn.mds.ubc.ca/" target="_blank"><b>Data
+Visualization</b></a> course </font>
+<center>
+<p>Notes:</p>
+<br>
+<div class="admonition-lets-apply-what-we-learned admonition">
+<p class="admonition-title">Let’s apply what we learned!</p>
+<p>Bringing back our Fruit Salad dataframe:</p>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>           name    colour    location    seed   shape  sweetness   water-content  weight
+0         apple       red     canada    True   round     True          84         100
+1        banana    yellow     mexico   False    long     True          75         120
+2    cantaloupe    orange      spain    True   round     True          90        1360
+3  dragon-fruit   magenta      china    True   round    False          96         600
+4    elderberry    purple    austria   False   round     True          80           5
+5           fig    purple     turkey   False    oval    False          78          40
+6         guava     green     mexico    True    oval     True          83         450
+7   huckleberry      blue     canada    True   round     True          73           5
+8          kiwi     brown      china    True   round     True          80          76
+9         lemon    yellow     mexico   False    oval    False          83          65
+</pre></div>
+</div>
+<p>1. Which of the following columns contain numerical data?<br />
+a) <code class="docutils literal notranslate"><span class="pre">colour</span></code>, <code class="docutils literal notranslate"><span class="pre">shape</span></code>, <code class="docutils literal notranslate"><span class="pre">water-content</span></code>
+b) <code class="docutils literal notranslate"><span class="pre">water-content</span></code>, <code class="docutils literal notranslate"><span class="pre">weight</span></code><br />
+c) <code class="docutils literal notranslate"><span class="pre">colour</span></code>, <code class="docutils literal notranslate"><span class="pre">seed</span></code>, <code class="docutils literal notranslate"><span class="pre">water-content</span></code>, <code class="docutils literal notranslate"><span class="pre">weight</span></code><br />
+d) All of the columns are categorical</p>
+<p>2. We need summary statistics of both numerical and categorical columns of the dataframe <code class="docutils literal notranslate"><span class="pre">fruit_salad</span></code>. What code would be suitable for this?<br />
+a) <code class="docutils literal notranslate"><span class="pre">df.describe()</span></code><br />
+b) <code class="docutils literal notranslate"><span class="pre">fruit_salad.describe()</span></code><br />
+c) <code class="docutils literal notranslate"><span class="pre">fruit_salad.describe(include=&quot;all&quot;)</span></code><br />
+d) <code class="docutils literal notranslate"><span class="pre">fruit_salad.summary(include=&quot;all&quot;)</span></code></p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Solutions!</p>
+<ol class="simple">
+<li><p>b) <code class="docutils literal notranslate"><span class="pre">water-content</span></code>, <code class="docutils literal notranslate"><span class="pre">weight</span></code></p></li>
+<li><p>c) <code class="docutils literal notranslate"><span class="pre">fruit_salad.describe(include=&quot;all&quot;)</span></code></p></li>
+</ol>
+<!-- We've added a title before, so there is nothing new there but adding x and y-axis labels is a little different. We can increase the label font sizes using the argument `fontsize`. In this case, we reference our initial plot and use the verb `.set_ylabel()` and `.set_xlabel()` with the desired axis label as an argument and `fontsize` to assign a desired label size.  -->
+<!-- To avoid unnecessary information that will be returned otherwise, whatever our last verb being used with our plot (named `sugar_plot) has to be reassigned back to the object. If we did this any other way, we would not have the ability to do more transformations on our plot, or we would get additional information with the plot output.  -->
+<!-- ```{python  out.width = '45%', fig.asp = .40} -->
+<!-- sugar_plot = (df.groupby(by='mfr') -->
+<!--                 .mean() -->
+<!--                 .loc[:,'sugars'] -->
+<!--                 .plot.bar(title='Mean sugar content among manufacturers') -->
+<!--               ) -->
+<!-- sugar_plot.set_ylabel('Sugar content (in grams)', fontsize=9) -->
+<!-- sugar_plot = sugar_plot.set_xlabel('Manufacturer', fontsize=9) -->
+<!-- sugar_plot -->
+<!-- ``` -->
+<!-- Notes: Script here -->
+<!-- <html> -->
+<!-- <audio controls > -->
+<!--   <source src="/placeholder_audio.mp3" /> -->
+<!-- </audio></html> -->
+<!-- --- -->
+<!-- In the last plot, we used `.loc[:,'sugars']` to select a single column to the plot, however, we can show multiple mean column values in a single plot by selecting more columns. The columns `fat`, `fiber` and `protein` seem like good choices.  -->
+<!-- ```{python out.width = '60%', fig.asp = .58} -->
+<!-- nutrition_plot = (df.groupby(by='mfr') -->
+<!--                     .mean() -->
+<!--                     .loc[:, ['fat', 'fiber', 'protein']] -->
+<!--                     .plot.bar(title='Mean nutritrion value over different manufacturers') -->
+<!--                  ) -->
+<!-- nutrition_plot.set_ylabel('Content (in grams)', fontsize=9) -->
+<!-- nutrition_plot = nutrition_plot.set_xlabel('Manufacturer', fontsize=9) -->
+<!-- nutrition_plot -->
+<!-- ``` -->
+<!-- If you want high fibre and low fat, consider having N's cereals for breakfast (or lunch or dinner)! -->
+<!-- Notes: Script here -->
+<!-- <html> -->
+<!-- <audio controls > -->
+<!--   <source src="/placeholder_audio.mp3" /> -->
+<!-- </audio></html> -->
+<!-- --- -->
+<!-- ## Multiple Grouping  -->
+<!-- We can group by multiple columns as well.  -->
+<!-- For example we can grouping by not only manufacturer but also by cereal type! All we do is put both both column labels in square brackets within `.groupby()`. -->
+<!-- ```{python} -->
+<!-- mfr_type_group = df.groupby(by=['mfr', 'type']) -->
+<!-- mfr_type_group.groups -->
+<!-- ``` -->
+<!-- The attribute `ngroups` indicates how many groups there are.   -->
+<!-- ```{python} -->
+<!-- mfr_type_group.ngroups -->
+<!-- ``` -->
+<!-- Notes: Script here -->
+<!-- <html> -->
+<!-- <audio controls > -->
+<!--   <source src="/placeholder_audio.mp3" /> -->
+<!-- </audio></html> -->
+<!-- --- -->
+<!-- If we want to get the dataframe of a specific group now, we put the value of each column in parentheses.  -->
+<!-- ```{python} -->
+<!-- mfr_type_group.get_group(('K', 'Cold')) -->
+<!-- ``` -->
+<!-- Notes: Script here -->
+<!-- <html> -->
+<!-- <audio controls > -->
+<!--   <source src="/placeholder_audio.mp3" /> -->
+<!-- </audio></html> -->
+<!-- --- -->
+<!-- We can plot in the same way as before  -->
+<!-- ```{python fig.width = 13, fig.height = 9,  out.width = '50%'} -->
+<!-- type_plot = (df.groupby(by=['mfr', 'type']) -->
+<!--                     .mean() -->
+<!--                     .loc[:, ['sugars']] -->
+<!--                     .plot.bar(title='Mean sugar value over different manufacturers and types')) -->
+<!-- type_plot.set_ylabel('Sugar (in grams)', fontsize=16) -->
+<!-- type_plot.set_xlabel('Manufacturer and cereal type', fontsize=16) -->
+<!-- type_plot -->
+<!-- ``` -->
+<!-- Notes: Script here -->
+<!-- <html> -->
+<!-- <audio controls > -->
+<!--   <source src="/placeholder_audio.mp3" /> -->
+<!-- </audio></html> -->
+<!-- --- -->
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "UBC-MDS/PPDS_book",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./modules/module2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Hayley Boyce, Mike Gelbart, Tiffany Timbers<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

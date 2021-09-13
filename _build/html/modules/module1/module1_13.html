@@ -361,14 +361,11 @@
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        <a class="dropdown-buttons"
-            href="../../_sources/modules/module1/module1_13.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
+        
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/modules/module1/module1_13.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/modules/module1/module1_13.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -389,7 +386,7 @@
             href="https://github.com/UBC-MDS/PPDS_book/issues/new?title=Issue%20on%20page%20%2Fmodules/module1/module1_13.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/UBC-MDS/PPDS_book/edit/main/modules/module1/module1_13.md"><button
+        <a class="edit-button" href="https://github.com/UBC-MDS/PPDS_book/edit/main/modules/module1/module1_13.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -409,7 +406,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/UBC-MDS/PPDS_book/main?urlpath=tree/modules/module1/module1_13.md"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/UBC-MDS/PPDS_book/main?urlpath=tree/modules/module1/module1_13.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
@@ -466,24 +463,251 @@
 <p>Here we have our trusty <code class="docutils literal notranslate"><span class="pre">cereal</span></code> dataframe.</p>
 <p>What would we do if we wanted to select columns and rows that don’t fall
 consecutively or if we wanted to rearrange them?</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span>
 </pre></div>
 </div>
-<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                         name mfr  type  calories  protein  fat  sodium  ...  sugars  potass  vitamins  shelf  weight  cups     rating
-0                   100% Bran   N  Cold        70        4    1     130  ...       6     280        25      3     1.0  0.33  68.402973
-1           100% Natural Bran   Q  Cold       120        3    5      15  ...       8     135         0      3     1.0  1.00  33.983679
-2                    All-Bran   K  Cold        70        4    1     260  ...       5     320        25      3     1.0  0.33  59.425505
-3   All-Bran with Extra Fiber   K  Cold        50        4    0     140  ...       0     330        25      3     1.0  0.50  93.704912
-4              Almond Delight   R  Cold       110        2    2     200  ...       8       1        25      3     1.0  0.75  34.384843
-..                        ...  ..   ...       ...      ...  ...     ...  ...     ...     ...       ...    ...     ...   ...        ...
-72                    Triples   G  Cold       110        2    1     250  ...       3      60        25      3     1.0  0.75  39.106174
-73                       Trix   G  Cold       110        1    1     140  ...      12      25        25      2     1.0  1.00  27.753301
-74                 Wheat Chex   R  Cold       100        3    1     230  ...       3     115        25      1     1.0  0.67  49.787445
-75                   Wheaties   G  Cold       100        3    1     200  ...       3     110        25      1     1.0  1.00  51.592193
-76        Wheaties Honey Gold   G  Cold       110        2    1     200  ...       8      60        25      1     1.0  0.75  36.187559
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-[77 rows x 16 columns]
-</pre></div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>mfr</th>
+      <th>type</th>
+      <th>calories</th>
+      <th>protein</th>
+      <th>fat</th>
+      <th>sodium</th>
+      <th>...</th>
+      <th>sugars</th>
+      <th>potass</th>
+      <th>vitamins</th>
+      <th>shelf</th>
+      <th>weight</th>
+      <th>cups</th>
+      <th>rating</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>100% Bran</td>
+      <td>N</td>
+      <td>Cold</td>
+      <td>70</td>
+      <td>4</td>
+      <td>1</td>
+      <td>130</td>
+      <td>...</td>
+      <td>6</td>
+      <td>280</td>
+      <td>25</td>
+      <td>3</td>
+      <td>1.0</td>
+      <td>0.33</td>
+      <td>68.402973</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>100% Natural Bran</td>
+      <td>Q</td>
+      <td>Cold</td>
+      <td>120</td>
+      <td>3</td>
+      <td>5</td>
+      <td>15</td>
+      <td>...</td>
+      <td>8</td>
+      <td>135</td>
+      <td>0</td>
+      <td>3</td>
+      <td>1.0</td>
+      <td>1.00</td>
+      <td>33.983679</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>All-Bran</td>
+      <td>K</td>
+      <td>Cold</td>
+      <td>70</td>
+      <td>4</td>
+      <td>1</td>
+      <td>260</td>
+      <td>...</td>
+      <td>5</td>
+      <td>320</td>
+      <td>25</td>
+      <td>3</td>
+      <td>1.0</td>
+      <td>0.33</td>
+      <td>59.425505</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>All-Bran with Extra Fiber</td>
+      <td>K</td>
+      <td>Cold</td>
+      <td>50</td>
+      <td>4</td>
+      <td>0</td>
+      <td>140</td>
+      <td>...</td>
+      <td>0</td>
+      <td>330</td>
+      <td>25</td>
+      <td>3</td>
+      <td>1.0</td>
+      <td>0.50</td>
+      <td>93.704912</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Almond Delight</td>
+      <td>R</td>
+      <td>Cold</td>
+      <td>110</td>
+      <td>2</td>
+      <td>2</td>
+      <td>200</td>
+      <td>...</td>
+      <td>8</td>
+      <td>1</td>
+      <td>25</td>
+      <td>3</td>
+      <td>1.0</td>
+      <td>0.75</td>
+      <td>34.384843</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>72</th>
+      <td>Triples</td>
+      <td>G</td>
+      <td>Cold</td>
+      <td>110</td>
+      <td>2</td>
+      <td>1</td>
+      <td>250</td>
+      <td>...</td>
+      <td>3</td>
+      <td>60</td>
+      <td>25</td>
+      <td>3</td>
+      <td>1.0</td>
+      <td>0.75</td>
+      <td>39.106174</td>
+    </tr>
+    <tr>
+      <th>73</th>
+      <td>Trix</td>
+      <td>G</td>
+      <td>Cold</td>
+      <td>110</td>
+      <td>1</td>
+      <td>1</td>
+      <td>140</td>
+      <td>...</td>
+      <td>12</td>
+      <td>25</td>
+      <td>25</td>
+      <td>2</td>
+      <td>1.0</td>
+      <td>1.00</td>
+      <td>27.753301</td>
+    </tr>
+    <tr>
+      <th>74</th>
+      <td>Wheat Chex</td>
+      <td>R</td>
+      <td>Cold</td>
+      <td>100</td>
+      <td>3</td>
+      <td>1</td>
+      <td>230</td>
+      <td>...</td>
+      <td>3</td>
+      <td>115</td>
+      <td>25</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>0.67</td>
+      <td>49.787445</td>
+    </tr>
+    <tr>
+      <th>75</th>
+      <td>Wheaties</td>
+      <td>G</td>
+      <td>Cold</td>
+      <td>100</td>
+      <td>3</td>
+      <td>1</td>
+      <td>200</td>
+      <td>...</td>
+      <td>3</td>
+      <td>110</td>
+      <td>25</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>1.00</td>
+      <td>51.592193</td>
+    </tr>
+    <tr>
+      <th>76</th>
+      <td>Wheaties Honey Gold</td>
+      <td>G</td>
+      <td>Cold</td>
+      <td>110</td>
+      <td>2</td>
+      <td>1</td>
+      <td>200</td>
+      <td>...</td>
+      <td>8</td>
+      <td>60</td>
+      <td>25</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>0.75</td>
+      <td>36.187559</td>
+    </tr>
+  </tbody>
+</table>
+<p>77 rows × 16 columns</p>
+</div></div></div>
 </div>
 <p>Let’s say we want only the rows labelled:</p>
 <ul class="simple">
@@ -502,14 +726,62 @@ consecutively or if we wanted to rearrange them?</p>
 <p>We need to specify each column and row label that we want between square
 brackets <code class="docutils literal notranslate"><span class="pre">[]</span></code>, that follow <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> and we separate the items that we
 list in the square brackets with commas.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="mi">13</span><span class="p">,</span><span class="mi">73</span><span class="p">,</span><span class="mi">75</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">,</span> <span class="s1">&#39;sugars&#39;</span><span class="p">,</span> <span class="s1">&#39;rating&#39;</span><span class="p">]]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="mi">13</span><span class="p">,</span><span class="mi">73</span><span class="p">,</span><span class="mi">75</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">,</span> <span class="s1">&#39;sugars&#39;</span><span class="p">,</span> <span class="s1">&#39;rating&#39;</span><span class="p">]]</span>
 </pre></div>
 </div>
-<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>        name  type  sugars     rating
-13  Clusters  Cold       7  40.400208
-73      Trix  Cold      12  27.753301
-75  Wheaties  Cold       3  51.592193
-</pre></div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>type</th>
+      <th>sugars</th>
+      <th>rating</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>13</th>
+      <td>Clusters</td>
+      <td>Cold</td>
+      <td>7</td>
+      <td>40.400208</td>
+    </tr>
+    <tr>
+      <th>73</th>
+      <td>Trix</td>
+      <td>Cold</td>
+      <td>12</td>
+      <td>27.753301</td>
+    </tr>
+    <tr>
+      <th>75</th>
+      <td>Wheaties</td>
+      <td>Cold</td>
+      <td>3</td>
+      <td>51.592193</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </div>
 <div class="section" id="ordered-indexing">
@@ -520,14 +792,62 @@ list in the square brackets with commas.</p>
 <p>How would we obtain that?</p>
 <p>We would just have to rearranging the order in which we list our rows
 and columns.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="mi">75</span><span class="p">,</span> <span class="mi">73</span><span class="p">,</span> <span class="mi">13</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">,</span> <span class="s1">&#39;rating&#39;</span><span class="p">,</span> <span class="s1">&#39;sugars&#39;</span><span class="p">]]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="mi">75</span><span class="p">,</span> <span class="mi">73</span><span class="p">,</span> <span class="mi">13</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">,</span> <span class="s1">&#39;rating&#39;</span><span class="p">,</span> <span class="s1">&#39;sugars&#39;</span><span class="p">]]</span>
 </pre></div>
 </div>
-<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>        name  type     rating  sugars
-75  Wheaties  Cold  51.592193       3
-73      Trix  Cold  27.753301      12
-13  Clusters  Cold  40.400208       7
-</pre></div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>type</th>
+      <th>rating</th>
+      <th>sugars</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>75</th>
+      <td>Wheaties</td>
+      <td>Cold</td>
+      <td>51.592193</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>73</th>
+      <td>Trix</td>
+      <td>Cold</td>
+      <td>27.753301</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Clusters</td>
+      <td>Cold</td>
+      <td>40.400208</td>
+      <td>7</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="admonition-lets-apply-what-we-learned admonition">
 <p class="admonition-title">Let’s apply what we learned!</p>

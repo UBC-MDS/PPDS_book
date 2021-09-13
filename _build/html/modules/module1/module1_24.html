@@ -361,14 +361,11 @@
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        <a class="dropdown-buttons"
-            href="../../_sources/modules/module1/module1_24.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
+        
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/modules/module1/module1_24.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/modules/module1/module1_24.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -389,7 +386,7 @@
             href="https://github.com/UBC-MDS/PPDS_book/issues/new?title=Issue%20on%20page%20%2Fmodules/module1/module1_24.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/UBC-MDS/PPDS_book/edit/main/modules/module1/module1_24.md"><button
+        <a class="edit-button" href="https://github.com/UBC-MDS/PPDS_book/edit/main/modules/module1/module1_24.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -409,7 +406,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/UBC-MDS/PPDS_book/main?urlpath=tree/modules/module1/module1_24.md"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/UBC-MDS/PPDS_book/main?urlpath=tree/modules/module1/module1_24.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
@@ -448,24 +445,251 @@ stored.</p>
 <p>We can easily sort the rows of a dataframe based on the values within a
 column.</p>
 <p>The verb that we use for that is <code class="docutils literal notranslate"><span class="pre">.sort_values()</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;rating&#39;</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cereal</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;rating&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                         name mfr  calories  shelf  weight  cups     rating
-10               Cap&#39;n&#39;Crunch   Q       120      2    1.00  0.75  18.042851
-12      Cinnamon Toast Crunch   G       120      2    1.00  0.75  19.823573
-35           Honey Graham Ohs   Q       120      2    1.00  1.00  21.871292
-18              Count Chocula   G       110      2    1.00  1.00  22.396513
-14                Cocoa Puffs   G       110      2    1.00  1.00  22.736446
-..                        ...  ..       ...    ...     ...   ...        ...
-63             Shredded Wheat   N        80      1    0.83  1.00  68.235885
-0                   100% Bran   N        70      3    1.00  0.33  68.402973
-65  Shredded Wheat spoon size   N        90      1    1.00  0.67  72.801787
-64     Shredded Wheat &#39;n&#39;Bran   N        90      1    1.00  0.67  74.472949
-3   All-Bran with Extra Fiber   K        50      3    1.00  0.50  93.704912
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-[77 rows x 7 columns]
-</pre></div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>mfr</th>
+      <th>type</th>
+      <th>calories</th>
+      <th>protein</th>
+      <th>fat</th>
+      <th>sodium</th>
+      <th>...</th>
+      <th>sugars</th>
+      <th>potass</th>
+      <th>vitamins</th>
+      <th>shelf</th>
+      <th>weight</th>
+      <th>cups</th>
+      <th>rating</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>10</th>
+      <td>Cap'n'Crunch</td>
+      <td>Q</td>
+      <td>Cold</td>
+      <td>120</td>
+      <td>1</td>
+      <td>2</td>
+      <td>220</td>
+      <td>...</td>
+      <td>12</td>
+      <td>35</td>
+      <td>25</td>
+      <td>2</td>
+      <td>1.00</td>
+      <td>0.75</td>
+      <td>18.042851</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Cinnamon Toast Crunch</td>
+      <td>G</td>
+      <td>Cold</td>
+      <td>120</td>
+      <td>1</td>
+      <td>3</td>
+      <td>210</td>
+      <td>...</td>
+      <td>9</td>
+      <td>45</td>
+      <td>25</td>
+      <td>2</td>
+      <td>1.00</td>
+      <td>0.75</td>
+      <td>19.823573</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>Honey Graham Ohs</td>
+      <td>Q</td>
+      <td>Cold</td>
+      <td>120</td>
+      <td>1</td>
+      <td>2</td>
+      <td>220</td>
+      <td>...</td>
+      <td>11</td>
+      <td>45</td>
+      <td>25</td>
+      <td>2</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>21.871292</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Count Chocula</td>
+      <td>G</td>
+      <td>Cold</td>
+      <td>110</td>
+      <td>1</td>
+      <td>1</td>
+      <td>180</td>
+      <td>...</td>
+      <td>13</td>
+      <td>65</td>
+      <td>25</td>
+      <td>2</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>22.396513</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Cocoa Puffs</td>
+      <td>G</td>
+      <td>Cold</td>
+      <td>110</td>
+      <td>1</td>
+      <td>1</td>
+      <td>180</td>
+      <td>...</td>
+      <td>13</td>
+      <td>55</td>
+      <td>25</td>
+      <td>2</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>22.736446</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>63</th>
+      <td>Shredded Wheat</td>
+      <td>N</td>
+      <td>Cold</td>
+      <td>80</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>95</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0.83</td>
+      <td>1.00</td>
+      <td>68.235885</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>100% Bran</td>
+      <td>N</td>
+      <td>Cold</td>
+      <td>70</td>
+      <td>4</td>
+      <td>1</td>
+      <td>130</td>
+      <td>...</td>
+      <td>6</td>
+      <td>280</td>
+      <td>25</td>
+      <td>3</td>
+      <td>1.00</td>
+      <td>0.33</td>
+      <td>68.402973</td>
+    </tr>
+    <tr>
+      <th>65</th>
+      <td>Shredded Wheat spoon size</td>
+      <td>N</td>
+      <td>Cold</td>
+      <td>90</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>120</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1.00</td>
+      <td>0.67</td>
+      <td>72.801787</td>
+    </tr>
+    <tr>
+      <th>64</th>
+      <td>Shredded Wheat 'n'Bran</td>
+      <td>N</td>
+      <td>Cold</td>
+      <td>90</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>140</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1.00</td>
+      <td>0.67</td>
+      <td>74.472949</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>All-Bran with Extra Fiber</td>
+      <td>K</td>
+      <td>Cold</td>
+      <td>50</td>
+      <td>4</td>
+      <td>0</td>
+      <td>140</td>
+      <td>...</td>
+      <td>0</td>
+      <td>330</td>
+      <td>25</td>
+      <td>3</td>
+      <td>1.00</td>
+      <td>0.50</td>
+      <td>93.704912</td>
+    </tr>
+  </tbody>
+</table>
+<p>77 rows × 16 columns</p>
+</div></div></div>
 </div>
 <p>For example, if we wanted to order the cereals based on rating, we could
 do so by using the argument <code class="docutils literal notranslate"><span class="pre">by</span></code> within the <code class="docutils literal notranslate"><span class="pre">.sort_values()</span></code> verb.</p>
@@ -473,25 +697,252 @@ do so by using the argument <code class="docutils literal notranslate"><span cla
 <p>What if we wanted the cereals with higher ratings at the top?</p>
 <p>Then we would order them in <code class="docutils literal notranslate"><span class="pre">descending</span></code> order by setting the argument
 <code class="docutils literal notranslate"><span class="pre">ascending=False</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sorted_ratings</span> <span class="o">=</span> <span class="n">cereal</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;rating&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sorted_ratings</span> <span class="o">=</span> <span class="n">cereal</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;rating&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">sorted_ratings</span>
 </pre></div>
 </div>
-<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                         name mfr  calories  shelf  weight  cups     rating
-3   All-Bran with Extra Fiber   K        50      3    1.00  0.50  93.704912
-64     Shredded Wheat &#39;n&#39;Bran   N        90      1    1.00  0.67  74.472949
-65  Shredded Wheat spoon size   N        90      1    1.00  0.67  72.801787
-0                   100% Bran   N        70      3    1.00  0.33  68.402973
-63             Shredded Wheat   N        80      1    0.83  1.00  68.235885
-..                        ...  ..       ...    ...     ...   ...        ...
-14                Cocoa Puffs   G       110      2    1.00  1.00  22.736446
-18              Count Chocula   G       110      2    1.00  1.00  22.396513
-35           Honey Graham Ohs   Q       120      2    1.00  1.00  21.871292
-12      Cinnamon Toast Crunch   G       120      2    1.00  0.75  19.823573
-10               Cap&#39;n&#39;Crunch   Q       120      2    1.00  0.75  18.042851
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-[77 rows x 7 columns]
-</pre></div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>mfr</th>
+      <th>type</th>
+      <th>calories</th>
+      <th>protein</th>
+      <th>fat</th>
+      <th>sodium</th>
+      <th>...</th>
+      <th>sugars</th>
+      <th>potass</th>
+      <th>vitamins</th>
+      <th>shelf</th>
+      <th>weight</th>
+      <th>cups</th>
+      <th>rating</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>3</th>
+      <td>All-Bran with Extra Fiber</td>
+      <td>K</td>
+      <td>Cold</td>
+      <td>50</td>
+      <td>4</td>
+      <td>0</td>
+      <td>140</td>
+      <td>...</td>
+      <td>0</td>
+      <td>330</td>
+      <td>25</td>
+      <td>3</td>
+      <td>1.00</td>
+      <td>0.50</td>
+      <td>93.704912</td>
+    </tr>
+    <tr>
+      <th>64</th>
+      <td>Shredded Wheat 'n'Bran</td>
+      <td>N</td>
+      <td>Cold</td>
+      <td>90</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>140</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1.00</td>
+      <td>0.67</td>
+      <td>74.472949</td>
+    </tr>
+    <tr>
+      <th>65</th>
+      <td>Shredded Wheat spoon size</td>
+      <td>N</td>
+      <td>Cold</td>
+      <td>90</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>120</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1.00</td>
+      <td>0.67</td>
+      <td>72.801787</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>100% Bran</td>
+      <td>N</td>
+      <td>Cold</td>
+      <td>70</td>
+      <td>4</td>
+      <td>1</td>
+      <td>130</td>
+      <td>...</td>
+      <td>6</td>
+      <td>280</td>
+      <td>25</td>
+      <td>3</td>
+      <td>1.00</td>
+      <td>0.33</td>
+      <td>68.402973</td>
+    </tr>
+    <tr>
+      <th>63</th>
+      <td>Shredded Wheat</td>
+      <td>N</td>
+      <td>Cold</td>
+      <td>80</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>95</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0.83</td>
+      <td>1.00</td>
+      <td>68.235885</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Cocoa Puffs</td>
+      <td>G</td>
+      <td>Cold</td>
+      <td>110</td>
+      <td>1</td>
+      <td>1</td>
+      <td>180</td>
+      <td>...</td>
+      <td>13</td>
+      <td>55</td>
+      <td>25</td>
+      <td>2</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>22.736446</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Count Chocula</td>
+      <td>G</td>
+      <td>Cold</td>
+      <td>110</td>
+      <td>1</td>
+      <td>1</td>
+      <td>180</td>
+      <td>...</td>
+      <td>13</td>
+      <td>65</td>
+      <td>25</td>
+      <td>2</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>22.396513</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>Honey Graham Ohs</td>
+      <td>Q</td>
+      <td>Cold</td>
+      <td>120</td>
+      <td>1</td>
+      <td>2</td>
+      <td>220</td>
+      <td>...</td>
+      <td>11</td>
+      <td>45</td>
+      <td>25</td>
+      <td>2</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>21.871292</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Cinnamon Toast Crunch</td>
+      <td>G</td>
+      <td>Cold</td>
+      <td>120</td>
+      <td>1</td>
+      <td>3</td>
+      <td>210</td>
+      <td>...</td>
+      <td>9</td>
+      <td>45</td>
+      <td>25</td>
+      <td>2</td>
+      <td>1.00</td>
+      <td>0.75</td>
+      <td>19.823573</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Cap'n'Crunch</td>
+      <td>Q</td>
+      <td>Cold</td>
+      <td>120</td>
+      <td>1</td>
+      <td>2</td>
+      <td>220</td>
+      <td>...</td>
+      <td>12</td>
+      <td>35</td>
+      <td>25</td>
+      <td>2</td>
+      <td>1.00</td>
+      <td>0.75</td>
+      <td>18.042851</td>
+    </tr>
+  </tbody>
+</table>
+<p>77 rows × 16 columns</p>
+</div></div></div>
 </div>
 <p>Perfect, now we have the highest rated cereals at the top of the
 dataframe.</p>

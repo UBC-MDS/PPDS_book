@@ -16,69 +16,30 @@ kernelspec:
 # Column renaming and column dropping
 
 :::{admonition} Watch it
-See the accompanied youtube video at <a href="https://www.youtube.com/embed/WCWi1R2CQsY?rel=0?start=573&end=589" target="_blank">the link here.</a>
+See the accompanied youtube video at <a href="https://www.youtube.com/embed/WCWi1R2CQsY?start=573&end=589" target="_blank">the link here.</a>
 :::
 
+```{code-cell} ipython3
+:tags: ["remove-cell"]
+import pandas as pd
+import numpy as np
 
-<br>
-
----
-
-``` python
-candy = pd.read_csv('candybars.csv')
-candy
+pd.set_option('display.width', 350)
+np.set_printoptions(linewidth=400)
+pd.set_option('display.max_columns', 15)
+pd.set_option('display.max_rows', 15)
 ```
-
-```out
-                 name  weight  chocolate  peanuts  caramel  nougat  cookie_wafer_rice  coconut  white_chocolate  multi available_canada_america
-0        Coffee Crisp      50          1        0        0       0                  1        0                0      0                   Canada
-1        Butterfinger     184          1        1        1       0                  0        0                0      0                  America
-2                Skor      39          1        0        1       0                  0        0                0      0                     Both
-3            Smarties      45          1        0        0       0                  0        0                0      1                   Canada
-..                ...     ...        ...      ...      ...     ...                ...      ...              ...    ...                      ...
-21   Whatchamacallits      45          1        1        0       0                  1        0                0      0                  America
-22         Almond Joy      46          1        0        0       0                  0        1                0      0                  America
-23           Oh Henry      51          1        1        1       0                  0        0                0      0                     Both
-24  Cookies and Cream      43          0        0        0       0                  1        0                1      0                     Both
-
-[25 rows x 11 columns]
-```
-
-Notes:
 
 Remember our `candybars.csv` dataframe?
 
 Let’s bring it back and save it as object named `candy`.
 
----
-
-## Column Renaming
-
-``` python
-candy = candy.rename(columns={'available_canada_america':'availability'})
+```{code-cell} ipython3
+candy = pd.read_csv('candybars.csv')
 candy
 ```
 
-```out
-                 name  weight  chocolate  peanuts  caramel  nougat  cookie_wafer_rice  coconut  white_chocolate  multi availability
-0        Coffee Crisp      50          1        0        0       0                  1        0                0      0       Canada
-1        Butterfinger     184          1        1        1       0                  0        0                0      0      America
-2                Skor      39          1        0        1       0                  0        0                0      0         Both
-3            Smarties      45          1        0        0       0                  0        0                0      1       Canada
-..                ...     ...        ...      ...      ...     ...                ...      ...              ...    ...          ...
-21   Whatchamacallits      45          1        1        0       0                  1        0                0      0      America
-22         Almond Joy      46          1        0        0       0                  0        1                0      0      America
-23           Oh Henry      51          1        1        1       0                  0        0                0      0         Both
-24  Cookies and Cream      43          0        0        0       0                  1        0                1      0         Both
-
-[25 rows x 11 columns]
-```
-
-``` python
- columns={'old column name':'new column name'}
-```
-
-Notes:
+## Column Renaming
 
 There will be times where you are unsatisfied with the column names and
 you may want to change them.
@@ -92,6 +53,11 @@ Perhaps it would be a good idea to change it to something shorter like
 
 Here is how we can accomplish that.
 
+```{code-cell} ipython3
+candy = candy.rename(columns={'available_canada_america':'availability'})
+candy
+```
+
 This code uses something we’ve never seen before - `{}` curly braces,
 also called curly brackets.
 
@@ -99,24 +65,9 @@ These have a special meaning but for now, you only need to concentrate
 your attention on the fact that the argument `columns` needs to have the
 format shown on the slide.
 
----
-
 ``` python
-candy = candy.rename(columns={'available_canada_america':'availability',
-                        'weight':'weight_g'})
-candy.head()
+ columns={'old column name':'new column name'}
 ```
-
-```out
-           name  weight_g  chocolate  peanuts  caramel  nougat  cookie_wafer_rice  coconut  white_chocolate  multi availability
-0  Coffee Crisp        50          1        0        0       0                  1        0                0      0       Canada
-1  Butterfinger       184          1        1        1       0                  0        0                0      0      America
-2          Skor        39          1        0        1       0                  0        0                0      0         Both
-3      Smarties        45          1        0        0       0                  0        0                0      1       Canada
-4          Twix        58          1        0        1       0                  1        0                0      1         Both
-```
-
-Notes:
 
 You can also rename multiple columns at once by adding a comma between
 the new and old column pairs within the curly brackets.
@@ -124,79 +75,51 @@ the new and old column pairs within the curly brackets.
 It’s important that we always save the dataframe to an object when
 making column changes or the changes will not be saved in our dataframe.
 
----
+
+```{code-cell} ipython3
+candy = candy.rename(columns={'available_canada_america':'availability',
+                        'weight':'weight_g'})
+candy.head()
+```
 
 ## Column Dropping
-
-``` python
-candy.drop(columns='coconut')
-```
-
-```out
-                 name  weight_g  chocolate  peanuts  caramel  nougat  cookie_wafer_rice  white_chocolate  multi availability
-0        Coffee Crisp        50          1        0        0       0                  1                0      0       Canada
-1        Butterfinger       184          1        1        1       0                  0                0      0      America
-2                Skor        39          1        0        1       0                  0                0      0         Both
-3            Smarties        45          1        0        0       0                  0                0      1       Canada
-..                ...       ...        ...      ...      ...     ...                ...              ...    ...          ...
-21   Whatchamacallits        45          1        1        0       0                  1                0      0      America
-22         Almond Joy        46          1        0        0       0                  0                0      0      America
-23           Oh Henry        51          1        1        1       0                  0                0      0         Both
-24  Cookies and Cream        43          0        0        0       0                  1                1      0         Both
-
-[25 rows x 10 columns]
-```
-
-Notes:
 
 `.drop()` is the verb we use to delete columns in a dataframe.
 
 Let’s delete the column `coconut` by specifying it in the `columns`
 argument of the `drop` verb.
 
----
-
-``` python
+```{code-cell} ipython3
 candy.drop(columns='coconut')
 ```
 
-``` python
-candy.head()
-```
 
-```out
-           name  weight_g  chocolate  peanuts  caramel  nougat  cookie_wafer_rice  coconut  white_chocolate  multi availability
-0  Coffee Crisp        50          1        0        0       0                  1        0                0      0       Canada
-1  Butterfinger       184          1        1        1       0                  0        0                0      0      America
-2          Skor        39          1        0        1       0                  0        0                0      0         Both
-3      Smarties        45          1        0        0       0                  0        0                0      1       Canada
-4          Twix        58          1        0        1       0                  1        0                0      1         Both
-```
 
-``` python
-candy = candy.drop(columns=['nougat', 'coconut'])
-candy.head()
-```
 
-```out
-           name  weight_g  chocolate  peanuts  caramel  cookie_wafer_rice  white_chocolate  multi availability
-0  Coffee Crisp        50          1        0        0                  1                0      0       Canada
-1  Butterfinger       184          1        1        1                  0                0      0      America
-2          Skor        39          1        0        1                  0                0      0         Both
-3      Smarties        45          1        0        0                  0                0      1       Canada
-4          Twix        58          1        0        1                  1                0      1         Both
+```{code-cell} ipython3
+candy.drop(columns='coconut')
 ```
-
-Notes:
 
 If you look again at the code we just wrote you’ll notice we didn’t save
 over the dataframe object, so the dataframe `candy` still will contain
 the `coconut` column.
 
+
+```{code-cell} ipython3
+candy.head()
+```
+
 Let’s overwrite the dataframe and remove multiple columns at the same
 time.
 
 Let’s drop `nougat` and `coconut` together.
+
+
+```{code-cell} ipython3
+candy = candy.drop(columns=['nougat', 'coconut'])
+candy.head()
+```
+
 
 We put the columns we want to drop in square brackets and this time we
 will remember to overwrite over the `candy` object.
@@ -204,9 +127,11 @@ will remember to overwrite over the `candy` object.
 Now when we call `candy.head()` it reflects the dropped columns. They’re
 no longer there.
 
+
+
 :::{admonition} Let’s apply what we learned!
 
-Bringing back our Fruit Salad dataframe:
+Here is our `fruit_salad` dataframe once again. 
 
 ```out
            name    colour    location    seed   shape  sweetness   water-content  weight
@@ -222,22 +147,31 @@ Bringing back our Fruit Salad dataframe:
 9         lemon    yellow     mexico   False    oval    False          83          65
 ```
  
-1\. Which of the following columns contain numerical data?                             
-a) `colour`, `shape`, `water-content` 
-b) `water-content`, `weight`      
-c) `colour`, `seed`, `water-content`, `weight`           
-d) All of the columns are categorical            
+Let's say we run the following code:
 
-2\. We need summary statistics of both numerical and categorical columns of the dataframe `fruit_salad`. What code would be suitable for this?        
-a) `df.describe()`        
-b) `fruit_salad.describe()`        
-c) `fruit_salad.describe(include="all")`        
-d) `fruit_salad.summary(include="all")`    
+```python
+fruit_salad.drop(columns = ['colour', 'shape', 'sweetness'])
+fruit_salad = fruit_salad.rename(columns={'location':'country',
+                                          'weight':'weight_g'})
+```
+
+Use the dataframe and code above to answer the next 2 questions.
+
+
+1\. After running the code above, How many columns (not including the index) are there in `fruit_salad` ?           
+a) 9      
+b) 4        
+c) 8           
+
+2\. After running the code above, which of the following is a column in the dataframe `fruit_salad`?        
+a) `country`     
+b) `location`        
 
 :::
 
 ```{admonition} Solutions!
 :class: tip, dropdown
 
-1. b) `water-content`, `weight`   
-2. c) `fruit_salad.describe(include="all")` 
+1. c) 8   
+2. a) `country` 
+```

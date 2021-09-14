@@ -16,7 +16,7 @@ kernelspec:
 # Grouping and aggregating
 
 :::{admonition} Watch it
-See the accompanied youtube video at <a href="https://www.youtube.com/embed/WCWi1R2CQsY?rel=0?start=1740&end=2104" target="_blank">the link here.</a>
+See the accompanied youtube video at <a href="https://www.youtube.com/embed/WCWi1R2CQsY?start=1740&end=2104" target="_blank">the link here.</a>
 :::
 
 

@@ -170,7 +170,27 @@
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="simple">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module2_01.html">
+     Reading in Different File Types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module2_06.html">
+     Reading arguments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module2_09.html">
+     Column renaming and column dropping
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="module2_13.html">
+     Column arithmetic and creation
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -362,7 +382,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/UBC-MDS/PPDS_book/main?urlpath=tree/modules/module2/module2_01__.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/UBC-MDS/PPDS_book/main?urlpath=tree/modules/module2/module2_01__.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
@@ -433,7 +453,7 @@
 <h1>Reading in Different File Types<a class="headerlink" href="#reading-in-different-file-types" title="Permalink to this headline">¶</a></h1>
 <div class="admonition-watch-it admonition">
 <p class="admonition-title">Watch it</p>
-<p>See the accompanied youtube video at <a href="https://www.youtube.com/embed/WCWi1R2CQsY?rel=0?start=0&end=270" target="_blank">the link here.</a></p>
+<p>See the accompanied youtube video at <a href="https://www.youtube.com/embed/WCWi1R2CQsY?start=0&end=270" target="_blank">the link here.</a></p>
 </div>
 <div class="section" id="id1">
 <h2>Reading in Different File Types<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
@@ -477,16 +497,111 @@ row and each column value separated with a comma.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">p4</span><span class="o">/</span><span class="mi">1</span><span class="n">bqk_8p16m98bm64l88gd_vc0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_3341</span><span class="o">/</span><span class="mf">1129269113.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">candybars</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/UBC-MDS/MCL-DSCI-511-programming-in-python/master/data/candybars.csv&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">candybars</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;pd&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>weight</th>
+      <th>chocolate</th>
+      <th>peanuts</th>
+      <th>caramel</th>
+      <th>nougat</th>
+      <th>cookie_wafer_rice</th>
+      <th>coconut</th>
+      <th>white_chocolate</th>
+      <th>multi</th>
+      <th>available_canada_america</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Coffee Crisp</td>
+      <td>50</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Butterfinger</td>
+      <td>184</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Skor</td>
+      <td>39</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Both</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Smarties</td>
+      <td>45</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Twix</td>
+      <td>58</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Both</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>It uses the same <code class="docutils literal notranslate"><span class="pre">pd.read_csv()</span></code> function we saw when reading in csv
 files locally.</p>
@@ -499,6 +614,9 @@ like we saw before.</p>
 <p>There are many different options and when we read in the data, we need
 to specify how the data should be recognized.</p>
 <p>Let’s load in the <code class="docutils literal notranslate"><span class="pre">candybars-text.txt</span></code> file.</p>
+<p>This is the same as the <code class="docutils literal notranslate"><span class="pre">candybars.csv</span></code> data but saved as a <code class="docutils literal notranslate"><span class="pre">txt</span></code> file.</p>
+<p>Look what happens when we load it in using the same syntax we are used
+to.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">candybars</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;candybars-text.txt&#39;</span><span class="p">)</span>
@@ -507,20 +625,52 @@ to specify how the data should be recognized.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">p4</span><span class="o">/</span><span class="mi">1</span><span class="n">bqk_8p16m98bm64l88gd_vc0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_3341</span><span class="o">/</span><span class="mf">2086048454.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">candybars</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;candybars-text.txt&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">candybars</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;pd&#39; is not defined
-</pre></div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name\tweight\tchocolate\tpeanuts\tcaramel\tnougat\tcookie_wafer_rice\tcoconut\twhite_chocolate\tmulti\tavailable_canada_america</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Coffee Crisp\t50\t1\t0\t0\t0\t1\t0\t0\t0\tCanada</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Butterfinger\t184\t1\t1\t1\t0\t0\t0\t0\t0\tAme...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Skor\t39\t1\t0\t1\t0\t0\t0\t0\t0\tBoth</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Smarties\t45\t1\t0\t0\t0\t0\t0\t0\t1\tCanada</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Twix\t58\t1\t0\t1\t0\t1\t0\t0\t1\tBoth</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
-</div>
-</div>
-<p>This is the same as the <code class="docutils literal notranslate"><span class="pre">candybars.csv</span></code> data but saved as a <code class="docutils literal notranslate"><span class="pre">txt</span></code> file.</p>
-<p>Look what happens when we load it in using the same syntax we are used
-to.</p>
 <p>This is not ideal.</p>
 <p>What you should notice is instead of each column value being separated
 by a comma, it is now separated by <code class="docutils literal notranslate"><span class="pre">\t</span></code>.</p>
@@ -536,16 +686,111 @@ by a comma, it is now separated by <code class="docutils literal notranslate"><s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">p4</span><span class="o">/</span><span class="mi">1</span><span class="n">bqk_8p16m98bm64l88gd_vc0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_3341</span><span class="o">/</span><span class="mf">581692996.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">candybars</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;candybars-text.txt&#39;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">candybars</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;pd&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>weight</th>
+      <th>chocolate</th>
+      <th>peanuts</th>
+      <th>caramel</th>
+      <th>nougat</th>
+      <th>cookie_wafer_rice</th>
+      <th>coconut</th>
+      <th>white_chocolate</th>
+      <th>multi</th>
+      <th>available_canada_america</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Coffee Crisp</td>
+      <td>50</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Butterfinger</td>
+      <td>184</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Skor</td>
+      <td>39</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Both</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Smarties</td>
+      <td>45</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Twix</td>
+      <td>58</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Both</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>That’s much better.</p>
 <p>The delimiter won’t always be <code class="docutils literal notranslate"><span class="pre">\t</span></code> for <code class="docutils literal notranslate"><span class="pre">txt</span></code> files. The most common
@@ -570,16 +815,196 @@ on different “sheets” within a single file.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">p4</span><span class="o">/</span><span class="mi">1</span><span class="n">bqk_8p16m98bm64l88gd_vc0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_3341</span><span class="o">/</span><span class="mf">3686699700.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">candybars</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;foods.xlsx&#39;</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;chocolate&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">candybars</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;pd&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>weight</th>
+      <th>chocolate</th>
+      <th>peanuts</th>
+      <th>caramel</th>
+      <th>nougat</th>
+      <th>cookie_wafer_rice</th>
+      <th>coconut</th>
+      <th>white_chocolate</th>
+      <th>multi</th>
+      <th>available_canada_america</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Coffee Crisp</td>
+      <td>50</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Butterfinger</td>
+      <td>184</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Skor</td>
+      <td>39</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Both</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Smarties</td>
+      <td>45</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Twix</td>
+      <td>58</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Both</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Take 5</td>
+      <td>43</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Whatchamacallits</td>
+      <td>45</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Almond Joy</td>
+      <td>46</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Oh Henry</td>
+      <td>51</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Both</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>Cookies and Cream</td>
+      <td>43</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>Both</td>
+    </tr>
+  </tbody>
+</table>
+<p>25 rows × 11 columns</p>
+</div></div></div>
 </div>
 </div>
 <div class="section" id="reading-in-data-from-a-different-file">
@@ -613,7 +1038,7 @@ exercises is coming from.</p>
 <div class="admonition-lets-apply-what-we-learned admonition">
 <p class="admonition-title">Let’s apply what we learned!</p>
 <p>1. What is a delimiter?<br />
-a) It defines how column values are separated
+a) It defines how column values are separated<br />
 b) It prevents a limitation on the data being read it<br />
 c) It is a manner of deleting values from a dataframe</p>
 <p>2. What argument is needed if we want to read in data from an Excel spreadsheet where there is data saved on different sheets?<br />
@@ -624,8 +1049,8 @@ c) <code class="docutils literal notranslate"><span class="pre">sheet</span></co
 <div class="tip dropdown admonition">
 <p class="admonition-title">Solutions!</p>
 <ol class="simple">
-<li><p>b) It defines how column values are separated</p></li>
-<li><p>c) <code class="docutils literal notranslate"><span class="pre">sheet_name</span></code></p></li>
+<li><p>a) It defines how column values are separated</p></li>
+<li><p>b) <code class="docutils literal notranslate"><span class="pre">sheet_name</span></code></p></li>
 </ol>
 </div>
 </div>

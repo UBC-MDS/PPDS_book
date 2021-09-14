@@ -16,28 +16,28 @@ kernelspec:
 # Conditional value replacement and assignment
 
 :::{admonition} Watch it
-See the accompanied youtube video at <a href="https://www.youtube.com/embed/WCWi1R2CQsY?rel=0?start=1224&end=1590" target="_blank">the link here.</a>
+See the accompanied youtube video at <a href="https://www.youtube.com/embed/WCWi1R2CQsY?start=1224&end=1590" target="_blank">the link here.</a>
 :::
 
+```{code-cell} ipython3
+import pandas as pd
+import numpy as np
 
----
+pd.set_option('display.width', 350)
+np.set_printoptions(linewidth=400)
+pd.set_option('display.max_columns', 20)
+pd.set_option('display.max_rows', 20)
+
+```
 
 # Building on things we know
 
-``` python
+```{code-cell} ipython3
 cereal = pd.read_csv('cereal.csv',
                   usecols=['name', 'mfr', 'type', 'calories', 'protein', 'weight', 'rating'])
 cereal.head()
 ```
 
-```out
-                        name mfr  type  calories  protein  weight     rating
-0                  100% Bran   N  Cold        70        4     1.0  68.402973
-1          100% Natural Bran   Q  Cold       120        3     1.0  33.983679
-2                   All-Bran   K  Cold        70        4     1.0  59.425505
-3  All-Bran with Extra Fiber   K  Cold        50        4     1.0  93.704912
-4             Almond Delight   R  Cold       110        2     1.0  34.384843
-```
 
 Notes:
 
@@ -58,22 +58,12 @@ This leads us to our task:
 
 ---
 
-``` python
+```{code-cell} ipython3
 q_cereal = cereal[cereal['mfr'] == 'Q']
 q_cereal.assign(mfr = 'Quaker')
 ```
 
-```out
-                  name     mfr  type  calories  protein  weight     rating
-1    100% Natural Bran  Quaker  Cold       120        3     1.0  33.983679
-10        Cap'n'Crunch  Quaker  Cold       120        1     1.0  18.042851
-35    Honey Graham Ohs  Quaker  Cold       120        1     1.0  21.871292
-41                Life  Quaker  Cold       100        4     1.0  45.328074
-54         Puffed Rice  Quaker  Cold        50        1     0.5  60.756112
-55        Puffed Wheat  Quaker  Cold        50        2     0.5  63.005645
-56  Quaker Oat Squares  Quaker  Cold       100        4     1.0  49.511874
-57      Quaker Oatmeal  Quaker   Hot       100        5     1.0  50.828392
-```
+
 
 Notes:
 
@@ -101,36 +91,16 @@ So what do we do?
 
 # Building on more things we know
 
-``` python
+```{code-cell} ipython3
 cereal.loc[73] 
 ```
 
-```out
-name           Trix
-mfr               G
-type           Cold
-calories        110
-protein           1
-weight            1
-rating      27.7533
-Name: 73, dtype: object
-```
 
-``` python
+
+```{code-cell} ipython3
 cereal.loc[cereal['mfr'] == 'Q']
 ```
 
-```out
-                  name mfr  type  calories  protein  weight     rating
-1    100% Natural Bran   Q  Cold       120        3     1.0  33.983679
-10        Cap'n'Crunch   Q  Cold       120        1     1.0  18.042851
-35    Honey Graham Ohs   Q  Cold       120        1     1.0  21.871292
-41                Life   Q  Cold       100        4     1.0  45.328074
-54         Puffed Rice   Q  Cold        50        1     0.5  60.756112
-55        Puffed Wheat   Q  Cold        50        2     0.5  63.005645
-56  Quaker Oat Squares   Q  Cold       100        4     1.0  49.511874
-57      Quaker Oatmeal   Q   Hot       100        5     1.0  50.828392
-```
 
 Notes:
 
@@ -150,23 +120,12 @@ when filtering. However, this time we wrap the whole thing within
 
 ---
 
-``` python
+```{code-cell} ipython3
 cereal.loc[cereal['mfr'] == 'Q', 'mfr']
 ```
 
-```out
-1     Q
-10    Q
-35    Q
-41    Q
-54    Q
-55    Q
-56    Q
-57    Q
-Name: mfr, dtype: object
-```
 
-``` python
+```{code-cell} ipython3
 cereal.loc[cereal['mfr'] == 'Q', 'mfr'] = 'Quaker'
 ```
 
@@ -194,26 +153,10 @@ Wait\! Nothing was outputted with our code\! What happened?
 
 ---
 
-``` python
+```{code-cell} ipython3
 cereal
 ```
 
-```out
-                         name     mfr  type  calories  protein  weight     rating
-0                   100% Bran       N  Cold        70        4     1.0  68.402973
-1           100% Natural Bran  Quaker  Cold       120        3     1.0  33.983679
-2                    All-Bran       K  Cold        70        4     1.0  59.425505
-3   All-Bran with Extra Fiber       K  Cold        50        4     1.0  93.704912
-4              Almond Delight       R  Cold       110        2     1.0  34.384843
-..                        ...     ...   ...       ...      ...     ...        ...
-72                    Triples       G  Cold       110        2     1.0  39.106174
-73                       Trix       G  Cold       110        1     1.0  27.753301
-74                 Wheat Chex       R  Cold       100        3     1.0  49.787445
-75                   Wheaties       G  Cold       100        3     1.0  51.592193
-76        Wheaties Honey Gold       G  Cold       110        2     1.0  36.187559
-
-[77 rows x 7 columns]
-```
 
 Notes:
 
@@ -229,24 +172,10 @@ Let’s discuss what really is happening behind the scenes.
 
 ---
 
-``` python
+```{code-cell} ipython3
 cereal['mfr'] == 'Q'
 ```
 
-```out
-0     False
-1     False
-2     False
-3     False
-4     False
-      ...  
-72    False
-73    False
-74    False
-75    False
-76    False
-Name: mfr, Length: 77, dtype: bool
-```
 
 Notes:
 
@@ -269,7 +198,8 @@ replacing the values in the `mfr` colum with the new value of `Quaker`.
 1.  
 <!-- end list -->
 
-``` python
+```{code-cell} ipython3
+:tags: ["remove-input"]
 cereal.loc[cereal['mfr'] == 'Q']
 ```
 
@@ -278,7 +208,8 @@ cereal.loc[cereal['mfr'] == 'Q']
 2.  
 <!-- end list -->
 
-``` python
+```{code-cell} ipython3
+:tags: ["remove-input"]
 cereal.loc[cereal['mfr'] == 'Q', 'mfr'] 
 ```
 
@@ -287,7 +218,8 @@ cereal.loc[cereal['mfr'] == 'Q', 'mfr']
 3.  
 <!-- end list -->
 
-``` python
+```{code-cell} ipython3
+:tags: ["remove-input"]
 cereal.loc[cereal['mfr'] == 'Q', 'mfr'] = 'Quaker'
 ```
 
@@ -304,26 +236,11 @@ You can split up how this code works into 3 steps:
 
 ---
 
-``` python
+```{code-cell} ipython3
+:tags: ["raises-exception"]
 cereal[cereal['mfr'] == 'Q', 'mfr'] = 'Quaker'
 ```
 
-``` out
-TypeError: 'Series' objects are mutable, thus they cannot be hashed
-
-Detailed traceback: 
-  File "<string>", line 1, in <module>
-  File "/usr/local/lib/python3.7/site-packages/pandas/core/frame.py", line 2938, in __setitem__
-    self._set_item(key, value)
-  File "/usr/local/lib/python3.7/site-packages/pandas/core/frame.py", line 3000, in _set_item
-    value = self._sanitize_column(key, value)
-  File "/usr/local/lib/python3.7/site-packages/pandas/core/frame.py", line 3666, in _sanitize_column
-    if broadcast and key in self.columns and value.ndim == 1:
-  File "/usr/local/lib/python3.7/site-packages/pandas/core/indexes/base.py", line 3899, in __contains__
-    hash(key)
-  File "/usr/local/lib/python3.7/site-packages/pandas/core/generic.py", line 1799, in __hash__
-    f"{repr(type(self).__name__)} objects are mutable, "
-```
 
 Notes:
 
@@ -339,11 +256,11 @@ specify a column.
 
 # Replacing with inequalities
 
-``` python
+```{code-cell} ipython3
 cereal.loc[cereal['protein'] >= 3, 'protein_level']  = 'high' 
 ```
 
-``` python
+```{code-cell} ipython3
 cereal.loc[cereal['protein'] < 3, 'protein_level']  = 'low' 
 ```
 
@@ -373,26 +290,10 @@ Next by the “low” values.
 
 ---
 
-``` python
+```{code-cell} ipython3
 cereal
 ```
 
-```out
-                         name     mfr  type  calories  protein  weight     rating protein_level
-0                   100% Bran       N  Cold        70        4     1.0  68.402973          high
-1           100% Natural Bran  Quaker  Cold       120        3     1.0  33.983679          high
-2                    All-Bran       K  Cold        70        4     1.0  59.425505          high
-3   All-Bran with Extra Fiber       K  Cold        50        4     1.0  93.704912          high
-4              Almond Delight       R  Cold       110        2     1.0  34.384843           low
-..                        ...     ...   ...       ...      ...     ...        ...           ...
-72                    Triples       G  Cold       110        2     1.0  39.106174           low
-73                       Trix       G  Cold       110        1     1.0  27.753301           low
-74                 Wheat Chex       R  Cold       100        3     1.0  49.787445          high
-75                   Wheaties       G  Cold       100        3     1.0  51.592193          high
-76        Wheaties Honey Gold       G  Cold       110        2     1.0  36.187559           low
-
-[77 rows x 8 columns]
-```
 
 Notes:
 
@@ -402,28 +303,12 @@ Let’s take a look at the dataframe now.
 
 ## Creating new columns
 
-``` python
+```{code-cell} ipython3
 oz_to_g = 28.3495
 cereal['weight_g'] = cereal['weight'] * oz_to_g
 cereal
 ```
 
-```out
-                         name     mfr  type  calories  protein  weight     rating protein_level  weight_g
-0                   100% Bran       N  Cold        70        4     1.0  68.402973          high   28.3495
-1           100% Natural Bran  Quaker  Cold       120        3     1.0  33.983679          high   28.3495
-2                    All-Bran       K  Cold        70        4     1.0  59.425505          high   28.3495
-3   All-Bran with Extra Fiber       K  Cold        50        4     1.0  93.704912          high   28.3495
-4              Almond Delight       R  Cold       110        2     1.0  34.384843           low   28.3495
-..                        ...     ...   ...       ...      ...     ...        ...           ...       ...
-72                    Triples       G  Cold       110        2     1.0  39.106174           low   28.3495
-73                       Trix       G  Cold       110        1     1.0  27.753301           low   28.3495
-74                 Wheat Chex       R  Cold       100        3     1.0  49.787445          high   28.3495
-75                   Wheaties       G  Cold       100        3     1.0  51.592193          high   28.3495
-76        Wheaties Honey Gold       G  Cold       110        2     1.0  36.187559           low   28.3495
-
-[77 rows x 9 columns]
-```
 
 Notes:
 

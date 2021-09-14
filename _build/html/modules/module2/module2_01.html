@@ -193,31 +193,6 @@
      Column arithmetic and creation
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="module2_16.html">
-     Data Filtering
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="module2_20.html">
-     Conditional value replacement and assignment
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="module2_22.html">
-     Chaining notation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="module2_25.html">
-     Grouping and aggregating
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="module2_29.html">
-     More plotting tricks using Altair
-    </a>
-   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -363,9 +338,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/modules/module2/module2_01.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/modules/module2/module2_01.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -386,7 +361,7 @@
             href="https://github.com/UBC-MDS/PPDS_book/issues/new?title=Issue%20on%20page%20%2Fmodules/module2/module2_01.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/UBC-MDS/PPDS_book/edit/main/modules/module2/module2_01.md"><button
+        <a class="edit-button" href="https://github.com/UBC-MDS/PPDS_book/edit/main/modules/module2/module2_01.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -400,6 +375,26 @@
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/UBC-MDS/PPDS_book/main?urlpath=tree/modules/module2/module2_01.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
 
         </div>
 
@@ -442,11 +437,6 @@
    Reading in Data from a Different File
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lets-apply-what-we-learned">
-   Let’s apply what we learned!
-  </a>
- </li>
 </ul>
 
             </nav>
@@ -460,24 +450,16 @@
                 
   <div class="section" id="reading-in-different-file-types">
 <h1>Reading in Different File Types<a class="headerlink" href="#reading-in-different-file-types" title="Permalink to this headline">¶</a></h1>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p>See the accompanied youtube video at <a href="https://www.youtube.com/embed/WCWi1R2CQsY?rel=0?start=10&end=430" target="_blank">the link here.</a></p>
+<div class="admonition-watch-it admonition">
+<p class="admonition-title">Watch it</p>
+<p>See the accompanied youtube video at <a href="https://www.youtube.com/embed/WCWi1R2CQsY?start=0&end=270" target="_blank">the link here.</a></p>
 </div>
-<hr class="docutils" />
 <div class="section" id="id1">
 <h2>Reading in Different File Types<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">pandas</span></code> facilitates the loading of data from many different file types
-including:</p>
-<ul class="simple">
-<li><p>A URL</p></li>
-<li><p>A <code class="docutils literal notranslate"><span class="pre">txt</span></code> file</p></li>
-<li><p>An <code class="docutils literal notranslate"><span class="pre">xlsx</span></code> file</p></li>
-</ul>
-<p>Notes:</p>
 <p>In the last module, we learned how to read in a <code class="docutils literal notranslate"><span class="pre">csv</span></code> file but loading
 in data is not restricted to this file type.</p>
-<p>There are several types such as:</p>
+<p><code class="docutils literal notranslate"><span class="pre">pandas</span></code> facilitates the loading of data from many different file types
+including::</p>
 <ul class="simple">
 <li><p>A URL: If the data is stored publicly on a webpage, pandas can read
 it directly in from the page address.</p></li>
@@ -494,64 +476,137 @@ for this course.</p>
 <hr class="docutils" />
 <div class="section" id="reading-from-a-url">
 <h2>Reading from a URL<a class="headerlink" href="#reading-from-a-url" title="Permalink to this headline">¶</a></h2>
-<p><a href="https://raw.githubusercontent.com/UBC-MDS/MCL-DSCI-011-programming-in-python/master/data/candybars.csv" target="_blank">https://raw.githubusercontent.com/UBC-MDS/MCL-DSCI-011-programming-in-python/master/data/candybars.csv</a>.</p>
-<center>
-</center>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">candybars</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/UBC-MDS/MCL-DSCI-511-programming-in-python/master/data/candybars.csv&#39;</span><span class="p">)</span>
-<span class="n">candybars</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>           name  weight  chocolate  peanuts  caramel  nougat  cookie_wafer_rice  coconut  white_chocolate  multi available_canada_america
-0  Coffee Crisp      50          1        0        0       0                  1        0                0      0                   Canada
-1  Butterfinger     184          1        1        1       0                  0        0                0      0                  America
-2          Skor      39          1        0        1       0                  0        0                0      0                     Both
-3      Smarties      45          1        0        0       0                  0        0                0      1                   Canada
-4          Twix      58          1        0        1       0                  1        0                0      1                     Both
-</pre></div>
-</div>
-<p>Notes:</p>
 <p>If the data is accessible publicly on a website, you can read in data
 directly from the webpage it is stored on. For example, this code and
 all the files that make up this course are all openly available and can
-be
-<a href="https://github.com/UBC-MDS/MCL-DSCI-011-programming-in-python" target="_blank">viewed
+be  <a href="https://github.com/UBC-MDS/MCL-DSCI-011-programming-in-python" target="_blank">viewed
 online</a>.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">candybar.csv</span></code> file that we used in the last module, is stored at
 this URL.</p>
+<p><a href="https://raw.githubusercontent.com/UBC-MDS/MCL-DSCI-011-programming-in-python/master/data/candybars.csv" target="_blank">https://raw.githubusercontent.com/UBC-MDS/MCL-DSCI-011-programming-in-python/master/data/candybars.csv</a>.</p>
+<img alt="404 image" src="../../_images/url-samp.png" />
 <p>You can see that it looks like a plain text file with each line being a
 row and each column value separated with a comma.</p>
 <p>The code required to read in this URL looks like this.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">candybars</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/UBC-MDS/MCL-DSCI-511-programming-in-python/master/data/candybars.csv&#39;</span><span class="p">)</span>
+<span class="n">candybars</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>weight</th>
+      <th>chocolate</th>
+      <th>peanuts</th>
+      <th>caramel</th>
+      <th>nougat</th>
+      <th>cookie_wafer_rice</th>
+      <th>coconut</th>
+      <th>white_chocolate</th>
+      <th>multi</th>
+      <th>available_canada_america</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Coffee Crisp</td>
+      <td>50</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Butterfinger</td>
+      <td>184</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Skor</td>
+      <td>39</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Both</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Smarties</td>
+      <td>45</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Twix</td>
+      <td>58</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Both</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
 <p>It uses the same <code class="docutils literal notranslate"><span class="pre">pd.read_csv()</span></code> function we saw when reading in csv
 files locally.</p>
 </div>
-<hr class="docutils" />
 <div class="section" id="reading-in-a-text-file">
 <h2>Reading in a Text File<a class="headerlink" href="#reading-in-a-text-file" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">candybars</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;candybars-text.txt&#39;</span><span class="p">)</span>
-<span class="n">candybars</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>  name\tweight\tchocolate\tpeanuts\tcaramel\tnougat\tcookie_wafer_rice\tcoconut\twhite_chocolate\tmulti\tavailable_canada_america
-0   Coffee Crisp\t50\t1\t0\t0\t0\t1\t0\t0\t0\tCanada                                                                             
-1  Butterfinger\t184\t1\t1\t1\t0\t0\t0\t0\t0\tAme...                                                                             
-2             Skor\t39\t1\t0\t1\t0\t0\t0\t0\t0\tBoth                                                                             
-3       Smarties\t45\t1\t0\t0\t0\t0\t0\t0\t1\tCanada                                                                             
-4             Twix\t58\t1\t0\t1\t0\t1\t0\t0\t1\tBoth
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">candybars</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;candybars-text.txt&#39;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="n">candybars</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>           name  weight  chocolate  peanuts  caramel  nougat  cookie_wafer_rice  coconut  white_chocolate  multi available_canada_america
-0  Coffee Crisp      50          1        0        0       0                  1        0                0      0                   Canada
-1  Butterfinger     184          1        1        1       0                  0        0                0      0                  America
-2          Skor      39          1        0        1       0                  0        0                0      0                     Both
-3      Smarties      45          1        0        0       0                  0        0                0      1                   Canada
-4          Twix      58          1        0        1       0                  1        0                0      1                     Both
-</pre></div>
-</div>
-<p>Notes:</p>
 <p>Reading in <code class="docutils literal notranslate"><span class="pre">txt</span></code> files can be a little less standard.</p>
 <p>Sometimes the character separating column values are not always commas
 like we saw before.</p>
@@ -561,6 +616,60 @@ to specify how the data should be recognized.</p>
 <p>This is the same as the <code class="docutils literal notranslate"><span class="pre">candybars.csv</span></code> data but saved as a <code class="docutils literal notranslate"><span class="pre">txt</span></code> file.</p>
 <p>Look what happens when we load it in using the same syntax we are used
 to.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">candybars</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;candybars-text.txt&#39;</span><span class="p">)</span>
+<span class="n">candybars</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name\tweight\tchocolate\tpeanuts\tcaramel\tnougat\tcookie_wafer_rice\tcoconut\twhite_chocolate\tmulti\tavailable_canada_america</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Coffee Crisp\t50\t1\t0\t0\t0\t1\t0\t0\t0\tCanada</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Butterfinger\t184\t1\t1\t1\t0\t0\t0\t0\t0\tAme...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Skor\t39\t1\t0\t1\t0\t0\t0\t0\t0\tBoth</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Smarties\t45\t1\t0\t0\t0\t0\t0\t0\t1\tCanada</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Twix\t58\t1\t0\t1\t0\t1\t0\t0\t1\tBoth</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
 <p>This is not ideal.</p>
 <p>What you should notice is instead of each column value being separated
 by a comma, it is now separated by <code class="docutils literal notranslate"><span class="pre">\t</span></code>.</p>
@@ -568,34 +677,126 @@ by a comma, it is now separated by <code class="docutils literal notranslate"><s
 <p>In this specific case, a <code class="docutils literal notranslate"><span class="pre">\t</span></code> delimiter is a “tab”.</p>
 <p>We need to tell <code class="docutils literal notranslate"><span class="pre">pd.read_csv()</span></code> to separate each value on our delimiter
 <code class="docutils literal notranslate"><span class="pre">\t</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">candybars</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;candybars-text.txt&#39;</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">candybars</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>weight</th>
+      <th>chocolate</th>
+      <th>peanuts</th>
+      <th>caramel</th>
+      <th>nougat</th>
+      <th>cookie_wafer_rice</th>
+      <th>coconut</th>
+      <th>white_chocolate</th>
+      <th>multi</th>
+      <th>available_canada_america</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Coffee Crisp</td>
+      <td>50</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Butterfinger</td>
+      <td>184</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Skor</td>
+      <td>39</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Both</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Smarties</td>
+      <td>45</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Twix</td>
+      <td>58</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Both</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
 <p>That’s much better.</p>
 <p>The delimiter won’t always be <code class="docutils literal notranslate"><span class="pre">\t</span></code> for <code class="docutils literal notranslate"><span class="pre">txt</span></code> files. The most common
 delimiters are <code class="docutils literal notranslate"><span class="pre">;</span></code>, <code class="docutils literal notranslate"><span class="pre">,</span></code>, <code class="docutils literal notranslate"><span class="pre">\t</span></code>, and sometimes even just spaces.</p>
 </div>
-<hr class="docutils" />
 <div class="section" id="reading-in-an-excel-file-xlsx">
 <h2>Reading in an Excel File (<code class="docutils literal notranslate"><span class="pre">xlsx</span></code>)<a class="headerlink" href="#reading-in-an-excel-file-xlsx" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">candybars</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;foods.xlsx&#39;</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;chocolate&#39;</span><span class="p">)</span>
-<span class="n">candybars</span>
-</pre></div>
-</div>
-<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                 name  weight  chocolate  peanuts  caramel  nougat  cookie_wafer_rice  coconut  white_chocolate  multi available_canada_america
-0        Coffee Crisp      50          1        0        0       0                  1        0                0      0                   Canada
-1        Butterfinger     184          1        1        1       0                  0        0                0      0                  America
-2                Skor      39          1        0        1       0                  0        0                0      0                     Both
-3            Smarties      45          1        0        0       0                  0        0                0      1                   Canada
-4                Twix      58          1        0        1       0                  1        0                0      1                     Both
-..                ...     ...        ...      ...      ...     ...                ...      ...              ...    ...                      ...
-20             Take 5      43          1        1        1       0                  1        0                0      0                  America
-21   Whatchamacallits      45          1        1        0       0                  1        0                0      0                  America
-22         Almond Joy      46          1        0        0       0                  0        1                0      0                  America
-23           Oh Henry      51          1        1        1       0                  0        0                0      0                     Both
-24  Cookies and Cream      43          0        0        0       0                  1        0                1      0                     Both
-
-[25 rows x 11 columns]
-</pre></div>
-</div>
-<p>Notes:</p>
 <p>Excel files need special attention because they give the user the
 capability of additional formatting including saving multiple dataframes
 on different “sheets” within a single file.</p>
@@ -605,61 +806,250 @@ on different “sheets” within a single file.</p>
 <p>Our candybars dataframe is now saved as an excel spreadsheet named
 <code class="docutils literal notranslate"><span class="pre">foods.xlsx</span></code> on a sheet named <code class="docutils literal notranslate"><span class="pre">chocolate</span></code>.</p>
 <p>Here is how we would read it in.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">candybars</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;foods.xlsx&#39;</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;chocolate&#39;</span><span class="p">)</span>
+<span class="n">candybars</span>
+</pre></div>
 </div>
-<hr class="docutils" />
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>weight</th>
+      <th>chocolate</th>
+      <th>peanuts</th>
+      <th>caramel</th>
+      <th>nougat</th>
+      <th>cookie_wafer_rice</th>
+      <th>coconut</th>
+      <th>white_chocolate</th>
+      <th>multi</th>
+      <th>available_canada_america</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Coffee Crisp</td>
+      <td>50</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Butterfinger</td>
+      <td>184</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Skor</td>
+      <td>39</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Both</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Smarties</td>
+      <td>45</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Twix</td>
+      <td>58</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Both</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Take 5</td>
+      <td>43</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Whatchamacallits</td>
+      <td>45</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Almond Joy</td>
+      <td>46</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Oh Henry</td>
+      <td>51</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Both</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>Cookies and Cream</td>
+      <td>43</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>Both</td>
+    </tr>
+  </tbody>
+</table>
+<p>25 rows × 11 columns</p>
+</div></div></div>
+</div>
+</div>
 <div class="section" id="reading-in-data-from-a-different-file">
 <h2>Reading in Data from a Different File<a class="headerlink" href="#reading-in-data-from-a-different-file" title="Permalink to this headline">¶</a></h2>
-<center>
-</center>
-<p>This translates to the syntax <code class="docutils literal notranslate"><span class="pre">data/canucks.csv</span></code>.</p>
-<p>Notes:</p>
 <p>Something you have seen in Module 1’s exercises is that when reading in
 the data there is always a <code class="docutils literal notranslate"><span class="pre">data/</span></code> before the file name.</p>
 <p>This is because we are running the current code in a file that is
 located in a different folder than the data.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">data</span></code> is specifying a folder in our current directory (folder).</p>
 <p>We need to specify the path to the <code class="docutils literal notranslate"><span class="pre">csv</span></code> file through the subdirectory.</p>
+<img alt="404 image" src="../../_images/datafile.png" />
 <p>This translates to the syntax <code class="docutils literal notranslate"><span class="pre">data/canucks.csv</span></code>.</p>
-<hr class="docutils" />
-<p><em><em>Example:</em></em></p>
-<p><code class="docutils literal notranslate"><span class="pre">data/module3/question2/candybars.csv</span></code></p>
-<p><br> <br></p>
-<center>
-</center>
-<p>Notes:</p>
 <p>This syntax is not restricted to a single subdirectory and could even
 have multiple folders between the current location and the final file
 name.</p>
-<hr class="docutils" />
-<center>
-</center>
-<p>Notes:</p>
+<p><em><em>Example:</em></em></p>
+<p><code class="docutils literal notranslate"><span class="pre">data/module3/question2/candybars.csv</span></code></p>
+<p><br> <br></p>
+<img alt="404 image" src="../../_images/more_files.png" />
 <p>You can see the whole course structure and it’s subdirectories
 <a href="https://github.com/UBC-MDS/MCL-DSCI-511-programming-in-python" target="_blank">openly
 online</a>.</p>
 <p>In this course, we save all our data in a folder called <code class="docutils literal notranslate"><span class="pre">data</span></code> so when
 asked to read in data, take care in future exercises to add the full
 path to the required file.</p>
+<img alt="404 image" src="../../_images/online.png" />
 <p>It may be a good idea to look in the
 <a href="https://github.com/UBC-MDS/MCL-DSCI-511-programming-in-python/tree/master/data" target="_blank">data
 folder</a> to see exactly where the data you are loading in the
 exercises is coming from.</p>
+<div class="admonition-lets-apply-what-we-learned admonition">
+<p class="admonition-title">Let’s apply what we learned!</p>
+<p>1. What is a delimiter?<br />
+a) It defines how column values are separated<br />
+b) It prevents a limitation on the data being read it<br />
+c) It is a manner of deleting values from a dataframe</p>
+<p>2. What argument is needed if we want to read in data from an Excel spreadsheet where there is data saved on different sheets?<br />
+a) <code class="docutils literal notranslate"><span class="pre">header</span></code><br />
+b) <code class="docutils literal notranslate"><span class="pre">sheet_name</span></code><br />
+c) <code class="docutils literal notranslate"><span class="pre">sheet</span></code></p>
 </div>
-<div class="section" id="lets-apply-what-we-learned">
-<h2>Let’s apply what we learned!<a class="headerlink" href="#lets-apply-what-we-learned" title="Permalink to this headline">¶</a></h2>
-<p>1. What is Pandas?<br />
-a) A useful tool for data manipulation in Python<br />
-b) A programming language<br />
-c) A datatype</p>
-<p>2. Which of the following statements is true?<br />
-a) Attribute and methods can be thought of as nouns and functions as verbs<br />
-b) Attribute can be thought of as nouns and functions and methods as verbs<br />
-c)Functions and methods can be thought of as nouns and attributes as verbs</p>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Solutions!</p>
 <ol class="simple">
-<li><p>a) A useful tool for data manipulation in Python</p></li>
-<li><p>b) Attribute can be thought of as nouns and functions and methods as verbs</p></li>
+<li><p>a) It defines how column values are separated</p></li>
+<li><p>b) <code class="docutils literal notranslate"><span class="pre">sheet_name</span></code></p></li>
 </ol>
 </div>
 </div>

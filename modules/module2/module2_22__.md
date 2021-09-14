@@ -16,7 +16,7 @@ kernelspec:
 # Chaining notation
 
 :::{admonition} Watch it
-See the accompanied youtube video at <a href="https://www.youtube.com/embed/WCWi1R2CQsY?rel=0?start=1591&end=1748" target="_blank">the link here.</a>
+See the accompanied youtube video at <a href="https://www.youtube.com/embed/WCWi1R2CQsY?start=1591&end=1748" target="_blank">the link here.</a>
 :::
 
 

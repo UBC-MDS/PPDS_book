@@ -4,7 +4,7 @@
 # # Data Filtering
 # 
 # :::{admonition} Watch it
-# See the accompanied youtube video at <a href="https://www.youtube.com/embed/WCWi1R2CQsY?rel=0?start=847&end=1221" target="_blank">the link here.</a>
+# See the accompanied youtube video at <a href="https://www.youtube.com/embed/WCWi1R2CQsY?start=847&end=1221" target="_blank">the link here.</a>
 # :::
 # 
 # 

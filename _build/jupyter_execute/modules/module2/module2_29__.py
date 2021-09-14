@@ -4,7 +4,7 @@
 # # More plotting tricks using Altair
 # 
 # :::{admonition} Watch it
-# See the accompanied youtube video at <a href="https://www.youtube.com/embed/WCWi1R2CQsY?rel=0?start=2106&end=2634" target="_blank">the link here.</a>
+# See the accompanied youtube video at <a href="https://www.youtube.com/embed/WCWi1R2CQsY?start=2106&end=2634" target="_blank">the link here.</a>
 # :::
 # 
 # 

@@ -193,31 +193,6 @@
      Column arithmetic and creation
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="module2_16.html">
-     Data Filtering
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="module2_20.html">
-     Conditional value replacement and assignment
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="module2_22.html">
-     Chaining notation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="module2_25.html">
-     Grouping and aggregating
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="module2_29.html">
-     More plotting tricks using Altair
-    </a>
-   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -363,9 +338,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/modules/module2/module2_09.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/modules/module2/module2_09.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -386,7 +361,7 @@
             href="https://github.com/UBC-MDS/PPDS_book/issues/new?title=Issue%20on%20page%20%2Fmodules/module2/module2_09.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/UBC-MDS/PPDS_book/edit/main/modules/module2/module2_09.md"><button
+        <a class="edit-button" href="https://github.com/UBC-MDS/PPDS_book/edit/main/modules/module2/module2_09.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -400,6 +375,26 @@
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/UBC-MDS/PPDS_book/main?urlpath=tree/modules/module2/module2_09.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
 
         </div>
 
@@ -421,11 +416,6 @@
    Column Dropping
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lets-apply-what-we-learned">
-   Let’s apply what we learned!
-  </a>
- </li>
 </ul>
 
             </nav>
@@ -439,58 +429,213 @@
                 
   <div class="section" id="column-renaming-and-column-dropping">
 <h1>Column renaming and column dropping<a class="headerlink" href="#column-renaming-and-column-dropping" title="Permalink to this headline">¶</a></h1>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p>See the accompanied youtube video at <a href="https://www.youtube.com/embed/WCWi1R2CQsY?rel=0?start=10&end=430" target="_blank">the link here.</a></p>
+<div class="admonition-watch-it admonition">
+<p class="admonition-title">Watch it</p>
+<p>See the accompanied youtube video at <a href="https://www.youtube.com/embed/WCWi1R2CQsY?start=573&end=589" target="_blank">the link here.</a></p>
 </div>
-<br>
-<hr class="docutils" />
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">candy</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;candybars.csv&#39;</span><span class="p">)</span>
-<span class="n">candy</span>
-</pre></div>
-</div>
-<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                 name  weight  chocolate  peanuts  caramel  nougat  cookie_wafer_rice  coconut  white_chocolate  multi available_canada_america
-0        Coffee Crisp      50          1        0        0       0                  1        0                0      0                   Canada
-1        Butterfinger     184          1        1        1       0                  0        0                0      0                  America
-2                Skor      39          1        0        1       0                  0        0                0      0                     Both
-3            Smarties      45          1        0        0       0                  0        0                0      1                   Canada
-..                ...     ...        ...      ...      ...     ...                ...      ...              ...    ...                      ...
-21   Whatchamacallits      45          1        1        0       0                  1        0                0      0                  America
-22         Almond Joy      46          1        0        0       0                  0        1                0      0                  America
-23           Oh Henry      51          1        1        1       0                  0        0                0      0                     Both
-24  Cookies and Cream      43          0        0        0       0                  1        0                1      0                     Both
-
-[25 rows x 11 columns]
-</pre></div>
-</div>
-<p>Notes:</p>
 <p>Remember our <code class="docutils literal notranslate"><span class="pre">candybars.csv</span></code> dataframe?</p>
 <p>Let’s bring it back and save it as object named <code class="docutils literal notranslate"><span class="pre">candy</span></code>.</p>
-<hr class="docutils" />
-<div class="section" id="column-renaming">
-<h2>Column Renaming<a class="headerlink" href="#column-renaming" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">candy</span> <span class="o">=</span> <span class="n">candy</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;available_canada_america&#39;</span><span class="p">:</span><span class="s1">&#39;availability&#39;</span><span class="p">})</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">candy</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;candybars.csv&#39;</span><span class="p">)</span>
 <span class="n">candy</span>
 </pre></div>
 </div>
-<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                 name  weight  chocolate  peanuts  caramel  nougat  cookie_wafer_rice  coconut  white_chocolate  multi availability
-0        Coffee Crisp      50          1        0        0       0                  1        0                0      0       Canada
-1        Butterfinger     184          1        1        1       0                  0        0                0      0      America
-2                Skor      39          1        0        1       0                  0        0                0      0         Both
-3            Smarties      45          1        0        0       0                  0        0                0      1       Canada
-..                ...     ...        ...      ...      ...     ...                ...      ...              ...    ...          ...
-21   Whatchamacallits      45          1        1        0       0                  1        0                0      0      America
-22         Almond Joy      46          1        0        0       0                  0        1                0      0      America
-23           Oh Henry      51          1        1        1       0                  0        0                0      0         Both
-24  Cookies and Cream      43          0        0        0       0                  1        0                1      0         Both
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-[25 rows x 11 columns]
-</pre></div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>weight</th>
+      <th>chocolate</th>
+      <th>peanuts</th>
+      <th>caramel</th>
+      <th>nougat</th>
+      <th>cookie_wafer_rice</th>
+      <th>coconut</th>
+      <th>white_chocolate</th>
+      <th>multi</th>
+      <th>available_canada_america</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Coffee Crisp</td>
+      <td>50</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Butterfinger</td>
+      <td>184</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Skor</td>
+      <td>39</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Both</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Smarties</td>
+      <td>45</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Twix</td>
+      <td>58</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Both</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Take 5</td>
+      <td>43</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Whatchamacallits</td>
+      <td>45</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Almond Joy</td>
+      <td>46</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Oh Henry</td>
+      <td>51</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Both</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>Cookies and Cream</td>
+      <td>43</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>Both</td>
+    </tr>
+  </tbody>
+</table>
+<p>25 rows × 11 columns</p>
+</div></div></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;old column name&#39;</span><span class="p">:</span><span class="s1">&#39;new column name&#39;</span><span class="p">}</span>
-</pre></div>
-</div>
-<p>Notes:</p>
+<div class="section" id="column-renaming">
+<h2>Column Renaming<a class="headerlink" href="#column-renaming" title="Permalink to this headline">¶</a></h2>
 <p>There will be times where you are unsatisfied with the column names and
 you may want to change them.</p>
 <p>The proper syntax to do that is with <code class="docutils literal notranslate"><span class="pre">.rename()</span></code>.</p>
@@ -498,109 +643,971 @@ you may want to change them.</p>
 <p>Perhaps it would be a good idea to change it to something shorter like
 <code class="docutils literal notranslate"><span class="pre">availability</span></code>.</p>
 <p>Here is how we can accomplish that.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">candy</span> <span class="o">=</span> <span class="n">candy</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;available_canada_america&#39;</span><span class="p">:</span><span class="s1">&#39;availability&#39;</span><span class="p">})</span>
+<span class="n">candy</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>weight</th>
+      <th>chocolate</th>
+      <th>peanuts</th>
+      <th>caramel</th>
+      <th>nougat</th>
+      <th>cookie_wafer_rice</th>
+      <th>coconut</th>
+      <th>white_chocolate</th>
+      <th>multi</th>
+      <th>availability</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Coffee Crisp</td>
+      <td>50</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Butterfinger</td>
+      <td>184</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Skor</td>
+      <td>39</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Both</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Smarties</td>
+      <td>45</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Twix</td>
+      <td>58</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Both</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Take 5</td>
+      <td>43</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Whatchamacallits</td>
+      <td>45</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Almond Joy</td>
+      <td>46</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Oh Henry</td>
+      <td>51</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Both</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>Cookies and Cream</td>
+      <td>43</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>Both</td>
+    </tr>
+  </tbody>
+</table>
+<p>25 rows × 11 columns</p>
+</div></div></div>
+</div>
 <p>This code uses something we’ve never seen before - <code class="docutils literal notranslate"><span class="pre">{}</span></code> curly braces,
 also called curly brackets.</p>
 <p>These have a special meaning but for now, you only need to concentrate
 your attention on the fact that the argument <code class="docutils literal notranslate"><span class="pre">columns</span></code> needs to have the
 format shown on the slide.</p>
-<hr class="docutils" />
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">candy</span> <span class="o">=</span> <span class="n">candy</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;available_canada_america&#39;</span><span class="p">:</span><span class="s1">&#39;availability&#39;</span><span class="p">,</span>
-                        <span class="s1">&#39;weight&#39;</span><span class="p">:</span><span class="s1">&#39;weight_g&#39;</span><span class="p">})</span>
-<span class="n">candy</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;old column name&#39;</span><span class="p">:</span><span class="s1">&#39;new column name&#39;</span><span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>           name  weight_g  chocolate  peanuts  caramel  nougat  cookie_wafer_rice  coconut  white_chocolate  multi availability
-0  Coffee Crisp        50          1        0        0       0                  1        0                0      0       Canada
-1  Butterfinger       184          1        1        1       0                  0        0                0      0      America
-2          Skor        39          1        0        1       0                  0        0                0      0         Both
-3      Smarties        45          1        0        0       0                  0        0                0      1       Canada
-4          Twix        58          1        0        1       0                  1        0                0      1         Both
-</pre></div>
-</div>
-<p>Notes:</p>
 <p>You can also rename multiple columns at once by adding a comma between
 the new and old column pairs within the curly brackets.</p>
 <p>It’s important that we always save the dataframe to an object when
 making column changes or the changes will not be saved in our dataframe.</p>
-</div>
-<hr class="docutils" />
-<div class="section" id="column-dropping">
-<h2>Column Dropping<a class="headerlink" href="#column-dropping" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">candy</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s1">&#39;coconut&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                 name  weight_g  chocolate  peanuts  caramel  nougat  cookie_wafer_rice  white_chocolate  multi availability
-0        Coffee Crisp        50          1        0        0       0                  1                0      0       Canada
-1        Butterfinger       184          1        1        1       0                  0                0      0      America
-2                Skor        39          1        0        1       0                  0                0      0         Both
-3            Smarties        45          1        0        0       0                  0                0      1       Canada
-..                ...       ...        ...      ...      ...     ...                ...              ...    ...          ...
-21   Whatchamacallits        45          1        1        0       0                  1                0      0      America
-22         Almond Joy        46          1        0        0       0                  0                0      0      America
-23           Oh Henry        51          1        1        1       0                  0                0      0         Both
-24  Cookies and Cream        43          0        0        0       0                  1                1      0         Both
-
-[25 rows x 10 columns]
-</pre></div>
-</div>
-<p>Notes:</p>
-<p><code class="docutils literal notranslate"><span class="pre">.drop()</span></code> is the verb we use to delete columns in a dataframe.</p>
-<p>Let’s delete the column <code class="docutils literal notranslate"><span class="pre">coconut</span></code> by specifying it in the <code class="docutils literal notranslate"><span class="pre">columns</span></code>
-argument of the <code class="docutils literal notranslate"><span class="pre">drop</span></code> verb.</p>
-<hr class="docutils" />
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">candy</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s1">&#39;coconut&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">candy</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>           name  weight_g  chocolate  peanuts  caramel  nougat  cookie_wafer_rice  coconut  white_chocolate  multi availability
-0  Coffee Crisp        50          1        0        0       0                  1        0                0      0       Canada
-1  Butterfinger       184          1        1        1       0                  0        0                0      0      America
-2          Skor        39          1        0        1       0                  0        0                0      0         Both
-3      Smarties        45          1        0        0       0                  0        0                0      1       Canada
-4          Twix        58          1        0        1       0                  1        0                0      1         Both
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">candy</span> <span class="o">=</span> <span class="n">candy</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;nougat&#39;</span><span class="p">,</span> <span class="s1">&#39;coconut&#39;</span><span class="p">])</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">candy</span> <span class="o">=</span> <span class="n">candy</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;available_canada_america&#39;</span><span class="p">:</span><span class="s1">&#39;availability&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;weight&#39;</span><span class="p">:</span><span class="s1">&#39;weight_g&#39;</span><span class="p">})</span>
 <span class="n">candy</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>           name  weight_g  chocolate  peanuts  caramel  cookie_wafer_rice  white_chocolate  multi availability
-0  Coffee Crisp        50          1        0        0                  1                0      0       Canada
-1  Butterfinger       184          1        1        1                  0                0      0      America
-2          Skor        39          1        0        1                  0                0      0         Both
-3      Smarties        45          1        0        0                  0                0      1       Canada
-4          Twix        58          1        0        1                  1                0      1         Both
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>weight_g</th>
+      <th>chocolate</th>
+      <th>peanuts</th>
+      <th>caramel</th>
+      <th>nougat</th>
+      <th>cookie_wafer_rice</th>
+      <th>coconut</th>
+      <th>white_chocolate</th>
+      <th>multi</th>
+      <th>availability</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Coffee Crisp</td>
+      <td>50</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Butterfinger</td>
+      <td>184</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Skor</td>
+      <td>39</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Both</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Smarties</td>
+      <td>45</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Twix</td>
+      <td>58</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Both</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="column-dropping">
+<h2>Column Dropping<a class="headerlink" href="#column-dropping" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">.drop()</span></code> is the verb we use to delete columns in a dataframe.</p>
+<p>Let’s delete the column <code class="docutils literal notranslate"><span class="pre">coconut</span></code> by specifying it in the <code class="docutils literal notranslate"><span class="pre">columns</span></code>
+argument of the <code class="docutils literal notranslate"><span class="pre">drop</span></code> verb.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">candy</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s1">&#39;coconut&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Notes:</p>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>weight_g</th>
+      <th>chocolate</th>
+      <th>peanuts</th>
+      <th>caramel</th>
+      <th>nougat</th>
+      <th>cookie_wafer_rice</th>
+      <th>white_chocolate</th>
+      <th>multi</th>
+      <th>availability</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Coffee Crisp</td>
+      <td>50</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Butterfinger</td>
+      <td>184</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Skor</td>
+      <td>39</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Both</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Smarties</td>
+      <td>45</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Twix</td>
+      <td>58</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Both</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Take 5</td>
+      <td>43</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Whatchamacallits</td>
+      <td>45</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Almond Joy</td>
+      <td>46</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Oh Henry</td>
+      <td>51</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Both</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>Cookies and Cream</td>
+      <td>43</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>Both</td>
+    </tr>
+  </tbody>
+</table>
+<p>25 rows × 10 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">candy</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s1">&#39;coconut&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>weight_g</th>
+      <th>chocolate</th>
+      <th>peanuts</th>
+      <th>caramel</th>
+      <th>nougat</th>
+      <th>cookie_wafer_rice</th>
+      <th>white_chocolate</th>
+      <th>multi</th>
+      <th>availability</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Coffee Crisp</td>
+      <td>50</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Butterfinger</td>
+      <td>184</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Skor</td>
+      <td>39</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Both</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Smarties</td>
+      <td>45</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Twix</td>
+      <td>58</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Both</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Take 5</td>
+      <td>43</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Whatchamacallits</td>
+      <td>45</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Almond Joy</td>
+      <td>46</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Oh Henry</td>
+      <td>51</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Both</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>Cookies and Cream</td>
+      <td>43</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>Both</td>
+    </tr>
+  </tbody>
+</table>
+<p>25 rows × 10 columns</p>
+</div></div></div>
+</div>
 <p>If you look again at the code we just wrote you’ll notice we didn’t save
 over the dataframe object, so the dataframe <code class="docutils literal notranslate"><span class="pre">candy</span></code> still will contain
 the <code class="docutils literal notranslate"><span class="pre">coconut</span></code> column.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">candy</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>weight_g</th>
+      <th>chocolate</th>
+      <th>peanuts</th>
+      <th>caramel</th>
+      <th>nougat</th>
+      <th>cookie_wafer_rice</th>
+      <th>coconut</th>
+      <th>white_chocolate</th>
+      <th>multi</th>
+      <th>availability</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Coffee Crisp</td>
+      <td>50</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Butterfinger</td>
+      <td>184</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Skor</td>
+      <td>39</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Both</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Smarties</td>
+      <td>45</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Twix</td>
+      <td>58</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Both</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
 <p>Let’s overwrite the dataframe and remove multiple columns at the same
 time.</p>
 <p>Let’s drop <code class="docutils literal notranslate"><span class="pre">nougat</span></code> and <code class="docutils literal notranslate"><span class="pre">coconut</span></code> together.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">candy</span> <span class="o">=</span> <span class="n">candy</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;nougat&#39;</span><span class="p">,</span> <span class="s1">&#39;coconut&#39;</span><span class="p">])</span>
+<span class="n">candy</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>weight_g</th>
+      <th>chocolate</th>
+      <th>peanuts</th>
+      <th>caramel</th>
+      <th>cookie_wafer_rice</th>
+      <th>white_chocolate</th>
+      <th>multi</th>
+      <th>availability</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Coffee Crisp</td>
+      <td>50</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Butterfinger</td>
+      <td>184</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Skor</td>
+      <td>39</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Both</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Smarties</td>
+      <td>45</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Twix</td>
+      <td>58</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Both</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
 <p>We put the columns we want to drop in square brackets and this time we
 will remember to overwrite over the <code class="docutils literal notranslate"><span class="pre">candy</span></code> object.</p>
 <p>Now when we call <code class="docutils literal notranslate"><span class="pre">candy.head()</span></code> it reflects the dropped columns. They’re
 no longer there.</p>
+<div class="admonition-lets-apply-what-we-learned admonition">
+<p class="admonition-title">Let’s apply what we learned!</p>
+<p>Here is our <code class="docutils literal notranslate"><span class="pre">fruit_salad</span></code> dataframe once again.</p>
+<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>           name    colour    location    seed   shape  sweetness   water-content  weight
+0         apple       red     canada    True   round     True          84         100
+1        banana    yellow     mexico   False    long     True          75         120
+2    cantaloupe    orange      spain    True   round     True          90        1360
+3  dragon-fruit   magenta      china    True   round    False          96         600
+4    elderberry    purple    austria   False   round     True          80           5
+5           fig    purple     turkey   False    oval    False          78          40
+6         guava     green     mexico    True    oval     True          83         450
+7   huckleberry      blue     canada    True   round     True          73           5
+8          kiwi     brown      china    True   round     True          80          76
+9         lemon    yellow     mexico   False    oval    False          83          65
+</pre></div>
 </div>
-<div class="section" id="lets-apply-what-we-learned">
-<h2>Let’s apply what we learned!<a class="headerlink" href="#lets-apply-what-we-learned" title="Permalink to this headline">¶</a></h2>
-<p>1. What is Pandas?<br />
-a) A useful tool for data manipulation in Python<br />
-b) A programming language<br />
-c) A datatype</p>
-<p>2. Which of the following statements is true?<br />
-a) Attribute and methods can be thought of as nouns and functions as verbs<br />
-b) Attribute can be thought of as nouns and functions and methods as verbs<br />
-c)Functions and methods can be thought of as nouns and attributes as verbs</p>
-<div class="dropdown admonition">
+<p>Let’s say we run the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fruit_salad</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;colour&#39;</span><span class="p">,</span> <span class="s1">&#39;shape&#39;</span><span class="p">,</span> <span class="s1">&#39;sweetness&#39;</span><span class="p">])</span>
+<span class="n">fruit_salad</span> <span class="o">=</span> <span class="n">fruit_salad</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;location&#39;</span><span class="p">:</span><span class="s1">&#39;country&#39;</span><span class="p">,</span>
+                                          <span class="s1">&#39;weight&#39;</span><span class="p">:</span><span class="s1">&#39;weight_g&#39;</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>Use the dataframe and code above to answer the next 2 questions.</p>
+<p>1. After running the code above, How many columns (not including the index) are there in <code class="docutils literal notranslate"><span class="pre">fruit_salad</span></code> ?<br />
+a) 9<br />
+b) 4<br />
+c) 8</p>
+<p>2. After running the code above, which of the following is a column in the dataframe <code class="docutils literal notranslate"><span class="pre">fruit_salad</span></code>?<br />
+a) <code class="docutils literal notranslate"><span class="pre">country</span></code><br />
+b) <code class="docutils literal notranslate"><span class="pre">location</span></code></p>
+</div>
+<div class="tip dropdown admonition">
 <p class="admonition-title">Solutions!</p>
 <ol class="simple">
-<li><p>a) A useful tool for data manipulation in Python</p></li>
-<li><p>b) Attribute can be thought of as nouns and functions and methods as verbs</p></li>
+<li><p>c) 8</p></li>
+<li><p>a) <code class="docutils literal notranslate"><span class="pre">country</span></code></p></li>
 </ol>
 </div>
 </div>

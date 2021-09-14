@@ -16,9 +16,19 @@ kernelspec:
 # Reading in Different File Types
 
 :::{admonition} Watch it
-See the accompanied youtube video at <a href="https://www.youtube.com/embed/WCWi1R2CQsY?rel=0?start=0&end=270" target="_blank">the link here.</a>
+See the accompanied youtube video at <a href="https://www.youtube.com/embed/WCWi1R2CQsY?start=0&end=270" target="_blank">the link here.</a>
 :::
 
+```{code-cell} ipython3
+:tags: ["remove-cell"]
+import pandas as pd
+import numpy as np
+
+pd.set_option('display.width', 350)
+np.set_printoptions(linewidth=400)
+pd.set_option('display.max_columns', 15)
+pd.set_option('display.max_rows', 15)
+```
 
 ## Reading in Different File Types
 
@@ -86,15 +96,15 @@ to specify how the data should be recognized.
 
 Let’s load in the `candybars-text.txt` file.
 
-```{code-cell} ipython3
-candybars = pd.read_csv('candybars-text.txt')
-candybars.head()
-```
-
 This is the same as the `candybars.csv` data but saved as a `txt` file.
 
 Look what happens when we load it in using the same syntax we are used
 to.
+
+```{code-cell} ipython3
+candybars = pd.read_csv('candybars-text.txt')
+candybars.head()
+```
 
 This is not ideal.
 
@@ -194,7 +204,7 @@ exercises is coming from.
 :::{admonition} Let’s apply what we learned!
 
 1\. What is a delimiter?                             
-a) It defines how column values are separated
+a) It defines how column values are separated     
 b) It prevents a limitation on the data being read it     
 c) It is a manner of deleting values from a dataframe           
 
@@ -208,5 +218,6 @@ c) `sheet`
 ```{admonition} Solutions!
 :class: tip, dropdown
 
-1. b) It defines how column values are separated 
-2. c) `sheet_name`          
+1. a) It defines how column values are separated 
+2. b) `sheet_name`          
+```

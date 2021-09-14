@@ -1,7 +1,7 @@
 # What is a dataframe?
 
 :::{admonition} Watch it
-See the accompanied youtube video at <a href="https://www.youtube.com/embed/W88f5DAl9hk?rel=0?start=3&end=114" target="_blank">the link here.</a>
+See the accompanied youtube video at <a href="https://www.youtube.com/embed/W88f5DAl9hk?start=3&end=114" target="_blank">the link here.</a>
 :::
 
 Often, the first thing we need to do in data analysis is to load in data.

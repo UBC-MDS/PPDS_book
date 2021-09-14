@@ -4,7 +4,7 @@
 # # Summary Statistics
 # 
 # :::{admonition} Watch it
-# See the accompanied youtube video at <a href="https://www.youtube.com/embed/W88f5DAl9hk?rel=0?start=1518&end=1770" target="_blank">the link here.</a>
+# See the accompanied youtube video at <a href="https://www.youtube.com/embed/W88f5DAl9hk?start=1518&end=1770" target="_blank">the link here.</a>
 # :::
 # 
 # Now we’ve learned about how to get the data in to the shape and size
@@ -193,8 +193,8 @@ cereal.mean()
 # ```
 #  
 # 1\. Which of the following columns contain numerical data?                             
-# a) `colour`, `shape`, `water-content` 
-# b) `water-content`, `weight`      
+# a) `colour`, `shape`, `water-content`          
+# b) `water-content`, `weight`           
 # c) `colour`, `seed`, `water-content`, `weight`           
 # d) All of the columns are categorical            
 # 

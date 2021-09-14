@@ -193,31 +193,6 @@
      Column arithmetic and creation
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="module2_16.html">
-     Data Filtering
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="module2_20.html">
-     Conditional value replacement and assignment
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="module2_22.html">
-     Chaining notation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="module2_25.html">
-     Grouping and aggregating
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="module2_29.html">
-     More plotting tricks using Altair
-    </a>
-   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -363,9 +338,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/modules/module2/module2_06.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/modules/module2/module2_06.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -386,7 +361,7 @@
             href="https://github.com/UBC-MDS/PPDS_book/issues/new?title=Issue%20on%20page%20%2Fmodules/module2/module2_06.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/UBC-MDS/PPDS_book/edit/main/modules/module2/module2_06.md"><button
+        <a class="edit-button" href="https://github.com/UBC-MDS/PPDS_book/edit/main/modules/module2/module2_06.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -400,6 +375,26 @@
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/UBC-MDS/PPDS_book/main?urlpath=tree/modules/module2/module2_06.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
 
         </div>
 
@@ -436,11 +431,6 @@
    usecols
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lets-apply-what-we-learned">
-   Let’s apply what we learned!
-  </a>
- </li>
 </ul>
 
             </nav>
@@ -454,13 +444,19 @@
                 
   <div class="section" id="reading-arguments">
 <h1>Reading arguments<a class="headerlink" href="#reading-arguments" title="Permalink to this headline">¶</a></h1>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p>See the accompanied youtube video at <a href="https://www.youtube.com/embed/WCWi1R2CQsY?rel=0?start=10&end=430" target="_blank">the link here.</a></p>
+<div class="admonition-watch-it admonition">
+<p class="admonition-title">Watch it</p>
+<p>See the accompanied youtube video at <a href="https://www.youtube.com/embed/WCWi1R2CQsY?start=272&end=471" target="_blank">the link here.</a></p>
 </div>
-<hr class="docutils" />
 <div class="section" id="arguments">
 <h2>Arguments<a class="headerlink" href="#arguments" title="Permalink to this headline">¶</a></h2>
+<p>When we load in our data we use different arguments to make sure it’s
+organized how we want it.</p>
+<p><code class="docutils literal notranslate"><span class="pre">delimiter</span></code> is an argument we have already discussed that instructs on
+how to separate each value in the data.</p>
+<p>This is only the tip of the iceberg.</p>
+<p>There are many others that are helpful when reading in our data, such as
+<code class="docutils literal notranslate"><span class="pre">index_col</span></code>, <code class="docutils literal notranslate"><span class="pre">header</span></code>, <code class="docutils literal notranslate"><span class="pre">nrows</span></code>, and <code class="docutils literal notranslate"><span class="pre">usecols</span></code>.</p>
 <p>Here, we are going to introduce different arguments for <code class="docutils literal notranslate"><span class="pre">pd.read_csv()</span></code>
 and <code class="docutils literal notranslate"><span class="pre">pd.read_excel()</span></code>:</p>
 <ul class="simple">
@@ -475,45 +471,10 @@ following links:</p>
 <li><p><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html" target="_blank"><code class="docutils literal notranslate"><span class="pre">pd.read_csv()</span></code></a></p></li>
 <li><p><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_excel.html" target="_blank"><code class="docutils literal notranslate"><span class="pre">pd.read_excel()</span></code></a></p></li>
 </ul>
-<p>Notes:</p>
-<p>When we load in our data we use different arguments to make sure it’s
-organized how we want it.</p>
-<p><code class="docutils literal notranslate"><span class="pre">delimiter</span></code> is an argument we have already discussed that instructs on
-how to separate each value in the data.</p>
-<p>This is only the tip of the iceberg.</p>
-<p>There are many others that are helpful when reading in our data, such as
-<code class="docutils literal notranslate"><span class="pre">index_col</span></code>, <code class="docutils literal notranslate"><span class="pre">header</span></code>, <code class="docutils literal notranslate"><span class="pre">nrows</span></code>, and <code class="docutils literal notranslate"><span class="pre">usecols</span></code>.</p>
 </div>
-<hr class="docutils" />
 <div class="section" id="index-col">
 <h2>index_col<a class="headerlink" href="#index-col" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;cereal.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s2">&quot;name&quot;</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                          mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
-name                                                                                                                                       
-100% Bran                   N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
-100% Natural Bran           Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
-All-Bran                    K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
-All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
-Almond Delight              R  Cold       110        2    2     200    1.0   14.0       8       1        25      3     1.0  0.75  34.384843
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;cereal.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                          mfr  type  calories  protein  fat  sodium  fiber  carbo  sugars  potass  vitamins  shelf  weight  cups     rating
-name                                                                                                                                       
-100% Bran                   N  Cold        70        4    1     130   10.0    5.0       6     280        25      3     1.0  0.33  68.402973
-100% Natural Bran           Q  Cold       120        3    5      15    2.0    8.0       8     135         0      3     1.0  1.00  33.983679
-All-Bran                    K  Cold        70        4    1     260    9.0    7.0       5     320        25      3     1.0  0.33  59.425505
-All-Bran with Extra Fiber   K  Cold        50        4    0     140   14.0    8.0       0     330        25      3     1.0  0.50  93.704912
-Almond Delight              R  Cold       110        2    2     200    1.0   14.0       8       1        25      3     1.0  0.75  34.384843
-</pre></div>
-</div>
-<p>Notes: <code class="docutils literal notranslate"><span class="pre">index_col</span></code> is an argument that indicates which column will be
+<p><code class="docutils literal notranslate"><span class="pre">index_col</span></code> is an argument that indicates which column will be
 acting as the index label.</p>
 <p>In most of the cases we have encountered, we did not use this argument
 and instead relied on the pandas default, which is to use ascending
@@ -521,15 +482,324 @@ integers for the index.</p>
 <p>We can, however, specify a column in the data to become the index.</p>
 <p>It’s in our best interest that the column we choose have unique values.</p>
 <p>For our <code class="docutils literal notranslate"><span class="pre">cereal.csv</span></code> let’s specify the <code class="docutils literal notranslate"><span class="pre">name</span></code> column as our index.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;cereal.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s2">&quot;name&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mfr</th>
+      <th>type</th>
+      <th>calories</th>
+      <th>protein</th>
+      <th>fat</th>
+      <th>sodium</th>
+      <th>fiber</th>
+      <th>carbo</th>
+      <th>sugars</th>
+      <th>potass</th>
+      <th>vitamins</th>
+      <th>shelf</th>
+      <th>weight</th>
+      <th>cups</th>
+      <th>rating</th>
+    </tr>
+    <tr>
+      <th>name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>100% Bran</th>
+      <td>N</td>
+      <td>Cold</td>
+      <td>70</td>
+      <td>4</td>
+      <td>1</td>
+      <td>130</td>
+      <td>10.0</td>
+      <td>5.0</td>
+      <td>6</td>
+      <td>280</td>
+      <td>25</td>
+      <td>3</td>
+      <td>1.0</td>
+      <td>0.33</td>
+      <td>68.402973</td>
+    </tr>
+    <tr>
+      <th>100% Natural Bran</th>
+      <td>Q</td>
+      <td>Cold</td>
+      <td>120</td>
+      <td>3</td>
+      <td>5</td>
+      <td>15</td>
+      <td>2.0</td>
+      <td>8.0</td>
+      <td>8</td>
+      <td>135</td>
+      <td>0</td>
+      <td>3</td>
+      <td>1.0</td>
+      <td>1.00</td>
+      <td>33.983679</td>
+    </tr>
+    <tr>
+      <th>All-Bran</th>
+      <td>K</td>
+      <td>Cold</td>
+      <td>70</td>
+      <td>4</td>
+      <td>1</td>
+      <td>260</td>
+      <td>9.0</td>
+      <td>7.0</td>
+      <td>5</td>
+      <td>320</td>
+      <td>25</td>
+      <td>3</td>
+      <td>1.0</td>
+      <td>0.33</td>
+      <td>59.425505</td>
+    </tr>
+    <tr>
+      <th>All-Bran with Extra Fiber</th>
+      <td>K</td>
+      <td>Cold</td>
+      <td>50</td>
+      <td>4</td>
+      <td>0</td>
+      <td>140</td>
+      <td>14.0</td>
+      <td>8.0</td>
+      <td>0</td>
+      <td>330</td>
+      <td>25</td>
+      <td>3</td>
+      <td>1.0</td>
+      <td>0.50</td>
+      <td>93.704912</td>
+    </tr>
+    <tr>
+      <th>Almond Delight</th>
+      <td>R</td>
+      <td>Cold</td>
+      <td>110</td>
+      <td>2</td>
+      <td>2</td>
+      <td>200</td>
+      <td>1.0</td>
+      <td>14.0</td>
+      <td>8</td>
+      <td>1</td>
+      <td>25</td>
+      <td>3</td>
+      <td>1.0</td>
+      <td>0.75</td>
+      <td>34.384843</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
 <p>The <code class="docutils literal notranslate"><span class="pre">index_col</span></code> argument also take in positions.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">name</span></code> column in our data is in the 0th position so we can also
 specify the index like we show here with <code class="docutils literal notranslate"><span class="pre">index_col=0</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;cereal.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
 </div>
-<hr class="docutils" />
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mfr</th>
+      <th>type</th>
+      <th>calories</th>
+      <th>protein</th>
+      <th>fat</th>
+      <th>sodium</th>
+      <th>fiber</th>
+      <th>carbo</th>
+      <th>sugars</th>
+      <th>potass</th>
+      <th>vitamins</th>
+      <th>shelf</th>
+      <th>weight</th>
+      <th>cups</th>
+      <th>rating</th>
+    </tr>
+    <tr>
+      <th>name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>100% Bran</th>
+      <td>N</td>
+      <td>Cold</td>
+      <td>70</td>
+      <td>4</td>
+      <td>1</td>
+      <td>130</td>
+      <td>10.0</td>
+      <td>5.0</td>
+      <td>6</td>
+      <td>280</td>
+      <td>25</td>
+      <td>3</td>
+      <td>1.0</td>
+      <td>0.33</td>
+      <td>68.402973</td>
+    </tr>
+    <tr>
+      <th>100% Natural Bran</th>
+      <td>Q</td>
+      <td>Cold</td>
+      <td>120</td>
+      <td>3</td>
+      <td>5</td>
+      <td>15</td>
+      <td>2.0</td>
+      <td>8.0</td>
+      <td>8</td>
+      <td>135</td>
+      <td>0</td>
+      <td>3</td>
+      <td>1.0</td>
+      <td>1.00</td>
+      <td>33.983679</td>
+    </tr>
+    <tr>
+      <th>All-Bran</th>
+      <td>K</td>
+      <td>Cold</td>
+      <td>70</td>
+      <td>4</td>
+      <td>1</td>
+      <td>260</td>
+      <td>9.0</td>
+      <td>7.0</td>
+      <td>5</td>
+      <td>320</td>
+      <td>25</td>
+      <td>3</td>
+      <td>1.0</td>
+      <td>0.33</td>
+      <td>59.425505</td>
+    </tr>
+    <tr>
+      <th>All-Bran with Extra Fiber</th>
+      <td>K</td>
+      <td>Cold</td>
+      <td>50</td>
+      <td>4</td>
+      <td>0</td>
+      <td>140</td>
+      <td>14.0</td>
+      <td>8.0</td>
+      <td>0</td>
+      <td>330</td>
+      <td>25</td>
+      <td>3</td>
+      <td>1.0</td>
+      <td>0.50</td>
+      <td>93.704912</td>
+    </tr>
+    <tr>
+      <th>Almond Delight</th>
+      <td>R</td>
+      <td>Cold</td>
+      <td>110</td>
+      <td>2</td>
+      <td>2</td>
+      <td>200</td>
+      <td>1.0</td>
+      <td>14.0</td>
+      <td>8</td>
+      <td>1</td>
+      <td>25</td>
+      <td>3</td>
+      <td>1.0</td>
+      <td>0.75</td>
+      <td>34.384843</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
 <div class="section" id="header">
 <h2>header<a class="headerlink" href="#header" title="Permalink to this headline">¶</a></h2>
-<img alt="404 image" src="module2/header_textedit.png" />
-<p>Notes:</p>
 <p>We have been lucky up until now that all the data we have loaded in has
 been particularly straightforward.</p>
 <p>Sometimes with data, there are a few lines of text explaining important
@@ -539,109 +809,568 @@ specify exactly when our dataframe begins.</p>
 <p>This is where <code class="docutils literal notranslate"><span class="pre">header</span></code> comes in.</p>
 <p>Take a look at
 <a href="https://github.com/UBC-MDS/MCL-DSCI-511-programming-in-python/blob/master/slides/candybars-h.csv" target="_blank"><code class="docutils literal notranslate"><span class="pre">candybars-h.csv</span></code>
-</a> as an example.</p>
+</a> below as an example.</p>
+<img alt="404 image" src="../../_images/header_textedit.png" />
 <p>If we look at the data with a regular text editor, the data doesn’t
 start until the 3rd line which would be the equivalent of position 2
 (since we begin counting from 0).</p>
-<hr class="docutils" />
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">candybars</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;candybars-h.csv&#39;</span><span class="p">)</span>
-<span class="n">candybars</span>
-</pre></div>
-</div>
-<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>   This dataset was created by Hayley Boyce in February 2020. Unnamed: 1 Unnamed: 2 Unnamed: 3 Unnamed: 4 Unnamed: 5         Unnamed: 6 Unnamed: 7       Unnamed: 8 Unnamed: 9               Unnamed: 10
-0   Note this is not a complete dataset and there ...                NaN        NaN        NaN        NaN        NaN                NaN        NaN              NaN        NaN                       NaN
-1                                                name             weight  chocolate    peanuts    caramel     nougat  cookie_wafer_rice    coconut  white_chocolate      multi  available_canada_america
-2                                        Coffee Crisp                 50          1          0          0          0                  1          0                0          0                    Canada
-3                                        Butterfinger                184          1          1          1          0                  0          0                0          0                   America
-4                                                Skor                 39          1          0          1          0                  0          0                0          0                      Both
-..                                                ...                ...        ...        ...        ...        ...                ...        ...              ...        ...                       ...
-22                                             Take 5                 43          1          1          1          0                  1          0                0          0                   America
-23                                   Whatchamacallits                 45          1          1          0          0                  1          0                0          0                   America
-24                                         Almond Joy                 46          1          0          0          0                  0          1                0          0                   America
-25                                           Oh Henry                 51          1          1          1          0                  0          0                0          0                      Both
-26                                  Cookies and Cream                 43          0          0          0          0                  1          0                1          0                      Both
-
-[27 rows x 11 columns]
-</pre></div>
-</div>
-<p>Notes:</p>
 <p>If we load this dataset without any arguments, we get this as the
 output.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">candybars</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;candybars-h.csv&#39;</span><span class="p">)</span>
+<span class="n">candybars</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>This dataset was created by Hayley Boyce in February 2020.</th>
+      <th>Unnamed: 1</th>
+      <th>Unnamed: 2</th>
+      <th>Unnamed: 3</th>
+      <th>Unnamed: 4</th>
+      <th>Unnamed: 5</th>
+      <th>Unnamed: 6</th>
+      <th>Unnamed: 7</th>
+      <th>Unnamed: 8</th>
+      <th>Unnamed: 9</th>
+      <th>Unnamed: 10</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Note this is not a complete dataset and there ...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>name</td>
+      <td>weight</td>
+      <td>chocolate</td>
+      <td>peanuts</td>
+      <td>caramel</td>
+      <td>nougat</td>
+      <td>cookie_wafer_rice</td>
+      <td>coconut</td>
+      <td>white_chocolate</td>
+      <td>multi</td>
+      <td>available_canada_america</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Coffee Crisp</td>
+      <td>50</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Butterfinger</td>
+      <td>184</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Skor</td>
+      <td>39</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Both</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Take 5</td>
+      <td>43</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Whatchamacallits</td>
+      <td>45</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>Almond Joy</td>
+      <td>46</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>Oh Henry</td>
+      <td>51</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Both</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>Cookies and Cream</td>
+      <td>43</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>Both</td>
+    </tr>
+  </tbody>
+</table>
+<p>27 rows × 11 columns</p>
+</div></div></div>
+</div>
 <p>We see that there are no clear column names and things are quite a
 mess!</p>
-<hr class="docutils" />
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">candybars</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;candybars-h.csv&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">candybars</span>
-</pre></div>
-</div>
-<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                 name  weight  chocolate  peanuts  caramel  nougat  cookie_wafer_rice  coconut  white_chocolate  multi available_canada_america
-0        Coffee Crisp      50          1        0        0       0                  1        0                0      0                   Canada
-1        Butterfinger     184          1        1        1       0                  0        0                0      0                  America
-2                Skor      39          1        0        1       0                  0        0                0      0                     Both
-3            Smarties      45          1        0        0       0                  0        0                0      1                   Canada
-4                Twix      58          1        0        1       0                  1        0                0      1                     Both
-..                ...     ...        ...      ...      ...     ...                ...      ...              ...    ...                      ...
-20             Take 5      43          1        1        1       0                  1        0                0      0                  America
-21   Whatchamacallits      45          1        1        0       0                  1        0                0      0                  America
-22         Almond Joy      46          1        0        0       0                  0        1                0      0                  America
-23           Oh Henry      51          1        1        1       0                  0        0                0      0                     Both
-24  Cookies and Cream      43          0        0        0       0                  1        0                1      0                     Both
-
-[25 rows x 11 columns]
-</pre></div>
-</div>
-<p>Notes:</p>
 <p>If we use <code class="docutils literal notranslate"><span class="pre">header=2</span></code> to indicate that the data actually begins at
 position 2, then things start to look much better.</p>
-</div>
-<hr class="docutils" />
-<div class="section" id="nrows">
-<h2>nrows<a class="headerlink" href="#nrows" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">candybars</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;candybars.csv&#39;</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">candybars</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;candybars-h.csv&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">candybars</span>
 </pre></div>
 </div>
-<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                        name  weight  chocolate  peanuts  caramel  nougat  cookie_wafer_rice  coconut  white_chocolate  multi available_canada_america
-0               Coffee Crisp      50          1        0        0       0                  1        0                0      0                   Canada
-1               Butterfinger     184          1        1        1       0                  0        0                0      0                  America
-2                       Skor      39          1        0        1       0                  0        0                0      0                     Both
-3                   Smarties      45          1        0        0       0                  0        0                0      1                   Canada
-4                       Twix      58          1        0        1       0                  1        0                0      1                     Both
-5  Reeses Peanutbutter Cups       43          1        1        0       0                  0        0                0      1                     Both
-6               3 Musketeers      54          1        0        0       1                  0        0                0      0                  America
-</pre></div>
 </div>
-<p>Notes:</p>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>weight</th>
+      <th>chocolate</th>
+      <th>peanuts</th>
+      <th>caramel</th>
+      <th>nougat</th>
+      <th>cookie_wafer_rice</th>
+      <th>coconut</th>
+      <th>white_chocolate</th>
+      <th>multi</th>
+      <th>available_canada_america</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Coffee Crisp</td>
+      <td>50</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Butterfinger</td>
+      <td>184</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Skor</td>
+      <td>39</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Both</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Smarties</td>
+      <td>45</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Twix</td>
+      <td>58</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Both</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Take 5</td>
+      <td>43</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Whatchamacallits</td>
+      <td>45</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Almond Joy</td>
+      <td>46</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Oh Henry</td>
+      <td>51</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Both</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>Cookies and Cream</td>
+      <td>43</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>Both</td>
+    </tr>
+  </tbody>
+</table>
+<p>25 rows × 11 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="nrows">
+<h2>nrows<a class="headerlink" href="#nrows" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">nrows</span></code> is an argument in <code class="docutils literal notranslate"><span class="pre">pd.read_csv()</span></code> that is useful when you only
 want to load in part of the dataframe.</p>
 <p>Perhaps the file you have is large and you only want a sample of it.</p>
 <p><code class="docutils literal notranslate"><span class="pre">nrows</span></code> will limit the number of rows that you read in.</p>
-<p>This code loads in only the first 7 rows of our candybar dataset.</p>
-</div>
-<hr class="docutils" />
-<div class="section" id="usecols">
-<h2>usecols<a class="headerlink" href="#usecols" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">candybars</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;candybars.csv&#39;</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">candybars</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;candybars.csv&#39;</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
 <span class="n">candybars</span>
 </pre></div>
 </div>
-<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                 name  weight available_canada_america
-0        Coffee Crisp      50                   Canada
-1        Butterfinger     184                  America
-2                Skor      39                     Both
-3            Smarties      45                   Canada
-4                Twix      58                     Both
-..                ...     ...                      ...
-20             Take 5      43                  America
-21   Whatchamacallits      45                  America
-22         Almond Joy      46                  America
-23           Oh Henry      51                     Both
-24  Cookies and Cream      43                     Both
-
-[25 rows x 3 columns]
-</pre></div>
 </div>
-<p>Notes:</p>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>weight</th>
+      <th>chocolate</th>
+      <th>peanuts</th>
+      <th>caramel</th>
+      <th>nougat</th>
+      <th>cookie_wafer_rice</th>
+      <th>coconut</th>
+      <th>white_chocolate</th>
+      <th>multi</th>
+      <th>available_canada_america</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Coffee Crisp</td>
+      <td>50</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Butterfinger</td>
+      <td>184</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Skor</td>
+      <td>39</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>Both</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Smarties</td>
+      <td>45</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Twix</td>
+      <td>58</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Both</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Reeses Peanutbutter Cups</td>
+      <td>43</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>Both</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>3 Musketeers</td>
+      <td>54</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>America</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>This code loads in only the first 7 rows of our candybar dataset.</p>
+</div>
+<div class="section" id="usecols">
+<h2>usecols<a class="headerlink" href="#usecols" title="Permalink to this headline">¶</a></h2>
 <p>Similarly to how <code class="docutils literal notranslate"><span class="pre">nrows</span></code> specifies how many rows to read in, <code class="docutils literal notranslate"><span class="pre">usecols</span></code>
 selects which columns to load from the data.</p>
 <p>Perhaps the only columns relevant to our analysis are the columns
@@ -649,46 +1378,230 @@ selects which columns to load from the data.</p>
 <p>We can forgo the other columns when reading the data in.</p>
 <p>In a similar way to selecting columns using <code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code>, we specify the
 desired column indices in square brackets.</p>
-<hr class="docutils" />
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">candybars</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;candybars.csv&#39;</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;weight&#39;</span><span class="p">,</span> <span class="s1">&#39;available_canada_america&#39;</span><span class="p">])</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">candybars</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;candybars.csv&#39;</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
 <span class="n">candybars</span>
 </pre></div>
 </div>
-<div class="highlight-out notranslate"><div class="highlight"><pre><span></span>                 name  weight available_canada_america
-0        Coffee Crisp      50                   Canada
-1        Butterfinger     184                  America
-2                Skor      39                     Both
-3            Smarties      45                   Canada
-4                Twix      58                     Both
-..                ...     ...                      ...
-20             Take 5      43                  America
-21   Whatchamacallits      45                  America
-22         Almond Joy      46                  America
-23           Oh Henry      51                     Both
-24  Cookies and Cream      43                     Both
-
-[25 rows x 3 columns]
-</pre></div>
 </div>
-<p>Notes:</p>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>weight</th>
+      <th>available_canada_america</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Coffee Crisp</td>
+      <td>50</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Butterfinger</td>
+      <td>184</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Skor</td>
+      <td>39</td>
+      <td>Both</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Smarties</td>
+      <td>45</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Twix</td>
+      <td>58</td>
+      <td>Both</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Take 5</td>
+      <td>43</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Whatchamacallits</td>
+      <td>45</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Almond Joy</td>
+      <td>46</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Oh Henry</td>
+      <td>51</td>
+      <td>Both</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>Cookies and Cream</td>
+      <td>43</td>
+      <td>Both</td>
+    </tr>
+  </tbody>
+</table>
+<p>25 rows × 3 columns</p>
+</div></div></div>
+</div>
 <p>The <code class="docutils literal notranslate"><span class="pre">usecols</span></code> argument accepts either index positions or labels so we
 could also use the column names in square brackets as shown here.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">candybars</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;candybars.csv&#39;</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;weight&#39;</span><span class="p">,</span> <span class="s1">&#39;available_canada_america&#39;</span><span class="p">])</span>
+<span class="n">candybars</span>
+</pre></div>
 </div>
-<div class="section" id="lets-apply-what-we-learned">
-<h2>Let’s apply what we learned!<a class="headerlink" href="#lets-apply-what-we-learned" title="Permalink to this headline">¶</a></h2>
-<p>1. What is Pandas?<br />
-a) A useful tool for data manipulation in Python<br />
-b) A programming language<br />
-c) A datatype</p>
-<p>2. Which of the following statements is true?<br />
-a) Attribute and methods can be thought of as nouns and functions as verbs<br />
-b) Attribute can be thought of as nouns and functions and methods as verbs<br />
-c)Functions and methods can be thought of as nouns and attributes as verbs</p>
-<div class="dropdown admonition">
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>weight</th>
+      <th>available_canada_america</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Coffee Crisp</td>
+      <td>50</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Butterfinger</td>
+      <td>184</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Skor</td>
+      <td>39</td>
+      <td>Both</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Smarties</td>
+      <td>45</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Twix</td>
+      <td>58</td>
+      <td>Both</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Take 5</td>
+      <td>43</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Whatchamacallits</td>
+      <td>45</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Almond Joy</td>
+      <td>46</td>
+      <td>America</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Oh Henry</td>
+      <td>51</td>
+      <td>Both</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>Cookies and Cream</td>
+      <td>43</td>
+      <td>Both</td>
+    </tr>
+  </tbody>
+</table>
+<p>25 rows × 3 columns</p>
+</div></div></div>
+</div>
+<div class="admonition-lets-apply-what-we-learned admonition">
+<p class="admonition-title">Let’s apply what we learned!</p>
+<p>1.Which argument will assign the index when reading in your data with <code class="docutils literal notranslate"><span class="pre">pd.read_excel()</span></code>?<br />
+a) <code class="docutils literal notranslate"><span class="pre">header</span></code><br />
+b) <code class="docutils literal notranslate"><span class="pre">ncols</span></code><br />
+c) <code class="docutils literal notranslate"><span class="pre">index_col</span></code></p>
+<p>2. Which argument will select only specific columns of the data file with <code class="docutils literal notranslate"><span class="pre">pd.read_csv()</span></code>?<br />
+a) <code class="docutils literal notranslate"><span class="pre">header</span></code><br />
+b) <code class="docutils literal notranslate"><span class="pre">nrows</span></code><br />
+c) <code class="docutils literal notranslate"><span class="pre">usecols</span></code></p>
+</div>
+<div class="tip dropdown admonition">
 <p class="admonition-title">Solutions!</p>
 <ol class="simple">
-<li><p>a) A useful tool for data manipulation in Python</p></li>
-<li><p>b) Attribute can be thought of as nouns and functions and methods as verbs</p></li>
+<li><p>c) <code class="docutils literal notranslate"><span class="pre">index_col</span></code></p></li>
+<li><p>c) <code class="docutils literal notranslate"><span class="pre">usecols</span></code></p></li>
 </ol>
 </div>
 </div>

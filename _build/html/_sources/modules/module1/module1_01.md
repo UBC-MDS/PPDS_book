@@ -60,7 +60,7 @@ see each row on its own line, and each entry in the table separated by a
 comma.
 
 
-:::{admonition} Let’s apply what we learned!
+:::{exercise} Let’s apply what we learned!
 
 1\. What are dataframes comparable to?     
 a) Text Documents      

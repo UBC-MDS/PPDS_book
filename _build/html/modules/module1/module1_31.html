@@ -28,6 +28,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/extras.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
@@ -172,7 +173,32 @@
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="simple">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module2/module2_01.html">
+     Reading in Different File Types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module2/module2_06.html">
+     Reading arguments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module2/module2_09.html">
+     Column renaming and column dropping
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module2/module2_13.html">
+     Column arithmetic and creation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../module2/module2_16.html">
+     Data Filtering
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -674,12 +700,12 @@ following code.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-1b6aa79a7413402ea7b031e478cc0a23"></div>
+<div id="altair-viz-26333547db5f482cb48191dcb1aaa82e"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-1b6aa79a7413402ea7b031e478cc0a23") {
-      outputDiv = document.getElementById("altair-viz-1b6aa79a7413402ea7b031e478cc0a23");
+    if (outputDiv.id !== "altair-viz-26333547db5f482cb48191dcb1aaa82e") {
+      outputDiv = document.getElementById("altair-viz-26333547db5f482cb48191dcb1aaa82e");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -768,12 +794,12 @@ and then specifying which column using <code class="docutils literal notranslate
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-373fea622cb44a668b404bf4f53bb068"></div>
+<div id="altair-viz-8a889563e2914e8ca90a9958a5f86ce2"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-373fea622cb44a668b404bf4f53bb068") {
-      outputDiv = document.getElementById("altair-viz-373fea622cb44a668b404bf4f53bb068");
+    if (outputDiv.id !== "altair-viz-8a889563e2914e8ca90a9958a5f86ce2") {
+      outputDiv = document.getElementById("altair-viz-8a889563e2914e8ca90a9958a5f86ce2");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -840,12 +866,12 @@ need to say what is going to be on the <code class="docutils literal notranslate
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-d1a4ec68fe234623ac0b82ebe122ec6f"></div>
+<div id="altair-viz-f1f7e31ce4244901a257dc0cde8e27f0"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-d1a4ec68fe234623ac0b82ebe122ec6f") {
-      outputDiv = document.getElementById("altair-viz-d1a4ec68fe234623ac0b82ebe122ec6f");
+    if (outputDiv.id !== "altair-viz-f1f7e31ce4244901a257dc0cde8e27f0") {
+      outputDiv = document.getElementById("altair-viz-f1f7e31ce4244901a257dc0cde8e27f0");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -915,12 +941,12 @@ it at 0.3.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-73e71f6ab6eb44e8a1de39be62e62bf5"></div>
+<div id="altair-viz-11ed7a94a6da44de98d8aa8c88163318"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-73e71f6ab6eb44e8a1de39be62e62bf5") {
-      outputDiv = document.getElementById("altair-viz-73e71f6ab6eb44e8a1de39be62e62bf5");
+    if (outputDiv.id !== "altair-viz-11ed7a94a6da44de98d8aa8c88163318") {
+      outputDiv = document.getElementById("altair-viz-11ed7a94a6da44de98d8aa8c88163318");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -982,12 +1008,12 @@ argument in <code class="docutils literal notranslate"><span class="pre">.mark_c
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-8481f24c63324bc0a3cbeebb498543d3"></div>
+<div id="altair-viz-8152a98f373946f2b4e97308fdc6fbbc"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-8481f24c63324bc0a3cbeebb498543d3") {
-      outputDiv = document.getElementById("altair-viz-8481f24c63324bc0a3cbeebb498543d3");
+    if (outputDiv.id !== "altair-viz-8152a98f373946f2b4e97308fdc6fbbc") {
+      outputDiv = document.getElementById("altair-viz-8152a98f373946f2b4e97308fdc6fbbc");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1050,12 +1076,12 @@ larger.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-35d194dc5874419cbe68e1f161ce4140"></div>
+<div id="altair-viz-ce15079f6d2544619cc5e125f02008f9"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-35d194dc5874419cbe68e1f161ce4140") {
-      outputDiv = document.getElementById("altair-viz-35d194dc5874419cbe68e1f161ce4140");
+    if (outputDiv.id !== "altair-viz-ce15079f6d2544619cc5e125f02008f9") {
+      outputDiv = document.getElementById("altair-viz-ce15079f6d2544619cc5e125f02008f9");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1116,12 +1142,12 @@ argument <code class="docutils literal notranslate"><span class="pre">title</spa
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-4b3799603c59418aa35b4bf625a810bd"></div>
+<div id="altair-viz-1ab05ab135204ad2b0bf399082a9d813"></div>
 <script type="text/javascript">
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-4b3799603c59418aa35b4bf625a810bd") {
-      outputDiv = document.getElementById("altair-viz-4b3799603c59418aa35b4bf625a810bd");
+    if (outputDiv.id !== "altair-viz-1ab05ab135204ad2b0bf399082a9d813") {
+      outputDiv = document.getElementById("altair-viz-1ab05ab135204ad2b0bf399082a9d813");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",

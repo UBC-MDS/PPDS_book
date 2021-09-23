@@ -3,7 +3,7 @@
 
 # # Data Filtering
 # 
-# :::{admonition} Exercise
+# :::{admonition} Watch it
 # See the accompanied youtube video at <a href="https://www.youtube.com/embed/WCWi1R2CQsY?start=847&end=1221" target="_blank">the link here.</a>
 # :::
 
@@ -241,17 +241,19 @@ cereal['protein'] > 4
 
 (cereal['protein'] > 4).head()
 
-The opposite of `cereal['protein'] > 4` is `cereal['protein'] <= 4`, so
-that one isn’t too tricky. But sometimes taking the opposite is not so
-straightforward. This is where the `~` (“tilde”) operator can be
-helpful.
+
+# The opposite of `cereal['protein'] > 4` is `cereal['protein'] <= 4`, so
+# that one isn’t too tricky. But sometimes taking the opposite is not so
+# straightforward. This is where the `~` (“tilde”) operator can be
+# helpful.
+# 
+# 
+# Tilde converts all the `True` values to `False` and all the `False`
+# values, to `True.`
+
+# In[16]:
 
 
-Tilde converts all the `True` values to `False` and all the `False`
-values, to `True.`
-
-
-```{code-cell} ipython3
 (~(cereal['protein'] > 4)).head()
 
 
@@ -265,7 +267,7 @@ values, to `True.`
 # What we have here, is taking the rows where the protein content is not
 # greater than four.
 
-# In[16]:
+# In[17]:
 
 
 cereal[~(cereal['protein'] > 4)]
@@ -293,15 +295,14 @@ cereal[~(cereal['protein'] > 4)]
 #  ```python
 #   ~(df['location'] == 'Canada')
 # ```
-# ```
 #  
 # a) `[True, False, False, True]`      
 # b) `[False, False, False, False]`       
 # c) `[True, True, True, True]`         
 # d) `[False, True, True, False]`         
 # 
-# 
 # :::
+# 
 # 
 # ```{admonition} Solutions!
 # :class: tip, dropdown

@@ -28,6 +28,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/extras.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
@@ -2804,28 +2805,40 @@ Name: protein, Length: 77, dtype: bool
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>(cereal[&#39;protein&#39;] &gt; 4).head()
-
-The opposite of `cereal[&#39;protein&#39;] &gt; 4` is `cereal[&#39;protein&#39;] &lt;= 4`, so
-that one isn’t too tricky. But sometimes taking the opposite is not so
-straightforward. This is where the `~` (“tilde”) operator can be
-helpful.
-
-
-Tilde converts all the `True` values to `False` and all the `False`
-values, to `True.`
-
-
-```{code-cell} ipython3
-(~(cereal[&#39;protein&#39;] &gt; 4)).head()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">cereal</span><span class="p">[</span><span class="s1">&#39;protein&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  File &quot;/var/folders/p4/1bqk_8p16m98bm64l88gd_vc0000gn/T/ipykernel_45512/3894984370.py&quot;, line 3
-    The opposite of `cereal[&#39;protein&#39;] &gt; 4` is `cereal[&#39;protein&#39;] &lt;= 4`, so
-        ^
-SyntaxError: invalid syntax
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    False
+1    False
+2    False
+3    False
+4    False
+Name: protein, dtype: bool
+</pre></div>
+</div>
+</div>
+</div>
+<p>The opposite of <code class="docutils literal notranslate"><span class="pre">cereal['protein']</span> <span class="pre">&gt;</span> <span class="pre">4</span></code> is <code class="docutils literal notranslate"><span class="pre">cereal['protein']</span> <span class="pre">&lt;=</span> <span class="pre">4</span></code>, so
+that one isn’t too tricky. But sometimes taking the opposite is not so
+straightforward. This is where the <code class="docutils literal notranslate"><span class="pre">~</span></code> (“tilde”) operator can be
+helpful.</p>
+<p>Tilde converts all the <code class="docutils literal notranslate"><span class="pre">True</span></code> values to <code class="docutils literal notranslate"><span class="pre">False</span></code> and all the <code class="docutils literal notranslate"><span class="pre">False</span></code>
+values, to <code class="docutils literal notranslate"><span class="pre">True.</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">~</span><span class="p">(</span><span class="n">cereal</span><span class="p">[</span><span class="s1">&#39;protein&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">))</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    True
+1    True
+2    True
+3    True
+4    True
+Name: protein, dtype: bool
 </pre></div>
 </div>
 </div>
@@ -3111,15 +3124,10 @@ Module 3).</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="o">~</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;location&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Canada&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> 
-a) `[True, False, False, True]`      
-b) `[False, False, False, False]`       
-c) `[True, True, True, True]`         
-d) `[False, True, True, False]`         
-
-
-</pre></div>
-</div>
+<p>a) <code class="docutils literal notranslate"><span class="pre">[True,</span> <span class="pre">False,</span> <span class="pre">False,</span> <span class="pre">True]</span></code><br />
+b) <code class="docutils literal notranslate"><span class="pre">[False,</span> <span class="pre">False,</span> <span class="pre">False,</span> <span class="pre">False]</span></code><br />
+c) <code class="docutils literal notranslate"><span class="pre">[True,</span> <span class="pre">True,</span> <span class="pre">True,</span> <span class="pre">True]</span></code><br />
+d) <code class="docutils literal notranslate"><span class="pre">[False,</span> <span class="pre">True,</span> <span class="pre">True,</span> <span class="pre">False]</span></code></p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Solutions!</p>

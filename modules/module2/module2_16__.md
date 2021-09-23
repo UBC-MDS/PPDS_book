@@ -233,6 +233,7 @@ cereal['protein'] > 4
 
 ```{code-cell} ipython3
 (cereal['protein'] > 4).head()
+```
 
 The opposite of `cereal['protein'] > 4` is `cereal['protein'] <= 4`, so
 that one isn’t too tricky. But sometimes taking the opposite is not so
@@ -285,15 +286,14 @@ df['location'] == 'Canada'
  ```python
   ~(df['location'] == 'Canada')
 ```
-```
  
 a) `[True, False, False, True]`      
 b) `[False, False, False, False]`       
 c) `[True, True, True, True]`         
 d) `[False, True, True, False]`         
 
-
 :::
+
 
 ```{admonition} Solutions!
 :class: tip, dropdown

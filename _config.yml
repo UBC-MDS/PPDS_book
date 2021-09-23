@@ -52,3 +52,4 @@ parse:
 sphinx:
     extra_extensions:
         - sphinx_thebe
+        - sphinx_exercise

@@ -38,7 +38,7 @@ html:
   use_edit_page_button: true
   use_repository_button: true
   use_issues_button: true
-  baseurl: gifted-perlman-a442ef.netlify.app
+  baseurl: https://prog-learn-book.mds.ubc.ca/intro.html
 parse:
   myst_enable_extensions:
     # don't forget to list any other extensions you want enabled,
